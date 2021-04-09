@@ -1,0 +1,65 @@
+.programm {
+  &__title {
+    max-width: rem(704px);
+  }
+  background: url("../assets/backgrounds/main/programm-background.svg")
+    no-repeat center center/cover;
+  &__body {
+    @include flexbox(row, space-between, center);
+    margin-top: rem(-31px);
+  }
+
+  &__item {
+    background: url("../assets/svg/dashed-image-small.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: rem(138px);
+  }
+  /* 
+  &__footer {
+    @include grid(
+      0,
+      rem(80px),
+      rem(30px),
+      1,
+      1fr,
+      auto-fill,
+      rem(277px),
+      rem(277px)
+    );
+  }
+ */
+  &__order {
+    @include grid(
+      rem(62px),
+      rem(80px),
+      rem(30px),
+      1,
+      1fr,
+      auto-fill,
+      rem(277px),
+      rem(277px)
+    );
+  }
+}
+
+.item-programm {
+  height: 100%;
+  margin: 0;
+  &__title {
+    font-size: rem(18px);
+    line-height: rem(26px);
+    font-weight: 600;
+    max-width: rem(229px);
+    text-align: center;
+  }
+  &__order {
+    left: rem(23px);
+  }
+}
+
+.mailing {
+  &__text {
+    max-width: rem(562px);
+  }
+}

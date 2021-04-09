@@ -1,0 +1,42 @@
+.faq {
+  background: url("../assets/backgrounds/main/FAQ-background.svg") no-repeat
+    center center/cover;
+  &__item {
+    margin-top: rem(35px);
+  }
+}
+
+.item-faq {
+  &__body {
+    @include flexbox(row, space-between, center);
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__text {
+    max-width: rem(955px);
+  }
+
+  &__right {
+    align-self: flex-start;
+  }
+  &__togglers {
+    height: rem(36px);
+    width: rem(36px);
+    position: relative;
+  }
+
+  &__underline {
+    background-color: #2b4263;
+    width: 100%;
+    height: rem(1px);
+    margin-top: rem(32px);
+  }
+
+  &__toggler {
+    height: rem(36px);
+    @include position(absolute, "", 0, 0, 0, 0, auto);
+  }
+}

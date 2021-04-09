@@ -1,0 +1,120 @@
+.tariff {
+  background: url("../assets/backgrounds/main/tariff-background.png") no-repeat
+    center center/cover;
+  &__title {
+    max-width: rem(395px);
+  }
+  &__body {
+  }
+  &__card {
+    background-color: $secColor;
+    width: 100%;
+    padding: 0 rem(50px);
+    padding-top: rem(43px);
+    padding-bottom: rem(60px);
+    border-radius: rem(12px);
+    margin-top: rem(40px);
+  }
+}
+
+.togglers {
+  display: flex;
+  &__button {
+    width: rem(196px);
+  }
+  &__button:nth-child(1) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  &__button:nth-child(2) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.card-tariff {
+  &__header,
+  &__price,
+  &__togglers,
+  &__footer {
+    display: flex;
+  }
+  &__body {
+    margin-top: rem(55px);
+  }
+
+  &__text {
+    max-width: rem(269px);
+    line-height: rem(26px);
+  }
+  &__line {
+    margin-top: rem(36px);
+    height: rem(1px);
+    background-color: #1f324f;
+  }
+  &__span {
+    opacity: 0.8;
+  }
+
+  &__switch {
+    margin-left: rem(217px);
+    @include flexbox(column, space-between, space-between);
+  }
+}
+
+.total-price {
+  &__amount {
+    font-size: rem(50px);
+    line-height: rem(58px);
+    font-weight: 700;
+  }
+
+  &__text {
+    margin-left: rem(16px);
+    padding-top: rem(6px);
+  }
+}
+
+.togglers-tariff {
+  &__btn {
+    @include flexbox(row, baseline, center);
+    margin-top: rem(22px);
+  }
+  &__item:nth-child(2) {
+    margin-left: rem(183px);
+  }
+  &__item:nth-child(3) {
+    margin-left: rem(126px);
+  }
+  &__sale {
+    max-width: rem(374px);
+    margin-top: rem(18px);
+    font-size: rem(15px);
+    line-height: rem(23px);
+  }
+
+  &__footer {
+    margin-top: rem(18px);
+  }
+}
+
+.btn-tariff {
+  &__item + &__item {
+    margin-left: rem(12px);
+  }
+}
+
+.footer-tariff {
+  &__btn {
+    width: rem(230px);
+  }
+  &__info {
+    @include flexbox(row, center, center);
+    margin-left: rem(32px);
+  }
+
+  &__text-info {
+    margin-left: rem(12px);
+    text-decoration: underline;
+  }
+}

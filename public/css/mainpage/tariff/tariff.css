@@ -1,0 +1,20 @@
+.tariff {
+  background: url("../assets/svg/backgrounds/tariff-background.svg") no-repeat center center/cover;
+}
+.togglers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.togglers__button {
+  width: rem(196px);
+}
+.togglers__button:nth-child(1) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.togglers__button:nth-child(2) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+/*# sourceMappingURL=tariff.css.map */

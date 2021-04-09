@@ -1,0 +1,24 @@
+.get {
+  &__section {
+    padding-bottom: rem(40px);
+  }
+  background: url("../assets/backgrounds/main/buy-background.png") no-repeat
+    center center/cover;
+  &__body {
+    @include flexbox(row, space-between, center);
+  }
+
+  &__left {
+    margin-bottom: rem(80px);
+  }
+  &__item {
+    margin-left: rem(16px);
+    padding-left: rem(18px);
+  }
+  &__item + &__item {
+    margin-top: rem(24px);
+  }
+  &__item::marker {
+    content: url(../../assets/svg/whatGet/check.svg);
+  }
+}

@@ -1,0 +1,35 @@
+.cities {
+  &__section {
+    padding-bottom: rem(40px);
+  }
+  background: url("../assets/backgrounds/main/buy-background.png") no-repeat
+    center center/cover;
+  &__body {
+    @include flexbox(row, space-between, center);
+  }
+
+  &__left {
+    margin-bottom: rem(80px);
+    min-width: rem(686px);
+  }
+  &__list {
+    @include grid(
+      0,
+      rem(18px),
+      rem(30px),
+      1,
+      1fr,
+      auto-fill,
+      rem(120px),
+      rem(170px)
+    );
+  }
+  &__item {
+    margin-left: rem(16px);
+    padding-left: rem(18px);
+  }
+
+  &__item::marker {
+    content: url(../../assets/svg/whatGet/check.svg);
+  }
+}

@@ -1,0 +1,276 @@
+@import "./vars&mixins.scss";
+
+@include font(
+  "NeueMachina-Ultrabold",
+  "NeueMachina-Ultrabold",
+  "800",
+  "normal"
+);
+@include font("TTCommons-Medium", "TTCommons-Medium", "600", "normal");
+
+@import "../../node_modules/sass-rem/rem";
+
+/*normalize*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+/* @media (max-width: 768px) {
+  * {
+    font-size: rem(14px);
+  }
+} */
+/* @media (max-width: 650px) {
+  * {
+    font-size: rem(13px);
+  }
+} */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  width: 100%;
+  color: $primaryColor;
+  line-height: 1;
+  font-family: "Open Sans";
+}
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a {
+  color: $primaryColor;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+
+.container,
+.container-md {
+  max-width: rem(1200px);
+  height: 100%;
+  margin: auto;
+  /*   padding-left: rem(20px);
+  padding-right: rem(20px); */
+  overflow: hidden;
+}
+
+.container-md {
+  overflow: visible;
+  max-width: rem(1132px);
+}
+
+.page {
+  background: url("../assets/backgrounds/main/main-background.png") no-repeat
+    center center/cover;
+}
+
+.section {
+  padding-bottom: rem(140px);
+
+  &__header {
+    margin-top: rem(140px);
+    margin-bottom: rem(70px);
+  }
+
+  &__header-content {
+    position: relative;
+    z-index: 0;
+  }
+
+  &__sec-title {
+    @include position(absolute, "", 0, 0, auto, 0, auto);
+    -webkit-text-stroke: 1px #203656;
+    color: transparent;
+    letter-spacing: 0.02em;
+    font-size: rem(80px);
+    font-weight: 700;
+    z-index: -1;
+    height: rem(58px);
+    line-height: rem(58px);
+  }
+  &__title {
+    z-index: 1;
+    margin-top: rem(30px);
+    line-height: rem(58px);
+    font-size: rem(50px);
+    max-width: rem(584px);
+    letter-spacing: 0.02em;
+    font-weight: 700;
+    @include flexbox(column, space-between, center);
+  }
+
+  &__title-span {
+    line-height: rem(24px);
+    font-family: "Nunito";
+    font-size: rem(20px);
+    font-weight: 600;
+  }
+}
+
+.item {
+  @include flexbox(column, center, center);
+  &__title {
+    line-height: rem(30px);
+    font-size: rem(22px);
+    font-weight: 700;
+    margin-top: rem(18px);
+  }
+  &__text {
+    line-height: rem(26px);
+    font-weight: 300;
+    margin-top: rem(12px);
+  }
+  &__price {
+    font-size: rem(20px);
+    line-height: rem(24px);
+    font-weight: 600;
+  }
+
+  @media (max-width: 540px) {
+    &__price {
+      line-height: rem(20px);
+      font-size: rem(16px);
+    }
+
+    &__title {
+      line-height: rem(24px);
+      font-size: rem(20px);
+    }
+  }
+}
+
+.order {
+  @include grid(
+    0,
+    rem(80px),
+    rem(30px),
+    1,
+    1fr,
+    auto-fill,
+    rem(380px),
+    rem(380px)
+  );
+  justify-content: center;
+
+  &__wrapper {
+    background: url("../assets/svg/dashed-image-big.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    /*Horizontal*/
+    // background-image: linear-gradient(
+    //   to right,
+    //   black 33%,
+    //   rgba(255, 255, 255, 0) 0%
+    // );
+    // background-position: bottom;
+    // background-size: 3px 1px;
+    // background-repeat: repeat-x;
+
+    // /*Vertical*/
+    // background-image: linear-gradient(black 33%, rgba(255, 255, 255, 0) 0%);
+    // background-position: right;
+    // background-size: 1px 3px;
+    // background-repeat: repeat-y;
+    position: relative;
+  } /* border: 1px solid; */
+
+  &__item {
+    margin: rem(42px) auto;
+    @include flexbox(column, center, center);
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: rem(15px);
+    line-height: rem(23px);
+    max-width: rem(320px);
+    margin-top: rem(12px);
+  }
+
+  &__num {
+    @include position(absolute, "", rem(-37.5px), 0, rem(21.5px), auto, auto);
+    background: linear-gradient(101.62deg, #1549d0 -3.13%, #17cdcd 174.19%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: rem(50px);
+    line-height: rem(58px);
+    font-weight: 700;
+  }
+}
+
+.switch-radio {
+  &__input {
+    position: relative;
+    width: rem(12px);
+    height: rem(12px);
+    &:after {
+      @include position(absolute, "", 0, 0, rem(-50%), 0, auto);
+      width: rem(24px);
+      height: rem(24px);
+      border-radius: rem(1000px);
+      background-color: #233855;
+    }
+  }
+  &__input:checked {
+    &:before {
+      @include position(absolute, "", 0, 0, 0, 0, auto);
+      width: rem(12px);
+      height: rem(12px);
+      border-radius: rem(1000px);
+      z-index: 2;
+      background-color: $accentColor;
+    }
+  }
+
+  &__label {
+    margin-left: rem(20px);
+  }
+}

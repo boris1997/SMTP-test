@@ -1,0 +1,7 @@
+.community {
+  background: url("../assets/svg/backgrounds/bg.jpg") no-repeat center center/cover;
+}
+.community__body {
+  margin-top: rem(105px);
+}
+/*# sourceMappingURL=community.css.map */

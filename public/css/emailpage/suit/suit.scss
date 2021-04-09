@@ -1,0 +1,61 @@
+.suit {
+  background: url("../assets/backgrounds/main/advantages-background.svg")
+    no-repeat center center/cover;
+  &__body {
+    height: auto;
+    @include grid(
+      rem(70px),
+      rem(80px),
+      rem(24px),
+      1,
+      1fr,
+      auto-fill,
+      rem(384px),
+      rem(384px)
+    );
+  }
+
+  &__item {
+    height: rem(246px);
+    /*    height: rem(316px); */
+    border-radius: rem(12px);
+    position: relative;
+
+    //   &__item:nth-child(1), &__item:nth-child(3) {
+    //     &:after {
+    //       left: rem(-70px);
+    //     }
+    //   }
+  }
+  &__item:nth-child(2) {
+    margin-top: rem(100px);
+  }
+}
+
+.item-suit {
+  border-radius: rem(12px);
+
+  @include position(absolute, "", 0, 0, 0, 0, auto);
+
+  background-color: $accentColor;
+
+  &__body {
+    height: 100%;
+    width: 100%;
+    @include flexbox(column, center, center);
+  }
+
+  &__body-active {
+    margin: 0;
+    margin-left: rem(32px);
+    margin-top: rem(20px);
+  }
+
+  &__text {
+    max-width: rem(348px);
+  }
+}
+
+.item-suit:nth-child(2) {
+  background-color: $secColor;
+}

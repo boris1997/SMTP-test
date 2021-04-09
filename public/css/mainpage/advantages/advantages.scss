@@ -1,0 +1,57 @@
+.advantages {
+  background: url("../assets/backgrounds/main/advantages-background.svg")
+    no-repeat center center/cover;
+  &__body {
+    @include flexbox(row, space-between, center);
+    position: relative;
+  }
+
+  &__item {
+    width: rem(484px);
+    /*    height: rem(316px); */
+    position: relative;
+    z-index: 0;
+    &:after {
+      border-radius: rem(12px);
+      @include position(absolute, "", 0, 0, 0, 0, auto);
+      background-color: $secColor;
+      width: 117%;
+      height: 107%;
+
+      z-index: -1;
+    }
+  }
+  //   &__item:nth-child(1), &__item:nth-child(3) {
+  //     &:after {
+  //       left: rem(-70px);
+  //     }
+  //   }
+  &__item:nth-child(3) {
+    &:after {
+      left: auto;
+      right: 0;
+    }
+  }
+  &__item-center {
+    /*   @include position(absolute, "", rem(220px), 0, 0, 0, auto); */
+    width: rem(377px);
+    height: rem(264px);
+    margin-top: rem(220px);
+    z-index: 2;
+    border-radius: rem(12px);
+    background-color: $accentColor;
+  }
+}
+
+.item-advantages {
+  margin-top: rem(29px);
+  margin-bottom: rem(38px);
+  margin-left: rem(40px);
+
+  &__text {
+    max-width: rem(584px);
+  }
+  &__text-short {
+    max-width: rem(312px);
+  }
+}

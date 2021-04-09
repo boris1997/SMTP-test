@@ -1,0 +1,30 @@
+.footer {
+  width: 100%;
+  &__logo {
+    margin: rem(35px) 0;
+  }
+  background-color: #0a1320;
+  &__content,
+  &__list {
+    @include flexbox(row, space-between, center);
+  }
+
+  &__list {
+    width: rem(689px);
+  }
+}
+
+.company {
+  background-color: #0a111a;
+  &__logo {
+    margin: rem(16px) auto;
+    float: right;
+    @include flexbox(row, space-between, center);
+  }
+  &__span {
+    color: #cfd2d7;
+    font-size: rem(13px);
+    line-height: rem(23px);
+    margin-left: rem(3px);
+  }
+}

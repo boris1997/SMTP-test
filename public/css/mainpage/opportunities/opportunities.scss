@@ -1,0 +1,34 @@
+.opportunity {
+  background: url("../assets/backgrounds/main/opportunity-background.svg")
+    no-repeat center center/cover;
+  &__body {
+    /*     @include flexbox(row, space-between, space-between); */
+    margin-top: rem(80px);
+    @include grid(0, rem(80px), rem(254px), 1, 1fr, auto-fit, rem(270px), 1fr);
+    justify-content: center;
+  }
+
+  &__item {
+    align-items: flex-start;
+  }
+}
+
+.item-opportunity {
+  &__text {
+    max-width: rem(480px);
+  }
+}
+
+.opportunity-feature {
+  &__title {
+    margin-top: rem(41.5px);
+  }
+  &__text {
+    margin-top: rem(12px);
+    text-align: center;
+    max-width: rem(226px);
+  }
+  &__img {
+    height: rem(81px);
+  }
+}
