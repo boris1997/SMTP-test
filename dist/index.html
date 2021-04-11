@@ -13,8 +13,8 @@
 
 <body>
     <div class="page">
-        <header class="header">
-            <div class="container">
+        <div class="container">
+            <header class="header">
                 <div class="header__content">
                     <div class="logo">
                         <img src="./assets/svg/SMTP logo.svg" alt="лого" class="logo__img">
@@ -28,29 +28,31 @@
                         </ul>
                     </nav>
                     <div class="header__contacts">
-                        <button class="header__btn btn btn__main">Контакты</button>
+                        <button class="header__btn btn btn__main"><a href="contact.html">Контакты</a></button>
                     </div>
                 </div>
-            </div>
-        </header>
-        <main class="main">
-            <div class="container">
-                <div class="main__content">
-                    <div class="main__header">
-                        <h1 class="main__title main__item">SMTP сервер для email рассылки</h1>
-                        <p class="main__text">Уже более 5 лет поставляем качественные, абузоустойчивые серверы</p>
-                    </div>
-                    <div class="main__body">
-                        <img class="main__illustration" src="./assets/svg/main/main/illustration.svg" alt="" srcset="">
-                        <object class="main__cards" data="./assets/svg/main/main/Group-card.svg" type=""></object>
-                    </div>
 
-                    <!-- <div class="main__left">
+            </header>
+            <main class="main">
+                <div class="container">
+                    <div class="main__content">
+                        <div class="main__header">
+                            <h1 class="main__title main__item">SMTP сервер для email рассылки</h1>
+                            <p class="main__text">Уже более 5 лет поставляем качественные, абузоустойчивые серверы</p>
+                        </div>
+                        <div class="main__body">
+                            <img class="main__illustration" src="./assets/svg/main/main/illustration.svg" alt=""
+                                srcset="">
+                            <object class="main__cards" data="./assets/svg/main/main/Group-card.svg" type=""></object>
+                        </div>
+
+                        <!-- <div class="main__left">
                     </div> -->
-                    <!--   <div class="main__right"><img src="assets/img/vehicleDvr.webp" alt="" class="main__img"></div> -->
+                        <!--   <div class="main__right"><img src="assets/img/vehicleDvr.webp" alt="" class="main__img"></div> -->
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
+        </div>
     </div>
 
     <section class="opportunity">
@@ -63,10 +65,6 @@
                     <h2 class="section__title">Какие возможности предоставляет наш smtp сервис
                     </h2>
                     <h3 class="section__sec-title">ВОЗМОЖНОСТИ</h3>
-                    <div class="section__decoration decoration">
-                        <div class="decoration__line"></div>
-                        <div class="decoration__line"></div>
-                    </div>
                 </div>
             </div>
 
@@ -140,10 +138,6 @@
                     <h2 class="section__title">Как начать с нами сотрудничество
                     </h2>
                     <h3 class="section__sec-title">СОТРУДНИЧЕСТВО</р>
-                        <div class="section__decoration decoration">
-                            <div class="decoration__line"></div>
-                            <div class="decoration__line"></div>
-                        </div>
                 </div>
             </div>
             <div class="community__body section__body order">
@@ -197,10 +191,6 @@
                         нашего сервиса
                     </h2>
                     <h3 class="section__sec-title">НАШИ ПРЕИМУЩЕСТВА</h3>
-                    <div class="section__decoration decoration">
-                        <div class="decoration__line"></div>
-                        <div class="decoration__line"></div>
-                    </div>
                 </div>
             </div>
             <div class="advantages__body section__body">
@@ -252,10 +242,6 @@
                     <h2 class="section__title tariff__title">Выбор тарифа
                     </h2>
                     <h3 class="section__sec-title">СТОИМОСТЬ УСЛУГ</р>
-                        <div class="section__decoration decoration">
-                            <div class="decoration__line"></div>
-                            <div class="decoration__line"></div>
-                        </div>
                 </div>
             </div>
             <div class="tariff__body">
@@ -267,7 +253,8 @@
                     <div class="card-tariff__wrapper">
                         <div class="card-tariff__header">
                             <div class="card-tariff__price total-price">
-                                <span class="total-price__amount">1 600 ₽</span>
+                                <span class="total-price__amount">1 600</span>
+                                <span class="total-price__amount-rub">₽</span>
                                 <div class="total-price__text card-tariff__text">
                                     Стоимость сервиса
                                     <br><span class="card-tariff__span">/в месяц</span>
@@ -296,13 +283,32 @@
                                         </div>
                                         <div class="togglers-tariff__btn btn-tariff">
                                             <div class="btn-tariff__toggler btn-tariff__item">
-                                                <img class="btn__toggler btn-tariff__decr" src="./assets/svg/-.svg"
-                                                    alt="-" srcset="">
+                                                <svg class="btn__toggler btn-tariff__decr incDec-btn" width="24"
+                                                    height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <rect class="incDec-btn__body incDec-btn__dec" x="0.5" y="0.500244"
+                                                        width="23" height="23" rx="11.5" stroke="#1549D0"
+                                                        fill="transparent" />
+                                                    <path class="incDec-btn__vert incDec-btn__dec incDec-btn__item"
+                                                        d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
+                                                        fill="#1549D0" />
+                                                </svg>
                                             </div>
                                             <div class="btn-tariff__amount btn-tariff__item">200 000</div>
                                             <div class="btn-tariff__toggler btn-tariff__item">
-                                                <img class="btn__toggler btn-tariff__incr" src="./assets/svg/+.svg"
-                                                    alt="+" srcset="">
+                                                <svg class="btn__toggler btn-tariff__incr incDec-btn" width="24"
+                                                    height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <rect class="incDec-btn__body incDec-btn__inc" x="0.5" y="0.500244"
+                                                        width="23" height="23" rx="11.5" stroke="#1549D0"
+                                                        fill="transparent" />
+                                                    <path class="incDec-btn__horiz incDec-btn__inc incDec-btn__item"
+                                                        d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
+                                                        fill="#1549D0" />
+                                                    <path class="incDec-btn__vert incDec-btn__inc incDec-btn__item"
+                                                        d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
+                                                        fill="#1549D0" />
+                                                </svg>
                                             </div>
                                         </div>
                                     </div>
@@ -311,13 +317,32 @@
                                             рассылки <br><span class="card-tariff__span">/в день</span> </div>
                                         <div class="togglers-tariff__btn btn-tariff">
                                             <div class="btn-tariff__toggler btn-tariff__item">
-                                                <img class="btn__toggler btn-tariff__decr" src="./assets/svg/-.svg"
-                                                    alt="-" srcset="">
+                                                <svg class="btn__toggler btn-tariff__decr incDec-btn" width="24"
+                                                    height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <rect class="incDec-btn__body incDec-btn__dec" x="0.5" y="0.500244"
+                                                        width="23" height="23" rx="11.5" stroke="#1549D0"
+                                                        fill="transparent" />
+                                                    <path class="incDec-btn__vert incDec-btn__dec incDec-btn__item"
+                                                        d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
+                                                        fill="#1549D0" />
+                                                </svg>
                                             </div>
                                             <div class="btn-tariff__amount btn-tariff__item">6 000 </div>
                                             <div class="btn-tariff__toggler btn-tariff__item">
-                                                <img class="btn__toggler btn-tariff__incr" src="./assets/svg/+.svg"
-                                                    alt="+" srcset="">
+                                                <svg class="btn__toggler btn-tariff__incr incDec-btn" width="24"
+                                                    height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <rect class="incDec-btn__body incDec-btn__inc" x="0.5" y="0.500244"
+                                                        width="23" height="23" rx="11.5" stroke="#1549D0"
+                                                        fill="transparent" />
+                                                    <path class="incDec-btn__horiz incDec-btn__inc incDec-btn__item"
+                                                        d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
+                                                        fill="#1549D0" />
+                                                    <path class="incDec-btn__vert incDec-btn__inc incDec-btn__item"
+                                                        d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
+                                                        fill="#1549D0" />
+                                                </svg>
                                             </div>
                                         </div>
                                     </div>
@@ -326,13 +351,33 @@
                                             серверов<br><span class="card-tariff__span">/на выбор</span></div>
                                         <div class="togglers-tariff__btn btn-tariff">
                                             <div class="btn-tariff__toggler btn-tariff__item">
-                                                <img class="btn__toggler btn-tariff__decr" src="./assets/svg/-.svg"
-                                                    alt="-" srcset="">
+                                                <svg class="btn__toggler btn-tariff__decr incDec-btn" width="24"
+                                                    height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <rect class="incDec-btn__body incDec-btn__dec" x="0.5" y="0.500244"
+                                                        width="23" height="23" rx="11.5" stroke="#1549D0"
+                                                        fill="transparent" />
+                                                    <path
+                                                        class="incDec-btn__vert incDec-btn__dec incDec-btn__inc incDec-btn__item"
+                                                        d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
+                                                        fill="#1549D0" />
+                                                </svg>
                                             </div>
                                             <div class="btn-tariff__amount btn-tariff__item">1</div>
                                             <div class="btn-tariff__toggler btn-tariff__item">
-                                                <img class="btn__toggler btn-tariff__incr" src="./assets/svg/+.svg"
-                                                    alt="+" srcset="">
+                                                <svg class="btn__toggler btn-tariff__incr incDec-btn" width="24"
+                                                    height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <rect class="incDec-btn__body incDec-btn__inc" x="0.5" y="0.500244"
+                                                        width="23" height="23" rx="11.5" stroke="#1549D0"
+                                                        fill="transparent" />
+                                                    <path class="incDec-btn__horiz incDec-btn__inc incDec-btn__item"
+                                                        d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
+                                                        fill="#1549D0" />
+                                                    <path class="incDec-btn__vert incDec-btn__inc incDec-btn__item"
+                                                        d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
+                                                        fill="#1549D0" />
+                                                </svg>
                                             </div>
                                         </div>
                                         <p class="togglers-tariff__sale">
@@ -464,10 +509,6 @@
                         вопросы
                     </h2>
                     <h3 class="section__sec-title">ОТВЕЧАЕМ ПОДРОБНО</р>
-                        <div class="section__decoration decoration">
-                            <div class="decoration__line"></div>
-                            <div class="decoration__line"></div>
-                        </div>
                 </div>
             </div>
             <div class="faq__body">
@@ -484,10 +525,17 @@
                                 применяется при организации email-рассылок между почтовыми серверами и клиентами.</p>
                         </div>
                         <div class="item-faq__right">
-                            <div class="item-faq__togglers">
-                                <img class="item-faq__toggler btn__toggler " src="./assets/svg/+.svg" alt="+" srcset="">
-                                <img class="item-faq__toggler btn__toggler " src="./assets/svg/-.svg" alt="-" srcset="">
-                            </div>
+                            <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect class="incDec-btn__body incDec-btn__inc" x="0.5" y="0.500244" width="23"
+                                    height="23" rx="11.5" stroke="#1549D0" fill="transparent" />
+                                <path class="incDec-btn__horiz  incDec-btn__inc incDec-btn__item"
+                                    d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
+                                    fill="#1549D0" />
+                                <path class="incDec-btn__vert incDec-btn__vertBig incDec-btn__item"
+                                    d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
+                                    fill="#1549D0" />
+                            </svg>
                         </div>
                     </div>
                     <hr class="item-faq__underline">
@@ -506,10 +554,17 @@
                             </p>
                         </div>
                         <div class="item-faq__right">
-                            <div class="item-faq__togglers">
-                                <img class="item-faq__toggler btn__toggler " src="./assets/svg/+.svg" alt="+" srcset="">
-                                <img class="item-faq__toggler btn__toggler " src="./assets/svg/-.svg" alt="-" srcset="">
-                            </div>
+                            <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect class="incDec-btn__body" x="0.5" y="0.500244" width="23" height="23" rx="11.5"
+                                    stroke="#1549D0" fill="transparent" />
+                                <path class="incDec-btn__horiz incDec-btn__item"
+                                    d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
+                                    fill="#1549D0" />
+                                <path class="incDec-btn__vert incDec-btn__item"
+                                    d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
+                                    fill="#1549D0" />
+                            </svg>
                         </div>
                     </div>
                     <hr class="item-faq__underline">
@@ -529,11 +584,17 @@
                             </p>
                         </div>
                         <div class="item-faq__right">
-                            <div class="item-faq__togglers">
-                                <img class="item-faq__toggler btn__toggler btn__toggler--active"
-                                    src="./assets/svg/+.svg" alt="+" srcset="">
-                                <img class="item-faq__toggler btn__toggler " src="./assets/svg/-.svg" alt="-" srcset="">
-                            </div>
+                            <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect class="incDec-btn__body" x="0.5" y="0.500244" width="23" height="23" rx="11.5"
+                                    stroke="#1549D0" fill="transparent" />
+                                <path class="incDec-btn__horiz incDec-btn__item"
+                                    d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
+                                    fill="#1549D0" />
+                                <path class="incDec-btn__vert incDec-btn__item"
+                                    d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
+                                    fill="#1549D0" />
+                            </svg>
                         </div>
                     </div>
                     <hr class="item-faq__underline">
@@ -552,10 +613,17 @@
                             </p>
                         </div>
                         <div class="item-faq__right">
-                            <div class="item-faq__togglers">
-                                <img class="item-faq__toggler btn__toggler " src="./assets/svg/+.svg" alt="+" srcset="">
-                                <img class="item-faq__toggler btn__toggler " src="./assets/svg/-.svg" alt="-" srcset="">
-                            </div>
+                            <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect class="incDec-btn__body" x="0.5" y="0.500244" width="23" height="23" rx="11.5"
+                                    stroke="#1549D0" fill="transparent" />
+                                <path class="incDec-btn__horiz incDec-btn__item"
+                                    d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
+                                    fill="#1549D0" />
+                                <path class="incDec-btn__vert incDec-btn__item"
+                                    d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
+                                    fill="#1549D0" />
+                            </svg>
                         </div>
                     </div>
                     <hr class="item-faq__underline">
@@ -574,10 +642,17 @@
                             </p>
                         </div>
                         <div class="item-faq__right">
-                            <div class="item-faq__togglers">
-                                <img class="item-faq__toggler btn__toggler " src="./assets/svg/+.svg" alt="+" srcset="">
-                                <img class="item-faq__toggler btn__toggler " src="./assets/svg/-.svg" alt="-" srcset="">
-                            </div>
+                            <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect class="incDec-btn__body" x="0.5" y="0.500244" width="23" height="23" rx="11.5"
+                                    stroke="#1549D0" fill="transparent" />
+                                <path class="incDec-btn__horiz incDec-btn__bigLine incDec-btn__item"
+                                    d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
+                                    fill="#1549D0" />
+                                <path class="incDec-btn__vert incDec-btn__bigLine incDec-btn__item"
+                                    d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
+                                    fill="#1549D0" />
+                            </svg>
                         </div>
                     </div>
                     <hr class="item-faq__underline">
@@ -596,10 +671,17 @@
                             </p>
                         </div>
                         <div class="item-faq__right">
-                            <div class="item-faq__togglers">
-                                <img class="item-faq__toggler btn__toggler " src="./assets/svg/+.svg" alt="+" srcset="">
-                                <img class="item-faq__toggler btn__toggler " src="./assets/svg/-.svg" alt="-" srcset="">
-                            </div>
+                            <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect class="incDec-btn__body" x="0.5" y="0.500244" width="23" height="23" rx="11.5"
+                                    stroke="#1549D0" fill="transparent" />
+                                <path class="incDec-btn__horiz incDec-btn__item"
+                                    d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
+                                    fill="#1549D0" />
+                                <path class="incDec-btn__vert incDec-btn__item"
+                                    d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
+                                    fill="#1549D0" />
+                            </svg>
                         </div>
                     </div>
                     <hr class="item-faq__underline">
@@ -618,10 +700,17 @@
                             </p>
                         </div>
                         <div class="item-faq__right">
-                            <div class="item-faq__togglers">
-                                <img class="item-faq__toggler btn__toggler " src="./assets/svg/+.svg" alt="+" srcset="">
-                                <img class="item-faq__toggler btn__toggler " src="./assets/svg/-.svg" alt="-" srcset="">
-                            </div>
+                            <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect class="incDec-btn__body" x="0.5" y="0.500244" width="23" height="23" rx="11.5"
+                                    stroke="#1549D0" fill="transparent" />
+                                <path class="incDec-btn__horiz incDec-btn__item"
+                                    d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
+                                    fill="#1549D0" />
+                                <path class="incDec-btn__vert incDec-btn__item"
+                                    d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
+                                    fill="#1549D0" />
+                            </svg>
                         </div>
                     </div>
                     <hr class="item-faq__underline">

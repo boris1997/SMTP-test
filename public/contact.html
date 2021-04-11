@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:regular,600,700&display=swap" rel="stylesheet" />
+    <title>SMTP</title>
+</head>
+
+<body>
+    <div class="page">
+        <div class="container  page__wrapper">
+            <header class="header">
+                <div class="header__content">
+                    <div class="logo">
+                        <img src="./assets/svg/SMTP logo.svg" alt="лого" class="logo__img">
+                    </div>
+                    <nav class="nav">
+                        <ul class="nav__list">
+                            <li class="nav__items"><a href="base.html" class="nav__link">База организаций</a></li>
+                            <li class="nav__items"><a href="mail.html" class="nav__link">E-mail рассылка</a></li>
+                            <li class="nav__items"><a href="servies.html" class="nav__link">Все услуги</a></li>
+                            <li class="nav__items"><a href="articles.html" class="nav__link">Статьи</a></li>
+                        </ul>
+                    </nav>
+                    <div class="header__contacts">
+                        <button class="header__btn btn btn__main">Контакты</button>
+                    </div>
+                </div>
+
+            </header>
+            <div class="page__pagination">
+                <ul class="pagination-page">
+                    <li class="pagination-page__item"><a href="index.html"
+                            class="nav__link pagination-page__link">Главная</a>
+                    </li>
+                    <li class="pagination-page__item"><a href="base.html" class="pagination-page__link">E-mail
+                            рассылка</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="contact">
+        <div class="container section">
+            <div class="contact__body mailing">
+
+                <div class="contact__left">
+                    <div class="contact__item item-contact item">
+                        <img class="item-contact__img" src="./assets/svg/email/contact/ic-1.svg" alt="отчет" srcset="">
+                        <h4 class="item-contact__title item__title">Сводная аналитика</h4>
+                        <p class="item-contact__text item__text">Мы проведем анализ эффективности рассылки
+                            и сопоставим с предыдущими результатами, дадим
+                            ценные советы по усовершенствованию процесса</p>
+                    </div>
+                    <div class="contact__item item-contact item">
+                        <img class="item-contact__img" src="./assets/svg/email/contact/ic-2.svg" alt="список" srcset="">
+                        <h4 class="item-contact__title item__title">Список отписавшихся</h4>
+                        <p class="item-contact__text item__text">Подсчитаем, в какое время и какого-типа
+                            клиенты
+                            чаще читают письма от вашей фирмы</p>
+                    </div>
+                    <div class="contact__item item-contact item">
+                        <img class="item-contact__img" src="./assets/svg/email/contact/ic-3.svg" alt="" srcset="">
+                        <h4 class="item-contact__title item__title">Карта кликов</h4>
+                        <p class="item-contact__text item__text">Благодаря ней вы узнаете, по каким ссылкам
+                            в письме клиенты кликают чаще всего</p>
+                    </div>
+                </div>
+                <div class="contact__right">
+                    <form method="POST" action="send" class="contact__form">
+                        <h2 class="contact__title">форма для заказа</h2>
+                        <div class="contact__item">
+                            <label for="name" class="contact__label">Имя</label>
+                            <input type="text" name="name" id="name" class="contact__input">
+                            <div class="contact__invalid">
+                                Введите имя корректно
+                            </div>
+                        </div>
+                        <div class="contact__item">
+                            <label for="number" class="contact__label">Номер</label>
+                            <input placeholder="89998887766" type="text" name="number" id="phone"
+                                class="contact__input">
+                            <div class="contact__invalid">
+                                Введите номер телефона корректно
+                            </div>
+                        </div>
+
+
+                        <!-- <input type="submit" value="Отправить" class="contact__btn"> -->
+                        <button type="submit" class="button contact__button button__call-to-action main__item">
+                            <div class="contact__button-inner button__call-to-action-inner">
+                                <div class="contact__button-inner-content button__call-to-action-inner-content">
+                                    Оформить заказ
+                                    <!--   <input type="submit" value="Оформить заказ"> -->
+                                </div>
+                            </div>
+                        </button>
+                    </form>
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__logo logo">
+                    <img src="./assets/svg/SMTP logo.svg" alt="лого" class="logo__img">
+                    <p class="logo__title">Сервис e-mail рассылок</p>
+                </div>
+                <nav class="footer__nav nav">
+                    <ul class="nav__list footer__list">
+                        <li class="nav__items"><a href="#page-about" class="nav__link">База организаций</a></li>
+                        <li class="nav__items"><a href="#page-work" class="nav__link">E-mail рассылка</a></li>
+                        <li class="nav__items"><a href="#page-gallery" class="nav__link">Все услуги</a></li>
+                        <li class="nav__items"><a href="#page-contact" class="nav__link">Статьи</a></li>
+                        <li class="nav__items"><a href="#page-contact" class="nav__link">Контакты</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+            <div class="footer__company company">
+                <div class="company__logo">
+                    <img src="./assets/svg/footer/studio-logo.svg" alt="компания логотип" class="company__img">
+                    <span class="company__span">
+                        Разработка сайта web2.ru
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

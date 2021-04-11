@@ -10,42 +10,77 @@
     @include flexbox(column, space-between, center);
     /* margin-top: rem(50px); */
     height: 100%;
+    position: relative;
   }
 
-  &__title {
+  &__title,
+  &__title-base {
     font-size: rem(50px);
     font-weight: 700;
     text-align: center;
   }
 
-  &__text {
+  &__downloads,
+  &__updates {
+    @include position(absolute, "", 0, 0, 0, 0, auto);
+    @include flexbox(column, center, center);
+  }
+
+  &__downloads {
+    width: rem(117.5px);
+    height: rem(117.5px);
+    right: auto;
+    left: 0;
+    top: rem(-448px);
+  }
+
+  &__updates {
+    width: rem(187px);
+    height: rem(187px);
+    right: 0;
+    left: auto;
+    top: rem(-230px);
+  }
+
+  &__text,
+  &__text-base {
     margin: 0 auto;
     margin-top: rem(32px);
     text-align: center;
     max-width: rem(512px);
     font-size: rem(20px);
   }
+  &__title-base {
+    max-width: rem(816px);
+  }
+  &__text-base {
+    max-width: rem(568px);
+  }
+  &__email-illustration {
+    margin-top: -251px;
+  }
   &__cards {
     @include position(absolute, "", 0, rem(155px), rem(40px), 0, auto);
   }
 }
 
-.mouse {
-  &__cursor {
-    animation: cursor 1.5s infinite ease;
+.downloads-main {
+  border-radius: rem(100px);
+  background-color: $accentColor;
+  &__title {
+    margin: 0;
   }
+}
 
-  @keyframes cursor {
-    0% {
-      transform: translateY(0px);
-    }
-
-    50% {
-      transform: translateY(4px);
-    }
-
-    100% {
-      transform: translateY(0px);
-    }
+.updates-main {
+  background-color: transparent;
+  border: 1px solid #dd2265;
+  border-radius: rem(100px);
+  &__title {
+    margin: 0;
+  }
+  &__text {
+    font-size: rem(15px);
+    line-height: rem(23px);
   }
 }

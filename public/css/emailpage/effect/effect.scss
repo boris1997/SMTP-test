@@ -1,0 +1,48 @@
+.effect {
+  &__section {
+    padding-bottom: rem(40px);
+  }
+  background: url("../assets/backgrounds/main/buy-background.png") no-repeat
+    center center/cover;
+  &__body {
+    @include flexbox(row, space-between, baseline);
+  }
+
+  &__main-title {
+    max-width: rem(885px);
+  }
+
+  &__title {
+    font-size: rem(18px);
+    line-height: rem(26px);
+    max-width: rem(585px);
+    font-weight: 600;
+  }
+
+  &__left {
+    height: 100%;
+    /*     margin-bottom: rem(80px); */
+  }
+  &__list {
+    margin-top: rem(32px);
+  }
+
+  &__img {
+    margin-top: rem(-40px);
+  }
+
+  &__text {
+    margin-top: rem(70px);
+    max-width: rem(458px);
+  }
+  &__item {
+    margin-left: rem(16px);
+    padding-left: rem(18px);
+  }
+  &__item + &__item {
+    margin-top: rem(24px);
+  }
+  &__item::marker {
+    content: url("../../assets/svg/check.svg");
+  }
+}

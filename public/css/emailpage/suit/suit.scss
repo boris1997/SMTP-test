@@ -1,10 +1,14 @@
 .suit {
   background: url("../assets/backgrounds/main/advantages-background.svg")
     no-repeat center center/cover;
+
+  &__main-title {
+    max-width: rem(475px);
+  }
   &__body {
     height: auto;
     @include grid(
-      rem(70px),
+      rem(100px),
       rem(80px),
       rem(24px),
       1,
@@ -17,6 +21,7 @@
 
   &__item {
     height: rem(246px);
+    width: 100%;
     /*    height: rem(316px); */
     border-radius: rem(12px);
     position: relative;
@@ -27,8 +32,19 @@
     //     }
     //   }
   }
-  &__item:nth-child(2) {
+  &__item-sm {
     margin-top: rem(100px);
+  }
+  &__item-mm {
+    margin-top: rem(190px);
+  }
+}
+
+.items-suit {
+  @include flexbox(column, center, center);
+  height: auto;
+  &__item + &__item {
+    margin-top: rem(32px);
   }
 }
 
@@ -49,6 +65,14 @@
     margin: 0;
     margin-left: rem(32px);
     margin-top: rem(20px);
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__title-w {
+    max-width: rem(180px);
   }
 
   &__text {

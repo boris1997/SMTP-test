@@ -1,0 +1,31 @@
+.difference {
+  background: url("../assets/backgrounds/main/cooperartion-background.png")
+    no-repeat center center/cover;
+  &__body {
+    /*     margin-top: rem(105px); */
+    @include grid(
+      0,
+      rem(80px),
+      rem(30px),
+      1,
+      1fr,
+      auto-fill,
+      rem(584px),
+      rem(584px)
+    );
+    justify-content: center;
+  }
+
+  &__item {
+    background: url("../assets/svg/dashed-image-big.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+.item-difference {
+  align-items: flex-start;
+  margin: rem(32px) 0;
+  margin-left: rem(23px);
+  max-width: rem(500px);
+}

@@ -1,0 +1,45 @@
+.afterMailing {
+  &__title {
+    max-width: rem(704px);
+  }
+  background: url("../assets/backgrounds/main/programm-background.svg")
+    no-repeat center center/cover;
+  &__body {
+    @include flexbox(row, space-between, space-between);
+  }
+
+  &__item {
+    align-items: flex-start;
+  }
+
+  &__item + &__item {
+    margin-top: rem(38px);
+  }
+  &__text {
+    max-width: rem(439px);
+  }
+
+  &__img {
+    margin-top: rem(58px);
+  }
+  /* 
+  &__footer {
+    @include grid(
+      0,
+      rem(80px),
+      rem(30px),
+      1,
+      1fr,
+      auto-fill,
+      rem(277px),
+      rem(277px)
+    );
+  }
+ */
+}
+
+.item-afterMailing {
+  &__text {
+    max-width: rem(417px);
+  }
+}

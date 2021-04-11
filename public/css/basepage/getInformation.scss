@@ -1,0 +1,32 @@
+.getInformation {
+  &__section {
+    padding-bottom: rem(40px);
+  }
+  background: url("../assets/backgrounds/main/buy-background.png") no-repeat
+    center center/cover;
+  &__title {
+    max-width: rem(811px);
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  &__header {
+    margin-bottom: rem(32px);
+  }
+  &__sec-title {
+    right: 0;
+    left: 0;
+    top: rem(-23px);
+    text-align: center;
+    bottom: auto;
+  }
+  &__body {
+    @include flexbox(row, center, center);
+  }
+
+  &__text {
+    margin-top: 0;
+    max-width: rem(880px);
+    text-align: center;
+  }
+}

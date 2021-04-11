@@ -1,0 +1,60 @@
+.direction {
+  &__section {
+    padding-bottom: rem(40px);
+  }
+  background: url("../assets/backgrounds/main/buy-background.png") no-repeat
+    center center/cover;
+  &__body {
+    margin-top: rem(32px);
+    @include flexbox(column, flex-start, flex-start);
+    background: url("../assets/svg/dashed-image-large.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__body-wrapper {
+    margin: rem(58.5px);
+    margin-right: rem(68px);
+  }
+
+  &__title {
+    max-width: rem(481px);
+  }
+
+  &__main-title {
+    max-width: rem(463px);
+  }
+
+  &__list {
+    transition: max-height 0.3s ease-in-out;
+    display: flex;
+    overflow: hidden;
+  }
+  &__list + &__list {
+    margin-top: rem(32.25px);
+  }
+  &__list:hover {
+    max-height: 1000px;
+  }
+
+  &__item {
+    font-size: rem(15px);
+  }
+  &__item + &__item {
+    margin-left: rem(16px);
+    padding-left: rem(18px);
+    position: relative;
+    &:before {
+      @include position(absolute, "", 0, 0, rem(-5px), auto, auto);
+      width: rem(8px);
+      height: rem(8px);
+      border-radius: rem(100px);
+      background: linear-gradient(101.62deg, #1549d0 -3.13%, #17cdcd 174.19%);
+    }
+  }
+
+  /*   &__item::marker {
+    content: url("../../assets/svg/ellipse-list.svg");
+
+  } */
+}

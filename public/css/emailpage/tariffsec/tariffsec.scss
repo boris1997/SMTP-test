@@ -1,0 +1,126 @@
+.tariffsec {
+  background: url("../assets/backgrounds/main/tariff-background.png") no-repeat
+    center center/cover;
+  &__title {
+    max-width: rem(395px);
+  }
+  &__body {
+    @include grid(
+      0,
+      rem(80px),
+      rem(30px),
+      1,
+      1fr,
+      auto-fill,
+      rem(380px),
+      rem(380px)
+    );
+    justify-content: center;
+  }
+  &__card {
+    background-color: $secColor;
+
+    border-radius: rem(12px);
+    margin-top: rem(40px);
+  }
+}
+
+.card-tariffsec {
+  &__header,
+  &__price,
+  &__togglers,
+  &__footer {
+    display: flex;
+  }
+
+  &__header {
+    padding: rem(32px) rem(40px);
+    border-top-left-radius: rem(12px);
+    border-top-right-radius: rem(12px);
+  }
+
+  &__header-sm {
+    padding: rem(32px) rem(28px);
+  }
+
+  &__body {
+    margin-top: rem(34px);
+    padding: 0 rem(40px);
+    padding-bottom: rem(50px);
+  }
+
+  &__body-sm {
+    padding: 0 rem(28px);
+  }
+
+  &__btn {
+    @include flexbox(row, baseline, center);
+    margin-top: rem(22px);
+  }
+
+  &__header-center {
+    background: linear-gradient(101.62deg, #1549d0 -3.13%, #17cdcd 174.19%);
+  }
+
+  &__title {
+    font-weight: 600;
+    margin-top: 0;
+  }
+
+  &__sale {
+    max-width: rem(374px);
+    margin-top: rem(18px);
+    font-size: rem(15px);
+    line-height: rem(23px);
+  }
+
+  &__footer {
+    margin-top: rem(32px);
+  }
+
+  &__free {
+    color: #22dddd;
+    font-weight: 500;
+  }
+  &__line {
+    margin: 0 rem(15px);
+    height: rem(1px);
+    background-color: #1f324f;
+  }
+  &__span {
+    opacity: 0.8;
+  }
+
+  &__switch {
+    margin-left: rem(217px);
+    @include flexbox(column, space-between, space-between);
+  }
+}
+
+.item-tariffseccard {
+  &__amount {
+    font-size: rem(36px);
+    line-height: rem(58px);
+    font-weight: 700;
+  }
+  &__date {
+    font-weight: 600;
+    margin-top: rem(8px);
+  }
+  &__text {
+    max-width: rem(269px);
+    line-height: rem(26px);
+    margin-top: rem(20px);
+  }
+
+  &__free {
+    color: #22dddd;
+    font-weight: 500;
+  }
+}
+
+.footer-tariffsec {
+  &__btn {
+    width: rem(296px);
+  }
+}

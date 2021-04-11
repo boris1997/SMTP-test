@@ -63,10 +63,15 @@
 }
 
 .total-price {
-  &__amount {
+  &__amount,
+  &__amount-rub {
     font-size: rem(50px);
     line-height: rem(58px);
     font-weight: 700;
+  }
+
+  &__amount-rub {
+    margin-left: rem(16px);
   }
 
   &__text {
@@ -99,6 +104,10 @@
 }
 
 .btn-tariff {
+  &__toggler {
+    width: rem(24px);
+    height: rem(24px);
+  }
   &__item + &__item {
     margin-left: rem(12px);
   }

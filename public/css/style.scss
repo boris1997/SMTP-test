@@ -106,6 +106,34 @@ img {
 .page {
   background: url("../assets/backgrounds/main/main-background.png") no-repeat
     center center/cover;
+  &__wrapper {
+    position: relative;
+  }
+  &__pagination {
+    @include position(absolute, "", rem(108px), 0, 0, auto, auto);
+  }
+}
+
+.pagination-page {
+  display: flex;
+  &__item + &__item {
+    margin-left: rem(22px);
+    position: relative;
+    opacity: 0.6;
+    &:before {
+      @include position(
+        absolute,
+        url("../assets/svg/page-pagination-icon.svg"),
+        rem(-10px),
+        0,
+        rem(-15px),
+        auto,
+        auto
+      );
+      width: rem(10px);
+      height: rem(10px);
+    }
+  }
 }
 
 .section {
@@ -197,7 +225,7 @@ img {
   justify-content: center;
 
   &__wrapper {
-    background: url("../assets/svg/dashed-image-big.svg");
+    background: url("../assets/svg/dashed-image-medium.svg");
     background-size: contain;
     background-repeat: no-repeat;
     /*Horizontal*/
@@ -273,4 +301,9 @@ img {
   &__label {
     margin-left: rem(20px);
   }
+}
+
+.full_height_show {
+  max-height: rem(30vh) !important;
+  overflow: visible !important;
 }

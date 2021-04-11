@@ -17,10 +17,15 @@
 
   &__text {
     max-width: rem(955px);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out;
   }
 
   &__right {
     align-self: flex-start;
+    height: rem(36px);
+    width: rem(36px);
   }
   &__togglers {
     height: rem(36px);

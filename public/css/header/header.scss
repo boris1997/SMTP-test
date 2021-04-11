@@ -6,6 +6,10 @@
     @include flexbox(row, space-between, center);
   }
 
+  &__title {
+    margin-top: rem(12px);
+  }
+
   &__btn {
     width: rem(172px);
   }
@@ -19,16 +23,34 @@
 
   &__link {
     position: relative;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: #2561fa;
+    }
+    &:active {
+      color: $accentColor;
+    }
+
     &::after {
       content: "";
       position: absolute;
       width: 0;
       left: 0;
       bottom: rem(-2px);
-      height: rem(1px);
+      height: rem(2px);
+      background-color: $accentColor;
       transition: width 0.4s ease-in-out;
     }
-    &:hover::after {
+  }
+  &__link--active {
+    &:hover {
+      color: $primaryColor !important;
+    }
+    &:active {
+      color: $primaryColor !important;
+    }
+    &::after {
       width: 100%;
     }
   }
