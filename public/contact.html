@@ -23,7 +23,7 @@
                         <ul class="nav__list">
                             <li class="nav__items"><a href="base.html" class="nav__link">База организаций</a></li>
                             <li class="nav__items"><a href="mail.html" class="nav__link">E-mail рассылка</a></li>
-                            <li class="nav__items"><a href="servies.html" class="nav__link">Все услуги</a></li>
+                            <li class="nav__items"><a href="services.html" class="nav__link">Все услуги</a></li>
                             <li class="nav__items"><a href="articles.html" class="nav__link">Статьи</a></li>
                         </ul>
                     </nav>
@@ -38,98 +38,115 @@
                     <li class="pagination-page__item"><a href="index.html"
                             class="nav__link pagination-page__link">Главная</a>
                     </li>
-                    <li class="pagination-page__item"><a href="base.html" class="pagination-page__link">E-mail
-                            рассылка</a></li>
+                    <li class="pagination-page__item"><a href="base.html" class="pagination-page__link">Контакты</a>
+                    </li>
                 </ul>
             </div>
+            <section class="contact">
+                <div class="container section">
+                    <h1 class="contact__title main__item">Контакты</h1>
+                    <div class="contact__body ">
+
+                        <div class="contact__left">
+                            <div class="contact__item item-contact item">
+                                <img class="item-contact__img" src="./assets/svg/contact/Location.svg" alt="отчет"
+                                    srcset="">
+                                <div class="item-contact__right">
+
+                                    <h4 class="item-contact__title item__title">Наш адрес:</h4>
+                                    <p class="item-contact__text item__text">г. Москва, Каширский проезд 9к3</p>
+                                </div>
+                            </div>
+                            <div class="contact__item item-contact item">
+                                <img class="item-contact__img" src="./assets/svg/contact/Mail.svg" alt="список"
+                                    srcset="">
+                                <div class="item-contact__right">
+
+                                    <h4 class="item-contact__title item__title">E-mail:</h4>
+                                    <p class="item-contact__text item__text">info@arendasmtp.ru</p>
+                                </div>
+                            </div>
+                            <div class="contact__item item-contact item">
+                                <img class="item-contact__img" src="./assets/svg/contact/Call.svg" alt="" srcset="">
+                                <div class="item-contact__right">
+                                    <h4 class="item-contact__title item__title">Телефон</h4>
+                                    <p class="item-contact__text item__text">8 (800) 555 55 55</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact__right">
+                            <form method="POST" action="send" class="contact__form contact-form">
+                                <h2 class="contact-form__title item__title">Запрос в поддержку</h2>
+                                <div class="contact-form__item">
+                                    <input placeholder="Ваше имя" type="text" name="name" id="name"
+                                        class="contact-form__input">
+
+                                </div>
+                                <div class="contact-form__item">
+                                    <input placeholder="Номер телефона" type="text" name="number" id="phone"
+                                        class="contact-form__input">
+
+                                </div>
+                                <div class="contact-form__item">
+                                    <input placeholder="Домен (если являетесь нашим клиентом)" type="text" name="name"
+                                        id="name" class="contact-form__input">
+
+                                </div>
+                                <div class="contact-form__item">
+
+                                    <textarea placeholder="Сообщение" name="textarea" id=""
+                                        class="contact-form__textarea"></textarea>
+                                </div>
+                                <!-- <input type="submit" value="Отправить" class="contact-form__btn"> -->
+                                <div class="contact-form__item">
+                                    <p class="contact-form__text">
+                                        Нажимая на кнопку «Отправить», вы даете согласие
+                                        на обработку своих <a href="#" class="contact-form__link"> персональных
+                                            данных </a>
+                                    </p>
+                                </div>
+                                <button type="submit" class="btn btn__main contact-form__btn">
+                                    Отправить
+                                </button>
+                            </form>
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 
 
-    <section class="contact">
-        <div class="container section">
-            <div class="contact__body mailing">
 
-                <div class="contact__left">
-                    <div class="contact__item item-contact item">
-                        <img class="item-contact__img" src="./assets/svg/email/contact/ic-1.svg" alt="отчет" srcset="">
-                        <h4 class="item-contact__title item__title">Сводная аналитика</h4>
-                        <p class="item-contact__text item__text">Мы проведем анализ эффективности рассылки
-                            и сопоставим с предыдущими результатами, дадим
-                            ценные советы по усовершенствованию процесса</p>
+    <footer class="footer">
+        <div class="footer__main">
+            <div class="container">
+                <div class="footer__content">
+                    <div class="footer__logo logo">
+                        <img src="./assets/svg/SMTP logo.svg" alt="лого" class="logo__img">
+                        <p class="logo__title">Сервис e-mail рассылок</p>
                     </div>
-                    <div class="contact__item item-contact item">
-                        <img class="item-contact__img" src="./assets/svg/email/contact/ic-2.svg" alt="список" srcset="">
-                        <h4 class="item-contact__title item__title">Список отписавшихся</h4>
-                        <p class="item-contact__text item__text">Подсчитаем, в какое время и какого-типа
-                            клиенты
-                            чаще читают письма от вашей фирмы</p>
-                    </div>
-                    <div class="contact__item item-contact item">
-                        <img class="item-contact__img" src="./assets/svg/email/contact/ic-3.svg" alt="" srcset="">
-                        <h4 class="item-contact__title item__title">Карта кликов</h4>
-                        <p class="item-contact__text item__text">Благодаря ней вы узнаете, по каким ссылкам
-                            в письме клиенты кликают чаще всего</p>
-                    </div>
-                </div>
-                <div class="contact__right">
-                    <form method="POST" action="send" class="contact__form">
-                        <h2 class="contact__title">форма для заказа</h2>
-                        <div class="contact__item">
-                            <label for="name" class="contact__label">Имя</label>
-                            <input type="text" name="name" id="name" class="contact__input">
-                            <div class="contact__invalid">
-                                Введите имя корректно
-                            </div>
-                        </div>
-                        <div class="contact__item">
-                            <label for="number" class="contact__label">Номер</label>
-                            <input placeholder="89998887766" type="text" name="number" id="phone"
-                                class="contact__input">
-                            <div class="contact__invalid">
-                                Введите номер телефона корректно
-                            </div>
-                        </div>
-
-
-                        <!-- <input type="submit" value="Отправить" class="contact__btn"> -->
-                        <button type="submit" class="button contact__button button__call-to-action main__item">
-                            <div class="contact__button-inner button__call-to-action-inner">
-                                <div class="contact__button-inner-content button__call-to-action-inner-content">
-                                    Оформить заказ
-                                    <!--   <input type="submit" value="Оформить заказ"> -->
-                                </div>
-                            </div>
-                        </button>
-                    </form>
-
-
-
+                    <nav class="footer__nav nav">
+                        <ul class="nav__list footer__list">
+                            <li class="nav__items"><a href="base.html"
+                                    class="nav__link nav__link nav__link--active">База организаций</a></li>
+                            <li class="nav__items"><a href="mail.html" class="nav__link">E-mail рассылка</a></li>
+                            <li class="nav__items"><a href="services.html" class="nav__link">Все услуги</a></li>
+                            <li class="nav__items"><a href="articles.html" class="nav__link">Статьи</a></li>
+                            <li class="nav__items"><a href="contact.html" class="nav__link">Контакты</a></li>
+                        </ul>
+                    </nav>
 
                 </div>
-
             </div>
         </div>
-    </section>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__content">
-                <div class="footer__logo logo">
-                    <img src="./assets/svg/SMTP logo.svg" alt="лого" class="logo__img">
-                    <p class="logo__title">Сервис e-mail рассылок</p>
-                </div>
-                <nav class="footer__nav nav">
-                    <ul class="nav__list footer__list">
-                        <li class="nav__items"><a href="#page-about" class="nav__link">База организаций</a></li>
-                        <li class="nav__items"><a href="#page-work" class="nav__link">E-mail рассылка</a></li>
-                        <li class="nav__items"><a href="#page-gallery" class="nav__link">Все услуги</a></li>
-                        <li class="nav__items"><a href="#page-contact" class="nav__link">Статьи</a></li>
-                        <li class="nav__items"><a href="#page-contact" class="nav__link">Контакты</a></li>
-                    </ul>
-                </nav>
-
-            </div>
-            <div class="footer__company company">
+        <div class="footer__company company">
+            <div class="container">
                 <div class="company__logo">
                     <img src="./assets/svg/footer/studio-logo.svg" alt="компания логотип" class="company__img">
                     <span class="company__span">

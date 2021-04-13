@@ -1,0 +1,139 @@
+.services {
+  margin-top: rem(124px);
+  &__title {
+    font-size: rem(50px);
+    font-weight: 700;
+  }
+  background: url("../assets/backgrounds/main/programm-background.svg")
+    no-repeat center center/cover;
+  &__header {
+    margin-top: rem(50px);
+  }
+  &__body {
+    margin-top: rem(70px);
+  }
+
+  &__footer {
+    margin-top: rem(100px);
+    @include flexbox(row, center, center);
+  }
+
+  &__line {
+    margin-top: rem(32px);
+    height: rem(1px);
+    background-color: #2b4263;
+  }
+}
+.content-services {
+  @include grid(0, rem(50px), rem(32px), 1, 1fr, auto-fit, rem(255px), 1fr);
+  justify-items: center;
+}
+
+.pagination-services {
+  @include flexbox(row, space-between, center);
+  &__btn {
+    font-size: rem(15px);
+    line-height: rem(23px);
+  }
+  &__item + &__item {
+    margin-left: rem(19px);
+  }
+
+  &__btn {
+    z-index: 0;
+    position: relative;
+    &:hover {
+      color: #2561fa;
+    }
+    &:active {
+      color: $accentColor;
+    }
+
+    &::after {
+      @include position(absolute, "", 0, 0, rem(-7px), 0, auto);
+      border-radius: rem(100px);
+      background-color: $accentColor;
+      height: rem(22px);
+      width: rem(22px);
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+    }
+  }
+  &__btn--active {
+    &:hover {
+      color: $accentColor !important;
+    }
+    &:active {
+      color: $accentColor !important;
+    }
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.filter {
+  &__list {
+    @include flexbox(row, space-between, space-between);
+  }
+  &__link {
+    position: relative;
+    &:hover {
+      color: #2561fa;
+    }
+    &:active {
+      color: $accentColor;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      left: rem(-11px);
+      bottom: rem(-35px);
+      height: rem(6px);
+      border-radius: rem(2px);
+      background-color: $accentColor;
+      transition: width 0.4s ease-in-out;
+    }
+  }
+  &__link--active {
+    &:hover {
+      color: $accentColor !important;
+    }
+    &:active {
+      color: $accentColor !important;
+    }
+    &::after {
+      width: 126%;
+    }
+  }
+}
+
+.services-item {
+  &__header {
+    height: rem(276px);
+    /*   position: relative; */
+  }
+  /*  &__img {
+    @include position(absolute, "", 0, 0, rem(-30px), 0, auto);
+  } */
+
+  &__btn {
+    width: rem(276px);
+    margin-left: rem(30px);
+  }
+
+  /* &__link--active {
+    &:hover {
+      color: $accentColor !important;
+    }
+    &:active {
+      color: $accentColor !important;
+    }
+    &::after {
+      width: 100%;
+    }
+  } */
+}

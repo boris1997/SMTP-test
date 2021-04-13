@@ -22,10 +22,9 @@
                     <nav class="nav">
                         <ul class="nav__list">
                             <li class="nav__items"><a href="base.html"
-                                    class="nav__link nav__link nav__link--active">База
-                                    организаций</a></li>
+                                    class="nav__link nav__link nav__link--active">База организаций</a></li>
                             <li class="nav__items"><a href="mail.html" class="nav__link">E-mail рассылка</a></li>
-                            <li class="nav__items"><a href="servies.html" class="nav__link">Все услуги</a></li>
+                            <li class="nav__items"><a href="services.html" class="nav__link">Все услуги</a></li>
                             <li class="nav__items"><a href="articles.html" class="nav__link">Статьи</a></li>
                         </ul>
                     </nav>
@@ -91,8 +90,22 @@
                 компаний</h4>
 
             <div class="direction__body section__body">
-                <div class="direction__body-wrapper">
+                <div class="direction__background">
+                    <svg class="direction__background-img" width="100%" height="100%" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect class="direction__background-rect" x="0" y="0" width="100%" height="100%" rx="11.5"
+                            stroke="url(#paint0_linear)" stroke-dasharray="7 7" />
+                        <defs>
+                            <linearGradient id="paint0_linear" x1="-45.3488" y1="-7.68318e-05" x2="2195.15" y2="853.559"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#1549D0" />
+                                <stop offset="1" stop-color="#17CDCD" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
 
+                </div>
+                <div class="direction__body-wrapper">
                     <ul class="direction__list">
                         <li class="direction__item">CМИ / Средства массовой информации </li>
                         <li class="direction__item">Аварийные / Экстренные и прочие службы </li>
@@ -514,24 +527,28 @@
     </section>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer__content">
-                <div class="footer__logo logo">
-                    <img src="./assets/svg/SMTP logo.svg" alt="лого" class="logo__img">
-                    <p class="logo__title">Сервис e-mail рассылок</p>
+        <div class="footer__main">
+            <div class="container">
+                <div class="footer__content">
+                    <div class="footer__logo logo">
+                        <img src="./assets/svg/SMTP logo.svg" alt="лого" class="logo__img">
+                        <p class="logo__title">Сервис e-mail рассылок</p>
+                    </div>
+                    <nav class="footer__nav nav">
+                        <ul class="nav__list footer__list">
+                            <li class="nav__items"><a href="base.html"
+                                    class="nav__link nav__link nav__link--active">База организаций</a></li>
+                            <li class="nav__items"><a href="mail.html" class="nav__link">E-mail рассылка</a></li>
+                            <li class="nav__items"><a href="services.html" class="nav__link">Все услуги</a></li>
+                            <li class="nav__items"><a href="articles.html" class="nav__link">Статьи</a></li>
+                            <li class="nav__items"><a href="contact.html" class="nav__link">Контакты</a></li>
+                        </ul>
+                    </nav>
                 </div>
-                <nav class="footer__nav nav">
-                    <ul class="nav__list footer__list">
-                        <li class="nav__items"><a href="#page-about" class="nav__link">База организаций</a></li>
-                        <li class="nav__items"><a href="#page-work" class="nav__link">E-mail рассылка</a></li>
-                        <li class="nav__items"><a href="#page-gallery" class="nav__link">Все услуги</a></li>
-                        <li class="nav__items"><a href="#page-contact" class="nav__link">Статьи</a></li>
-                        <li class="nav__items"><a href="#page-contact" class="nav__link">Контакты</a></li>
-                    </ul>
-                </nav>
-
             </div>
-            <div class="footer__company company">
+        </div>
+        <div class="footer__company company">
+            <div class="container">
                 <div class="company__logo">
                     <img src="./assets/svg/footer/studio-logo.svg" alt="компания логотип" class="company__img">
                     <span class="company__span">

@@ -90,11 +90,11 @@ img {
 
 .container,
 .container-md {
-  max-width: rem(1200px);
+  max-width: rem(1224px);
   height: 100%;
   margin: auto;
-  /*   padding-left: rem(20px);
-  padding-right: rem(20px); */
+  padding-left: rem(12px);
+  padding-right: rem(12px);
   overflow: hidden;
 }
 
@@ -110,7 +110,7 @@ img {
     position: relative;
   }
   &__pagination {
-    @include position(absolute, "", rem(108px), 0, 0, auto, auto);
+    @include position(absolute, "", rem(108px), auto, 0, auto, auto);
   }
 }
 
@@ -186,6 +186,12 @@ img {
     font-size: rem(22px);
     font-weight: 700;
     margin-top: rem(18px);
+  }
+
+  &__title-medium {
+    font-size: rem(18px);
+    line-height: rem(26px);
+    font-weight: 600;
   }
   &__text {
     line-height: rem(26px);

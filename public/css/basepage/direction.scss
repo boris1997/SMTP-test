@@ -7,9 +7,34 @@
   &__body {
     margin-top: rem(32px);
     @include flexbox(column, flex-start, flex-start);
-    background: url("../assets/svg/dashed-image-large.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
+
+    position: relative;
+  }
+
+  &__background {
+    @include position(absolute, "", 0, 0, 0, 0, auto);
+    width: 100%;
+    height: 100%;
+    /*   overflow: visible;
+    border: 8px solid transparent;
+    -webkit-border-image: url("../assets/svg/dashed-image-large.svg"); */
+    // background: url("../assets/svg/dashed-image-large.svg");
+    // /*     background-size: cover;
+    // background-position: center; */
+    // background-size: cover;
+    // background-repeat: no-repeat;
+  }
+
+  &__background-img {
+    width: 100%;
+    height: 100%;
+    /*     object-fit: cover;
+    display: block; */
+  }
+
+  &__background-rect {
+    width: 100%;
+    height: 100%;
   }
 
   &__body-wrapper {

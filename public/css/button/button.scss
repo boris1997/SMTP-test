@@ -31,6 +31,10 @@
       border: none;
     }
   }
+
+  &__link {
+    @include flexbox(column, center, center);
+  }
 }
 
 .incDec-btn {

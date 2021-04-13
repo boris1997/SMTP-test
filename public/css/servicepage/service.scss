@@ -1,0 +1,151 @@
+.service {
+  margin-top: rem(124px);
+  &__title {
+    font-size: rem(50px);
+    font-weight: 700;
+  }
+  background: url("../assets/backgrounds/main/programm-background.svg")
+    no-repeat center center/cover;
+
+  &__header {
+    margin-top: rem(70px);
+
+    @include flexbox(row, flex-start, flex-start);
+  }
+  &__directions {
+    @include flexbox(column, space-between, space-between);
+  }
+
+  &__interest,
+  &__articles,
+  &__directions {
+    margin-top: rem(82px);
+  }
+
+  &__right {
+    margin-left: rem(135px);
+  }
+
+  &__img {
+    margin-left: rem(-29px);
+  }
+
+  /* 
+  &__footer {
+    @include grid(
+      0,
+      rem(80px),
+      rem(30px),
+      1,
+      1fr,
+      auto-fill,
+      rem(277px),
+      rem(277px)
+    );
+  }
+ */
+}
+
+.service-data {
+  &__header {
+    display: flex;
+    /*     @include flexbox(row, space-between, space-between);
+ */
+  }
+  &__btn {
+    width: rem(166px);
+    align-self: flex-end;
+    margin-bottom: rem(13px);
+  }
+
+  &__text {
+    margin-top: rem(40px);
+  }
+  &__item + &__item,
+  &__btn {
+    margin-left: rem(72px);
+  }
+}
+
+.item-datas {
+  &__amount {
+    font-size: rem(36px) !important;
+  }
+}
+
+.interest-service {
+  &__body {
+    margin-top: rem(30px) !important;
+  }
+
+  &__img {
+    margin-left: -27px;
+  }
+}
+
+.item-service {
+  &__title {
+    font-size: rem(18px);
+    line-height: rem(26px);
+    font-weight: 600;
+  }
+
+  &__right {
+    margin-left: rem(18px);
+  }
+  &__img {
+    margin-top: rem(18px);
+  }
+}
+
+.usefull-articles {
+  &__body {
+    @include grid(
+      rem(50px),
+      rem(50px),
+      rem(32px),
+      1,
+      1fr,
+      auto-fit,
+      rem(360px),
+      1fr
+    );
+    justify-items: center;
+  }
+}
+
+.usefull-article {
+  &__body,
+  &__link {
+    margin-top: rem(20px);
+  }
+  &__header {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    /*   z-index: 1; */
+  }
+
+  &__title {
+    margin-bottom: rem(20px);
+  }
+
+  &__date {
+    @include position(absolute, "", auto, 0, 0, auto, auto);
+  }
+  &__link {
+    text-decoration: underline;
+  }
+}
+
+.date-article {
+  @include flexbox(row, center, center);
+  background-color: $accentColor;
+  border-top-right-radius: rem(12px);
+  z-index: 0;
+  height: rem(33px);
+  width: rem(101px);
+  &__text {
+    font-size: rem(13px);
+  }
+}

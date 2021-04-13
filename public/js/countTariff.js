@@ -6,20 +6,31 @@ class CountTarif {
         this.switchLabel = switchLabel;
         this.togglersTariff = togglersTariff;
         this.totalPriceEl = totalPriceEl;
+        this.discountPrice = 1600;
+        this.primaryPriceIndex = 1;
         this.priceIndex = 1;
         this.limitier = 9;
+        this.disountArr = [];
         this.totalPrice = this.strToNumbaer(this.totalPriceEl);
         this.primaryPrice = this.totalPrice;
         this.tariffIndicators = {
             'indicator': [],
-            'countIndex': []
+            'countIndex': [],
+            'discount': 1
         };
+    }
+
+    setDiscounts = () => {
+        for (let i = 0; i <= this.limitier; i++) {
+            i === 0 && this.disountArr.push(1)
+            i === 1 && this.disountArr.push(0.9)
+            i > 1 && this.disountArr.push(0.85)
+        }
     }
 
     getindicators = () => this.togglersTariff.map(item => {
         this.tariffIndicators['indicator'].push(this.strToNumbaer(item.children[1]));
         this.tariffIndicators['countIndex'].push(0);
-        this.tariffIndicators['discount'] = 1;
     })
 
 
@@ -43,11 +54,10 @@ class CountTarif {
     decrIndicator = (i) => {
         console.log(this.tariffIndicators)
         if (this.tariffIndicators['countIndex'][i] > 0) {
-            this.priceIndex--;
             this.tariffIndicators['countIndex'][i]--;
             let indicator = this.strToNumbaer(this.togglersTariff[i].children[1]) - this.tariffIndicators['indicator'][i];
             console.log(indicator)
-            i === 2 && this.countDiscount(indicator, i);
+            i === 2 ? this.countDiscount(indicator, i) : this.priceIndex--;
             this.togglersTariff[i].children[1].textContent = this.addSpacesToNum(indicator);
             i !== 2 ? this.countTotalPrice() : this.countPrimaryPrice(i);
             this.showTotalPrice()
@@ -63,25 +73,38 @@ class CountTarif {
     incrIndicator = (i) => {
         console.log(this.tariffIndicators)
         if (this.tariffIndicators['countIndex'][i] < this.limitier) {
-            this.priceIndex++;
+
             this.tariffIndicators['countIndex'][i]++;
             let indicator = this.strToNumbaer(this.togglersTariff[i].children[1]) + this.tariffIndicators['indicator'][i];
             console.log(indicator)
-            i === 2 && this.countDiscount(indicator, i);
+            i === 2 ? this.countDiscount(indicator, i) : this.priceIndex++;
             this.togglersTariff[i].children[1].textContent = this.addSpacesToNum(indicator);
             i !== 2 ? this.countTotalPrice() : this.countPrimaryPrice(i);
             this.showTotalPrice()
         }
     }
 
-    countTotalPrice = () => {
-        this.totalPrice = this.primaryPrice * this.priceIndex * this.tariffIndicators['discount'];
+    countTotalPrice = (i) => {
+        this.totalPrice = this.discountPrice * this.priceIndex;
+        console.log(this.priceIndex, this.discountPrice)
+        /*    this.totalPrice = this.totalPrice * (this.tariffIndicators['countIndex'][2] + 1) */
+        console.log(this.totalPrice)
     }
 
     countPrimaryPrice = (i) => {
-        console.log(this.totalPrice, this.tariffIndicators['countIndex'][i], this.tariffIndicators['discount'])
-        this.primaryPrice = this.primaryPrice * (this.tariffIndicators['countIndex'][i] + 1) * this.tariffIndicators['discount'];
-        this.totalPrice = this.primaryPrice;
+        /*      console.log(this.primaryPrice, this.totalPrice, this.tariffIndicators['countIndex'][i], this.tariffIndicators['discount'], this.priceIndex);
+             const discount = this.primaryPrice * this.tariffIndicators['discount'];
+                console.log(discount)
+                this.discountPrice += discount; */
+        console.log(this.tariffIndicators['countIndex'][i] + 1)
+        this.discountPrice = 0;
+        console.log(this.priceIndex)
+        for (let z = 0; z < this.tariffIndicators['countIndex'][i] + 1; z++) {
+            this.discountPrice += this.primaryPrice * this.disountArr[z]/*  * this.priceIndex */;
+            /*    console.log(this.disountArr[z], this.primaryPrice)
+               console.log(price.toFixed()) */
+        }
+        this.totalPrice = this.discountPrice * this.priceIndex;
     }
 
     addSpacesToNum = (element) => {
@@ -96,6 +119,8 @@ class CountTarif {
     changeTariff = (i) => {
         console.log(this.totalPrice)
         i === 0 ? this.primaryPrice = 1600 : this.primaryPrice = 1800;
+        this.discountPrice = this.primaryPrice;
+        console.log(this.discountPrice)
         this.countPrimaryPrice(2)
         this.showTotalPrice()
     }
@@ -116,13 +141,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const switchLabel = [...document.querySelectorAll(".switch-radio__label")];
     const togglersTariff = [...document.querySelectorAll(".togglers-tariff__btn")];
     const totalPrice = document.querySelector(".total-price__amount");
-
-    const countTarif = new CountTarif(switchRadio, switchLabel, togglersTariff, totalPrice);
-
-    countTarif.getindicators();
-    countTarif.initSwitchTariffBtns();
-    countTarif.initTogglers();
-
+    console.log(switchRadio)
+    if (switchRadio.length !== 0 && switchRadio.length !== 0 && togglersTariff.length !== 0 && totalPrice !== null) {
+        const countTarif = new CountTarif(switchRadio, switchLabel, togglersTariff, totalPrice);
+        countTarif.getindicators();
+        countTarif.initSwitchTariffBtns();
+        countTarif.initTogglers();
+        countTarif.setDiscounts();
+    }
 })
 
 

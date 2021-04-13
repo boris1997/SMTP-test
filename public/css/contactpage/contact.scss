@@ -1,6 +1,8 @@
 .contact {
+  margin-top: rem(124px);
   &__title {
-    max-width: rem(704px);
+    font-size: rem(50px);
+    font-weight: 700;
   }
   background: url("../assets/backgrounds/main/programm-background.svg")
     no-repeat center center/cover;
@@ -8,20 +10,24 @@
     @include flexbox(row, space-between, space-between);
   }
 
+  &__left {
+    margin-top: rem(70px);
+  }
+  &__right {
+    flex: 0.5;
+    margin-top: rem(-42px);
+  }
+
   &__item {
+    justify-content: flex-start;
     align-items: flex-start;
+    flex-direction: row;
   }
 
   &__item + &__item {
     margin-top: rem(38px);
   }
-  &__text {
-    max-width: rem(439px);
-  }
 
-  &__img {
-    margin-top: rem(58px);
-  }
   /* 
   &__footer {
     @include grid(
@@ -36,64 +42,75 @@
     );
   }
  */
+}
 
-  &__content {
-    @include flexbox(row, space-between, center);
-    margin-top: rem(100px);
+.item-contact {
+  &__title {
+    font-size: rem(18px);
+    line-height: rem(26px);
+    font-weight: 600;
   }
+
+  &__right {
+    margin-left: rem(18px);
+  }
+  &__img {
+    margin-top: rem(18px);
+  }
+}
+
+.contact-form {
+  @include flexbox(column, space-between, flex-start);
+  background-color: $primaryColor;
+  border-radius: rem(12px);
+  padding: rem(42px) rem(52px);
 
   &__title {
-    text-align: center;
-    font-size: rem(28px);
+    color: initial;
+    margin-top: 0;
   }
-  &__form {
-    box-shadow: rem(-2px) rem(-2px) rem(4px) rgba(0, 0, 0, 0.15),
-      rem(2px) rem(2px) rem(4px) rgba(0, 0, 0, 0.15);
-    border-radius: 30px;
-    margin-bottom: rem(20px);
-    padding: rem(40px) rem(30px);
-  }
+  /*   &__content {
+    margin-top: rem(100px);
+  } */
 
   &__item,
   &__btn {
-    margin-top: rem(40px);
-    position: relative;
-    @include flexbox(column, center, "");
+    margin-top: rem(18px);
   }
 
   &__btn {
-    margin: rem(60px) 0;
+    width: 100%;
   }
+
+  &__text {
+    font-size: rem(14px);
+    color: #9497b1;
+    line-height: rem(20px);
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration: underline !important;
+  }
+
   &__input,
-  &__btn {
-    height: rem(30px);
-    background: none;
-    width: rem(300px);
-    border: rem(2px) solid $secColor;
-    color: $secColor;
-    margin-top: rem(5px);
-    border-radius: rem(5px);
+  &__textarea {
+    height: rem(50px);
+    background-color: #f3f6fb;
+    color: #9497b1;
+    width: rem(378px);
+    padding-left: rem(22px);
+    line-height: rem(22px);
+    border-radius: rem(8px);
   }
-  &__input {
-    padding-left: rem(7px);
+
+  &__textarea {
+    padding-top: rem(14px);
+    height: rem(62px);
+    resize: none;
   }
 
   &__input:focus {
     outline: none;
-  }
-
-  &__button {
-    /*  @include buttonBR(rem(50px), 100%, rem(50px), rem(3px), $ ) */
-    height: rem(50px);
-    width: 100%;
-    border-radius: rem(50px);
-
-    /*   border: rem(3px) solid $thirdColor; */
-  }
-}
-
-.item-contact {
-  &__text {
-    max-width: rem(417px);
   }
 }
