@@ -1,0 +1,26 @@
+.articles {
+  margin-top: rem(124px);
+  &__title {
+    font-size: rem(50px);
+    font-weight: 700;
+  }
+  background: url("../assets/backgrounds/main/programm-background.svg")
+    no-repeat center center/cover;
+  &__header {
+    margin-top: rem(50px);
+  }
+  &__pages {
+    margin-top: rem(70px);
+  }
+
+  &__footer {
+    margin-top: rem(100px);
+    @include flexbox(row, center, center);
+  }
+
+  &__line {
+    margin-top: rem(32px);
+    height: rem(1px);
+    background-color: #2b4263;
+  }
+}

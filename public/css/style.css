@@ -127,7 +127,8 @@ img {
 .page__wrapper {
   position: relative;
 }
-.page__pagination {
+.page__navigtion {
+  padding-left: 0.75rem;
   position: absolute;
   content: "";
   top: 6.75rem;
@@ -137,17 +138,17 @@ img {
   margin: auto;
 }
 
-.pagination-page {
+.navigtion-page {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.pagination-page__item + .pagination-page__item {
+.navigtion-page__item + .navigtion-page__item {
   margin-left: 1.375rem;
   position: relative;
   opacity: 0.6;
 }
-.pagination-page__item + .pagination-page__item:before {
+.navigtion-page__item + .navigtion-page__item:before {
   position: absolute;
   content: url("../assets/svg/page-pagination-icon.svg");
   top: -0.625rem;

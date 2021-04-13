@@ -9,7 +9,7 @@
   &__header {
     margin-top: rem(50px);
   }
-  &__body {
+  &__pages {
     margin-top: rem(70px);
   }
 
@@ -29,8 +29,12 @@
   justify-items: center;
 }
 
-.pagination-services {
-  @include flexbox(row, space-between, center);
+.pagination {
+  margin-top: rem(100px);
+  @include flexbox(row, center, center);
+  &__content {
+    @include flexbox(row, space-between, center);
+  }
   &__btn {
     font-size: rem(15px);
     line-height: rem(23px);

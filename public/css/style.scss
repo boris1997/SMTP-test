@@ -109,12 +109,13 @@ img {
   &__wrapper {
     position: relative;
   }
-  &__pagination {
+  &__navigtion {
+    padding-left: rem(12px);
     @include position(absolute, "", rem(108px), auto, 0, auto, auto);
   }
 }
 
-.pagination-page {
+.navigtion-page {
   display: flex;
   &__item + &__item {
     margin-left: rem(22px);
