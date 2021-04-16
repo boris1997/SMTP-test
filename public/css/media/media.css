@@ -1,0 +1,289 @@
+/* Portrait tablets and medium desktops */
+@media (max-width: 1224px) {
+  .main__illustration,
+.effect__img {
+    width: 100%;
+  }
+
+  .main__cards {
+    width: 36.3%;
+    /* margin-left: calc(76 / 991 * 100%); */
+  }
+
+  .suit__item-mm,
+.suit__item-sm {
+    margin-top: 0;
+  }
+}
+@media (max-width: 991px) {
+  .nav {
+    display: none;
+  }
+
+  .main__title,
+.section__title,
+.total-price__amount,
+.total-price__amount-rub {
+    font-size: rem(40px);
+    line-height: rem(50px);
+  }
+
+  .section__header {
+    margin-top: rem(110px);
+    margin-bottom: rem(55px);
+  }
+
+  .main {
+    overflow: hidden;
+    margin-top: calc(124 / 991 * 100%);
+  }
+
+  .section {
+    padding-bottom: rem(110px);
+  }
+
+  .get__left {
+    margin-bottom: 0;
+  }
+
+  .get__right {
+    margin-right: calc(-68 / 991 * 100%);
+  }
+
+  .section__sec-title {
+    font-size: rem(60px);
+  }
+
+  .item__title {
+    line-height: rem(28px);
+    font-size: rem(20px);
+  }
+
+  .item__text {
+    font-size: rem(15px);
+    line-height: rem(24px);
+  }
+
+  .opportunity__body {
+    grid-column-gap: rem(128px);
+  }
+
+  .mailing__right {
+    margin-left: rem(10px);
+  }
+
+  .mailing__img {
+    width: 100%;
+  }
+
+  .order__text,
+.switch-radio__label,
+.item__text-medium {
+    font-size: rem(14px);
+  }
+
+  .item__title-medium {
+    font-size: rem(17px);
+  }
+
+  .card-tariff__header {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .card-tariff__switch {
+    margin-left: 0;
+  }
+
+  .togglers-tariff__item:nth-child(2) {
+    margin-left: calc(133 / 991 * 100%);
+  }
+
+  .togglers-tariff__item:nth-child(3) {
+    margin-left: calc(76 / 991 * 100%);
+  }
+
+  .card-tariff__footer {
+    margin-top: rem(30px);
+  }
+
+  .afterMailing__body,
+.effect__body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .get__img {
+    width: 100%;
+  }
+}
+/* Portrait tablets and small desktops */
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  .main__title,
+.section__title {
+    font-size: rem(30px);
+    line-height: rem(40px);
+  }
+
+  .section__header {
+    margin-top: rem(80px);
+    margin-bottom: rem(45px);
+  }
+
+  .section {
+    padding-bottom: rem(80px);
+  }
+
+  .section__sec-title {
+    font-size: rem(45px);
+  }
+
+  .item__title {
+    font-size: rem(19px);
+  }
+
+  .item__text {
+    font-size: rem(14px);
+    line-height: rem(22px);
+  }
+
+  .total-price__amount,
+.total-price__amount-rub {
+    font-size: rem(36px);
+    line-height: rem(36px);
+  }
+
+  .order__text,
+.switch-radio__label,
+.item__text-medium {
+    font-size: rem(13px);
+  }
+
+  .get__img {
+    display: none;
+  }
+}
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+  .section__header {
+    margin-top: rem(50px);
+    margin-bottom: rem(40px);
+  }
+
+  .section {
+    padding-bottom: rem(50px);
+  }
+
+  .main__title,
+.section__title {
+    font-size: rem(22px);
+    line-height: rem(32px);
+  }
+
+  .item__title {
+    font-size: rem(18px);
+  }
+
+  .item__text {
+    font-size: rem(13px);
+  }
+
+  .total-price__amount,
+.total-price__amount-rub {
+    font-size: rem(34px);
+    line-height: rem(32px);
+  }
+
+  .tariff__card {
+    padding: rem(22px);
+    padding-bottom: rem(50px);
+  }
+
+  .card-tariff__text {
+    font-size: rem(12px);
+    line-height: rem(15px);
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .total-price__amount-rub {
+    margin-left: rem(8px);
+  }
+
+  .footer-tariff__btn {
+    font-size: rem(14px);
+    height: rem(50px);
+  }
+}
+@media (max-width: 650px) {
+  .section__sec-title {
+    display: none;
+  }
+
+  /*   .card-tariff__togglers {
+    justify-content: space-between;
+  } */
+  .card-tariff__header,
+.card-tariff__togglers,
+.card-tariff__footer,
+.programm__body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .togglers-tariff__item:nth-child(2),
+.togglers-tariff__item:nth-child(3),
+.footer-tariff__info {
+    margin-left: 0;
+  }
+
+  .mailing__right {
+    margin-left: 0;
+  }
+
+  .total-price__text {
+    margin-left: rem(22px);
+    padding: 0 !important;
+  }
+
+  .card-tariff__switch,
+.card-tariff__body,
+.footer-tariff__info,
+.card-tariff__line,
+.togglers-tariff__item + .togglers-tariff__item {
+    margin-top: rem(30px);
+  }
+
+  .togglers-tariff__btn {
+    margin-top: rem(24px);
+  }
+
+  .switch-radio__item + .switch-radio__item {
+    margin-top: rem(16px);
+  }
+
+  .footer-tariff__info {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+
+  .footer-tariff__btn {
+    width: 100%;
+  }
+
+  .mailing__right {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+}
+/*# sourceMappingURL=media.css.map */

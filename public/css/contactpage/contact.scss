@@ -64,7 +64,6 @@
   background-color: $primaryColor;
   border-radius: rem(12px);
   padding: rem(42px) rem(52px);
-
   &__title {
     color: initial;
     margin-top: 0;
@@ -75,6 +74,7 @@
 
   &__item,
   &__btn {
+    width: 100%;
     margin-top: rem(18px);
   }
 
@@ -95,10 +95,10 @@
 
   &__input,
   &__textarea {
+    width: 100%;
     height: rem(50px);
     background-color: #f3f6fb;
     color: #9497b1;
-    width: rem(378px);
     padding-left: rem(22px);
     line-height: rem(22px);
     border-radius: rem(8px);

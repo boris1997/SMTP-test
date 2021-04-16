@@ -54,6 +54,7 @@
     transition: max-height 0.3s ease-in-out;
     display: flex;
     overflow: hidden;
+    flex-wrap: wrap;
   }
   &__list + &__list {
     margin-top: rem(32.25px);
@@ -62,9 +63,6 @@
     max-height: 1000px;
   }
 
-  &__item {
-    font-size: rem(15px);
-  }
   &__item + &__item {
     margin-left: rem(16px);
     padding-left: rem(18px);

@@ -35,10 +35,7 @@
   &__content {
     @include flexbox(row, space-between, center);
   }
-  &__btn {
-    font-size: rem(15px);
-    line-height: rem(23px);
-  }
+
   &__item + &__item {
     margin-left: rem(19px);
   }

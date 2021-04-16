@@ -2,10 +2,14 @@
   overflow: hidden;
   margin-top: rem(124px);
   &__body {
-    position: relative;
     margin-top: rem(50px);
     margin-bottom: rem(36px);
   }
+
+  &__body-wrapper {
+    position: relative;
+  }
+
   &__content {
     @include flexbox(column, space-between, center);
     /* margin-top: rem(50px); */
@@ -59,8 +63,24 @@
   &__email-illustration {
     margin-top: -251px;
   }
+  &__plains {
+    width: 20%;
+    @include position(absolute, "", 0, rem(27%), 0, 0, auto);
+    transition: all 0.3s ease-in-out;
+  }
+  &__plain-left {
+    left: 3.5%;
+    right: auto;
+    transform: rotate(7deg);
+  }
+  &__plain-right {
+    left: auto;
+    right: 0;
+    bottom: 60%;
+  }
+
   &__cards {
-    @include position(absolute, "", 0, rem(155px), rem(40px), 0, auto);
+    @include position(absolute, "", 0, rem(27%), rem(4%), 0, auto);
   }
 }
 
@@ -78,9 +98,5 @@
   border-radius: rem(100px);
   &__title {
     margin: 0;
-  }
-  &__text {
-    font-size: rem(15px);
-    line-height: rem(23px);
   }
 }

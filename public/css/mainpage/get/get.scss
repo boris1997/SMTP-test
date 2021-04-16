@@ -9,14 +9,18 @@
   }
 
   &__left {
-    margin-bottom: rem(80px);
+    margin-bottom: rem(100px);
+  }
+
+  &__right {
+    margin-right: rem(-68px);
   }
   &__item {
     margin-left: rem(16px);
     padding-left: rem(18px);
   }
   &__item + &__item {
-    margin-top: rem(24px);
+    margin-top: rem(18px);
   }
   &__item::marker {
     content: url("../../assets/svg/check.svg");

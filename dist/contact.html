@@ -11,8 +11,8 @@
     <title>SMTP</title>
 </head>
 
-<body>
-    <div class="page">
+<body class="body">
+    <div class="page page_screen_full ">
         <div class="container  page__wrapper">
             <header class="header">
                 <div class="header__content">
@@ -75,15 +75,16 @@
                             </div>
                         </div>
                         <div class="contact__right">
-                            <form method="POST" action="send" class="contact__form contact-form">
+                            <form data-modal="form"
+                                class="contact__form popup__modal popup__modal--active contact-form">
                                 <h2 class="contact-form__title item__title">Запрос в поддержку</h2>
                                 <div class="contact-form__item">
-                                    <input placeholder="Ваше имя" type="text" name="name" id="name"
+                                    <input required placeholder="Ваше имя" type="text" name="name" id="name"
                                         class="contact-form__input">
 
                                 </div>
                                 <div class="contact-form__item">
-                                    <input placeholder="Номер телефона" type="text" name="number" id="phone"
+                                    <input required placeholder="Номер телефона" type="text" name="number" id="phone"
                                         class="contact-form__input">
 
                                 </div>
@@ -105,7 +106,7 @@
                                             данных </a>
                                     </p>
                                 </div>
-                                <button type="submit" class="btn btn__main contact-form__btn">
+                                <button type="submit" class="btn btn__popup btn__main contact-form__btn">
                                     Отправить
                                 </button>
                             </form>
@@ -122,7 +123,27 @@
     </div>
 
 
+    <div id="popup-contact" class="popup popup--hidden">
+        <div class="popup__body">
+            <!--  popup__modal--active -->
 
+            <div data-modal="success" class="popup__modal popup__item">
+
+                <div class="modal-success popup__modal-wrapper">
+                    <img data-modal="success" src="./assets/svg/close-btn.svg" alt="" class="popup__modal-close">
+                    <img src="./assets/svg/success.svg" alt="" srcset="">
+                    <h2 class="modal-success__title item__title">Спасибо за заявку!</h2>
+                    <p class="modal-success__text item__text">Мы свяжемся с вами в ближайшее
+                        время.</p>
+                    <button data-modal="close" type="button" class="btn btn__main btn__popup contact-form__btn">
+                        Закрыть
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
     <footer class="footer">
         <div class="footer__main">
             <div class="container">

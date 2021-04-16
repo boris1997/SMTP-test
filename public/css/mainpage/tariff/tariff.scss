@@ -94,8 +94,6 @@
   &__sale {
     max-width: rem(374px);
     margin-top: rem(18px);
-    font-size: rem(15px);
-    line-height: rem(23px);
   }
 
   &__footer {
@@ -123,6 +121,7 @@
   }
 
   &__text-info {
+    color: $primaryColor;
     margin-left: rem(12px);
     text-decoration: underline;
   }

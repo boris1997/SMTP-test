@@ -103,16 +103,25 @@ img {
   max-width: rem(1132px);
 }
 
+.body--noscroll {
+  overflow: hidden;
+}
+
 .page {
   background: url("../assets/backgrounds/main/main-background.png") no-repeat
     center center/cover;
   &__wrapper {
     position: relative;
   }
+
   &__navigtion {
     padding-left: rem(12px);
     @include position(absolute, "", rem(108px), auto, 0, auto, auto);
   }
+}
+
+.page_screen_full {
+  height: 100vh;
 }
 
 .navigtion-page {
@@ -135,6 +144,9 @@ img {
       height: rem(10px);
     }
   }
+}
+
+.font {
 }
 
 .section {
@@ -169,7 +181,7 @@ img {
     max-width: rem(584px);
     letter-spacing: 0.02em;
     font-weight: 700;
-    @include flexbox(column, space-between, center);
+    /* @include flexbox(column, space-between, center); */
   }
 
   &__title-span {
@@ -196,8 +208,15 @@ img {
   }
   &__text {
     line-height: rem(26px);
-    font-weight: 300;
+    font-size: rem(16px);
+    font-weight: 400;
     margin-top: rem(12px);
+  }
+  &__text-medium {
+    line-height: rem(23px);
+    font-weight: 400;
+    margin-top: rem(12px);
+    font-size: rem(15px);
   }
   &__price {
     font-size: rem(20px);
@@ -255,6 +274,7 @@ img {
 
   &__item {
     margin: rem(42px) auto;
+    height: rem(200px);
     @include flexbox(column, center, center);
   }
 
@@ -308,9 +328,4 @@ img {
   &__label {
     margin-left: rem(20px);
   }
-}
-
-.full_height_show {
-  max-height: rem(30vh) !important;
-  overflow: visible !important;
 }

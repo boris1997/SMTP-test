@@ -5,17 +5,15 @@
   background: url("../assets/backgrounds/main/buy-background.png") no-repeat
     center center/cover;
   &__body {
-    @include flexbox(row, space-between, center);
+    @include flexbox(row, space-between, flex-start);
   }
 
   &__left {
     margin-bottom: rem(80px);
     min-width: rem(686px);
   }
-  &__list {
-    max-height: rem(246px);
-    transition: max-height 0.3s ease-in-out;
-    overflow: hidden;
+  &__list,
+  &__list-hidden {
     @include grid(
       0,
       rem(30px),
@@ -27,9 +25,13 @@
       rem(200px)
     );
   }
-  &__list:hover {
-    max-height: 1000px;
+  &__list-hidden {
+    margin-top: rem(30px);
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
   }
+
   &__item {
     margin-left: rem(16px);
     padding-left: rem(18px);
@@ -53,9 +55,16 @@
   &__link {
     margin-left: rem(16px);
     text-decoration: underline;
+    cursor: pointer;
   }
   &__icon {
+    cursor: pointer;
     margin-left: rem(12px);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &__link--hide + &__icon {
+    transform: rotate(180deg);
   }
 
   /*   &__item::marker {

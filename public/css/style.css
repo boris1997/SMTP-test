@@ -121,6 +121,10 @@ img {
   max-width: 70.75rem;
 }
 
+.body--noscroll {
+  overflow: hidden;
+}
+
 .page {
   background: url("../assets/backgrounds/main/main-background.png") no-repeat center center/cover;
 }
@@ -136,6 +140,10 @@ img {
   left: 0;
   right: auto;
   margin: auto;
+}
+
+.page_screen_full {
+  height: 100vh;
 }
 
 .navigtion-page {
@@ -196,19 +204,7 @@ img {
   max-width: 36.5rem;
   letter-spacing: 0.02em;
   font-weight: 700;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  /* @include flexbox(column, space-between, center); */
 }
 .section__title-span {
   line-height: 1.5rem;
@@ -245,8 +241,15 @@ img {
 }
 .item__text {
   line-height: 1.625rem;
-  font-weight: 300;
+  font-size: 1rem;
+  font-weight: 400;
   margin-top: 0.75rem;
+}
+.item__text-medium {
+  line-height: 1.4375rem;
+  font-weight: 400;
+  margin-top: 0.75rem;
+  font-size: 0.9375rem;
 }
 .item__price {
   font-size: 1.25rem;
@@ -284,6 +287,7 @@ img {
 }
 .order__item {
   margin: 2.625rem auto;
+  height: 12.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -358,10 +362,5 @@ img {
 }
 .switch-radio__label {
   margin-left: 1.25rem;
-}
-
-.full_height_show {
-  max-height: 30vh !important;
-  overflow: visible !important;
 }
 /*# sourceMappingURL=style.css.map */

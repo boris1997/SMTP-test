@@ -11,7 +11,7 @@
     <title>SMTP</title>
 </head>
 
-<body>
+<body class="body">
     <div class="page">
         <div class="container">
             <header class="header">
@@ -41,9 +41,19 @@
                             <p class="main__text">Уже более 5 лет поставляем качественные, абузоустойчивые серверы</p>
                         </div>
                         <div class="main__body">
-                            <img class="main__illustration" src="./assets/svg/main/main/illustration.svg" alt=""
-                                srcset="">
-                            <object class="main__cards" data="./assets/svg/main/main/Group-card.svg" type=""></object>
+                            <!--     <img class="main__illustration" src="./assets/svg/main/main/illustration.svg"
+                                alt="сервер для рассылки" srcset=""> -->
+                            <div class="main__body-wrapper">
+
+                                <img class="main__illustration" src="./assets/svg/main/main/illustration.svg" alt=""
+                                    srcset="">
+                                <img class="main__plains main__plain-left" src="./assets/svg/main/main/left-plain.svg"
+                                    alt="" srcset="">
+                                <img class="main__plains main__plain-right" src="./assets/svg/main/main/right-plain.svg"
+                                    alt="" srcset="">
+                                <object class="main__cards" data="./assets/svg/main/main/Group-card.svg"
+                                    type=""></object>
+                            </div>
                         </div>
 
                         <!-- <div class="main__left">
@@ -246,7 +256,7 @@
             </div>
             <div class="tariff__body">
                 <div class="togglers tariff__togglers">
-                    <button class="togglers__button btn btn__main">Новый сервер</button>
+                    <button class="togglers__button  btn btn__main">Новый сервер</button>
                     <button class="togglers__button btn btn__transparent">Продление</button>
                 </div>
                 <div class="tariff__card card-tariff">
@@ -264,12 +274,16 @@
                                 <div class="switch-radio__item">
                                     <input id="radio-input-1" checked type="radio" name="options"
                                         class="switch-radio__input">
-                                    <label for="radio-input-1" class="switch-radio__label">Уже есть домен для
+                                    <label for="radio-input-1" class="switch-radio__label item__text-medium ">Уже есть
+                                        домен
+                                        для
                                         рассылки</label>
                                 </div>
                                 <div class="switch-radio__item">
                                     <input id="radio-input-2" type="radio" name="options" class="switch-radio__input">
-                                    <label for="radio-input-2" class="switch-radio__label">Заказать сервер + домен
+                                    <label for="radio-input-2" class="switch-radio__label item__text-medium">Заказать
+                                        сервер +
+                                        домен
                                     </label>
                                 </div>
                             </div>
@@ -381,7 +395,7 @@
                                                 </svg>
                                             </div>
                                         </div>
-                                        <p class="togglers-tariff__sale">
+                                        <p class="togglers-tariff__sale item__text-medium">
                                             Скидка 10% при заказе 2 серверов, 3 и более - 15%
                                             Активация сервера до 24 часов.
                                         </p>
@@ -389,10 +403,13 @@
                                 </div>
 
                                 <div class="card-tariff__footer footer-tariff">
-                                    <button class="footer-tariff__btn btn btn__main">Оформить заказ</button>
-                                    <div class="footer-tariff__info">
+                                    <button data-modal="form" type="button"
+                                        class="footer-tariff__btn btn__popup btn btn__main">Оформить заказ</button>
+                                    <div class="footer-tariff__info reference-info">
                                         <img src="./assets/svg/main/tariff/info icon.svg" alt="" srcset="">
-                                        <a href="#" class="footer-tariff__text-info">Справочная информация</a>
+                                        <a data-modal="reference" type="button" href="##"
+                                            class="footer-tariff__text-info btn__popup reference-info__text">Справочная
+                                            информация</a>
                                     </div>
                                 </div>
                             </div>
@@ -421,13 +438,14 @@
             <div class="get__body">
                 <div class="get__left">
                     <ul class="get__list">
-                        <li class="get__item">Домен в зоне .ru</li>
-                        <li class="get__item">Выделенный ip адрес (Россия)</li>
-                        <li class="get__item">Виртуальный сервер объемом 15 gb</li>
-                        <li class="get__item">Панель для заведения ящиков</li>
-                        <li class="get__item">Почтовый клиент</li>
-                        <li class="get__item">Программу для рассылки</li>
-                        <li class="get__item">Все необходимые записи: PTR, DKIM, SPF, DMARC, Precedence: bulk</li>
+                        <li class="get__item item__text">Домен в зоне .ru</li>
+                        <li class="get__item item__text">Выделенный ip адрес (Россия)</li>
+                        <li class="get__item item__text">Виртуальный сервер объемом 15 gb</li>
+                        <li class="get__item item__text">Панель для заведения ящиков</li>
+                        <li class="get__item item__text">Почтовый клиент</li>
+                        <li class="get__item item__text">Программу для рассылки</li>
+                        <li class="get__item item__text">Все необходимые записи: PTR, DKIM, SPF, DMARC, Precedence: bulk
+                        </li>
                     </ul>
                 </div>
                 <div class="get__right"><img src="./assets/svg/main/whatGet/macbook.svg" alt="" class="get__img"></div>
@@ -460,7 +478,8 @@
                         программой или подключить любой другой софт для рассылки.
                     </p>
                 </div>
-                <div class="mailing__right"><img src="./assets/img/mailing/sreenshot.png" alt=""></div>
+                <div class="mailing__right"><img class="mailing__img" src="./assets/img/mailing/sreenshot.png" alt="">
+                </div>
             </div>
 
             <div class="programm__footer">
@@ -520,6 +539,7 @@
                             <h4 class="item-faq__title item__title">
                                 Что такое SMTP?
                             </h4>
+                            <!-- <div class="item-faq__slide"></div> -->
                             <p class="item-faq__text item__text">Simple Mail Transfer Protocol представляет собой
                                 протокол, по которому осуществляется передача сообщений в сети. Этот
                                 способ обмена данными был разработан несколько десятков лет назад, но несмотря на свой
@@ -547,13 +567,17 @@
                     <div class="item-faq__body">
                         <div class="item-faq__left">
                             <h4 class="item-faq__title item__title">Что такое SMTP?</h4>
-                            <p class="item-faq__text item__text">
-                                Simple Mail Transfer Protocol представляет собой протокол, по которому осуществляется
-                                передача сообщений в сети. Этот
-                                способ обмена данными был разработан несколько десятков лет назад, но несмотря на свой
-                                возраст, он до сих пор
-                                применяется при организации email-рассылок между почтовыми серверами и клиентами.
-                            </p>
+                            <div class="item-faq__slide">
+                                <p class="item-faq__text item__text">
+                                    Simple Mail Transfer Protocol представляет собой протокол, по которому
+                                    осуществляется
+                                    передача сообщений в сети. Этот
+                                    способ обмена данными был разработан несколько десятков лет назад, но несмотря на
+                                    свой
+                                    возраст, он до сих пор
+                                    применяется при организации email-рассылок между почтовыми серверами и клиентами.
+                                </p>
+                            </div>
                         </div>
                         <div class="item-faq__right">
                             <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
@@ -753,6 +777,95 @@
             </div>
         </div>
     </footer>
+    <div id="popup-main" class="popup popup--hidden">
+        <div class="popup__body">
+            <!--  popup__modal--active -->
+            <div data-modal="form" class="popup__modal popup__item">
+                <form class="popup__modal-wrapper contact-form">
+                    <img data-modal="form" src="./assets/svg/close-btn.svg" alt="" class="popup__modal-close">
+                    <h2 class="contact-form__title item__title">Заголовок в 1 или
+                        2 строки</h2>
+                    <div class="contact-form__item">
+                        <input required placeholder="Ваше имя" type="text" name="name" id="name"
+                            class="contact-form__input">
+
+                    </div>
+                    <div class="contact-form__item">
+                        <input required placeholder="Номер телефона" type="text" name="number" id="phone"
+                            class="contact-form__input">
+
+                    </div>
+
+                    <div class="contact-form__item">
+
+                        <textarea placeholder="Комментарий" name="textarea" id=""
+                            class="contact-form__textarea"></textarea>
+                    </div>
+                    <!-- <input type="submit" value="Отправить" class="contact-form__btn"> -->
+                    <div class="contact-form__item">
+                        <p class="contact-form__text">
+                            Нажимая на кнопку «Отправить», вы даете согласие
+                            на обработку своих <a href="#" class="contact-form__link"> персональных
+                                данных </a>
+                        </p>
+                    </div>
+                    <button data-modal="success" type="submit" class="btn btn__main contact-form__btn">
+                        Отправить
+                    </button>
+                </form>
+            </div>
+            <div data-modal="success" class="popup__modal popup__item">
+
+                <div class="modal-success popup__modal-wrapper">
+                    <img data-modal="success" src="./assets/svg/close-btn.svg" alt="" class="popup__modal-close">
+                    <img src="./assets/svg/success.svg" alt="" srcset="">
+                    <h2 class="modal-success__title item__title">Спасибо за заявку!</h2>
+                    <p class="modal-success__text item__text">Мы свяжемся с вами в ближайшее время.</p>
+                    <button data-modal="close" type="button" class="btn btn__main contact-form__btn">
+                        Закрыть
+                    </button>
+                </div>
+            </div>
+            <div data-modal="reference" class="popup__modal popup__item">
+                <div class="popup__modal-wrapper modal-reference">
+                    <img data-modal="reference" src="./assets/svg/close-btn.svg" alt="" class="popup__modal-close">
+                    <div class="reference-info modal-reference__info">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="12" fill="#1549D0" />
+                            <path d="M13.5 10.5H11.25V18.75H13.5V10.5Z" fill="white" />
+                            <path d="M13.5 5.25H11.25V7.5H13.5V5.25Z" fill="white" />
+                        </svg>
+
+                        <a href="##" class="item__title reference-info__text">Справочная информация</a>
+                    </div>
+                    <p class="modal-reference__text item__text">Lorem Ipsum - это текст-"рыба", часто используемый в
+                        печати
+                        и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
+                        текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую
+                        коллекцию
+                        размеров и форм
+                        шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил
+                        без
+                        заметных изменений
+                        пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили
+                        публикация листов Letraset с
+                        образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа
+                        Aldus PageMaker, в
+                        шаблонах которых используется Lorem Ipsum.</p>
+                    <p class="modal-reference__text item__text">
+                        Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является
+                        стандартной "рыбой" для
+                        текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую
+                        коллекцию
+                        размеров и форм
+                        шрифтов, используя Lorem Ipsum для распечатки образцов.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
     <script src="./js/script.js"></script>
 </body>
 

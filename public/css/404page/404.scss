@@ -1,0 +1,26 @@
+.notFound {
+  overflow: hidden;
+  margin-top: rem(90px);
+
+  &__content {
+    /* margin-top: rem(50px); */
+    height: 100%;
+    position: relative;
+  }
+  &__body {
+    @include flexbox(row, baseline, center);
+  }
+
+  &__title {
+    text-transform: uppercase;
+    margin-top: rem(35px);
+    margin-left: rem(33px);
+  }
+  &__sec-title {
+    max-width: rem(980px);
+  }
+  &__text {
+    margin-top: rem(27px);
+    max-width: rem(608px);
+  }
+}

@@ -52,7 +52,7 @@ class CountTarif {
     decrIndicator = (i) => {
         console.log(this.tariffIndicators)
 
-        if (this.priceIndex > 0) {
+        if (this.priceIndex > 1) {
             this.priceIndex--;
 
             this.togglersTariff.map((item, z) => {
