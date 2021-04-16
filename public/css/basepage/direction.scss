@@ -52,9 +52,24 @@
 
   &__list {
     transition: max-height 0.3s ease-in-out;
-    display: flex;
+    /*     display: flex;
     overflow: hidden;
+    flex-wrap: wrap; */
+    display: flex;
     flex-wrap: wrap;
+    /*     display: grid;
+    grid-template-columns: auto auto 1fr; */
+
+    /*   @include grid(
+    0,
+    rem(80px),
+    rem(30px),
+    1,
+    1fr,
+    auto-fill,
+    rem(380px),
+    rem(380px)
+  ); */
   }
   &__list + &__list {
     margin-top: rem(32.25px);
@@ -63,7 +78,11 @@
     max-height: 1000px;
   }
 
-  &__item + &__item {
+  /*   &__item + &__item {
+ 
+  } */
+
+  &__item--margin {
     margin-left: rem(16px);
     padding-left: rem(18px);
     position: relative;
