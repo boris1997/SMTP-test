@@ -1,7 +1,7 @@
 .advantages {
   background: url("../assets/backgrounds/main/advantages-background.svg")
     no-repeat center center/cover;
-  &__body {
+  &__slider {
     @include flexbox(row, space-between, center);
     position: relative;
   }
@@ -11,35 +11,40 @@
     /*    height: rem(316px); */
     position: relative;
     z-index: 0;
-    &:after {
-      border-radius: rem(12px);
+    background-color: $secColor;
+    border-radius: rem(12px);
+    /*     &:after {
       @include position(absolute, "", 0, 0, 0, 0, auto);
-      background-color: $secColor;
       width: 117%;
       height: 107%;
 
       z-index: -1;
-    }
+    } */
   }
   //   &__item:nth-child(1), &__item:nth-child(3) {
   //     &:after {
   //       left: rem(-70px);
   //     }
   //   }
-  &__item:nth-child(3) {
-    &:after {
-      left: auto;
-      right: 0;
-    }
+  &__item:nth-child(3) .item-advantages {
+    margin-left: rem(105px);
+    margin-bottom: rem(68px);
   }
   &__item-center {
-    /*   @include position(absolute, "", rem(220px), 0, 0, 0, auto); */
+    @include position(absolute, "", rem(220px), 0, 0, 0, auto);
     width: rem(377px);
     height: rem(264px);
-    margin-top: rem(220px);
+    /*     margin-top: rem(220px); */
     z-index: 2;
     border-radius: rem(12px);
     background-color: $accentColor;
+  }
+
+  &__resizer {
+    position: absolute;
+    visibility: hidden;
+    left: -1000px;
+    width: 10px;
   }
 }
 
@@ -49,7 +54,7 @@
   margin-left: rem(40px);
 
   &__text {
-    max-width: rem(584px);
+    max-width: rem(366px);
   }
   &__text-short {
     max-width: rem(312px);

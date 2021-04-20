@@ -8,8 +8,8 @@
   &__body {
     height: auto;
     @include grid(
-      rem(100px),
-      rem(80px),
+      0,
+      rem(32px),
       rem(24px),
       1,
       1fr,
@@ -27,12 +27,27 @@
     border-radius: rem(12px);
     position: relative;
 
+    margin: auto;
+
     //   &__item:nth-child(1), &__item:nth-child(3) {
     //     &:after {
     //       left: rem(-70px);
     //     }
     //   }
   }
+
+  &__base-item:nth-child(1),
+  &__base-item:nth-child(4) {
+    margin-top: rem(-120px);
+    grid-row: span 1/3;
+  }
+  &__base-item:nth-child(2) {
+    grid-area: 2 / 2 / 1 / 2;
+  }
+  &__base-item:nth-child(3) {
+    grid-area: 2 / 2/ 2 / 3;
+  }
+
   &__item-sm {
     margin-top: rem(100px);
   }
@@ -72,8 +87,11 @@
     text-align: center;
   }
 
-  &__title-w {
+  &__title_width_sm {
     max-width: rem(180px);
+  }
+  &__title_width_m {
+    max-width: rem(236px);
   }
 
   &__text {

@@ -10,24 +10,18 @@
 
   &__left {
     margin-bottom: rem(80px);
-    min-width: rem(686px);
+    flex: 1;
   }
   &__list,
   &__list-hidden {
-    @include grid(
-      0,
-      rem(30px),
-      rem(30px),
-      1,
-      1fr,
-      auto-fill,
-      rem(120px),
-      rem(200px)
-    );
+    @include grid(0, rem(18px), rem(30px), 1, 1fr, auto-fill, rem(200px), 1fr);
+  }
+  &__list {
+    margin-bottom: rem(18px);
   }
   &__list-hidden {
-    margin-top: rem(30px);
-    max-height: 0;
+    --max-heightCities: 0;
+    max-height: var(--max-heightCities);
     transition: max-height 0.3s ease-in-out;
     overflow: hidden;
   }
@@ -35,6 +29,7 @@
   &__item {
     margin-left: rem(16px);
     padding-left: rem(18px);
+    margin-top: 0;
     position: relative;
     display: list-item;
     &:before {
@@ -49,21 +44,16 @@
   }
 
   &__accordion {
-    margin-top: rem(52px);
-    @include flexbox(row, baseline, center);
-  }
-  &__link {
-    margin-left: rem(16px);
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  &__icon {
-    cursor: pointer;
-    margin-left: rem(12px);
-    transition: transform 0.2s ease-in-out;
+    margin-top: rem(14px);
   }
 
-  &__link--hide + &__icon {
+  &__link {
+    margin-left: rem(16px);
+  }
+  &__icon {
+    margin-left: rem(12px);
+  }
+  &__accordion-body--hide &__icon {
     transform: rotate(180deg);
   }
 
@@ -71,4 +61,20 @@
     content: url("../../assets/svg/ellipse-list.svg");
 
   } */
+}
+
+.text-accordion {
+  &__body {
+    cursor: pointer;
+    @include flexbox(row, baseline, baseline);
+    display: inline-flex;
+  }
+  &__link {
+    margin-top: 0 !important;
+    text-decoration: underline;
+  }
+
+  &__icon {
+    transition: transform 0.2s ease-in-out;
+  }
 }

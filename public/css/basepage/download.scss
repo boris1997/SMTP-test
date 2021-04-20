@@ -21,8 +21,11 @@
     bottom: auto;
   }
   &__body {
-    @include flexbox(column, center, center);
     position: relative;
+  }
+
+  &__content {
+    @include flexbox(column, center, center);
   }
 
   &__text {

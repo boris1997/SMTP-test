@@ -39,8 +39,7 @@ a:focus,
 a:active {
   outline: none;
 }
-
-nav,
+b nav,
 footer,
 header,
 aside {
@@ -146,8 +145,6 @@ img {
   }
 }
 
-.font {
-}
 
 .section {
   padding-bottom: rem(140px);
@@ -224,7 +221,7 @@ img {
     font-weight: 600;
   }
 
-  @media (max-width: 540px) {
+  /*   @media (max-width: 540px) {
     &__price {
       line-height: rem(20px);
       font-size: rem(16px);
@@ -234,7 +231,7 @@ img {
       line-height: rem(24px);
       font-size: rem(20px);
     }
-  }
+  } */
 }
 
 .order {

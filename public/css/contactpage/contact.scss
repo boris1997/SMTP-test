@@ -14,7 +14,6 @@
     margin-top: rem(70px);
   }
   &__right {
-    flex: 0.5;
     margin-top: rem(-42px);
   }
 
@@ -26,6 +25,11 @@
 
   &__item + &__item {
     margin-top: rem(38px);
+  }
+
+  &__form {
+    width: rem(482px);
+    /*  width: calc(482 / 1200 * 100%); */
   }
 
   /* 

@@ -4,13 +4,13 @@
   &__body {
     /*     margin-top: rem(105px); */
     @include grid(
-      0,
+      rem(70px),
       rem(80px),
       rem(30px),
       1,
       1fr,
       auto-fill,
-      rem(584px),
+      rem(296px),
       rem(584px)
     );
     justify-content: center;

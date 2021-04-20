@@ -51,7 +51,7 @@ a:active {
   outline: none;
 }
 
-nav,
+b nav,
 footer,
 header,
 aside {
@@ -227,6 +227,17 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  /*   @media (max-width: 540px) {
+    &__price {
+      line-height: rem(20px);
+      font-size: rem(16px);
+    }
+
+    &__title {
+      line-height: rem(24px);
+      font-size: rem(20px);
+    }
+  } */
 }
 .item__title {
   line-height: 1.875rem;
@@ -255,16 +266,6 @@ img {
   font-size: 1.25rem;
   line-height: 1.5rem;
   font-weight: 600;
-}
-@media (max-width: 540px) {
-  .item__price {
-    line-height: 1.25rem;
-    font-size: 1rem;
-  }
-  .item__title {
-    line-height: 1.5rem;
-    font-size: 1.25rem;
-  }
 }
 
 .order {

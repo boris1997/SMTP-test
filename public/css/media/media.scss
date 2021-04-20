@@ -10,6 +10,10 @@
     width: 100%;
   }
 
+  .main__email-illustration {
+    margin-top: -20%;
+  }
+
   .main__cards {
     width: 36.3%;
     /* margin-left: calc(76 / 991 * 100%); */
@@ -25,20 +29,140 @@
     right: 11%;
     bottom: 100%;
   }
+
+  .advantages__item,
+  .advantages__item-center {
+    min-width: 40%;
+  }
+
+  .programm__item {
+    min-width: 27%;
+  }
+
+  .advantages__item:nth-child(3),
+  .advantages__item-center {
+    margin-left: rem(32px) !important;
+  }
+
+  .programm__item + .programm__item {
+    margin-left: rem(20px);
+  }
+
+  .advantages__item-center {
+    position: static;
+    margin: 0;
+    height: rem(343px);
+  }
+
   .suit__item-mm,
   .suit__item-sm {
     margin-top: 0;
   }
+  .togglers-tariff__item:nth-child(3) .togglers-tariff__header {
+    margin-bottom: rem(50px);
+  }
+
+  .afterMailing__right {
+    margin-top: rem(58px);
+  }
+  .suit__item {
+    grid-area: auto !important;
+    margin-top: 0 !important;
+  }
+
+  .work__order {
+    margin-top: rem(60px);
+  }
+
+  .cities__list,
+  .cities__list-hidden {
+    grid-template: repeat(1, 1fr) / repeat(auto-fill, minmax(rem(178px), 1fr));
+  }
+
+  .direction__body-wrapper {
+    margin: rem(50px);
+    margin-right: rem(60px);
+  }
+
+  .direction__body-wrapper {
+    margin-bottom: rem(23px);
+  }
+
+  .direction__list + .direction__list {
+    margin-top: rem(27px);
+  }
+
+  .direction__content-overflow {
+    margin-top: 0;
+    margin-bottom: 0;
+    --max-heightDirection: 0;
+    max-height: var(--max-heightDirection);
+    visibility: hidden;
+  }
+
+  .direction__content-overflow--visible,
+  .direction__content {
+    margin-top: 0;
+    margin-bottom: rem(27px);
+  }
+
+  .direction__accordion {
+    margin-bottom: rem(50px);
+    margin-left: rem(50px);
+
+    @include flexbox(row, baseline, center);
+  }
+
+  .service__right {
+    margin-left: rem(42px);
+  }
+
+  .interest-service__slider,
+  .usefull-articles__slider {
+    @include flexbox(row, space-between, center);
+    grid-column-gap: 0;
+  }
+  .interest-service__slider-item + .interest-service__slider-item,
+  .articles-content__slide + .articles-content__slide {
+    margin-left: rem(30px);
+  }
+  .interest-service__slider-item {
+    min-width: 26%;
+  }
+  .articles-content__slide {
+    min-width: 33%;
+  }
+
+  .interest-service__slider-item .services-item__img {
+    width: 100%;
+  }
+
+  //resizer
+
+  .advantages__resizer,
+  .programm__resizer,
+  .interest-service__resizer,
+  .articles-content__resizer {
+    width: 9px;
+  }
 }
 
 @media (max-width: 991px) {
-  .nav {
+  .nav,
+  .navigtion-page,
+  .service__left,
+  .article__right {
     display: none;
   }
   .main__title,
+  .main__title-base,
   .section__title,
   .total-price__amount,
-  .total-price__amount-rub {
+  .total-price__amount-rub,
+  .service__title,
+  .services__title,
+  .articles__title,
+  .article__title {
     font-size: rem(40px);
     line-height: rem(50px);
   }
@@ -49,21 +173,82 @@
     font-size: rem(18px);
   }
 
+  .main__base-illustration {
+    margin-bottom: rem(462px);
+  }
+
+  .advantages__item,
+  .advantages__item-center {
+    min-width: 50%;
+    height: rem(316px);
+  }
+
+  .advantages__item:nth-child(3),
+  .advantages__item-center {
+    margin-left: rem(27px) !important;
+  }
+
+  .programm__item {
+    min-width: 30%;
+  }
+
+  .programm__item + .programm__item {
+    margin-left: rem(16px);
+  }
+
+  .programm__item {
+    font-size: rem(17px);
+  }
+
+  .download__body {
+    margin-bottom: rem(149px);
+  }
+
+  .download__use {
+    left: 0;
+    right: 0;
+    bottom: rem(-435px);
+  }
+
+  .main__downloads {
+    right: rem(40px);
+    left: auto;
+    top: rem(961px);
+  }
+
+  .main__updates {
+    left: rem(20px);
+    right: auto;
+    top: rem(538px);
+  }
+
   .section__header {
     margin-top: rem(110px);
     margin-bottom: rem(55px);
   }
 
-  .main {
+  .service__header,
+  .services__body,
+  .articles__body,
+  .contact__left {
+    margin-top: rem(60px);
+  }
+
+  .main,
+  .contact,
+  .service,
+  .services,
+  .articles,
+  .article {
     overflow: hidden;
-    margin-top: min(rem(46px));
     margin-top: calc(124 / 991 * 100%);
   }
 
   .section {
     padding-bottom: rem(110px);
   }
-  .get__left {
+  .get__left,
+  .cities__left {
     margin-bottom: 0;
   }
 
@@ -92,6 +277,7 @@
 
   .mailing__img {
     width: 100%;
+    margin-top: 0;
   }
   .order__text,
   .switch-radio__label,
@@ -115,8 +301,13 @@
     margin-left: calc(76 / 991 * 100%);
   }
 
-  .card-tariff__footer {
+  .card-tariff__footer,
+  .faq__item {
     margin-top: rem(30px);
+  }
+
+  .item-faq__underline {
+    margin-top: rem(17px);
   }
 
   .afterMailing__body,
@@ -124,8 +315,81 @@
     flex-direction: column;
   }
 
-  .get__img {
+  .get__img,
+  .parametres__img {
     width: 100%;
+  }
+  .cities__list,
+  .cities__list-hidden {
+    @include grid(0, rem(18px), rem(30px), 1, 1fr, auto-fill, rem(150px), 1fr);
+  }
+
+  .direction__body-wrapper {
+    margin: rem(40px);
+    margin-right: rem(50px);
+  }
+
+  .direction__body-wrapper {
+    margin-bottom: rem(19px);
+  }
+
+  .direction__list + .direction__list {
+    margin-top: rem(21px);
+  }
+
+  .direction__content-overflow--visible,
+  .direction__content {
+    margin-top: 0;
+    margin-bottom: rem(21px);
+  }
+
+  .direction__accordion {
+    margin-bottom: rem(40px);
+    margin-left: rem(40px);
+  }
+
+  .service__right {
+    margin-left: rem(33px);
+  }
+
+  .contact__body {
+    flex-direction: column;
+  }
+
+  .item-datas__title {
+    margin-top: 0 !important;
+    margin-bottom: rem(12px);
+  }
+  .article-data {
+    margin: 0;
+  }
+  .article-data__text {
+    max-width: initial;
+  }
+
+  //resizer
+
+  .advantages__resizer,
+  .programm__resizer,
+  .interest-service__resizer,
+  .articles-content__resizer {
+    width: 8px;
+  }
+
+  .filter__list {
+    min-width: rem(1116px);
+  }
+
+  .interest-service__slider-item + .interest-service__slider-item,
+  .articles-content__slide + .articles-content__slide {
+    margin-left: rem(25px);
+  }
+  .interest-service__slider-item {
+    min-width: 36%;
+  }
+
+  .articles-content__slide {
+    min-width: 40%;
   }
 }
 
@@ -136,7 +400,12 @@
 /* Landscape phones and portrait tablets */
 @media (max-width: 767px) {
   .main__title,
-  .section__title {
+  .main__title-base,
+  .section__title,
+  .service__title,
+  .services__title,
+  .articles__title,
+  .article__title {
     font-size: rem(30px);
     line-height: rem(40px);
   }
@@ -145,6 +414,34 @@
   .main__text-base {
     line-height: rem(25px);
     font-size: rem(16px);
+  }
+  .service__header,
+  .services__body,
+  .articles__body,
+  .contact__left {
+    margin-top: rem(50px);
+  }
+
+  .main__downloads {
+    top: calc(961 / 1251 * 100%);
+  }
+
+  .main__updates {
+    top: calc(488 / 1251 * 100%);
+  }
+
+  .advantages__item,
+  .advantages__item-center {
+    min-width: 60%;
+  }
+
+  .programm__item {
+    min-width: 35%;
+  }
+
+  .advantages__item:nth-child(3),
+  .advantages__item-center {
+    margin-left: rem(26px) !important;
   }
 
   .section__header {
@@ -163,6 +460,10 @@
   .item__title {
     font-size: rem(19px);
   }
+
+  .item__title-medium {
+    font-size: rem(16px);
+  }
   .item__text {
     font-size: rem(14px);
     line-height: rem(22px);
@@ -178,8 +479,61 @@
   .item__text-medium {
     font-size: rem(13px);
   }
-  .get__img {
+  .get__img,
+  .cities__right {
     display: none;
+  }
+
+  .faq__item {
+    margin-top: rem(25px);
+  }
+
+  .item-faq__underline {
+    margin-top: rem(12px);
+  }
+  .faq-btn {
+    width: rem(24px);
+  }
+
+  .direction__body-wrapper {
+    margin: rem(30px);
+    margin-right: rem(40px);
+  }
+
+  .direction__body-wrapper {
+    margin-bottom: rem(15px);
+  }
+
+  .direction__list + .direction__list {
+    margin-top: rem(14px);
+  }
+
+  .direction__content-overflow--visible,
+  .direction__content {
+    margin-top: 0;
+    margin-bottom: rem(15px);
+  }
+
+  .direction__accordion {
+    margin-bottom: rem(30px);
+    margin-left: rem(30px);
+  }
+  .service__right {
+    margin-left: rem(25px);
+  }
+  .download__body {
+    margin-bottom: rem(179px);
+  }
+
+  //resizer
+
+  .advantages__resizer,
+  .programm__resizer {
+    width: 7px;
+  }
+
+  .filter__list {
+    min-width: rem(972px);
   }
 }
 
@@ -197,29 +551,113 @@
     left: 0;
     right: 0; */
   }
+  .main__email-illustration {
+    margin-left: -17%;
+    width: calc(643 / 480 * 100%);
+  }
+
+  .service__header,
+  .services__body,
+  .articles__body,
+  .articlee__body,
+  .contact__left {
+    margin-top: rem(40px);
+  }
 
   .section {
     padding-bottom: rem(50px);
   }
-  .main {
+  .main,
+  .contact,
+  .service,
+  .services,
+  .articles,
+  .article {
     margin-top: rem(46px);
   }
+
+  .main__plain-left {
+    top: -18%;
+    width: 28%;
+    left: -3%;
+  }
+
   .main__title,
-  .section__title {
+  .section__title,
+  .main__title-base,
+  .service__title,
+  .services__title,
+  .articles__title,
+  .article__title {
     font-size: rem(22px);
     line-height: rem(32px);
   }
 
+  .main__title,
+  .main__text,
+  .main__title-base,
+  .main__text-base,
+  .section__title,
+  .getInformation__text,
+  .download__text,
+  .download__info {
+    text-align: left;
+  }
   .main__text,
   .main__text-base {
     line-height: rem(24px);
     font-size: rem(15px);
   }
+
+  .main__cards {
+    width: (280 / 480 * 100%);
+  }
+
+  .advantages__item,
+  .advantages__item-center,
+  .programm__item {
+    min-width: 94%;
+  }
+
+  .item-advantages {
+    margin-left: rem(20px);
+    margin-top: rem(8px);
+  }
+
+  .advantages__item:nth-child(3),
+  .advantages__item-center,
+  .programm__item + .programm__item {
+    margin-left: rem(12px) !important;
+  }
+
+  .item-difference {
+    display: inline-table;
+  }
   .item__title {
     font-size: rem(18px);
   }
+
+  .item-faq__title,
+  .item-work__title,
+  .item-programm__title {
+    font-size: rem(16px !important);
+  }
+
+  .item__title-medium {
+    font-size: rem(13px);
+  }
   .item__text {
     font-size: rem(13px);
+  }
+
+  .community__item {
+    margin: auto;
+    width: rem(296px);
+    height: rem(180px);
+  }
+
+  .item-community__text {
+    width: rem(275px);
   }
 
   .total-price__amount,
@@ -227,7 +665,6 @@
     font-size: rem(34px);
     line-height: rem(32px);
   }
-
   .tariff__card {
     padding: rem(22px);
     padding-bottom: rem(50px);
@@ -235,6 +672,10 @@
   .card-tariff__text {
     font-size: rem(12px);
     line-height: rem(15px);
+  }
+
+  .tariffsec__card + .tariffsec__card {
+    margin-left: rem(20px);
   }
   .btn {
     width: 100%;
@@ -247,6 +688,121 @@
     font-size: rem(14px);
     height: rem(50px);
   }
+  .faq__item {
+    margin-top: rem(20px);
+  }
+
+  .item-faq__underline {
+    margin-top: rem(7px);
+  }
+
+  .cities__list,
+  .cities__list-hidden {
+    grid-column-gap: rem(16px);
+    grid-template: repeat(1, 1fr) / repeat(auto-fill, minmax(rem(140px), 1fr));
+  }
+
+  .cities__item {
+    margin-left: rem(5px);
+    padding-left: rem(16px);
+  }
+
+  .tariffsec__slider {
+    @include flexbox(row, space-between, center);
+    grid-column-gap: 0;
+  }
+
+  .tariffsec__card {
+    min-width: 100%;
+  }
+
+  .card-tariffsec__body,
+  .card-tariffsec__header {
+    padding: 0 rem(20px);
+    margin-top: (30px);
+    padding-bottom: rem(40px);
+  }
+
+  .card-tariffsec__header-center,
+  .card-tariffsec__header {
+    padding: rem(20px);
+    margin-top: 0;
+  }
+
+  .tariffsec__togglers {
+    @include flexbox(row, center, center);
+  }
+
+  .suit__item {
+    width: rem(298px);
+    height: rem(230px);
+  }
+
+  .afterMailing__img {
+    width: 75%;
+    margin-top: rem(30px);
+  }
+
+  .afterMailing__right {
+    margin-top: rem(46px);
+  }
+
+  .download__body {
+    margin-bottom: rem(209px);
+  }
+
+  .direction__body-wrapper {
+    margin: rem(19px);
+    margin-right: 0;
+  }
+
+  .direction__body-wrapper {
+    margin-left: rem(13px);
+  }
+
+  .direction__list + .direction__list {
+    margin-top: 0;
+  }
+
+  .direction__content-overflow--visible,
+  .direction__content {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .direction__accordion {
+    margin-bottom: rem(19px);
+    margin-left: rem(19px);
+  }
+  .service__right {
+    margin-left: 0;
+  }
+
+  /*   .direction__content-overflow--visible {
+  } */
+
+  //resizer
+
+  .advantages__resizer,
+  .programm__resizer,
+  .tariffsec__resizer,
+  .interest-service__resizer,
+  .articles-content__resizer {
+    width: 5px;
+  }
+
+  .filter__list {
+    min-width: rem(729px);
+  }
+
+  .services-item__img {
+    width: 100%;
+  }
+
+  .interest-service__slider-item,
+  .articles-content__slide {
+    min-width: 100%;
+  }
 }
 
 // понадобности дописую промежуточные разрешения, если вдруг по дизайну что то падает на 650px, тогда дописую: @media
@@ -254,24 +810,50 @@
   .section__sec-title {
     display: none;
   }
+
+  .advantages__item,
+  .advantages__item-center {
+    min-width: 75%;
+  }
+
+  .programm__item {
+    min-width: 44%;
+  }
+
+  .advantages__item:nth-child(3),
+  .advantages__item-center {
+    margin-left: rem(19px) !important;
+  }
+
   /*   .card-tariff__togglers {
     justify-content: space-between;
   } */
   .card-tariff__header,
   .card-tariff__togglers,
   .card-tariff__footer,
-  .programm__body {
+  .programm__body,
+  .parametres__body,
+  .service-data__header {
     flex-direction: column;
+  }
+  .parametres__right {
+    margin: rem(81px) auto;
+    margin-bottom: 0;
   }
 
   .togglers-tariff__item:nth-child(2),
   .togglers-tariff__item:nth-child(3),
-  .footer-tariff__info {
-    margin-left: 0;
+  .footer-tariff__info,
+  .service-data__item,
+  .mailing__right,
+  .service-data__btn,
+  .service-data__item,
+  .service__right {
+    margin-left: 0 !important ;
   }
 
-  .mailing__right {
-    margin-left: 0;
+  .togglers-tariff__item:nth-child(3) .togglers-tariff__header {
+    margin-bottom: 0;
   }
 
   .total-price__text {
@@ -289,7 +871,12 @@
   .togglers-tariff__btn {
     margin-top: rem(24px);
   }
-  .switch-radio__item + .switch-radio__item {
+
+  .service-data__item + .service-data__item {
+    margin-top: rem(20px);
+  }
+  .switch-radio__item + .switch-radio__item,
+  .service-data__text {
     margin-top: rem(16px);
   }
 
@@ -302,5 +889,37 @@
 
   .mailing__right {
     order: -1;
+  }
+
+  .service-data {
+    position: relative;
+  }
+
+  .service-data__btn {
+    position: absolute;
+    bottom: rem(-110px);
+    width: 100%;
+  }
+
+  .item-datas__text {
+    margin-bottom: rem(18px);
+  }
+
+  .service__directions {
+    margin-top: rem(117px);
+  }
+
+  //resizer
+
+  .advantages__resizer,
+  .programm__resizer,
+  .interest-service__resizer,
+  .articles-content__resizer {
+    width: 6px;
+  }
+
+  .interest-service__slider-item,
+  .articles-content__slide {
+    min-width: 47%;
   }
 }

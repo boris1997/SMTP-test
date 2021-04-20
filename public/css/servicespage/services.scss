@@ -113,17 +113,17 @@
 }
 
 .services-item {
-  &__header {
-    height: rem(276px);
-    /*   position: relative; */
+  // &__header {
+  //   height: rem(276px);
+  //   /*   position: relative; */
+  // }
+  &__img {
+    width: rem(276px);
   }
-  /*  &__img {
-    @include position(absolute, "", 0, 0, rem(-30px), 0, auto);
-  } */
 
   &__btn {
-    width: rem(276px);
-    margin-left: rem(30px);
+    margin-top: rem(32px);
+    width: 100%;
   }
 
   /* &__link--active {

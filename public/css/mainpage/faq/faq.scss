@@ -13,12 +13,14 @@
 
   &__title {
     margin-top: 0;
+    margin-right: rem(10px);
   }
 
   &__text {
     max-width: rem(955px);
     overflow: hidden;
-    max-height: 0;
+    --max-heightFaq: 0;
+    max-height: var(--max-heightFaq);
     height: auto;
     transition: all 0.5s ease-in-out;
     // cubic-bezier(0.82, 1.24, 0.16,-0.27)

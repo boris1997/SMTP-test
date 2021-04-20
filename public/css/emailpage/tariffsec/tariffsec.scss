@@ -4,7 +4,10 @@
   &__title {
     max-width: rem(395px);
   }
-  &__body {
+  /*   &__body {
+  } */
+
+  &__slider {
     @include grid(
       0,
       rem(80px),
@@ -21,7 +24,10 @@
     background-color: $secColor;
 
     border-radius: rem(12px);
-    margin-top: rem(40px);
+  }
+
+  &__togglers {
+    display: none;
   }
 }
 

@@ -76,7 +76,7 @@ class Modal {
 
     addNoScrollStyles = (element) => {
         element.style.paddingRight = window.innerWidth - this.body.offsetWidth + 'px';
-        element.style.width = '100vw';
+        element.style.width = '100vw'; // ? 
     }
 
     removeNoScrollStyles = (element) => {

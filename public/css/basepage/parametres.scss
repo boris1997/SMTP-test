@@ -21,16 +21,10 @@
     /*     margin-bottom: rem(80px); */
   }
   &__list {
-    @include grid(
-      rem(32px),
-      rem(32px),
-      rem(116px),
-      1,
-      1fr,
-      auto-fill,
-      rem(200px),
-      rem(200px)
-    );
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: rem(32px);
+    grid-column-gap: rem(32px);
   }
 
   &__img {
@@ -43,6 +37,7 @@
   }
   &__item {
     margin-left: rem(16px);
+    margin-top: rem(18px);
     padding-left: rem(18px);
   }
 

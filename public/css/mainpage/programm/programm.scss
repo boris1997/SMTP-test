@@ -5,8 +5,7 @@
   background: url("../assets/backgrounds/main/programm-background.svg")
     no-repeat center center/cover;
   &__body {
-    @include flexbox(row, space-between, center);
-    margin-top: rem(-31px);
+    @include flexbox(row, space-between, flex-start);
   }
 
   &__item {
@@ -14,6 +13,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     height: rem(138px);
+    width: rem(277px);
   }
   /* 
   &__footer {
@@ -29,8 +29,8 @@
     );
   }
  */
-  &__order {
-    @include grid(
+  &__slider {
+    /*     @include grid(
       rem(62px),
       rem(80px),
       rem(30px),
@@ -39,7 +39,16 @@
       auto-fill,
       rem(277px),
       rem(277px)
-    );
+    ); */
+    margin-top: rem(62px);
+
+    @include flexbox(row, space-between, center);
+    position: relative;
+  }
+  &__resizer {
+    position: absolute;
+    visibility: hidden;
+    width: 10px;
   }
 }
 
@@ -57,6 +66,9 @@
 
 .mailing {
   &__text {
-    max-width: rem(562px);
+    max-width: rem(542px);
+  }
+  &__img {
+    margin-top: rem(-30px);
   }
 }
