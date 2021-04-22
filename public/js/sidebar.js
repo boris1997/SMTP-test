@@ -14,7 +14,10 @@ class Scroll {
 
         console.log('ok')
         window.onresize = () => {
-            (window.innerWidth > 1024 && this.sidebar.classList.contains('page__sidebar--active')) && this.removeSidebar()
+            if (window.innerWidth > 1024 && this.sidebar.classList.contains('page__sidebar--active')) {
+                this.sidebar.classList.contains('sidebar--full-page') && this.page.classList.toggle('page_screen_full')
+                this.removeSidebar()
+            }
 
         }
         this.sidebarOverlay.onclick = () => this.removeSidebar();

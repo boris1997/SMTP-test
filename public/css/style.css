@@ -168,6 +168,10 @@ img {
   height: 100vh !important;
 }
 
+.page_sec_color {
+  background: #192942;
+}
+
 .navigtion-page {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -211,12 +215,26 @@ img {
   margin: auto;
   -webkit-text-stroke: 1px #203656;
   color: transparent;
+  height: 100% !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   letter-spacing: 0.02em;
   font-size: 5rem;
   font-weight: 700;
   z-index: -1;
   height: 3.625rem;
   line-height: 3.625rem;
+}
+.section__sec-title:hover {
+  -webkit-background-clip: text !important;
+  -webkit-text-stroke: 1px transparent;
+  background: linear-gradient(98.72deg, rgba(21, 73, 208, 0.26) 5.11%, #17cdcd 113.04%);
+  /* color: #0f2441; */
+  color: #0f2441;
 }
 .section__title {
   z-index: 1;
@@ -233,6 +251,10 @@ img {
   font-family: "Nunito";
   font-size: 1.25rem;
   font-weight: 600;
+}
+
+.page_screen_full + .section--sec {
+  padding-top: 1.25rem;
 }
 
 .item {

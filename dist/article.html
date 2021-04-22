@@ -12,12 +12,14 @@
 </head>
 
 <body>
-    <div class="page">
+    <div class="page page_sec_color">
         <div class="container section  page__wrapper">
             <header class="header">
                 <div class="header__content">
-                    <div class="logo">
-                        <img src="./assets/svg/SMTP logo.svg" alt="лого" class="logo__img">
+                    <div class="header__logo logo">
+                        <a href="index.html" class="logo__link">
+                            <img src="./assets/svg/SMTP logo.svg" alt="лого" class="logo__img">
+                        </a>
                     </div>
                     <nav class="nav">
                         <ul class="nav__list">
@@ -28,8 +30,56 @@
                             <li class="nav__items"><a href="articles.html" class="nav__link">Статьи</a></li>
                         </ul>
                     </nav>
-                    <div class="header__articles">
+                    <div class="header__contacts">
                         <a href="contact.html" class="header__btn btn__link btn btn__main">Контакты</a>
+                    </div>
+                    <div class="cross hamburger-menu header__hamburger-menu">
+                        <svg class="hamburger-menu__content" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <!--  <circle cx="50" cy="50" r="30" /> -->
+                            <path class="hamburger-menu__line hamburger-menu__line--1"
+                                d="M0 40h62c13 0 6 28-4 18L35 35" />
+                            <path class="hamburger-menu__line hamburger-menu__line--2" d="M0 50h70" />
+                            <path class="hamburger-menu__line hamburger-menu__line--3"
+                                d="M0 60h62c13 0 6-28-4-18L35 65" />
+                        </svg>
+                    </div>
+                    <div class="page__sidebar sidebar sidebar--full-page">
+                        <div class="sidebar__body">
+                            <div class="sidebar__content">
+                                <div class="sidebar__menu mobile-menu">
+                                    <ul class="mobile-menu__wrapper mobile-menu__active">
+                                        <li class="mobile-menu__item mobile-menu__item--active">
+                                            <a class="mobile-menu__link item__text-medium mobile-menu__toggler"
+                                                href="base.html" class="menu__link">База организаций</a>
+                                        </li>
+                                        <li class="mobile-menu__item mobile-menu__item--active">
+                                            <a class="mobile-menu__link item__text-medium mobile-menu__toggler"
+                                                href="mail.html">E-mail
+                                                рассылка</a>
+
+                                        </li>
+                                        <li class="mobile-menu__item mobile-menu__item--active">
+                                            <a class="mobile-menu__link item__text-medium mobile-menu__toggler"
+                                                href="services.html">Все
+                                                услуги</a>
+
+                                        </li>
+                                        <li class="mobile-menu__item mobile-menu__item--active">
+                                            <a class="mobile-menu__link item__text-medium"
+                                                href="articles.html">Статьи</a>
+                                        </li>
+                                        <li class="mobile-menu__item mobile-menu__item--active"><a
+                                                class="mobile-menu__link item__text-medium "
+                                                href="contact.html">Контакты</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="overlay">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -44,155 +94,157 @@
                     </li>
                 </ul>
             </div>
-            <section class="article">
-                <h1 class="article__title main__item">Заголовок статьи</h1>
-                <div class="article__header">
-                    <div class="article__main">
-                        <div class="article__left">
-                            <div class="article-data">
 
-                                <p class="article-data__text item__text">Lorem Ipsum - это текст-"рыба", часто
-                                    используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
-                                    текстов на латинице с начала XVI века. В то время некий безымянный печатник создал
-                                    большую коллекцию разме ро в и форм
-                                    шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только
-                                    успешно пережил без заметных изменений
-                                    пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время
-                                    послужили публикация листов Letraset с
-                                    образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной
-                                    вёрстки типа Aldus PageMaker, в
-                                    шаблонах которых используется Lorem Ipsum.</p>
-                                <p class="article-data__text item__text">Lorem Ipsum - это текст-"рыба", часто
-                                    используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
-                                    текстов на латинице с начала XVI века. В то время некий безымянный печатник создал
-                                    большую коллекцию размеров и форм
-                                    шрифтов, используя Lorem Ipsum для распечатки образцов.</p>
-                            </div>
-                        </div>
-                        <div class="article__right">
-                            <img src="./assets/svg/article/img-3.png" alt="статья" class="article__img">
-                        </div>
-                    </div>
-                    <p class="article-data__text-overflow item__text">Lorem Ipsum - это текст-"рыба", часто используемый
-                        в печати
-                        и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
-                        текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую
-                        коллекцию размеров и форм
-                        шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил
-                        без заметных изменений
-                        пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили
-                        публикация листов Letraset с
-                        образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа
-                        Aldus PageMaker, в
-                        шаблонах которых используется Lorem Ipsum.</p>
-                </div>
-
-
-                <div class="article__articles usefull-articles">
-                    <h4 class="usefull-articles__title item__title">Вам также может быть интересно</h4>
-                    <div class="usefull-articles__body">
-                        <div class="articles-content slider slider--smooth usefull-articles__slider">
-                            <div class="articles-content__artice  articles-content__slide usefull-article">
-                                <div class="usefull-article__header">
-                                    <img class="usefull-article__img" src="./assets/svg/article/img-1.png" alt="услуга"
-                                        srcset="">
-
-                                    <div class="usefull-article__date date-article">
-                                        <img src="./assets/svg/article/time-icon.svg" alt="время"
-                                            class="date-article__time-icon">
-                                        <p class="date-article__text">08.04.2020</p>
-                                    </div>
-
-                                </div>
-                                <div class="usefull-article__body">
-                                    <h4 class="usefull-article__title item__title-medium">Заголовок статьи
-                                        в 1 или 2 строки</h4>
-                                    <a href="" class="usefull-article__link">Читать статью</a>
-                                </div>
-                            </div>
-                            <div class="articles-content__artice articles-content__slide usefull-article">
-                                <div class="usefull-article__header">
-                                    <img class="usefull-article__img" src="./assets/svg/article/img-2.png" alt="услуга"
-                                        srcset="">
-                                    <div class="usefull-article__date date-article">
-
-                                        <img src="./assets/svg/article/time-icon.svg" alt="время"
-                                            class="date-article__time-icon">
-                                        <p class="date-article__text">08.04.2020</p>
-                                    </div>
-                                </div>
-                                <div class="usefull-article__body">
-                                    <h4 class="usefull-article__title item__title-medium">Заголовок статьи
-                                        в 1 или 2 строки</h4>
-                                    <a href="" class="usefull-article__link">Читать статью</a>
-                                </div>
-                            </div>
-                            <div class="articles-content__artice articles-content__slide usefull-article">
-                                <div class="usefull-article__header">
-                                    <img class="usefull-article__img" src="./assets/svg/article/img-3.png" alt="услуга"
-                                        srcset="">
-
-                                    <div class="usefull-article__date date-article">
-                                        <img src="./assets/svg/article/time-icon.svg" alt="время"
-                                            class="date-article__time-icon">
-                                        <p class="date-article__text">08.04.2020</p>
-                                    </div>
-                                </div>
-                                <div class="usefull-article__body">
-                                    <h4 class="usefull-article__title  item__title-medium">Заголовок статьи
-                                        в 1 или 2 строки</h4>
-                                    <a href="" class="usefull-article__link">Читать статью</a>
-                                </div>
-                            </div>
-                            <div class="articles-content__resizer"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="article__interest interest-service">
-                    <h4 class="interest-service__title item__title">Лучшие предложения для вас</h4>
-                    <div class="interest-service__body">
-                        <div class="content-services interest-service__slider slider slider--smooth">
-                            <div class="content-services__item interest-service__slider-item services-item">
-                                <div class="services-item__header">
-                                    <img class="services-item__img" src="./assets/svg/services/illustration-1.png"
-                                        alt="услуга" srcset="">
-                                </div>
-
-                            </div>
-                            <div class="content-services__item interest-service__slider-item services-item">
-                                <div class="services-item__header">
-                                    <img class="services-item__img" src="./assets/svg/services/illustration-2.png"
-                                        alt="услуга" srcset="">
-
-                                </div>
-
-                            </div>
-                            <div class="content-services__item interest-service__slider-item services-item">
-                                <div class="services-item__header">
-
-                                    <img class="services-item__img" src="./assets/svg/services/illustration-1.png"
-                                        alt="услуга" srcset="">
-
-                                </div>
-
-                            </div>
-                            <div class="content-services__item interest-service__slider-item services-item">
-                                <div class="services-item__header">
-
-                                    <img class="services-item__img" src="./assets/svg/services/illustration-2.png"
-                                        alt="услуга" srcset="">
-                                </div>
-
-                            </div>
-                            <div class="interest-service__resizer"></div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
         </div>
     </div>
+    <section class="article section section--sec">
+        <div class="container section">
+            <h1 class="article__title main__item">Заголовок статьи</h1>
+            <div class="article__header">
+                <div class="article__main">
+                    <div class="article__left">
+                        <div class="article-data">
 
+                            <p class="article-data__text item__text">Lorem Ipsum - это текст-"рыба", часто
+                                используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
+                                текстов на латинице с начала XVI века. В то время некий безымянный печатник создал
+                                большую коллекцию разме ро в и форм
+                                шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только
+                                успешно пережил без заметных изменений
+                                пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время
+                                послужили публикация листов Letraset с
+                                образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной
+                                вёрстки типа Aldus PageMaker, в
+                                шаблонах которых используется Lorem Ipsum.</p>
+                            <p class="article-data__text item__text">Lorem Ipsum - это текст-"рыба", часто
+                                используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
+                                текстов на латинице с начала XVI века. В то время некий безымянный печатник создал
+                                большую коллекцию размеров и форм
+                                шрифтов, используя Lorem Ipsum для распечатки образцов.</p>
+                        </div>
+                    </div>
+                    <div class="article__right">
+                        <img src="./assets/svg/article/img-3.png" alt="статья" class="article__img">
+                    </div>
+                </div>
+                <p class="article-data__text-overflow item__text">Lorem Ipsum - это текст-"рыба", часто используемый
+                    в печати
+                    и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
+                    текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую
+                    коллекцию размеров и форм
+                    шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил
+                    без заметных изменений
+                    пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили
+                    публикация листов Letraset с
+                    образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа
+                    Aldus PageMaker, в
+                    шаблонах которых используется Lorem Ipsum.</p>
+            </div>
+
+
+            <div class="article__articles usefull-articles">
+                <h4 class="usefull-articles__title item__title">Вам также может быть интересно</h4>
+                <div class="usefull-articles__body">
+                    <div class="articles-content slider slider--smooth usefull-articles__slider">
+                        <div class="articles-content__artice  articles-content__slide usefull-article">
+                            <div class="usefull-article__header">
+                                <img class="usefull-article__img" src="./assets/svg/article/img-1.png" alt="услуга"
+                                    srcset="">
+
+                                <div class="usefull-article__date date-article">
+                                    <img src="./assets/svg/article/time-icon.svg" alt="время"
+                                        class="date-article__time-icon">
+                                    <p class="date-article__text">08.04.2020</p>
+                                </div>
+
+                            </div>
+                            <div class="usefull-article__body">
+                                <h4 class="usefull-article__title item__title-medium">Заголовок статьи
+                                    в 1 или 2 строки</h4>
+                                <a href="" class="usefull-article__link">Читать статью</a>
+                            </div>
+                        </div>
+                        <div class="articles-content__artice articles-content__slide usefull-article">
+                            <div class="usefull-article__header">
+                                <img class="usefull-article__img" src="./assets/svg/article/img-2.png" alt="услуга"
+                                    srcset="">
+                                <div class="usefull-article__date date-article">
+
+                                    <img src="./assets/svg/article/time-icon.svg" alt="время"
+                                        class="date-article__time-icon">
+                                    <p class="date-article__text">08.04.2020</p>
+                                </div>
+                            </div>
+                            <div class="usefull-article__body">
+                                <h4 class="usefull-article__title item__title-medium">Заголовок статьи
+                                    в 1 или 2 строки</h4>
+                                <a href="" class="usefull-article__link">Читать статью</a>
+                            </div>
+                        </div>
+                        <div class="articles-content__artice articles-content__slide usefull-article">
+                            <div class="usefull-article__header">
+                                <img class="usefull-article__img" src="./assets/svg/article/img-3.png" alt="услуга"
+                                    srcset="">
+
+                                <div class="usefull-article__date date-article">
+                                    <img src="./assets/svg/article/time-icon.svg" alt="время"
+                                        class="date-article__time-icon">
+                                    <p class="date-article__text">08.04.2020</p>
+                                </div>
+                            </div>
+                            <div class="usefull-article__body">
+                                <h4 class="usefull-article__title  item__title-medium">Заголовок статьи
+                                    в 1 или 2 строки</h4>
+                                <a href="" class="usefull-article__link">Читать статью</a>
+                            </div>
+                        </div>
+                        <div class="articles-content__resizer"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="article__interest interest-service">
+                <h4 class="interest-service__title item__title">Лучшие предложения для вас</h4>
+                <div class="interest-service__body">
+                    <div class="content-services interest-service__slider slider slider--smooth">
+                        <div class="content-services__item interest-service__slider-item services-item">
+                            <div class="services-item__header">
+                                <img class="services-item__img" src="./assets/svg/services/illustration-1.png"
+                                    alt="услуга" srcset="">
+                            </div>
+
+                        </div>
+                        <div class="content-services__item interest-service__slider-item services-item">
+                            <div class="services-item__header">
+                                <img class="services-item__img" src="./assets/svg/services/illustration-2.png"
+                                    alt="услуга" srcset="">
+
+                            </div>
+
+                        </div>
+                        <div class="content-services__item interest-service__slider-item services-item">
+                            <div class="services-item__header">
+
+                                <img class="services-item__img" src="./assets/svg/services/illustration-1.png"
+                                    alt="услуга" srcset="">
+
+                            </div>
+
+                        </div>
+                        <div class="content-services__item interest-service__slider-item services-item">
+                            <div class="services-item__header">
+
+                                <img class="services-item__img" src="./assets/svg/services/illustration-2.png"
+                                    alt="услуга" srcset="">
+                            </div>
+
+                        </div>
+                        <div class="interest-service__resizer"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <footer class="footer">
@@ -201,15 +253,23 @@
                 <div class="footer__content">
                     <div class="footer__logo logo">
                         <img src="./assets/svg/SMTP logo.svg" alt="лого" class="logo__img">
-                        <p class="logo__title">Сервис e-mail рассылок</p>
+                        <p class="logo__title item__text-medium">Сервис e-mail рассылок</p>
                     </div>
                     <nav class="footer__nav nav">
                         <ul class="nav__list footer__list">
-                            <li class="nav__items"><a href="base.html" class="nav__link">База организаций</a></li>
-                            <li class="nav__items"><a href="mail.html" class="nav__link">E-mail рассылка</a></li>
-                            <li class="nav__items"><a href="services.html" class="nav__link">Все услуги</a></li>
-                            <li class="nav__items"><a href="articles.html" class="nav__link">Статьи</a></li>
-                            <li class="nav__items"><a href="service.html" class="nav__link">Контакты</a></li>
+                            <li class="nav__items footer__item"><a href="base.html" class="nav__link item__text">База
+                                    организаций</a></li>
+                            <li class="nav__items footer__item"><a href="mail.html" class="nav__link item__text">E-mail
+                                    рассылка</a>
+                            </li>
+                            <li class="nav__items footer__item"><a href="services.html" class="nav__link item__text">Все
+                                    услуги</a>
+                            </li>
+                            <li class="nav__items footer__item"><a href="articles.html"
+                                    class="nav__link item__text">Статьи</a></li>
+                            <li class="nav__items footer__item"><a href="contact.html"
+                                    class="nav__link item__text">Контакты</a>
+                            </li>
                         </ul>
                     </nav>
 

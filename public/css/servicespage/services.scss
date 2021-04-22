@@ -1,11 +1,9 @@
 .services {
-  margin-top: rem(124px);
   &__title {
     font-size: rem(50px);
     font-weight: 700;
   }
-  background: url("../assets/backgrounds/main/programm-background.svg")
-    no-repeat center center/cover;
+  background: #192942;
   &__header {
     margin-top: rem(50px);
   }

@@ -23,6 +23,10 @@
   &__item {
     height: rem(246px);
     width: 100%;
+    /*    transition: background 0.3s ease-in-out;
+    &:hover .item-suit {
+      background-color: #0b213f;
+    } */
     /*    height: rem(316px); */
     border-radius: rem(12px);
     position: relative;
@@ -69,7 +73,7 @@
 
   @include position(absolute, "", 0, 0, 0, 0, auto);
 
-  background-color: $accentColor;
+  /*   background-color: $accentColor; */
 
   &__body {
     height: 100%;
@@ -100,5 +104,5 @@
 }
 
 .item-suit:nth-child(2) {
-  background-color: $secColor;
+  /*   background-color: $secColor; */
 }

@@ -1,0 +1,22 @@
+.card {
+  /*   transition: background 0.3s ease-in-out;
+  &__blue {
+    background-color: $accentColor;
+  }
+  &__dark {
+    background-color: #0e1e35;
+  }
+
+  &:hover &__blue {
+    background-color: #255ae3;
+  }
+  &:hover &__dark {
+    background-color: #0b213f;
+  } */
+}
+
+/*     transition: background 0.3s ease-in-out;
+    &:hover .item-suit {
+      background-color: #0b213f;
+    } */
+/*# sourceMappingURL=card.css.map */

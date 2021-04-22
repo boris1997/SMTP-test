@@ -13,6 +13,7 @@
     z-index: 0;
     background-color: $secColor;
     border-radius: rem(12px);
+    transition: all 0.2s ease-in-out;
     /*     &:after {
       @include position(absolute, "", 0, 0, 0, 0, auto);
       width: 117%;
@@ -26,6 +27,13 @@
   //       left: rem(-70px);
   //     }
   //   }
+
+  &__item-center:hover {
+    background-color: #255ae3;
+  }
+  &__item:hover {
+    background-color: #0b213f;
+  }
   &__item:nth-child(3) .item-advantages {
     margin-left: rem(105px);
     margin-bottom: rem(68px);

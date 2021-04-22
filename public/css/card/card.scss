@@ -1,0 +1,21 @@
+.card {
+  &__blue {
+    transition: all 0.2s ease-in-out;
+    background-color: $accentColor;
+  }
+  &__dark {
+    transition: all 0.2s ease-in-out;
+    background-color: #0e1e35;
+  }
+
+  &:hover &__blue {
+    background-color: #255ae3;
+  }
+  &:hover &__dark {
+    background-color: #0b213f;
+  }
+}
+/*     transition: background 0.3s ease-in-out;
+    &:hover .item-suit {
+      background-color: #0b213f;
+    } */

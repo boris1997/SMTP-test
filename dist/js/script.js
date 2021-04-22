@@ -100,7 +100,7 @@ class Slider {
 
             const wrapperRight = window.innerWidth - (this.wrapper.getBoundingClientRect().left + this.wrapper.clientWidth);
             const lastElementRight = window.innerWidth - (this.content[this.content.length - 1].getBoundingClientRect().left + this.content[this.content.length - 1].clientWidth);
-
+            /* console.log(this.prevTranslation, this.currentTranslationX) */
             /*        console.log(translationtoAbs) */
 
             /*  console.log(((this.translateStepX * this.content.length) + this.elemntsMargins).toFixed());
@@ -108,11 +108,13 @@ class Slider {
             /*    console.log(Math.abs(this.currentTranslationX).toFixed(), ((this.translateStepX * (this.content.length - 1)) + this.elemntsMargins).toFixed())
                console.log(Math.abs(this.currentTranslationX).toFixed()) */
             /*  console.log(this.translateStepX) */
-
+            console.log(this.currentTranslationX, this.prevTranslation, this.sliderLimit)
+            console.log(this.sliderLimit - wrapperRight, lastElementRight)
             /* console.log(this.sliderLimit + wrapperRight, lastElementRight) */
-
+            /*   console.log(lastElementRight, this.sliderLimit, wrapperRight)
+              console.log(lastElementRight < this.sliderLimit, wrapperRight) */
             // +Math.abs(this.currentTranslationX).toFixed() <= ((this.translateStepX * (this.content.length - 1)) + this.elemntsMargins).toFixed()
-            if (lastElementRight < this.sliderLimit + wrapperRight && +Math.abs(this.currentTranslationX).toFixed() <= ((this.translateStepX * (this.content.length - 1)) + this.elemntsMargins).toFixed() && this.currentTranslationX < 2) {
+            if ((lastElementRight <= this.sliderLimit && +Math.abs(this.currentTranslationX).toFixed() <= ((this.translateStepX * (this.content.length - 1)) + this.elemntsMargins).toFixed() && this.currentTranslationX < 2) || (this.currentTranslationX >= this.prevTranslation && this.currentTranslationX < 2)) {
                 /*   console.log(this.currentTranslationX) */
                 this.currentTranslationX = this.absToPercent(((this.prevTranslation * this.main.clientWidth / 100) + currentPosition - this.startPos), this.main.clientWidth);
             }
@@ -129,7 +131,8 @@ class Slider {
 
 
             // Изменям индекс в зависимости от текущей трансформации
-            if (this.currentIndex < this.content.length) {
+            if (this.currentIndex < this.content.length - 1) {
+                console.log(this.currentIndex, this.content.length)
                 Math.abs(this.currentTranslationX) > ((Math.abs(this.prevTranslation) + this.translateStepX / 3.5)) && (this.currentIndex++);
             }
             if (this.currentIndex >= 0) {
@@ -151,7 +154,9 @@ class Slider {
 
             setTimeout(() => {
                 const wrapperRight = window.innerWidth - (this.wrapper.getBoundingClientRect().left + this.wrapper.clientWidth);
+                console.log(wrapperRight)
                 const lastElementRight = window.innerWidth - (this.content[this.content.length - 1].getBoundingClientRect().left + this.content[this.content.length - 1].clientWidth);
+                console.log(lastElementRight)
                 lastElementRight > 0 ? this.sliderLimit = wrapperRight + lastElementRight : this.sliderLimit = 0
                 console.log(this.sliderLimit)
             }, 500)
@@ -401,7 +406,8 @@ class Slider {
     getMargin = () => {
         // Узнаем отутупы для правельного транслэйта
         this.margin = +getComputedStyle(this.content[1]).marginLeft.split('px').join('');
-        this.elemntsMargins = this.absToPercent((this.margin * this.content.length), this.getTotalElementsWidth()) - this.stopperFactor;
+        console.log(this.margin)
+        this.elemntsMargins = this.absToPercent((this.margin * this.content.length - 1), this.getTotalElementsWidth()) - this.stopperFactor;
 
     }
 
@@ -2181,7 +2187,10 @@ class Scroll {
 
         console.log('ok')
         window.onresize = () => {
-            (window.innerWidth > 1024 && this.sidebar.classList.contains('page__sidebar--active')) && this.removeSidebar()
+            if (window.innerWidth > 1024 && this.sidebar.classList.contains('page__sidebar--active')) {
+                this.sidebar.classList.contains('sidebar--full-page') && this.page.classList.toggle('page_screen_full')
+                this.removeSidebar()
+            }
 
         }
         this.sidebarOverlay.onclick = () => this.removeSidebar();
