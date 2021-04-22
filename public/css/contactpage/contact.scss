@@ -15,6 +15,7 @@
   }
   &__right {
     margin-top: rem(-42px);
+    padding: 0 !important;
   }
 
   &__item {
@@ -30,6 +31,11 @@
   &__form {
     width: rem(482px);
     /*  width: calc(482 / 1200 * 100%); */
+  }
+
+  &__title {
+    text-align: left !important;
+    margin-right: auto;
   }
 
   /* 
@@ -71,6 +77,7 @@
   &__title {
     color: initial;
     margin-top: 0;
+    margin-right: auto;
   }
   /*   &__content {
     margin-top: rem(100px);

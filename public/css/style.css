@@ -127,6 +127,8 @@ img {
 
 .page {
   background: url("../assets/backgrounds/main/main-background.png") no-repeat center center/cover;
+  position: relative;
+  /*   transition: background 0.2s ease-in-out 0.2s; */
 }
 .page__wrapper {
   position: relative;
@@ -141,9 +143,29 @@ img {
   right: auto;
   margin: auto;
 }
+.page__sidebar {
+  height: calc(100% - 66px);
+  width: 100%;
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: auto;
+  left: 0;
+  right: auto;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.page__sidebar--active {
+  visibility: visible;
+}
 
 .page_screen_full {
-  height: 100vh;
+  height: 100vh !important;
 }
 
 .navigtion-page {

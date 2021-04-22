@@ -5,6 +5,7 @@
   background: rgba(0, 0, 0, 0.36);
   top: 0;
   left: 0;
+  z-index: 2;
   &__body {
     min-height: 100%;
 
@@ -19,6 +20,7 @@
   }
   &__modal {
     visibility: hidden;
+    padding-left: rem(16px);
     /*     @include flexbox(column, center, center); */
   }
 
@@ -33,9 +35,15 @@
     transform: perspective(rem(600px)) translate(0, -100%) rotateX(45deg);
     transition: all 0.5s ease-in-out;
     max-width: rem(450px);
+    /*  margin-right: rem(16px); */
+  }
+
+  &__modal-wrapper--margin {
+    margin-right: rem(16px);
   }
   &__modal--active {
     visibility: visible;
+    padding: 0 rem(16px);
   }
   &__modal--active > &__modal-wrapper {
     transform: perspective(0) translate(0, 0) rotateX(0);

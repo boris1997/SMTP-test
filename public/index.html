@@ -16,8 +16,10 @@
         <div class="container">
             <header class="header">
                 <div class="header__content">
-                    <div class="logo">
-                        <img src="./assets/svg/SMTP logo.svg" alt="лого" class="logo__img">
+                    <div class="header__logo logo">
+                        <a href="index.html" class="logo__link">
+                            <img src="./assets/svg/SMTP logo.svg" alt="лого" class="logo__img">
+                        </a>
                     </div>
                     <nav class="nav">
                         <ul class="nav__list">
@@ -30,7 +32,7 @@
                     <div class="header__contacts">
                         <a href="contact.html" class="header__btn btn__link btn btn__main">Контакты</a>
                     </div>
-                    <div class="cross hamburger-menu menu__hamburger-menu">
+                    <div class="cross hamburger-menu header__hamburger-menu">
                         <svg class="hamburger-menu__content" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
                             <!--  <circle cx="50" cy="50" r="30" /> -->
                             <path class="hamburger-menu__line hamburger-menu__line--1"
@@ -40,65 +42,72 @@
                                 d="M0 60h62c13 0 6-28-4-18L35 65" />
                         </svg>
                     </div>
+                    <div class="page__sidebar sidebar ">
+                        <div class="sidebar__body">
+                            <div class="sidebar__content">
+                                <div class="sidebar__menu mobile-menu">
+                                    <ul class="mobile-menu__wrapper mobile-menu__active">
+                                        <li class="mobile-menu__item mobile-menu__item--active">
+                                            <a class="mobile-menu__link item__text-medium mobile-menu__toggler"
+                                                href="base.html" class="menu__link">База организаций</a>
+                                        </li>
+                                        <li class="mobile-menu__item mobile-menu__item--active">
+                                            <a class="mobile-menu__link item__text-medium mobile-menu__toggler"
+                                                href="mail.html">E-mail
+                                                рассылка</a>
+
+                                        </li>
+                                        <li class="mobile-menu__item mobile-menu__item--active">
+                                            <a class="mobile-menu__link item__text-medium mobile-menu__toggler"
+                                                href="services.html">Все
+                                                услуги</a>
+
+                                        </li>
+                                        <li class="mobile-menu__item mobile-menu__item--active">
+                                            <a class="mobile-menu__link item__text-medium"
+                                                href="articles.html">Статьи</a>
+                                        </li>
+                                        <li class="mobile-menu__item mobile-menu__item--active"><a
+                                                class="mobile-menu__link item__text-medium "
+                                                href="contact.html">Контакты</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="overlay">
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </header>
-            <div class="page__sidebar sidebar ">
-                <div class="sidebar__content">
-                    <div class="sidebar__body">
-                        <div class="sidebar__menu mobile-menu">
-                            <ul class="mobile-menu__wrapper mobile-menu__active">
-                                <li class="mobile-menu__item mobile-menu__item--active">
-                                    <a class="mobile-menu__link mobile-menu__toggler" href="#page-about"
-                                        class="menu__link">Харакстеристки</a>
-                                </li>
-                                <li class="mobile-menu__item mobile-menu__item--active">
-                                    <a class="mobile-menu__link mobile-menu__toggler" href="#page-work">Как
-                                        мы работаем</a>
 
-                                </li>
-                                <li class="mobile-menu__item mobile-menu__item--active">
-                                    <a class="mobile-menu__link mobile-menu__toggler" href="#page-gallery">Галерея</a>
-
-                                </li>
-                                <li class="mobile-menu__item mobile-menu__item--active"><a class="mobile-menu__link"
-                                        href="#page-contact">Контакты</a> </li>
-
-                            </ul>
-                        </div>
-
-                    </div>
-                    <div class="overlay">
-                    </div>
-                </div>
-            </div>
             <main class="main">
-                <div class="container">
-                    <div class="main__content">
-                        <div class="main__header">
-                            <h1 class="main__title main__item">SMTP сервер для email рассылки</h1>
-                            <p class="main__text">Уже более 5 лет поставляем качественные, абузоустойчивые серверы</p>
-                        </div>
-                        <div class="main__body">
-                            <!--     <img class="main__illustration" src="./assets/svg/main/main/illustration.svg"
-                                alt="сервер для рассылки" srcset=""> -->
-                            <div class="main__body-wrapper">
-
-                                <img class="main__illustration" src="./assets/svg/main/main/illustration.svg" alt=""
-                                    srcset="">
-                                <img class="main__plains main__plain-left" src="./assets/svg/main/main/left-plain.svg"
-                                    alt="" srcset="">
-                                <img class="main__plains main__plain-right" src="./assets/svg/main/main/right-plain.svg"
-                                    alt="" srcset="">
-                                <object class="main__cards" data="./assets/svg/main/main/Group-card.svg"
-                                    type=""></object>
-                            </div>
-                        </div>
-
-                        <!-- <div class="main__left">
-                    </div> -->
-                        <!--   <div class="main__right"><img src="assets/img/vehicleDvr.webp" alt="" class="main__img"></div> -->
+                <div class="main__content">
+                    <div class="main__header">
+                        <h1 class="main__title main__item">SMTP сервер для email рассылки</h1>
+                        <p class="main__text">Уже более 5 лет поставляем качественные, абузоустойчивые серверы</p>
                     </div>
+                    <div class="main__body">
+                        <!--     <img class="main__illustration" src="./assets/svg/main/main/illustration.svg"
+                                alt="сервер для рассылки" srcset=""> -->
+                        <div class="main__body-wrapper">
+
+                            <img class="main__illustration" src="./assets/svg/main/main/illustration.svg" alt=""
+                                srcset="">
+                            <img class="main__plains main__plain-left" src="./assets/svg/main/main/left-plain.svg"
+                                alt="" srcset="">
+                            <img class="main__plains main__plain-right" src="./assets/svg/main/main/right-plain.svg"
+                                alt="" srcset="">
+                            <object class="main__cards" data="./assets/svg/main/main/Group-card.svg" type=""></object>
+                        </div>
+                    </div>
+
+                    <!-- <div class="main__left">
+                    </div> -->
+                    <!--   <div class="main__right"><img src="assets/img/vehicleDvr.webp" alt="" class="main__img"></div> -->
                 </div>
             </main>
         </div>
@@ -800,15 +809,23 @@
                 <div class="footer__content">
                     <div class="footer__logo logo">
                         <img src="./assets/svg/SMTP logo.svg" alt="лого" class="logo__img">
-                        <p class="logo__title">Сервис e-mail рассылок</p>
+                        <p class="logo__title item__text-medium">Сервис e-mail рассылок</p>
                     </div>
                     <nav class="footer__nav nav">
                         <ul class="nav__list footer__list">
-                            <li class="nav__items"><a href="#page-about" class="nav__link">База организаций</a></li>
-                            <li class="nav__items"><a href="#page-work" class="nav__link">E-mail рассылка</a></li>
-                            <li class="nav__items"><a href="#page-gallery" class="nav__link">Все услуги</a></li>
-                            <li class="nav__items"><a href="#page-contact" class="nav__link">Статьи</a></li>
-                            <li class="nav__items"><a href="#page-contact" class="nav__link">Контакты</a></li>
+                            <li class="nav__items footer__item"><a href="base.html" class="nav__link item__text">База
+                                    организаций</a></li>
+                            <li class="nav__items footer__item"><a href="mail.html" class="nav__link item__text">E-mail
+                                    рассылка</a>
+                            </li>
+                            <li class="nav__items footer__item"><a href="services.html" class="nav__link item__text">Все
+                                    услуги</a>
+                            </li>
+                            <li class="nav__items footer__item"><a href="articles.html"
+                                    class="nav__link item__text">Статьи</a></li>
+                            <li class="nav__items footer__item"><a href="contact.html"
+                                    class="nav__link item__text">Контакты</a>
+                            </li>
                         </ul>
                     </nav>
 
@@ -827,6 +844,7 @@
         </div>
     </footer>
     <div id="popup-main" class="popup popup--hidden">
+
         <div class="popup__body">
             <!--  popup__modal--active -->
             <div data-modal="form" class="popup__modal popup__item">
@@ -893,16 +911,19 @@
                         текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую
                         коллекцию
                         размеров и форм
-                        шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил
+                        шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно
+                        пережил
                         без
                         заметных изменений
                         пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили
                         публикация листов Letraset с
-                        образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа
+                        образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки
+                        типа
                         Aldus PageMaker, в
                         шаблонах которых используется Lorem Ipsum.</p>
                     <p class="modal-reference__text item__text">
-                        Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является
+                        Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum
+                        является
                         стандартной "рыбой" для
                         текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую
                         коллекцию

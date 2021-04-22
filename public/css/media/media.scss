@@ -54,6 +54,17 @@
     height: rem(343px);
   }
 
+  .item-advantages {
+    margin-left: rem(40px) !important;
+  }
+
+  .advantages__item-center .item-advantages__title {
+    margin-top: rem(32px);
+  }
+  .advantages__item:nth-child(3) .item-advantages .item-advantages__title {
+    margin-top: rem(18px);
+  }
+
   .suit__item-mm,
   .suit__item-sm {
     margin-top: 0;
@@ -151,9 +162,33 @@
   .nav,
   .navigtion-page,
   .service__left,
-  .article__right {
+  .article__right,
+  .header__contacts {
     display: none;
   }
+
+  .header__hamburger-menu,
+  .footer__nav {
+    display: block;
+  }
+
+  .footer__nav {
+    margin-bottom: rem(50px);
+  }
+
+  .footer__logo {
+    margin-top: rem(50px);
+    margin-bottom: rem(20px);
+  }
+
+  .footer__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .company__logo {
+    float: left;
+  }
+
   .main__title,
   .main__title-base,
   .section__title,
@@ -165,6 +200,13 @@
   .article__title {
     font-size: rem(40px);
     line-height: rem(50px);
+  }
+
+  .page {
+    height: 100%;
+  }
+  .page__contact {
+    height: 100% !important;
   }
 
   .main__text,
@@ -356,6 +398,10 @@
     flex-direction: column;
   }
 
+  .contact__right {
+    margin-top: rem(50px);
+  }
+
   .item-datas__title {
     margin-top: 0 !important;
     margin-bottom: rem(12px);
@@ -408,6 +454,18 @@
   .article__title {
     font-size: rem(30px);
     line-height: rem(40px);
+  }
+
+  .logo__img {
+    height: rem(32px);
+  }
+  .footer__list {
+    flex-direction: column;
+    align-items: baseline;
+  }
+
+  .footer__item + .footer__item {
+    margin-top: rem(14px);
   }
 
   .main__text,
@@ -525,6 +583,10 @@
     margin-bottom: rem(179px);
   }
 
+  .popup__modal-wrapper {
+    padding: rem(30px);
+  }
+
   //resizer
 
   .advantages__resizer,
@@ -544,9 +606,16 @@
     margin-bottom: rem(40px);
   }
 
+  .main__body {
+    margin-top: rem(20px);
+  }
+
+  .main__body--email {
+    margin-top: 0;
+  }
   .main__illustration {
-    width: calc(732 / 480 * 100%);
-    margin-left: -26%;
+    width: calc(712 / 480 * 100%);
+    margin-left: -23%;
     /*     position: absolute;
     left: 0;
     right: 0; */
@@ -556,6 +625,13 @@
     width: calc(643 / 480 * 100%);
   }
 
+  .logo__img {
+    height: rem(26px);
+  }
+
+  .header__hamburger-menu {
+    width: rem(42px);
+  }
   .service__header,
   .services__body,
   .articles__body,
@@ -579,7 +655,7 @@
   .main__plain-left {
     top: -18%;
     width: 28%;
-    left: -3%;
+    left: 0;
   }
 
   .main__title,
@@ -610,7 +686,7 @@
   }
 
   .main__cards {
-    width: (280 / 480 * 100%);
+    width: (260 / 480 * 100%);
   }
 
   .advantages__item,
@@ -621,7 +697,7 @@
 
   .item-advantages {
     margin-left: rem(20px);
-    margin-top: rem(8px);
+    margin-top: rem(15px);
   }
 
   .advantages__item:nth-child(3),
@@ -721,6 +797,19 @@
     padding: 0 rem(20px);
     margin-top: (30px);
     padding-bottom: rem(40px);
+  }
+
+  .modal-reference__text {
+    line-height: rem(19px);
+  }
+
+  .modal-reference__text + .modal-reference__text {
+    margin-top: rem(5px);
+  }
+
+  .popup__modal-wrapper {
+    margin-top: 0;
+    padding: rem(25px) rem(12px);
   }
 
   .card-tariffsec__header-center,

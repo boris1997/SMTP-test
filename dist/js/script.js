@@ -1076,10 +1076,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 class Modal {
 
-    constructor(body, popup, popupModal, btnPopup, closeBtn, formInputs, popupModalActive, popupHidden, bodyNoScroll, staticForm) {
+    constructor(body, popup, popupModal, popupModalWrapper, wrapperMargin, btnPopup, closeBtn, formInputs, popupModalActive, popupHidden, bodyNoScroll, staticForm) {
         this.body = body;
         this.popup = popup;
         this.popupModal = popupModal;
+        this.popupModalWrapper = popupModalWrapper;
+        this.wrapperMargin = wrapperMargin;
         this.btnPopup = btnPopup;
         this.closeBtn = closeBtn;
         this.formInputs = formInputs;
@@ -1110,7 +1112,7 @@ class Modal {
                     if (popupModal.classList.contains(this.popupModalActive)) {
                         this.removeClass(this.body, this.bodyNoScroll);
                         this.removeNoScrollStyles(this.body);
-                        !popupModal.classList.contains(this.staticForm) && this.removeNoScrollStyles(popupModal);
+                        /*  !popupModal.classList.contains(this.staticForm) && this.removeNoScrollStyles(popupModal); */
                         !popupModal.classList.contains(this.staticForm) && this.removeClass(popupModal, this.popupModalActive);
                         this.addClass(this.popup, this.popupHidden)
                     }
@@ -1129,13 +1131,13 @@ class Modal {
                     popupModal.dataset.modal === 'form' && this.submitForm(popupModal)
                 })
             } else {
-                console.log(btnPopup)
                 btnPopup.addEventListener('click', () => {
                     this.popupModal.map((popupModal, i) => {
                         console.log(popupModal.dataset.modal, btnPopup.dataset.modal)
                         if (btnPopup.dataset.modal === popupModal.dataset.modal) {
                             popupModal.dataset.modal === 'form' && this.submitForm(popupModal)
-                            this.addNoScrollStyles(popupModal)
+                            /* this.addNoScrollStyles(popupModal) */
+                            window.innerWidth - this.body.offsetWidth > 0 && this.addMarginToBlock(this.popupModalWrapper[i])
                             !this.body.classList.contains(this.bodyNoScroll) && (this.addNoScrollStyles(this.body), this.addClass(this.body, this.bodyNoScroll))
                             this.addClass(popupModal, this.popupModalActive);
                             this.popup.classList.contains(this.popupHidden) && this.removeClass(this.popup, this.popupHidden)
@@ -1151,12 +1153,17 @@ class Modal {
     }
 
     addNoScrollStyles = (element) => {
-        element.style.paddingRight = window.innerWidth - this.body.offsetWidth + 'px';
+        console.log('pk')
+        element.style.paddingRight = window.innerWidth - this.body.offsetWidth + /* 12 +  */'px';
         element.style.width = '100vw'; // ? 
     }
 
+    addMarginToBlock = (element) => {
+        this.addClass(element, this.wrapperMargin)
+    }
+
     removeNoScrollStyles = (element) => {
-        element.style.paddingRight = 0;
+        element.style.paddingRight = 0 + 'px';
         element.style.width = '100%';
     }
 
@@ -1203,14 +1210,16 @@ document.addEventListener('DOMContentLoaded', () => {
         let body = document.querySelector(".body");
         let popup = document.querySelector(".popup");
         let popupModal = [...document.querySelectorAll(".popup__modal")];
+        let popupModalWrapper = [...document.querySelectorAll(".popup__modal-wrapper")];
         let btnPopup = [...document.querySelectorAll(".btn__popup")];
         let closeBtn = [...document.querySelectorAll(".popup__modal-close")];
         let formInputs = [...document.querySelectorAll(".contact-form__input")];
         let popupModalActive = 'popup__modal--active';
         let popupHidden = 'popup--hidden';
         let bodyNoScroll = 'body--noscroll';
+        let wrapperMargin = 'popup__modal-wrapper--margin'
         console.log(closeBtn)
-        /*    faqBtn.length !== 0 && */ new Modal(body, popup, popupModal, btnPopup, closeBtn, formInputs, popupModalActive, popupHidden, bodyNoScroll);
+        new Modal(body, popup, popupModal, popupModalWrapper, wrapperMargin, btnPopup, closeBtn, formInputs, popupModalActive, popupHidden, bodyNoScroll);
     }
 
 
@@ -1219,6 +1228,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let body = document.querySelector(".body");
         let popup = document.querySelector(".popup");
         let popupModal = [...document.querySelectorAll(".popup__modal")];
+        let popupModalWrapper = [...document.querySelectorAll(".popup__modal-wrapper")];
         let btnPopup = [...document.querySelectorAll(".btn__popup")];
         let closeBtn = [...document.querySelectorAll(".popup__modal-close")];
         let formInputs = [...document.querySelectorAll(".contact-form__input")];
@@ -1226,7 +1236,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let popupHidden = 'popup--hidden';
         let bodyNoScroll = 'body--noscroll';
         let staticForm = 'contact__form';
-        new Modal(body, popup, popupModal, btnPopup, closeBtn, formInputs, popupModalActive, popupHidden, bodyNoScroll, staticForm);
+        let wrapperMargin = 'popup__modal-wrapper--margin'
+        new Modal(body, popup, popupModal, popupModalWrapper, wrapperMargin, btnPopup, closeBtn, formInputs, popupModalActive, popupHidden, bodyNoScroll, staticForm);
     }
     // const citiesList = document.querySelector(".cities__list-hidden");
     // const citiesBtn = document.querySelector(".cities__link");
@@ -2182,8 +2193,9 @@ class Scroll {
 
     toggleSidebar = () => {
         console.log('ok')
+        this.sidebar.classList.contains('sidebar--full-page') && this.page.classList.toggle('page_screen_full')
         this.sidebar.classList.toggle('page__sidebar--active');
-        this.page.classList.toggle('page__noScroll');
+        this.page.classList.toggle('page--noScroll');
         this.sidebarBody.classList.toggle('sidebar__body--active');
         this.sidebarOverlay.classList.toggle('overlay--show');
         this.hamburgerMenu.classList.toggle('hamburger-menu__content--active');
@@ -2195,7 +2207,7 @@ class Scroll {
 
     removeSidebar = () => {
         this.sidebar.classList.remove('page__sidebar--active');
-        this.page.classList.remove('page__noScroll');
+        this.page.classList.remove('page--noScroll');
         this.sidebarBody.classList.remove('sidebar__body--active');
         this.sidebarOverlay.classList.remove('overlay--show');
         this.hamburgerMenu.classList.remove('hamburger-menu__content--active');
@@ -2215,63 +2227,7 @@ class Scroll {
         /* this.menuItems.map((menuItem, z) => i !== z && (console.log(z))) */
     }
 
-    // hoverItemStyleOver = (menuItem) => {
-    //     const activeMenuItem = document.querySelector('.menu__items--active');
-    //     menuItem.style.backgroundColor = '#2a75d8';
-    //     activeMenuItem.style.backgroundColor = '#000000';
-    // }
-    // hoverItemStyleOut = (menuItem) => {
-    //     const activeMenuItem = document.querySelector('.menu__items--active');
-    //     menuItem.style.backgroundColor = '#000000';
-    //     activeMenuItem.style.backgroundColor = '#2a75d8'
-    // }
 
-
-    scrollEvent = () => {
-        window.addEventListener('scroll', () => {
-            this.setActiveUrl()
-        })
-    }
-
-    setActiveUrl = () => {
-        //проверяем больше ли отступ элемента чем текущий скрол, если нет проверяем следующий элемент
-        if (this.sectionTop(1) - 150 < window.scrollY) {
-            this.setNewUrl(this.index + 1);
-            this.changeItemStyle(this.index + 1)
-            this.index++;
-        }
-
-        if (this.sectionTop(0) - 150 > window.scrollY) {
-            this.setNewUrl(this.index - 1);
-            this.changeItemStyle(this.index - 1);
-            this.index--;
-        }
-    }
-
-    findActiveIndex = () => {
-        for (let i = 0; i < this.sections.length; i++) {
-            if (this.sections[i].getBoundingClientRect().top + window.pageYOffset < window.scrollY) {
-                this.index = i;
-                console.log(this.sections[i].getBoundingClientRect().top + window.pageYOffset)
-                this.changeItemStyle(this.index)
-                this.setNewUrl(this.index)
-            } /* else if (this.sections[i].getBoundingClientRect().top + window.pageYOffset === 0) {
-                console.log('ok')
-                console.log(this.sections[i].getBoundingClientRect().top + window.pageYOffset)
-                this.setNewUrl(this.index)
-            } */
-        }
-    }
-
-    setNewUrl = (i) => {
-        console.log(i)
-        const state = `#${this.sections[i].id}`;
-        const title = 'scroll';
-        const url = `#${this.sections[i].id}`
-        history.replaceState(state, title, url)
-    }
-
-    sectionTop = (factor) => this.sections[this.index + factor].getBoundingClientRect().top + window.pageYOffset
 }
 
 
@@ -2281,12 +2237,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuItems = [...document.querySelectorAll('.menu__items')];
     const mobileMenuItems = [...document.querySelectorAll('.mobile-menu__item')];
     const sidebar = document.querySelector('.page__sidebar');
-    const sidebarBody = document.querySelector('.sidebar__body');
+    const sidebarBody = document.querySelector('.sidebar__content');
     const sidebarOverlay = document.querySelector('.overlay');
     const hamburgerMenu = document.querySelector('.hamburger-menu__content');
     const scroll = new Scroll(page, sections, menuItems, mobileMenuItems, hamburgerMenu, sidebar, sidebarBody, sidebarOverlay);
-    /* 
-        scroll.menuItemsInit();
-        scroll.sidebarManipulation() */
+
+    scroll.menuItemsInit();
+    scroll.sidebarManipulation()
 
 })

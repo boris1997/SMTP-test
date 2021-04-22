@@ -1,6 +1,11 @@
 .header {
   padding-top: rem(14px);
   width: 100%;
+
+  &__logo,
+  &__hamburger-menu {
+    z-index: 10;
+  }
   &__content,
   &__list {
     @include flexbox(row, space-between, center);
@@ -12,6 +17,10 @@
 
   &__btn {
     width: rem(172px);
+  }
+
+  &__hamburger-menu {
+    display: none;
   }
 }
 

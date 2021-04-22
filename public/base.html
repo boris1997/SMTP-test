@@ -16,8 +16,10 @@
         <div class="container page__wrapper">
             <header class="header">
                 <div class="header__content">
-                    <div class="logo">
-                        <img src="./assets/svg/SMTP logo.svg" alt="лого" class="logo__img">
+                    <div class="header__logo logo">
+                        <a href="index.html" class="logo__link">
+                            <img src="./assets/svg/SMTP logo.svg" alt="лого" class="logo__img">
+                        </a>
                     </div>
                     <nav class="nav">
                         <ul class="nav__list">
@@ -30,6 +32,54 @@
                     </nav>
                     <div class="header__contacts">
                         <a href="contact.html" class="header__btn btn__link btn btn__main">Контакты</a>
+                    </div>
+                    <div class="cross hamburger-menu header__hamburger-menu">
+                        <svg class="hamburger-menu__content" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <!--  <circle cx="50" cy="50" r="30" /> -->
+                            <path class="hamburger-menu__line hamburger-menu__line--1"
+                                d="M0 40h62c13 0 6 28-4 18L35 35" />
+                            <path class="hamburger-menu__line hamburger-menu__line--2" d="M0 50h70" />
+                            <path class="hamburger-menu__line hamburger-menu__line--3"
+                                d="M0 60h62c13 0 6-28-4-18L35 65" />
+                        </svg>
+                    </div>
+                    <div class="page__sidebar sidebar ">
+                        <div class="sidebar__body">
+                            <div class="sidebar__content">
+                                <div class="sidebar__menu mobile-menu">
+                                    <ul class="mobile-menu__wrapper mobile-menu__active">
+                                        <li class="mobile-menu__item mobile-menu__item--active">
+                                            <a class="mobile-menu__link item__text-medium mobile-menu__toggler"
+                                                href="base.html" class="menu__link">База организаций</a>
+                                        </li>
+                                        <li class="mobile-menu__item mobile-menu__item--active">
+                                            <a class="mobile-menu__link item__text-medium mobile-menu__toggler"
+                                                href="mail.html">E-mail
+                                                рассылка</a>
+
+                                        </li>
+                                        <li class="mobile-menu__item mobile-menu__item--active">
+                                            <a class="mobile-menu__link item__text-medium mobile-menu__toggler"
+                                                href="services.html">Все
+                                                услуги</a>
+
+                                        </li>
+                                        <li class="mobile-menu__item mobile-menu__item--active">
+                                            <a class="mobile-menu__link item__text-medium"
+                                                href="articles.html">Статьи</a>
+                                        </li>
+                                        <li class="mobile-menu__item mobile-menu__item--active"><a
+                                                class="mobile-menu__link item__text-medium "
+                                                href="contact.html">Контакты</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="overlay">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </header>
