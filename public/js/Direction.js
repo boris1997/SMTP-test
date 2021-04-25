@@ -40,7 +40,7 @@ class Direction {
         let childTop = direction.getBoundingClientRect().top;
         childTop = +childTop.toFixed()
         if (window.innerWidth > 1190) {
-            childMarginRight > 0 && (direction.style.marginRight = '0')
+            childMarginRight > 0 && (direction.style.marginRight = '0') // console.log 
         }
         if ((childTop - parentTop) > childMarginTop && direction.classList.contains(this.directionActive) && this.directions.indexOf(direction) % 3 !== 0) {
             this.removeClass(direction, this.directionActive)
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const directions = [...document.querySelectorAll(".direction__item")];
     const directionsBody = document.querySelector(".direction__body-wrapper");
     const directionActive = 'direction__item--margin';
-    directions.length !== 0 && new Direction(directionsBody, directions, directionActive);
+    directions.length !== 0 && new Direction(directionsBody, directions, directionActive); 
 
 
 

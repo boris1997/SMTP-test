@@ -1,60 +1,124 @@
-class Slider {
+class Filter {
 
-    constructor(content, main, wrapper, sliderBreakpoint, arrow, circeTogglers, circleActiveClass, slideResizeOberverObj, toggleBtn, toggleMoveGif, stopperFactor, slideNumber, toggleResizeOberverObj) {
+    constructor(productWrapper, product, productPrice, productTitle, filterMinMaxAmount, filterRailWrapper, filterRailShifts, filterTransformVAr, filterRailLine, filterCheckboxLabel, filterCheckboxAmount, filterSearcher) {
 
-        this.content = content,
-            this.main = main,
-            this.wrapper = wrapper,
-            this.sliderBreakpoint = sliderBreakpoint,
-            this.arrow = arrow,
-            this.circeTogglers = circeTogglers,
-            this.circleActiveClass = circleActiveClass,
-            this.slideResizeOberverObj = slideResizeOberverObj,
-            this.toggleResizeOberverObj = toggleResizeOberverObj,
-            this.toggleBtn = toggleBtn,
-            this.toggleMoveGif = toggleMoveGif,
-            this.slideNumber = slideNumber,
-            this.isDragging = false,
-            this.currentIndex = 0,
-            this.startPos = 0,
-            this.translateStepX = 0,
-            this.currentTranslationX = 0,
-            this.currentTranslationMove,
-            this.margin = 0,
-            this.sliderLimit = 0,
-            this.elemntsMargins = 0,
-            this.prevTranslation = 0,
-            this.animationID = 0,
-            this.stopperFactor = stopperFactor,
-            this.oserver = null;
+        this.productWrapper = productWrapper;
+        this.product = product;
+        this.productPrice = productPrice;
+        this.productTitle = productTitle;
+        this.filterMinMaxAmount = filterMinMaxAmount;
+        this.filterRailWrapper = filterRailWrapper;
+        this.filterRailShifts = filterRailShifts;
+        this.filterTransformVAr = filterTransformVAr;
+        this.filterRailLine = filterRailLine;
+        this.filterCheckboxLabel = filterCheckboxLabel;
+        this.filterCheckboxAmount = filterCheckboxAmount;
+        this.filterSearcher = filterSearcher;
+        this.currentIndex = 0;
+        this.startPos = 0;
+        this.translateStepX = 0;
+        this.currentTranslationX = 0;
+        this.currentTranslationMove;
+        this.margin = 0;
+        this.wrapperRight = this.getElementRight(this.filterRailWrapper);
+        this.ElementRight = this.getElementRight(this.filterRailShifts[this.filterRailShifts.length - 1]);
+        this.min = 0;
+        this.max = 0;
+        this.elemntsMargins = 0;
+        this.prevTranslation = 0;
+        this.animationID = 0;
+        this.oserver = null;
     }
 
 
 
+
+    getMinMax = () => {
+        let prices = []
+        this.productPrice.map(item => /* console.log(typeof (+item.textContent)), */ prices.push(+item.textContent));
+        prices = prices.sort((a, b) => a - b);
+        console.log(prices)
+        this.min = prices[0]
+        this.minOneMore = prices[1]
+        this.max = prices[prices.length - 1]
+        this.maxOneLess = prices[prices.length - 2]
+        console.log(prices, this.min, this.minOneMore, this.max)
+    }
+
+    displayMinMax = (min, max) => {
+        console.log(this.min, max)
+        min.value = this.min;
+        max.value = this.max;
+        /*  this.displayMinMax(this.filterMinMaxAmount[0].value) */
+    }
+
+    changePriceInput = () => {
+        this.filterMinMaxAmount[0].addEventListener('keyup', (e) => {
+            this.filterProducts()
+        })
+    }
+
+
+    filterProducts = () => {
+        console.log(+this.productPrice[4].textContent);
+        this.product = this.product.filter((item, i) => +this.productPrice[i].textContent > this.min && +this.productPrice[i].textContent < this.max);
+        console.log(this.product);
+        this.showFilteredProducts()
+    }
+
+    showFilteredProducts = () => {
+        let result = `${this.product}`;
+        console.log(this.product.outerHTML)
+        console.log(result)
+        this.product.map(item => {
+            console.log(item)
+            result += `
+               <div class="content-products__item product">
+                                <div class="product__header">
+                                    <img src="./assets/img/COMBO/image-1.png" alt="" srcset="">
+                                </div>
+                                <div class="product__body">
+                                    <div class="product__body-wrapper">
+                                        <h3 class="product__title">${item}</h3>
+                                        <b class="product__price">344</b>
+                                        <div class="product__call-to-action"></div>
+                                    </div>
+                                </div>
+                            </div>`
+        })
+    }
 
     /*                                                ТАЧ СОБЫТИЕ                                             */
 
-    initDrag = () => {
-        this.content.map((dragableItem, i) => {
-            console.log(innerWidth)
-            /* if (innerWidth < this.sliderBreakpoint) { */
-            dragableItem.addEventListener('dragstart', (e) => e.preventDefault())
-            console.log(dragableItem)
-            //touch event
-            dragableItem.addEventListener('touchstart', this.touchStart(i), { passive: true })
-            dragableItem.addEventListener('touchend', (e) => this.touchEnd(e))
-            dragableItem.addEventListener('touchmove', this.touchMove, { passive: true })
+    initRailsShifts = () => {
+        console.log(this.filterRailShifts)
+        this.filterRailShifts.map(item => this.initDrag(item))
 
-
-            //mouse event
-            dragableItem.addEventListener('mousedown', this.touchStart(i), { passive: true })
-            dragableItem.addEventListener('mouseup', (e) => this.touchEnd(e))
-            dragableItem.addEventListener('mousemove', this.touchMove, { passive: true })
-            dragableItem.addEventListener('mouseleave', (e) => this.isDragging && this.touchEnd(e))
-            /* } */
-
-        })
     }
+
+
+
+    initDrag = (element) => {
+        console.log(element)
+        element.addEventListener('dragstart', (e) => e.preventDefault())
+
+        //touch event
+        element.addEventListener('touchstart', this.touchStart(element), { passive: true })
+        element.addEventListener('touchend', () => { this.touchEnd(element) })
+        element.addEventListener('touchmove', this.touchMove(element), { passive: true })
+
+
+        //mouse event
+        element.addEventListener('mousedown', this.touchStart(element), { passive: true })
+        element.addEventListener('mouseup', () => { this.touchEnd(element) })
+        element.addEventListener('mousemove', this.touchMove(element), { passive: true })
+        element.addEventListener('mouseleave', () => this.isDragging && this.touchEnd(element))
+
+
+    }
+
+    getElementRight = (element) => window.innerWidth - (element.getBoundingClientRect().left + element.clientWidth)
+
 
 
     contextMenu = () => {
@@ -66,101 +130,105 @@ class Slider {
     }
 
 
-    animation = () => {
+    animation = (element) => {
+        /*       console.log(element) */
         // анимация если драг активен
-        this.setSliderPositionX(this.main, this.currentTranslationX);
-        if (this.isDragging) requestAnimationFrame(this.animation)
+        this.setSliderPositionX(element, this.currentTranslationX);
+        if (this.isDragging) requestAnimationFrame(this.animation.bind(this, element))
     }
 
 
-    touchStart = (i) => {
+    touchStart = (element) => {
 
         // Начало тач события 
         return (event) => {
-            console.log(this.sliderBreakpoint, innerWidth)
-            if (this.sliderBreakpoint > innerWidth) {
-                console.log('ok')
-                this.main.classList.remove('slider--smooth'); // удаляем плавность при движении, чтобы не было задержек
-                this.startPos = this.getPositionX(event);                // узнаем стартовую позицию мыши
-                this.isDragging = true;                                  // инициализируем перетаскивание
-                this.animationID = requestAnimationFrame(this.animation) // запускаем анимацию
-            }
-
+            /*     console.log(this.animationID)
+                console.log(element) */
+            this.startPos = this.getPositionX(event);                // узнаем стартовую позицию мыши
+            this.isDragging = true;                                  // инициализируем перетаскивание
+            this.animationID = requestAnimationFrame(this.animation.bind(this, element)) // запускаем анимацию
         }
     }
 
 
-    touchMove = (e) => {
-
+    touchMove = (element) => {
+        /*    console.log(element) */
         // тач событие
+        return (e) => {
 
-        if (this.isDragging && this.sliderBreakpoint > innerWidth) { // если драг активен
+            if (this.isDragging) { // если драг активен
+                /*    console.log(element) */
+                let currentPosition = this.getPositionX(e); // узнаем  позицию мыши
+                /* console.log(this.startPos, currentPosition) */
+                // останавливаем транслэйт при выходе из контейнера 
+                /* console.log(currentPosition) */
+                /*   console.log(((this.translateStepX * this.content.length) + this.elemntsMargins).toFixed());
+                console.log((Math.abs(this.currentTranslationX) + 100).toFixed()); */
+                /* console.log(this.filterRailWrapper) */
+                /* console.log(this.wrapperRight, lastElementRight) */
+                /* this.filterRailWrapper */
+                console.log(this.currentTranslationX, this.ElementRight, this.filterRailWrapper, this.filterRailShifts)
+                if ((this.ElementRight < this.wrapperRight || this.startPos < currentPosition) && (this.currentTranslationX < 0 || this.startPos > currentPosition)) {
+                    console.log('ok')
+                    this.ElementRight = this.getElementRight(element);
+                    this.currentTranslationX = currentPosition - this.startPos + this.prevTranslation
+                }
+                /* console.log(this.ElementRight < this.wrapperRight, this.startPos < currentPosition)
+                console.log(this.currentTranslationX > 0, this.startPos > currentPosition)
+ */
+                if (!(this.ElementRight < this.wrapperRight || this.startPos < currentPosition) && (this.currentTranslationX < 0 || this.startPos > currentPosition)) {
+                    // console.log(element.clientWidth - this.filterRailWrapper.clientWidth, this.prevTranslation)
+                    this.ElementRight = this.wrapperRight;
+                    this.currentTranslationX = this.filterRailWrapper.clientWidth - element.clientWidth
 
-            let currentPosition = this.getPositionX(e); // узнаем  позицию мыши
+                }
+                /*  console.log(this.currentTranslationX) */
 
-            const wrapperRight = window.innerWidth - (this.wrapper.getBoundingClientRect().left + this.wrapper.clientWidth);
-            const lastElementRight = window.innerWidth - (this.content[this.content.length - 1].getBoundingClientRect().left + this.content[this.content.length - 1].clientWidth);
-            /* console.log(this.prevTranslation, this.currentTranslationX) */
-            /*        console.log(translationtoAbs) */
+                if ((this.ElementRight < this.wrapperRight || this.startPos < currentPosition) && !(this.currentTranslationX < 0 || this.startPos > currentPosition)) {
+                    // console.log(element.clientWidth - this.filterRailWrapper.clientWidth, this.prevTranslation)
+                    this.ElementRight = this.filterRailWrapper.clientWidth - element.clientWidth;
+                    this.currentTranslationX = 0
 
-            /*  console.log(((this.translateStepX * this.content.length) + this.elemntsMargins).toFixed());
-             console.log(Math.abs(this.currentTranslationX).toFixed(), ((this.translateStepX * (this.content.length - 1)) + this.elemntsMargins).toFixed()); */
-            /*    console.log(Math.abs(this.currentTranslationX).toFixed(), ((this.translateStepX * (this.content.length - 1)) + this.elemntsMargins).toFixed())
-               console.log(Math.abs(this.currentTranslationX).toFixed()) */
-            /*  console.log(this.translateStepX) */
-            console.log(this.currentTranslationX, this.prevTranslation, this.sliderLimit)
-            console.log(this.sliderLimit - wrapperRight, lastElementRight)
-            /* console.log(this.sliderLimit + wrapperRight, lastElementRight) */
-            /*   console.log(lastElementRight, this.sliderLimit, wrapperRight)
-              console.log(lastElementRight < this.sliderLimit, wrapperRight) */
-            // +Math.abs(this.currentTranslationX).toFixed() <= ((this.translateStepX * (this.content.length - 1)) + this.elemntsMargins).toFixed()
-            if ((lastElementRight <= this.sliderLimit && +Math.abs(this.currentTranslationX).toFixed() <= ((this.translateStepX * (this.content.length - 1)) + this.elemntsMargins).toFixed() && this.currentTranslationX < 2) || (this.currentTranslationX >= this.prevTranslation && this.currentTranslationX < 2)) {
-                /*   console.log(this.currentTranslationX) */
-                this.currentTranslationX = this.absToPercent(((this.prevTranslation * this.main.clientWidth / 100) + currentPosition - this.startPos), this.main.clientWidth);
+                }
+
+
+                /*     if (this.currentTranslationX > 0 || this.startPos > currentPosition) {
+                        this.ElementRight = this.getElementRight(element);
+                        this.currentTranslationX = currentPosition - this.startPos + this.prevTranslation
+                    } else {
+                        this.currentTranslationX = 0
+                    } */
+
+                /* this.absToPercent(((this.prevTranslation * this.main.clientWidth / 100) + currentPosition - this.startPos), this.main.clientWidth); */
+                /* if ((Math.abs(this.currentTranslationX) + 100).toFixed() <= ((this.translateStepX * this.content.length) + this.elemntsMargins).toFixed() && this.currentTranslationX < 2) {
+                } */
             }
         }
     }
 
 
-    touchEnd = (e) => {
+    touchEnd = (element) => {
         // Остановка тач события
-        if (this.sliderBreakpoint > innerWidth) {
-            this.main.classList.add('slider--smooth');           // возвращаем плавность для событий на клик стрелки
-            cancelAnimationFrame(this.animationID)                          // отмена анимацию
-            this.isDragging = false;                                        // отсановка перетаскивания
+        console.log(this.animationID)
+        cancelAnimationFrame(this.animationID)                          // отмена анимацию
+        this.isDragging = false;                                        // отсановка перетаскивания
+        console.log(this.isDragging)
+        this.prevTranslation = this.currentTranslationX;
+        /* this.prevPosition = this.getPositionX(e) */
+        // Изменям индекс в зависимости от текущей трансформации
+        // if (this.currentIndex < this.content.length) {
+        //     Math.abs(this.currentTranslationX) > ((Math.abs(this.prevTranslation) + this.translateStepX / 3)) && (this.currentIndex++);
+        // }
+        // if (this.currentIndex >= 0) {
+        //     Math.abs(this.currentTranslationX) < ((Math.abs(this.prevTranslation) - this.translateStepX / 3)) && (this.currentIndex--);
+        // }
 
-
-            // Изменям индекс в зависимости от текущей трансформации
-            if (this.currentIndex < this.content.length - 1) {
-                console.log(this.currentIndex, this.content.length)
-                Math.abs(this.currentTranslationX) > ((Math.abs(this.prevTranslation) + this.translateStepX / 3.5)) && (this.currentIndex++);
-            }
-            if (this.currentIndex >= 0) {
-                Math.abs(this.currentTranslationX) < ((Math.abs(this.prevTranslation) - this.translateStepX / 3.5)) && (this.currentIndex--);
-            }
-
-
-            this.setPrevTranslation();                                      // Устанавливаем предыдущий транслэйте
-            this.setCurrentXTranslation();                                  // Устанавливаем текущий транслэйте
-            this.changeArrowActivity();                                     // Изменяем активность кнопопк
-            this.setSliderPositionX(this.main, this.currentTranslationX);   // Устанавливаем транслэйт для слайдера
-            this.getUnactiveElts();                                        // меняем опасити элементов 
-
-            console.log(this.currentIndex)
-            if (this.circeTogglers) {
-                this.setCircleActivity(this.circeTogglers[this.currentIndex])
-            }
-
-
-            setTimeout(() => {
-                const wrapperRight = window.innerWidth - (this.wrapper.getBoundingClientRect().left + this.wrapper.clientWidth);
-                console.log(wrapperRight)
-                const lastElementRight = window.innerWidth - (this.content[this.content.length - 1].getBoundingClientRect().left + this.content[this.content.length - 1].clientWidth);
-                console.log(lastElementRight)
-                lastElementRight > 0 ? this.sliderLimit = wrapperRight + lastElementRight : this.sliderLimit = 0
-                console.log(this.sliderLimit)
-            }, 500)
-        }
+        console.log(this.currentTranslationX)
+        /* this.setPrevTranslation();     */                                  // Устанавливаем предыдущий транслэйте
+        /* this.setCurrentXTranslation(); */                                  // Устанавливаем текущий транслэйте
+        /* this.changeArrowActivity();    */                                  // Изменяем активность кнопопк
+        this.setSliderPositionX(element, this.currentTranslationX);   // Устанавливаем транслэйт для слайдера
+        /* this.getUnactiveElts();  */                                        // меняем опасити элементов 
     }
 
 
@@ -169,7 +237,6 @@ class Slider {
     /*                                                СОБЫТИЕ НА КЛИК СТРЕЛОК                                             */
 
     initArrowsBtns = () => {
-        console.log('ok')
         this.arrow[0].addEventListener("click", () => this.left()); // левая стрелка
 
         this.arrow[1].addEventListener("click", () => this.rigth()); // праввая стрелка
@@ -211,7 +278,7 @@ class Slider {
             this.setCurrentXTranslation();                                  // Меняем текущий транслэйт слайдер 
             this.setSliderPositionX(this.main, this.currentTranslationX);  // Устанавливаем транслэйт для слайдера
             this.setSlideNumber(this.slideNumber)
-            if (this.direction() === 'column') {
+            if (this.column()) {
                 this.setSliderPositionY(this.toggleMoveGif, this.setCurrentFullBodyTranslation(100))   // Меняем текущий транслэйт движущегося элемента и станавливаем транслэйт для движущегося элемента
             } else {
                 this.setSliderPositionX(this.toggleMoveGif, this.setCurrentFullBodyTranslation(100))
@@ -222,34 +289,9 @@ class Slider {
 
 
 
-    direction = () => window.getComputedStyle(this.toggleBtn[0].parentElement).flexDirection;
+    column = () => this.toggleBtn[0].parentElement.clientHeight > this.toggleBtn[0].parentElement.clientWidth
 
 
-    /*                                                СОБЫТИЕ НА КЛИК КРУЖКОВ                                         */
-
-
-    initCirceTogglers = () => {
-        this.circeTogglers.map((item, i) => item.addEventListener("click", () => {
-            /*  !this.toggleMoveGif.classList.contains('togglers__item-move--smooth') && this.toggleClasses(this.toggleMoveGif, 'togglers__item-move--smooth') */
-
-            this.setCircleActivity(item)
-
-            this.currentIndex = i;
-            console.log(this.currentIndex)
-            this.setPrevTranslation();
-            this.setCurrentXTranslation();                                  // Меняем текущий транслэйт слайдер 
-            this.setSliderPositionX(this.main, this.currentTranslationX);  // Устанавливаем транслэйт для слайдера
-        }))
-    }
-
-
-
-    getActiveElement = (activeClass) => document.querySelector(`.${activeClass}`)
-
-    setCircleActivity = (item) => {
-        this.toggleClasses(this.getActiveElement(this.circleActiveClass), this.circleActiveClass)
-        this.toggleClasses(item, this.circleActiveClass)
-    }
 
     /*                                                ОБЩИЕ МЕТОДЫ                                         */
 
@@ -261,22 +303,19 @@ class Slider {
         // меняем активность стрелок
 
         console.log(this)
-
-        if (this.arrow) {
-            // Левая стрелка
-            if (Math.abs(this.currentTranslationX) > 0) {
-                this.arrow[0].classList.contains('carousel__toggle-btn--unactive') && this.arrow[0].classList.remove('carousel__toggle-btn--unactive')
-            } else {
-                !this.arrow[0].classList.contains('carousel__toggle-btn--unactive') && this.arrow[0].classList.add('carousel__toggle-btn--unactive');
-            }
+        // Левая стрелка
+        if (Math.abs(this.currentTranslationX) > 0) {
+            this.arrow[0].classList.contains('carousel__toggle-btn--unactive') && this.arrow[0].classList.remove('carousel__toggle-btn--unactive')
+        } else {
+            !this.arrow[0].classList.contains('carousel__toggle-btn--unactive') && this.arrow[0].classList.add('carousel__toggle-btn--unactive');
+        }
 
 
-            // Правая стрелка
-            if (this.currentIndex === this.getMainToContentIndex()) {
-                this.arrow[1].classList.add('carousel__toggle-btn--unactive');
-            } else {
-                this.arrow[1].classList.remove('carousel__toggle-btn--unactive');
-            }
+        // Правая стрелка
+        if (this.currentIndex === this.getMainToContentIndex()) {
+            this.arrow[1].classList.add('carousel__toggle-btn--unactive');
+        } else {
+            this.arrow[1].classList.remove('carousel__toggle-btn--unactive');
         }
     }
 
@@ -305,25 +344,14 @@ class Slider {
     slideRzeObrCallback = (entries) => {
 
         // Настройка слайдера после изменения ширина слайда(в процентом соотношении)
-        this.getMargin();
         this.getTranslateStepX(); // Узнаем шаг для X транслэйта
 
         // Уменьшаем индекс при переполнении
         if (this.currentIndex > this.getMainToContentIndex()) {
             const decresseIndex = this.currentIndex - this.getMainToContentIndex();
             this.currentIndex -= decresseIndex;
-            console.log(this.currentIndex)
         }
-        if (this.sliderBreakpoint < innerWidth) {
-            this.currentIndex = 0;
-            console.log(this.currentIndex)
-        }
-
-        if (this.circeTogglers) {
-            this.setCircleActivity(this.circeTogglers[this.currentIndex])
-        }
-        /*     console.log(this.getMainToContentIndex())
-            console.log(this.currentIndex) */
+        console.log(this.currentIndex)
         this.setPrevTranslation();           // Устанавливаем предыдущий транслэйт
         this.getMainToContentIndex()         // Узнаем насколько могут переполнятся элементы с контейнера слайдера, берется как отношенее элеметов в контецнера слайдера к общему количеству элементов в слайдере
         this.setCurrentXTranslation();       // Устанавливаем текущий транслэйт
@@ -336,14 +364,13 @@ class Slider {
     slideResizeObserver = () => {
 
         // resizeInteraction событие, которое срабатывает при измненнении ширины элемента
-        console.log(this.currentIndex, this.slideResizeOberverObj)
         this.resizerSlide = new ResizeObserver(this.slideRzeObrCallback);
         this.resizerSlide.observe(this.slideResizeOberverObj)
     }
 
     toggleContainerRzeObrCallback = () => {
         this.toggleMoveGif.classList.contains('togglers__item-move--smooth') && this.toggleClasses(this.toggleMoveGif, 'togglers__item-move--smooth')
-        if (this.direction() === 'column') {
+        if (this.column()) {
             this.setSliderPositionY(this.toggleMoveGif, this.setCurrentFullBodyTranslation(100))   // Меняем текущий транслэйт движущегося элемента и станавливаем транслэйт для движущегося элемента
         } else {
             this.setSliderPositionX(this.toggleMoveGif, this.setCurrentFullBodyTranslation(100))
@@ -377,7 +404,10 @@ class Slider {
     getMainToContentIndex = () => this.content.length - ((this.absToPercent(this.main.clientWidth, this.getTotalElementsWidth()).toFixed() / 100) * this.content.length).toFixed()  // индекс отношения контэйнера слайдера к его контентой части
 
 
-    setSliderPositionX = (element, translation) => element.style.transform = `translateX(${translation}%)`  // Устанавливаем транслэйт для элемента по x координате
+    setSliderPositionX = (element, translation) => {
+        console.log(element, translation)
+        element.style.setProperty(this.filterTransformVAr, `${translation}px`)
+    }// Устанавливаем транслэйт для элемента по x координате
 
     setSliderPositionY = (element, translation) => element.style.transform = `translateY(${translation}%)` // Устанавливаем транслэйт для элемента по y координате
 
@@ -405,17 +435,16 @@ class Slider {
 
     getMargin = () => {
         // Узнаем отутупы для правельного транслэйта
-        this.margin = +getComputedStyle(this.content[1]).marginLeft.split('px').join('');
-        console.log(this.margin)
-        this.elemntsMargins = this.absToPercent((this.margin * this.content.length - 1), this.getTotalElementsWidth()) - this.stopperFactor;
+        this.margin = +getComputedStyle(this.content[0]).marginLeft.split('px').join('');
+        this.elemntsMargins = this.absToPercent((this.margin * this.content.length), this.getTotalElementsWidth()) - this.stopperFactor;
 
     }
 
-    getTranslateStepX = () => this.translateStepX = (this.content[1].clientWidth + this.margin) / this.main.clientWidth * 100  // Узнаем шаг для X транслэйта
+    getTranslateStepX = () => this.translateStepX = (this.content[0].clientWidth + this.margin) / this.main.clientWidth * 100  // Узнаем шаг для X транслэйта
 
 
 
-    getTotalElementsWidth = () => (this.content[1].clientWidth + this.margin) * this.content.length // Узнаем общую ширину для всех эелементов слайдера
+    getTotalElementsWidth = () => (this.content[0].clientWidth + this.margin) * this.content.length // Узнаем общую ширину для всех эелементов слайдера
 
 }
 
@@ -423,115 +452,82 @@ class Slider {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Advantages Slider
+    // Coffee Slider
 
-    const contentAdvantages = [...document.querySelectorAll(".advantages__carousel-item")];
-    if (contentAdvantages.length !== 0) {
-
-        const wrapperAdvantages = document.querySelector(".advantages__body");
-        const mainAdvantages = document.querySelector(".advantages__slider");
-        const resizeOberverAdvantages = document.querySelector(".advantages__resizer");
-        const sliderBreakpointAdvantages = 1225;
-        console.log(contentAdvantages)
-        const sliderAdvantages = new Slider(contentAdvantages, mainAdvantages, wrapperAdvantages, sliderBreakpointAdvantages, null, null, null, resizeOberverAdvantages, null, null, 0, null, null);
-
-        /*  sliderCoffee.getUnactiveElts(); */
-        /* sliderCoffee.initArrowsBtns(); */
-        sliderAdvantages.getMargin();
-        sliderAdvantages.getTranslateStepX();
-        sliderAdvantages.initDrag();
-        sliderAdvantages.contextMenu();
-        sliderAdvantages.slideResizeObserver();
-    }
+    const productWrapper = document.querySelector(".content-products__body-wrapper");
+    const product = [...document.querySelectorAll(".product")];
+    const productPrice = [...document.querySelectorAll(".product__price")];
+    const productTitle = [...document.querySelectorAll(".product__title")];
 
 
-    // Advantages Slider
+    // price filter
+    const filterMinMaxAmount = [...document.querySelectorAll(".filter-minMax__amount")];
 
-    const contentProgramm = [...document.querySelectorAll(".programm__item ")];
-
-    if (contentProgramm.length !== 0) {
-        const wrapperProgramm = document.querySelector(".programm__body");
-        const mainProgramm = document.querySelector(".programm__slider ");
-        const resizeOberverProgramm = document.querySelector(".programm__resizer");
-        const sliderBreakpointProgramm = 1225;
-        console.log(contentAdvantages)
-        const sliderProgramm = new Slider(contentProgramm, mainProgramm, wrapperProgramm, sliderBreakpointProgramm, null, null, null, resizeOberverProgramm, null, null, 0, null, null);
-
-        /*  sliderCoffee.getUnactiveElts(); */
-        /* sliderCoffee.initArrowsBtns(); */
-        sliderProgramm.getMargin();
-        sliderProgramm.getTranslateStepX();
-        sliderProgramm.initDrag();
-        sliderProgramm.contextMenu();
-        sliderProgramm.slideResizeObserver();
-
-    }
-
-    const contentCard = [...document.querySelectorAll(".tariffsec__card")];
-
-    if (contentCard.length !== 0) {
-        const mainCard = document.querySelector(".tariffsec__slider");
-        const wrapperCard = document.querySelector(".tariffsec__body");
-        const resizeOberverCard = document.querySelector(".tariffsec__resizer");
-        const circeTogglersCard = [...document.querySelectorAll(".circe-togglers__item")];
-        const circleActiveClass = 'circe-togglers__item--active'
-        const sliderBreakpointCard = 480;
-        console.log(contentAdvantages)
-        const sliderProgramm = new Slider(contentCard, mainCard, wrapperCard, sliderBreakpointCard, null, circeTogglersCard, circleActiveClass, resizeOberverCard, null, null, 0, null, null);
-
-        /*  sliderCoffee.getUnactiveElts(); */
-        /* sliderCoffee.initArrowsBtns(); */
-        sliderProgramm.getMargin();
-        sliderProgramm.getTranslateStepX();
-        sliderProgramm.initDrag();
-        sliderProgramm.initCirceTogglers()
-        sliderProgramm.contextMenu();
-        sliderProgramm.slideResizeObserver();
-
-    }
-    const contentService = [...document.querySelectorAll(".interest-service__slider-item")];
-    console.log(contentService)
-    if (contentService.length !== 0) {
-        const mainService = document.querySelector(".interest-service__slider");
-        const wrapperService = document.querySelector(".interest-service__body");
-        const resizeOberverService = document.querySelector(".interest-service__resizer");
-        const sliderBreakpointService = 1225;
-        console.log(contentAdvantages)
-        const sliderProgramm = new Slider(contentService, mainService, wrapperService, sliderBreakpointService, null, null, null, resizeOberverService, null, null, 0, null, null);
-
-        /*  sliderCoffee.getUnactiveElts(); */
-        /* sliderCoffee.initArrowsBtns(); */
-        sliderProgramm.getMargin();
-        sliderProgramm.getTranslateStepX();
-        sliderProgramm.initDrag();
-        sliderProgramm.contextMenu();
-        sliderProgramm.slideResizeObserver();
-
-    }
+    const filterRailWrapper = document.querySelector(".filter");
+    const filterRailShifts = [...document.querySelectorAll(".filter__body")];
+    const filterRailLine = document.querySelector(".filter-rail__line");
+    const filterTransformVAr = '--body-transform';
 
 
-    const contentArticles = [...document.querySelectorAll(".articles-content__slide")];
-    console.log(contentService)
-    if (contentService.length !== 0) {
-        const mainArticles = document.querySelector(".usefull-articles__slider");
-        const wrapperArticles = document.querySelector(".usefull-articles__body");
-        const resizeOberverArticles = document.querySelector(".articles-content__resizer");
-        const sliderBreakpointArticles = 1225;
-        console.log(contentAdvantages)
-        const sliderProgramm = new Slider(contentArticles, mainArticles, wrapperArticles, sliderBreakpointArticles, null, null, null, resizeOberverArticles, null, null, 0, null, null);
+    // text filter
+    const filterCheckboxLabel = [...document.querySelectorAll(".checkbox__label")];
+    const filterCheckboxAmount = [...document.querySelectorAll(".checkbox__amount")];
 
-        /*  sliderCoffee.getUnactiveElts(); */
-        /* sliderCoffee.initArrowsBtns(); */
-        sliderProgramm.getMargin();
-        sliderProgramm.getTranslateStepX();
-        sliderProgramm.initDrag();
-        sliderProgramm.contextMenu();
-        sliderProgramm.slideResizeObserver();
 
-    }
+    // search filter
+    const filterSearcher = document.querySelector(".input__search");
+
+
+    const productFilter = new Filter(productWrapper, product, productPrice, productTitle, filterMinMaxAmount, filterRailWrapper, filterRailShifts, filterTransformVAr, filterRailLine, filterCheckboxLabel, filterCheckboxAmount, filterSearcher);
+
+
+    /*     productFilter.getMinMax();
+        productFilter.displayMinMax(filterMinMaxAmount[0], filterMinMaxAmount[1]); */
+    productFilter.initRailsShifts();
+    /*     productFilter.changePriceInput();
+        productFilter.contextMenu(); */
+    /*     sliderCoffee.getMargin();
+        sliderCoffee.getUnactiveElts();
+        sliderCoffee.getTranslateStepX();
+        sliderCoffee.initArrowsBtns();
+        sliderCoffee.initDrag();
+        sliderCoffee.slideResizeObserver(); */
 
 
 
+    // // Combo Slider
+
+    // const arrowCom = [...document.querySelectorAll(".combo__toggle-btn")];
+    // const contentCom = [...document.querySelectorAll(".combo__item")];
+    // const mainCom = document.querySelector(".combo__body-wrapper");
+    // const resizeOberverCom = document.querySelector(".combo__resizeOberver");
+
+    // const sliderCombo = new Slider(contentCom, mainCom, arrowCom, resizeOberverCom, null, null, 0, null, null);
+
+    // sliderCombo.getMargin();
+    // sliderCombo.getUnactiveElts();
+    // sliderCombo.getTranslateStepX();
+    // sliderCombo.initArrowsBtns();
+    // sliderCombo.initDrag();
+    // sliderCombo.contextMenu();
+    // sliderCombo.slideResizeObserver();
+
+
+
+    // // Giftset Slider
+
+    // const contentGif = [...document.querySelectorAll(".giftset__body-wrapper")];
+    // const mainGif = document.querySelector(".giftset__body");
+    // const toggleBtnGif = [...document.querySelectorAll(".togglers__item")];
+    // const toggleMoveGif = document.querySelector(".togglers__item-move");
+    // const slideNumber = document.querySelector(".togglers__slide-number");
+    // const toggleResizeOberverGif = document.querySelector(".togglers__resize-observer");
+    // const sliderGiftset = new Slider(contentGif, mainGif, null, null, toggleBtnGif, toggleMoveGif, null, slideNumber, toggleResizeOberverGif);
+
+    // sliderGiftset.getMargin();
+    // sliderGiftset.getTranslateStepX();
+    // sliderGiftset.initToggleBtns();
+    // sliderGiftset.toggleContainerResizeObserver();
 
 })
 
@@ -549,7 +545,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 }
-
 const slider3d = {
     type: "3dslider",
     settings: {
@@ -563,9 +558,7 @@ const slider3d = {
         }
     }
 }
-
 const sliderGif = new Slider (
-
 ) */
 class Accordion {
 
@@ -1051,7 +1044,7 @@ class Direction {
         let childTop = direction.getBoundingClientRect().top;
         childTop = +childTop.toFixed()
         if (window.innerWidth > 1190) {
-            childMarginRight > 0 && (direction.style.marginRight = '0')
+            childMarginRight > 0 && (direction.style.marginRight = '0') // console.log 
         }
         if ((childTop - parentTop) > childMarginTop && direction.classList.contains(this.directionActive) && this.directions.indexOf(direction) % 3 !== 0) {
             this.removeClass(direction, this.directionActive)
@@ -1071,7 +1064,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const directions = [...document.querySelectorAll(".direction__item")];
     const directionsBody = document.querySelector(".direction__body-wrapper");
     const directionActive = 'direction__item--margin';
-    directions.length !== 0 && new Direction(directionsBody, directions, directionActive);
+    directions.length !== 0 && new Direction(directionsBody, directions, directionActive); 
 
 
 
@@ -2255,3 +2248,585 @@ document.addEventListener('DOMContentLoaded', () => {
     scroll.sidebarManipulation()
 
 })
+
+class Slider {
+
+    constructor(content, main, wrapper, sliderBreakpoint, arrow, circeTogglers, circleActiveClass, slideResizeOberverObj, toggleBtn, toggleMoveGif, stopperFactor, slideNumber, toggleResizeOberverObj) {
+
+        this.content = content,
+            this.main = main,
+            this.wrapper = wrapper,
+            this.sliderBreakpoint = sliderBreakpoint,
+            this.arrow = arrow,
+            this.circeTogglers = circeTogglers,
+            this.circleActiveClass = circleActiveClass,
+            this.slideResizeOberverObj = slideResizeOberverObj,
+            this.toggleResizeOberverObj = toggleResizeOberverObj,
+            this.toggleBtn = toggleBtn,
+            this.toggleMoveGif = toggleMoveGif,
+            this.slideNumber = slideNumber,
+            this.isDragging = false,
+            this.currentIndex = 0,
+            this.startPos = 0,
+            this.translateStepX = 0,
+            this.currentTranslationX = 0,
+            this.currentTranslationMove,
+            this.margin = 0,
+            this.sliderLimit = 0,
+            this.elemntsMargins = 0,
+            this.prevTranslation = 0,
+            this.animationID = 0,
+            this.stopperFactor = stopperFactor,
+            this.oserver = null;
+    }
+
+
+
+
+    /*                                                ТАЧ СОБЫТИЕ                                             */
+
+    initDrag = () => {
+        this.content.map((dragableItem, i) => {
+            console.log(innerWidth)
+            /* if (innerWidth < this.sliderBreakpoint) { */
+            dragableItem.addEventListener('dragstart', (e) => e.preventDefault())
+            console.log(dragableItem)
+            //touch event
+            dragableItem.addEventListener('touchstart', this.touchStart(i), { passive: true })
+            dragableItem.addEventListener('touchend', (e) => this.touchEnd(e))
+            dragableItem.addEventListener('touchmove', this.touchMove, { passive: true })
+
+
+            //mouse event
+            dragableItem.addEventListener('mousedown', this.touchStart(i), { passive: true })
+            dragableItem.addEventListener('mouseup', (e) => this.touchEnd(e))
+            dragableItem.addEventListener('mousemove', this.touchMove, { passive: true })
+            dragableItem.addEventListener('mouseleave', (e) => this.isDragging && this.touchEnd(e))
+            /* } */
+
+        })
+    }
+
+
+    contextMenu = () => {
+        window.oncontextmenu = (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            return false
+        }
+    }
+
+
+    animation = () => {
+        // анимация если драг активен
+        console.log('ok')
+        this.setSliderPositionX(this.main, this.currentTranslationX);
+        if (this.isDragging) requestAnimationFrame(this.animation)
+    }
+
+
+    touchStart = (i) => {
+
+        // Начало тач события 
+        return (event) => {
+            console.log(this.sliderBreakpoint, innerWidth)
+            if (this.sliderBreakpoint > innerWidth) {
+                console.log('ok')
+                this.main.classList.remove('slider--smooth'); // удаляем плавность при движении, чтобы не было задержек
+                this.startPos = this.getPositionX(event);                // узнаем стартовую позицию мыши
+                this.isDragging = true;                                  // инициализируем перетаскивание
+                this.animationID = requestAnimationFrame(this.animation) // запускаем анимацию
+            }
+
+        }
+    }
+
+
+    touchMove = (e) => {
+
+        // тач событие
+
+        if (this.isDragging && this.sliderBreakpoint > innerWidth) { // если драг активен
+
+            let currentPosition = this.getPositionX(e); // узнаем  позицию мыши
+
+            const wrapperRight = window.innerWidth - (this.wrapper.getBoundingClientRect().left + this.wrapper.clientWidth);
+            const lastElementRight = window.innerWidth - (this.content[this.content.length - 1].getBoundingClientRect().left + this.content[this.content.length - 1].clientWidth);
+            /* console.log(this.prevTranslation, this.currentTranslationX) */
+            /*        console.log(translationtoAbs) */
+
+            /*  console.log(((this.translateStepX * this.content.length) + this.elemntsMargins).toFixed());
+             console.log(Math.abs(this.currentTranslationX).toFixed(), ((this.translateStepX * (this.content.length - 1)) + this.elemntsMargins).toFixed()); */
+            /*    console.log(Math.abs(this.currentTranslationX).toFixed(), ((this.translateStepX * (this.content.length - 1)) + this.elemntsMargins).toFixed())
+               console.log(Math.abs(this.currentTranslationX).toFixed()) */
+            /*  console.log(this.translateStepX) */
+            /*  console.log(this.currentTranslationX, this.prevTranslation, this.sliderLimit)
+             console.log(this.sliderLimit - wrapperRight, lastElementRight) */
+            /* console.log(this.sliderLimit + wrapperRight, lastElementRight) */
+            /*   console.log(lastElementRight, this.sliderLimit, wrapperRight)
+              console.log(lastElementRight < this.sliderLimit, wrapperRight) */
+            // +Math.abs(this.currentTranslationX).toFixed() <= ((this.translateStepX * (this.content.length - 1)) + this.elemntsMargins).toFixed()
+            if ((lastElementRight <= this.sliderLimit && +Math.abs(this.currentTranslationX).toFixed() <= ((this.translateStepX * (this.content.length - 1)) + this.elemntsMargins).toFixed() && this.currentTranslationX < 2) || (this.currentTranslationX >= this.prevTranslation && this.currentTranslationX < 2)) {
+                /*   console.log(this.currentTranslationX) */
+                this.currentTranslationX = this.absToPercent(((this.prevTranslation * this.main.clientWidth / 100) + currentPosition - this.startPos), this.main.clientWidth);
+            }
+        }
+    }
+
+
+    touchEnd = (e) => {
+        // Остановка тач события
+        if (this.sliderBreakpoint > innerWidth) {
+            this.main.classList.add('slider--smooth');           // возвращаем плавность для событий на клик стрелки
+            cancelAnimationFrame(this.animationID)                          // отмена анимацию
+            this.isDragging = false;                                        // отсановка перетаскивания
+
+
+            // Изменям индекс в зависимости от текущей трансформации
+            if (this.currentIndex < this.content.length - 1) {
+                console.log(this.currentIndex, this.content.length)
+                Math.abs(this.currentTranslationX) > ((Math.abs(this.prevTranslation) + this.translateStepX / 3.5)) && (this.currentIndex++);
+            }
+            if (this.currentIndex >= 0) {
+                Math.abs(this.currentTranslationX) < ((Math.abs(this.prevTranslation) - this.translateStepX / 3.5)) && (this.currentIndex--);
+            }
+
+
+            this.setPrevTranslation();                                      // Устанавливаем предыдущий транслэйте
+            this.setCurrentXTranslation();                                  // Устанавливаем текущий транслэйте
+            this.changeArrowActivity();                                     // Изменяем активность кнопопк
+            this.setSliderPositionX(this.main, this.currentTranslationX);   // Устанавливаем транслэйт для слайдера
+            this.getUnactiveElts();                                        // меняем опасити элементов 
+
+            console.log(this.currentIndex)
+            if (this.circeTogglers) {
+                this.setCircleActivity(this.circeTogglers[this.currentIndex])
+            }
+
+
+            setTimeout(() => {
+                const wrapperRight = window.innerWidth - (this.wrapper.getBoundingClientRect().left + this.wrapper.clientWidth);
+                console.log(wrapperRight)
+                const lastElementRight = window.innerWidth - (this.content[this.content.length - 1].getBoundingClientRect().left + this.content[this.content.length - 1].clientWidth);
+                console.log(lastElementRight)
+                lastElementRight > 0 ? this.sliderLimit = wrapperRight + lastElementRight : this.sliderLimit = 0
+                console.log(this.sliderLimit)
+            }, 500)
+        }
+    }
+
+
+
+
+    /*                                                СОБЫТИЕ НА КЛИК СТРЕЛОК                                             */
+
+    initArrowsBtns = () => {
+        console.log('ok')
+        this.arrow[0].addEventListener("click", () => this.left()); // левая стрелка
+
+        this.arrow[1].addEventListener("click", () => this.rigth()); // праввая стрелка
+    }
+
+    rigth = () => {
+        if (this.currentIndex < this.getMainToContentIndex()) {
+            this.currentIndex++;
+            this.setPrevTranslation();            // Устанавливаем предыдущий транслэйт
+            this.setCurrentXTranslation();        // Устанавливаем текущий транслэйт
+            this.changeArrowActivity();           // Изменяем активность кнопопк
+            this.setSliderPositionX(this.main, this.currentTranslationX);   // Устанавливаем транслэйт для слайдера
+            this.getUnactiveElts();               // меняем опасити элементов 
+        }
+
+    }
+
+
+    left = () => {
+        if (Math.abs(this.currentTranslationX) > 0) {
+            this.currentIndex--
+            this.setPrevTranslation();            // Устанавливаем предыдущий транслэйт
+            this.setCurrentXTranslation();        // Устанавливаем текущий транслэйт
+            this.changeArrowActivity();           // Изменяем активность кнопопк
+            this.setSliderPositionX(this.main, this.currentTranslationX);   // Устанавливаем транслэйт для слайдера
+            this.getUnactiveElts();               // меняем опасити элементов 
+        }
+    }
+
+
+
+
+    /*                                                СОБЫТИЕ НА КЛИК КНОПОК                                         */
+
+    initToggleBtns = () => {
+        this.toggleBtn.map((item, i) => item.addEventListener("click", () => {
+            !this.toggleMoveGif.classList.contains('togglers__item-move--smooth') && this.toggleClasses(this.toggleMoveGif, 'togglers__item-move--smooth')
+            this.currentIndex = i;
+            this.setCurrentXTranslation();                                  // Меняем текущий транслэйт слайдер 
+            this.setSliderPositionX(this.main, this.currentTranslationX);  // Устанавливаем транслэйт для слайдера
+            this.setSlideNumber(this.slideNumber)
+            if (this.direction() === 'column') {
+                this.setSliderPositionY(this.toggleMoveGif, this.setCurrentFullBodyTranslation(100))   // Меняем текущий транслэйт движущегося элемента и станавливаем транслэйт для движущегося элемента
+            } else {
+                this.setSliderPositionX(this.toggleMoveGif, this.setCurrentFullBodyTranslation(100))
+            }
+        }))
+    }
+
+
+
+
+    direction = () => window.getComputedStyle(this.toggleBtn[0].parentElement).flexDirection;
+
+
+    /*                                                СОБЫТИЕ НА КЛИК КРУЖКОВ                                         */
+
+
+    initCirceTogglers = () => {
+        this.circeTogglers.map((item, i) => item.addEventListener("click", () => {
+            /*  !this.toggleMoveGif.classList.contains('togglers__item-move--smooth') && this.toggleClasses(this.toggleMoveGif, 'togglers__item-move--smooth') */
+
+            this.setCircleActivity(item)
+
+            this.currentIndex = i;
+            console.log(this.currentIndex)
+            this.setPrevTranslation();
+            this.setCurrentXTranslation();                                  // Меняем текущий транслэйт слайдер 
+            this.setSliderPositionX(this.main, this.currentTranslationX);  // Устанавливаем транслэйт для слайдера
+        }))
+    }
+
+
+
+    getActiveElement = (activeClass) => document.querySelector(`.${activeClass}`)
+
+    setCircleActivity = (item) => {
+        this.toggleClasses(this.getActiveElement(this.circleActiveClass), this.circleActiveClass)
+        this.toggleClasses(item, this.circleActiveClass)
+    }
+
+    /*                                                ОБЩИЕ МЕТОДЫ                                         */
+
+
+    /*                                                СМЕНА АКТИВНОСТИ СТРЕЛОК                                        */
+
+    changeArrowActivity = () => {
+
+        // меняем активность стрелок
+
+        console.log(this)
+
+        if (this.arrow) {
+            // Левая стрелка
+            if (Math.abs(this.currentTranslationX) > 0) {
+                this.arrow[0].classList.contains('carousel__toggle-btn--unactive') && this.arrow[0].classList.remove('carousel__toggle-btn--unactive')
+            } else {
+                !this.arrow[0].classList.contains('carousel__toggle-btn--unactive') && this.arrow[0].classList.add('carousel__toggle-btn--unactive');
+            }
+
+
+            // Правая стрелка
+            if (this.currentIndex === this.getMainToContentIndex()) {
+                this.arrow[1].classList.add('carousel__toggle-btn--unactive');
+            } else {
+                this.arrow[1].classList.remove('carousel__toggle-btn--unactive');
+            }
+        }
+    }
+
+
+
+
+    /*                                                МЕНЯЕМ ПРОЗРАЧНОСТЬ ВЫПАДАЮЩИХ ЭЛЕМЕНТОВ                                      */
+
+    getUnactiveElts = () => this.content.map((item, i) => {
+        // меняем опасити элементов 
+        const translationtoAbs = this.percentToAbsolute(Math.abs(this.currentTranslationX), this.main.clientWidth).toFixed();
+        if (this.main.clientWidth <= ((item.offsetLeft + this.margin + i) - translationtoAbs) || item.offsetLeft + i - translationtoAbs < 0) {
+            item.classList.add('carousel__item--unActive')
+        } else {
+            (item.classList.contains('carousel__item--unActive') && item.classList.remove('carousel__item--unActive'))
+        }
+
+    })
+
+
+
+
+    /*                                                resizeObserver API                                     */
+
+
+    slideRzeObrCallback = (entries) => {
+        setTimeout(() => {
+
+
+            // Настройка слайдера после изменения ширина слайда(в процентом соотношении)
+            this.getTranslateStepX(); // Узнаем шаг для X транслэйта
+            this.getMargin();
+            console.log(this.margin, this.translateStepX)
+
+            // Уменьшаем индекс при переполнении
+            if (this.currentIndex > this.getMainToContentIndex()) {
+                const decresseIndex = this.currentIndex - this.getMainToContentIndex();
+                this.currentIndex -= decresseIndex;
+                console.log(this.currentIndex)
+            }
+
+            console.log(this.sliderBreakpoint, innerWidth)
+            if (this.sliderBreakpoint < innerWidth) {
+                this.currentIndex = 0;
+                console.log(this.currentIndex)
+            }
+
+            if (this.circeTogglers) {
+                this.setCircleActivity(this.circeTogglers[this.currentIndex])
+            }
+            /*     console.log(this.getMainToContentIndex())
+            console.log(this.currentIndex) */
+            this.setPrevTranslation();           // Устанавливаем предыдущий транслэйт
+            this.getMainToContentIndex()         // Узнаем насколько могут переполнятся элементы с контейнера слайдера, берется как отношенее элеметов в контецнера слайдера к общему количеству элементов в слайдере
+            this.setCurrentXTranslation();       // Устанавливаем текущий транслэйт
+            this.changeArrowActivity();          // Изменяем активность кнопопок
+            this.setSliderPositionX(this.main, this.currentTranslationX);  // Устанавливаем транслэйт для слайдера
+            this.getUnactiveElts();              // меняем опасити элементов 
+
+        }, 500)
+    }
+
+    slideResizeObserver = () => {
+
+        // resizeInteraction событие, которое срабатывает при измненнении ширины элемента
+        console.log(this.currentIndex, this.slideResizeOberverObj)
+        this.resizerSlide = new ResizeObserver(this.slideRzeObrCallback);
+        this.resizerSlide.observe(this.slideResizeOberverObj)
+    }
+
+    toggleContainerRzeObrCallback = () => {
+        this.toggleMoveGif.classList.contains('togglers__item-move--smooth') && this.toggleClasses(this.toggleMoveGif, 'togglers__item-move--smooth')
+        if (this.direction() === 'column') {
+            this.setSliderPositionY(this.toggleMoveGif, this.setCurrentFullBodyTranslation(100))   // Меняем текущий транслэйт движущегося элемента и станавливаем транслэйт для движущегося элемента
+        } else {
+            this.setSliderPositionX(this.toggleMoveGif, this.setCurrentFullBodyTranslation(100))
+        }
+
+    }
+
+
+
+
+    toggleContainerResizeObserver = () => {
+        this.resizerToggler = new ResizeObserver(this.toggleContainerRzeObrCallback);
+        console.log(this.toggleResizeOberverObj)
+        this.resizerToggler.observe(this.toggleResizeOberverObj)
+    }
+
+
+
+    /*                                               ТЕХНИЧЕСКИЕ МЕТОДЫ                                  */
+
+    toggleClasses = (element, classList) => element.classList.toggle(classList)
+
+
+
+
+    /*                                               СМЕНА КЛАССОВ                                 */
+
+
+
+
+    getMainToContentIndex = () => this.content.length - ((this.absToPercent(this.main.clientWidth, this.getTotalElementsWidth()).toFixed() / 100) * this.content.length).toFixed()  // индекс отношения контэйнера слайдера к его контентой части
+
+
+    setSliderPositionX = (element, translation) => element.style.transform = `translateX(${translation}%)`  // Устанавливаем транслэйт для элемента по x координате
+
+    setSliderPositionY = (element, translation) => element.style.transform = `translateY(${translation}%)` // Устанавливаем транслэйт для элемента по y координате
+
+
+    getPositionX = (event) => event.type.includes('mouse') ? event.pageX : event.touches[0].clientX; // Позиция мыши/пальца
+
+
+    // Переводы чисел
+
+    absToPercent = (absolute, container) => absolute / container * 100  // Перевод в проценты
+
+    percentToAbsolute = (percent, container) => percent / 100 * container  // Перевод в абсолюбное значение
+
+
+    setSlideNumber = (elem) => elem.textContent = this.currentIndex + 1  // Устанавливаем номер слайда
+
+
+    setPrevTranslation = () => this.prevTranslation = this.currentIndex * - this.absToPercent(this.content[0].clientWidth + this.margin, this.main.clientWidth).toFixed();// Устанавливаем предыдущий трансл
+
+    setCurrentXTranslation = () => this.currentTranslationX = (this.currentIndex) * -this.translateStepX; //Меняем текущий X транслэйт
+
+    setCurrentFullBodyTranslation = (translate) => (this.currentIndex) * translate; //Меняем текущий Y транслэйт
+
+
+    getMargin = () => {
+        // Узнаем отутупы для правельного транслэйта
+        this.margin = +getComputedStyle(this.content[1]).marginLeft.split('px').join('');
+        /*  console.log(this.margin) */
+        this.elemntsMargins = this.absToPercent((this.margin * this.content.length - 1), this.getTotalElementsWidth()) - this.stopperFactor;
+
+    }
+
+    getTranslateStepX = () => {
+        /*   console.log(this.content[1].getBoundingClientRect().width) */
+        console.log(this.content[1].clientWidth)
+        console.log(this.main.clientWidth)
+        /*  setTimeout(() => { */
+        this.translateStepX = ((this.content[1].clientWidth + this.margin) / this.main.clientWidth * 100).toFixed() // Узнаем шаг для X транслэйта
+        /*         }, 500) */
+
+    }
+
+    getTotalElementsWidth = () => (this.content[1].clientWidth + this.margin) * this.content.length // Узнаем общую ширину для всех эелементов слайдера
+
+}
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Advantages Slider
+
+    const contentAdvantages = [...document.querySelectorAll(".advantages__carousel-item")];
+    if (contentAdvantages.length !== 0) {
+
+        const wrapperAdvantages = document.querySelector(".advantages__body");
+        const mainAdvantages = document.querySelector(".advantages__slider");
+        const resizeOberverAdvantages = document.querySelector(".advantages__resizer");
+        const sliderBreakpointAdvantages = 1225;
+        console.log(contentAdvantages)
+        const sliderAdvantages = new Slider(contentAdvantages, mainAdvantages, wrapperAdvantages, sliderBreakpointAdvantages, null, null, null, resizeOberverAdvantages, null, null, 0, null, null);
+
+        /*  sliderCoffee.getUnactiveElts(); */
+        /* sliderCoffee.initArrowsBtns(); */
+        sliderAdvantages.getMargin();
+        sliderAdvantages.getTranslateStepX();
+        sliderAdvantages.initDrag();
+        sliderAdvantages.contextMenu();
+        sliderAdvantages.slideResizeObserver();
+    }
+
+
+    // Advantages Slider
+
+    const contentProgramm = [...document.querySelectorAll(".programm__item ")];
+
+    if (contentProgramm.length !== 0) {
+        const wrapperProgramm = document.querySelector(".programm__body");
+        const mainProgramm = document.querySelector(".programm__slider ");
+        const resizeOberverProgramm = document.querySelector(".programm__resizer");
+        const sliderBreakpointProgramm = 1225;
+        console.log(contentAdvantages)
+        const sliderProgramm = new Slider(contentProgramm, mainProgramm, wrapperProgramm, sliderBreakpointProgramm, null, null, null, resizeOberverProgramm, null, null, 0, null, null);
+
+        /*  sliderCoffee.getUnactiveElts(); */
+        /* sliderCoffee.initArrowsBtns(); */
+        sliderProgramm.getMargin();
+        sliderProgramm.getTranslateStepX();
+        sliderProgramm.initDrag();
+        sliderProgramm.contextMenu();
+        sliderProgramm.slideResizeObserver();
+
+    }
+
+    const contentCard = [...document.querySelectorAll(".tariffsec__card")];
+
+    if (contentCard.length !== 0) {
+        const mainCard = document.querySelector(".tariffsec__slider");
+        const wrapperCard = document.querySelector(".tariffsec__body");
+        const resizeOberverCard = document.querySelector(".tariffsec__resizer");
+        const circeTogglersCard = [...document.querySelectorAll(".circe-togglers__item")];
+        const circleActiveClass = 'circe-togglers__item--active'
+        const sliderBreakpointCard = 480;
+        console.log(contentAdvantages)
+        const sliderProgramm = new Slider(contentCard, mainCard, wrapperCard, sliderBreakpointCard, null, circeTogglersCard, circleActiveClass, resizeOberverCard, null, null, 0, null, null);
+
+        /*  sliderCoffee.getUnactiveElts(); */
+        /* sliderCoffee.initArrowsBtns(); */
+        sliderProgramm.getMargin();
+        sliderProgramm.getTranslateStepX();
+        sliderProgramm.initDrag();
+        sliderProgramm.initCirceTogglers()
+        sliderProgramm.contextMenu();
+        sliderProgramm.slideResizeObserver();
+
+    }
+    const contentService = [...document.querySelectorAll(".interest-service__slider-item")];
+    console.log(contentService)
+    if (contentService.length !== 0) {
+        const mainService = document.querySelector(".interest-service__slider");
+        const wrapperService = document.querySelector(".interest-service__body");
+        const resizeOberverService = document.querySelector(".interest-service__resizer");
+        const sliderBreakpointService = 1225;
+        console.log(contentAdvantages)
+        const sliderProgramm = new Slider(contentService, mainService, wrapperService, sliderBreakpointService, null, null, null, resizeOberverService, null, null, 0, null, null);
+
+        /*  sliderCoffee.getUnactiveElts(); */
+        /* sliderCoffee.initArrowsBtns(); */
+        sliderProgramm.getMargin();
+        sliderProgramm.getTranslateStepX();
+        sliderProgramm.initDrag();
+        sliderProgramm.contextMenu();
+        sliderProgramm.slideResizeObserver();
+
+    }
+
+
+    const contentArticles = [...document.querySelectorAll(".articles-content__slide")];
+    console.log(contentService)
+    if (contentService.length !== 0) {
+        const mainArticles = document.querySelector(".usefull-articles__slider");
+        const wrapperArticles = document.querySelector(".usefull-articles__body");
+        const resizeOberverArticles = document.querySelector(".articles-content__resizer");
+        const sliderBreakpointArticles = 1225;
+        console.log(contentAdvantages)
+        const sliderProgramm = new Slider(contentArticles, mainArticles, wrapperArticles, sliderBreakpointArticles, null, null, null, resizeOberverArticles, null, null, 0, null, null);
+
+        /*  sliderCoffee.getUnactiveElts(); */
+        /* sliderCoffee.initArrowsBtns(); */
+        sliderProgramm.getMargin();
+        sliderProgramm.getTranslateStepX();
+        sliderProgramm.initDrag();
+        sliderProgramm.contextMenu();
+        sliderProgramm.slideResizeObserver();
+
+    }
+
+
+
+
+})
+
+
+/* const carousel = {
+    type: "carousel",
+    settings: {
+        customSetting: {
+            effects: "",
+            touch: "true/false",
+        },
+        switchers: {
+            dots: "true/false",
+            arrows: "true/false",
+        }
+    }
+}
+
+const slider3d = {
+    type: "3dslider",
+    settings: {
+        customSetting: {
+            effects: "rota",
+        },
+        switchers: {
+            dots:  "true/false",
+            arrows: "true/false",
+            togglers: "true/false",
+        }
+    }
+}
+
+const sliderGif = new Slider (
+
+) */

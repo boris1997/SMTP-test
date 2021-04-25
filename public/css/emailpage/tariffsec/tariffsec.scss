@@ -29,6 +29,13 @@
   &__togglers {
     display: none;
   }
+
+  &__resizer {
+     position: absolute;
+    visibility: hidden;
+    left: -1000px;
+    width: 10px;
+  }
 }
 
 .card-tariffsec {

@@ -73,6 +73,18 @@
 }
 
 .filter {
+  &__body {
+    /*     --body-transform: 0;
+    transform: translate(var(--body-transform)); */
+    transform: translate(0);
+    @media (max-width: 991px) {
+      --body-transform: 0;
+      transform: translate(var(--body-transform));
+    }
+  }
+  /*   --body-transform: 0;
+      transform: translate(var(--body-transform)); */
+
   &__list {
     @include flexbox(row, space-between, space-between);
   }

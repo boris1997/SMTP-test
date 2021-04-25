@@ -68,6 +68,7 @@ class Slider {
 
     animation = () => {
         // анимация если драг активен
+        console.log('ok')
         this.setSliderPositionX(this.main, this.currentTranslationX);
         if (this.isDragging) requestAnimationFrame(this.animation)
     }
@@ -108,8 +109,8 @@ class Slider {
             /*    console.log(Math.abs(this.currentTranslationX).toFixed(), ((this.translateStepX * (this.content.length - 1)) + this.elemntsMargins).toFixed())
                console.log(Math.abs(this.currentTranslationX).toFixed()) */
             /*  console.log(this.translateStepX) */
-            console.log(this.currentTranslationX, this.prevTranslation, this.sliderLimit)
-            console.log(this.sliderLimit - wrapperRight, lastElementRight)
+            /*  console.log(this.currentTranslationX, this.prevTranslation, this.sliderLimit)
+             console.log(this.sliderLimit - wrapperRight, lastElementRight) */
             /* console.log(this.sliderLimit + wrapperRight, lastElementRight) */
             /*   console.log(lastElementRight, this.sliderLimit, wrapperRight)
               console.log(lastElementRight < this.sliderLimit, wrapperRight) */
@@ -303,34 +304,40 @@ class Slider {
 
 
     slideRzeObrCallback = (entries) => {
+        setTimeout(() => {
 
-        // Настройка слайдера после изменения ширина слайда(в процентом соотношении)
-        this.getMargin();
-        this.getTranslateStepX(); // Узнаем шаг для X транслэйта
 
-        // Уменьшаем индекс при переполнении
-        if (this.currentIndex > this.getMainToContentIndex()) {
-            const decresseIndex = this.currentIndex - this.getMainToContentIndex();
-            this.currentIndex -= decresseIndex;
-            console.log(this.currentIndex)
-        }
-        if (this.sliderBreakpoint < innerWidth) {
-            this.currentIndex = 0;
-            console.log(this.currentIndex)
-        }
+            // Настройка слайдера после изменения ширина слайда(в процентом соотношении)
+            this.getTranslateStepX(); // Узнаем шаг для X транслэйта
+            this.getMargin();
+            console.log(this.margin, this.translateStepX)
 
-        if (this.circeTogglers) {
-            this.setCircleActivity(this.circeTogglers[this.currentIndex])
-        }
-        /*     console.log(this.getMainToContentIndex())
+            // Уменьшаем индекс при переполнении
+            if (this.currentIndex > this.getMainToContentIndex()) {
+                const decresseIndex = this.currentIndex - this.getMainToContentIndex();
+                this.currentIndex -= decresseIndex;
+                console.log(this.currentIndex)
+            }
+
+            console.log(this.sliderBreakpoint, innerWidth)
+            if (this.sliderBreakpoint < innerWidth) {
+                this.currentIndex = 0;
+                console.log(this.currentIndex)
+            }
+
+            if (this.circeTogglers) {
+                this.setCircleActivity(this.circeTogglers[this.currentIndex])
+            }
+            /*     console.log(this.getMainToContentIndex())
             console.log(this.currentIndex) */
-        this.setPrevTranslation();           // Устанавливаем предыдущий транслэйт
-        this.getMainToContentIndex()         // Узнаем насколько могут переполнятся элементы с контейнера слайдера, берется как отношенее элеметов в контецнера слайдера к общему количеству элементов в слайдере
-        this.setCurrentXTranslation();       // Устанавливаем текущий транслэйт
-        this.changeArrowActivity();          // Изменяем активность кнопопок
-        this.setSliderPositionX(this.main, this.currentTranslationX);  // Устанавливаем транслэйт для слайдера
-        this.getUnactiveElts();              // меняем опасити элементов 
+            this.setPrevTranslation();           // Устанавливаем предыдущий транслэйт
+            this.getMainToContentIndex()         // Узнаем насколько могут переполнятся элементы с контейнера слайдера, берется как отношенее элеметов в контецнера слайдера к общему количеству элементов в слайдере
+            this.setCurrentXTranslation();       // Устанавливаем текущий транслэйт
+            this.changeArrowActivity();          // Изменяем активность кнопопок
+            this.setSliderPositionX(this.main, this.currentTranslationX);  // Устанавливаем транслэйт для слайдера
+            this.getUnactiveElts();              // меняем опасити элементов 
 
+        }, 500)
     }
 
     slideResizeObserver = () => {
@@ -395,8 +402,7 @@ class Slider {
     setSlideNumber = (elem) => elem.textContent = this.currentIndex + 1  // Устанавливаем номер слайда
 
 
-    setPrevTranslation = () => this.prevTranslation = this.currentIndex * - this.absToPercent(this.content[0].clientWidth + this.margin, this.main.clientWidth);// Устанавливаем предыдущий трансл
-
+    setPrevTranslation = () => this.prevTranslation = this.currentIndex * - this.absToPercent(this.content[0].clientWidth + this.margin, this.main.clientWidth).toFixed();// Устанавливаем предыдущий трансл
 
     setCurrentXTranslation = () => this.currentTranslationX = (this.currentIndex) * -this.translateStepX; //Меняем текущий X транслэйт
 
@@ -406,14 +412,20 @@ class Slider {
     getMargin = () => {
         // Узнаем отутупы для правельного транслэйта
         this.margin = +getComputedStyle(this.content[1]).marginLeft.split('px').join('');
-        console.log(this.margin)
+        /*  console.log(this.margin) */
         this.elemntsMargins = this.absToPercent((this.margin * this.content.length - 1), this.getTotalElementsWidth()) - this.stopperFactor;
 
     }
 
-    getTranslateStepX = () => this.translateStepX = (this.content[1].clientWidth + this.margin) / this.main.clientWidth * 100  // Узнаем шаг для X транслэйта
+    getTranslateStepX = () => {
+        /*   console.log(this.content[1].getBoundingClientRect().width) */
+        console.log(this.content[1].clientWidth)
+        console.log(this.main.clientWidth)
+        /*  setTimeout(() => { */
+        this.translateStepX = ((this.content[1].clientWidth + this.margin) / this.main.clientWidth * 100).toFixed() // Узнаем шаг для X транслэйта
+        /*         }, 500) */
 
-
+    }
 
     getTotalElementsWidth = () => (this.content[1].clientWidth + this.margin) * this.content.length // Узнаем общую ширину для всех эелементов слайдера
 
