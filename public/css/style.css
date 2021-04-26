@@ -164,6 +164,11 @@ img {
   visibility: visible;
 }
 
+.page--main-background {
+  background-color: #192942;
+  background-image: none;
+}
+
 .page_screen_full {
   height: 100vh !important;
 }
