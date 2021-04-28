@@ -155,7 +155,7 @@
     min-width: 26%;
   }
   .articles-content__slide {
-    min-width: 33%;
+    min-width: 31%;
   }
 
   .interest-service__slider-item .services-item__img {
@@ -444,12 +444,9 @@
   .articles-content__slide + .articles-content__slide {
     margin-left: rem(25px);
   }
-  .interest-service__slider-item {
-    min-width: 36%;
-  }
-
+  .interest-service__slider-item,
   .articles-content__slide {
-    min-width: 40%;
+    min-width: 36%;
   }
 }
 
@@ -737,7 +734,8 @@
 
   .item-faq__title,
   .item-work__title,
-  .item-programm__title {
+  .item-programm__title,
+  .services-item__text {
     font-size: rem(16px !important);
   }
 
@@ -912,7 +910,12 @@
 
   .interest-service__slider-item,
   .articles-content__slide {
-    min-width: 100%;
+    min-width: 93%;
+  }
+
+  .interest-service__slider-item + .interest-service__slider-item,
+  .articles-content__slide + .articles-content__slide {
+    margin-left: rem(20px);
   }
 }
 
@@ -1031,6 +1034,6 @@
 
   .interest-service__slider-item,
   .articles-content__slide {
-    min-width: 47%;
+    min-width: 43%;
   }
 }

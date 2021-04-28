@@ -16,24 +16,74 @@
         <div class="container section  page__wrapper">
             <header class="header">
                 <div class="header__content">
-                    <div class="logo">
-                        <img src="./assets/svg/SMTP logo.svg" alt="лого" class="logo__img">
+                    <div class="header__logo logo">
+                        <a href="index.html" class="logo__link">
+                            <img src="./assets/svg/SMTP logo.svg" alt="лого" class="logo__img">
+                        </a>
                     </div>
                     <nav class="nav">
                         <ul class="nav__list">
                             <li class="nav__items"><a href="base.html" class="nav__link">База организаций</a></li>
                             <li class="nav__items"><a href="mail.html" class="nav__link">E-mail рассылка</a></li>
-                            <li class="nav__items"><a href="services.html" class="nav__link nav__link--active">Все
-                                    услуги</a></li>
+                            <li class="nav__items"><a href="services.html" class="nav__link">Все услуги</a></li>
                             <li class="nav__items"><a href="articles.html" class="nav__link">Статьи</a></li>
                         </ul>
                     </nav>
-                    <div class="header__services">
+                    <div class="header__contacts">
                         <a href="contact.html" class="header__btn btn__link btn btn__main">Контакты</a>
+                    </div>
+                    <div class="cross hamburger-menu header__hamburger-menu">
+                        <svg class="hamburger-menu__content" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <!--  <circle cx="50" cy="50" r="30" /> -->
+                            <path class="hamburger-menu__line hamburger-menu__line--1"
+                                d="M0 40h62c13 0 6 28-4 18L35 35" />
+                            <path class="hamburger-menu__line hamburger-menu__line--2" d="M0 50h70" />
+                            <path class="hamburger-menu__line hamburger-menu__line--3"
+                                d="M0 60h62c13 0 6-28-4-18L35 65" />
+                        </svg>
+                    </div>
+                    <div class="page__sidebar sidebar ">
+                        <div class="sidebar__body">
+                            <div class="sidebar__content">
+                                <div class="sidebar__menu mobile-menu">
+                                    <ul class="mobile-menu__wrapper mobile-menu__active">
+                                        <li class="mobile-menu__item mobile-menu__item--active">
+                                            <a class="mobile-menu__link item__text-medium mobile-menu__toggler"
+                                                href="base.html" class="menu__link">База организаций</a>
+                                        </li>
+                                        <li class="mobile-menu__item mobile-menu__item--active">
+                                            <a class="mobile-menu__link item__text-medium mobile-menu__toggler"
+                                                href="mail.html">E-mail
+                                                рассылка</a>
+
+                                        </li>
+                                        <li class="mobile-menu__item mobile-menu__item--active">
+                                            <a class="mobile-menu__link item__text-medium mobile-menu__toggler"
+                                                href="services.html">Все
+                                                услуги</a>
+
+                                        </li>
+                                        <li class="mobile-menu__item mobile-menu__item--active">
+                                            <a class="mobile-menu__link item__text-medium"
+                                                href="articles.html">Статьи</a>
+                                        </li>
+                                        <li class="mobile-menu__item mobile-menu__item--active"><a
+                                                class="mobile-menu__link item__text-medium "
+                                                href="contact.html">Контакты</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="overlay">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
             </header>
+
             <div class="page__navigtion">
                 <ul class="navigtion-page">
                     <li class="navigtion-page__item"><a href="index.html"
@@ -43,354 +93,360 @@
                     </li>
                 </ul>
             </div>
-            <section class="service">
-                <h1 class="service__title main__item">Рассылка по Новосибирску</h1>
-                <div class="service__header">
-                    <div class="service__left">
-                        <img src="./assets/svg/service/illustration.svg" alt="" class="service__img">
-                    </div>
-                    <div class="service__right">
-                        <div class="service-data">
-                            <div class="service-data__header">
-                                <div class="service-data__item item-datas">
-                                    <p class="item__text item-datas__title">
-                                        Стоимость
-                                    </p>
-                                    <span class="total-price__amount item-datas__amount">4 000</span>
-                                    <span class="total-price__amount-rub item-datas__amount">₽</span>
-                                </div>
-                                <div class="service-data__item item-datas">
-                                    <p class="item__text item-datas__title">
-                                        Тип услуги
-                                    </p>
-                                    <h4 class="item__title item-datas__title">E-mail рассылка</h4>
-                                </div>
-                                <button class="btn btn__main service-data__btn">Заказать</button>
-                            </div>
-                            <p class="service-data__text item__text">Lorem Ipsum - это текст-"рыба", часто
-                                используемый в
-                                печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
-                                текстов на латинице с начала XVI века. В то время некий безымянный печатник создал
-                                большую коллекцию размеров и форм
-                                шрифтов, используя Lorem Ipsum
-                                для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных
-                                изменений пять веков, но и перешагнул в
-                                электронный дизайн.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="service__directions">
-                    <h4 class="direction__title item__title">В базе предоставлены все направления деятельности
-                        российских
-                        компаний</h4>
-
-                    <div class="direction__body section__body">
-                        <div class="direction__background">
-                            <svg class="direction__background-img" width="100%" height="100%" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <rect class="direction__background-rect" x="0" y="0" width="100%" height="100%"
-                                    rx="11.5" stroke="url(#paint0_linear)" stroke-dasharray="7 7" />
-                                <defs>
-                                    <linearGradient id="paint0_linear" x1="-45.3488" y1="-7.68318e-05" x2="2195.15"
-                                        y2="853.559" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="#1549D0" />
-                                        <stop offset="1" stop-color="#17CDCD" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-
-                        </div>
-                        <div class="direction__body-wrapper">
-                            <div class="direction__content">
-                                <ul class="direction__list">
-                                    <li class="direction__item item__text-medium">CМИ / Средства массовой информации
-                                    </li>
-                                    <li class="direction__item item__text-medium  direction__item--margin">Аварийные /
-                                        Экстренные и
-                                        прочие службы </li>
-                                    <li class="direction__item item__text-medium  direction__item--margin">Автосервис /
-                                        Товары
-                                        для
-                                        автомобилей</li>
-                                </ul>
-                                <ul class="direction__list">
-                                    <li class="direction__item item__text-medium">Агро-промышленность</li>
-                                    <li class="direction__item direction__item--margin item__text-medium">Бытовая,
-                                        офисная и
-                                        компьютерная техника</li>
-                                    <li class="direction__item  direction__item--margin item__text-medium">Все для
-                                        животных /
-                                        Ветеринария</li>
-                                </ul>
-                                <ul class="direction__list">
-                                    <li class="direction__item item__text-medium">Домашняя и офисная мебель / Материалы
-                                    </li>
-                                    <li class="direction__item direction__item--margin item__text-medium">Инструмент /
-                                        Оборудование
-                                        / Инструмент технический
-                                    </li>
-                                    <li class="direction__item direction__item--margin item__text-medium">Интернет /
-                                        Информационные
-                                        сети</li>
-                                </ul>
-                                <ul class="direction__list">
-                                    <li class="direction__item item__text-medium">Магазин одежды и обуви Медицинские
-                                        услуги /
-                                        Здоровье и красота</li>
-                                    <li class="direction__item direction__item--margin item__text-medium">Металлы /
-                                        Химические
-                                        элементы / Топливо</li>
-                                    <li class="direction__item direction__item--margin item__text-medium">Муниципалитет
-                                        / Власть
-                                    </li>
-                                </ul>
-                                <ul class="direction__list">
-                                    <li class="direction__item item__text-medium">Научные учреждения / Наука</li>
-                                    <li class="direction__item direction__item--margin item__text-medium">
-                                        Образовательные
-                                        учреждения
-                                        / Карьера / Работа</li>
-                                    <li class="direction__item direction__item--margin item__text-medium">Общественный
-                                        досуг /
-                                        Развлечения</li>
-                                </ul>
-                                <ul class="direction__list">
-                                    <li class="direction__item item__text-medium">Охранные предприятия / Безопасность
-                                    </li>
-                                    <li class="direction__item direction__item--margin item__text-medium">Повседневные,
-                                        коммунальные
-                                        и ритуальные услуги
-                                    </li>
-                                    <li class="direction__item direction__item--margin item__text-medium">
-                                        Полиграфическая и
-                                        рекламная продукция</li>
-                                </ul>
-                            </div>
-                            <div class="direction__content-overflow">
-                                <ul class="direction__list">
-                                    <li class="direction__item item__text-medium">Производство / Курьерские службы /
-                                        Поставки
-                                    </li>
-                                    <li class="direction__item direction__item--margin item__text-medium">Производство и
-                                        продажа
-                                        продуктов питания / Напитки
-                                    </li>
-                                    <li class="direction__item direction__item--margin item__text-medium">Разные услуги
-                                        / Прочее
-                                    </li>
-                                </ul>
-                                <ul class="direction__list">
-                                    <li class="direction__item item__text-medium">Религия / Культурные центры /
-                                        Искусство</li>
-                                    <li class="direction__item direction__item--margin item__text-medium">Семья /
-                                        Домашнее
-                                        хозяйство
-                                    </li>
-                                    <li class="direction__item direction__item--margin item__text-medium">Социальная
-                                        помощь /
-                                        Благотворительность</li>
-                                </ul>
-                                <ul class="direction__list">
-                                    <li class="direction__item item__text-medium">Спортивная сфера / Туризм / Отдых</li>
-                                    <li class="direction__item direction__item--margin item__text-medium">Строительная
-                                        сфера /
-                                        Ремонт / Недвижимость</li>
-                                    <li class="direction__item direction__item--margin item__text-medium">Строительные
-                                        материалы
-                                        /
-                                        Материалы отделочные
-                                    </li>
-                                </ul>
-                                <ul class="direction__list">
-                                    <li class="direction__item item__text-medium">Текстиль / Предметы для интерьера</li>
-                                    <li class="direction__item direction__item--margin item__text-medium">Торговые
-                                        центры,
-                                        комплексы
-                                        / Спецмагазины</li>
-                                    <li class="direction__item direction__item--margin item__text-medium">Транспортная
-                                        сфера,
-                                        Грузовые перевозки</li>
-                                </ul>
-                                <ul class="direction__list">
-                                    <li class="direction__item item__text-medium">Туризм / Гостиницы / Базы отдыха</li>
-                                    <li class="direction__item direction__item--margin item__text-medium">Хозяйственные
-                                        товары /
-                                        Канцелярия / Упаковка</li>
-                                    <li class="direction__item direction__item--margin item__text-medium">Электротехника
-                                        /
-                                        Электроника</li>
-                                </ul>
-                                <ul class="direction__list">
-                                    <li class="direction__item item__text-medium">Энергетика / Электростанции</li>
-                                    <li class="direction__item direction__item--margin item__text-medium">Юридические /
-                                        Бизнес /
-                                        Финансовые услуги</li>
-                                </ul>
-                            </div>
-
-
-                        </div>
-                        <div class="text-accordion direction__accordion">
-                            <div class="text-accordion__body direction__accordion-body">
-
-                                <p class="text-accordion__link item__text direction__link">Все направления</p>
-                                <img src="./assets/svg/chevron.svg" alt="показать города"
-                                    class="text-accordionicon__icon direction__icon">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="service__interest interest-service">
-                    <h4 class="interest-service__title item__title">Вам также может быть интересно</h4>
-                    <div class="interest-service__body">
-                        <div class="content-services interest-service__slider slider slider--smooth">
-                            <div class="content-services__item interest-service__slider-item services-item">
-                                <div class="services-item__header">
-                                    <img class="services-item__img" src="./assets/svg/services/illustration-1.png"
-                                        alt="услуга" srcset="">
-                                </div>
-
-                            </div>
-                            <div class="content-services__item interest-service__slider-item services-item">
-                                <div class="services-item__header">
-                                    <img class="services-item__img" src="./assets/svg/services/illustration-2.png"
-                                        alt="услуга" srcset="">
-
-                                </div>
-
-                            </div>
-                            <div class="content-services__item interest-service__slider-item services-item">
-                                <div class="services-item__header">
-
-                                    <img class="services-item__img" src="./assets/svg/services/illustration-1.png"
-                                        alt="услуга" srcset="">
-
-                                </div>
-
-                            </div>
-                            <div class="content-services__item interest-service__slider-item services-item">
-                                <div class="services-item__header">
-
-                                    <img class="services-item__img" src="./assets/svg/services/illustration-2.png"
-                                        alt="услуга" srcset="">
-                                </div>
-
-                            </div>
-                            <div class="interest-service__resizer"></div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="service__articles usefull-articles">
-                    <h4 class="usefull-articles__title item__title">Полезные статьи</h4>
-                    <div class="usefull-articles__body">
-                        <div class="articles-content slider slider--smooth usefull-articles__slider">
-                            <div class="articles-content__artice  articles-content__slide usefull-article">
-                                <div class="usefull-article__header">
-                                    <img class="usefull-article__img" src="./assets/svg/article/img-1.png" alt="услуга"
-                                        srcset="">
-
-                                    <div class="usefull-article__date date-article">
-                                        <img src="./assets/svg/article/time-icon.svg" alt="время"
-                                            class="date-article__time-icon">
-                                        <p class="date-article__text">08.04.2020</p>
-                                    </div>
-
-                                </div>
-                                <div class="usefull-article__body">
-                                    <h4 class="usefull-article__title item__title-medium">Заголовок статьи
-                                        в 1 или 2 строки</h4>
-                                    <a href="" class="usefull-article__link">Читать статью</a>
-                                </div>
-                            </div>
-                            <div class="articles-content__artice articles-content__slide usefull-article">
-                                <div class="usefull-article__header">
-                                    <img class="usefull-article__img" src="./assets/svg/article/img-2.png" alt="услуга"
-                                        srcset="">
-                                    <div class="usefull-article__date date-article">
-
-                                        <img src="./assets/svg/article/time-icon.svg" alt="время"
-                                            class="date-article__time-icon">
-                                        <p class="date-article__text">08.04.2020</p>
-                                    </div>
-                                </div>
-                                <div class="usefull-article__body">
-                                    <h4 class="usefull-article__title item__title-medium">Заголовок статьи
-                                        в 1 или 2 строки</h4>
-                                    <a href="" class="usefull-article__link">Читать статью</a>
-                                </div>
-                            </div>
-                            <div class="articles-content__artice articles-content__slide usefull-article">
-                                <div class="usefull-article__header">
-                                    <img class="usefull-article__img" src="./assets/svg/article/img-3.png" alt="услуга"
-                                        srcset="">
-
-                                    <div class="usefull-article__date date-article">
-                                        <img src="./assets/svg/article/time-icon.svg" alt="время"
-                                            class="date-article__time-icon">
-                                        <p class="date-article__text">08.04.2020</p>
-                                    </div>
-                                </div>
-                                <div class="usefull-article__body">
-                                    <h4 class="usefull-article__title  item__title-medium">Заголовок статьи
-                                        в 1 или 2 строки</h4>
-                                    <a href="" class="usefull-article__link">Читать статью</a>
-                                </div>
-                            </div>
-                            <div class="articles-content__resizer"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
         </div>
+    </div>
 
-
-
-        <footer class="footer">
-            <div class="footer__main">
-                <div class="container">
-                    <div class="footer__content">
-                        <div class="footer__logo logo">
-                            <img src="./assets/svg/SMTP logo.svg" alt="лого" class="logo__img">
-                            <p class="logo__title item__text-medium">Сервис e-mail рассылок</p>
+    <section class="service section section--sec">
+        <div class="container section">
+            <h1 class="service__title main__item">Рассылка по Новосибирску</h1>
+            <div class="service__header">
+                <div class="service__left">
+                    <img src="./assets/svg/service/illustration.svg" alt="" class="service__img">
+                </div>
+                <div class="service__right">
+                    <div class="service-data">
+                        <div class="service-data__header">
+                            <div class="service-data__item item-datas">
+                                <p class="item__text item-datas__title">
+                                    Стоимость
+                                </p>
+                                <span class="total-price__amount item-datas__amount">4 000</span>
+                                <span class="total-price__amount-rub item-datas__amount">₽</span>
+                            </div>
+                            <div class="service-data__item item-datas">
+                                <p class="item__text item-datas__title">
+                                    Тип услуги
+                                </p>
+                                <h4 class="item__title item-datas__title">E-mail рассылка</h4>
+                            </div>
+                            <button class="btn btn__main service-data__btn">Заказать</button>
                         </div>
-                        <nav class="footer__nav nav">
-                            <ul class="nav__list footer__list">
-                                <li class="nav__items footer__item"><a href="base.html"
-                                        class="nav__link item__text">База
-                                        организаций</a></li>
-                                <li class="nav__items footer__item"><a href="mail.html"
-                                        class="nav__link item__text">E-mail
-                                        рассылка</a>
+                        <p class="service-data__text item__text">Lorem Ipsum - это текст-"рыба", часто
+                            используемый в
+                            печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для
+                            текстов на латинице с начала XVI века. В то время некий безымянный печатник создал
+                            большую коллекцию размеров и форм
+                            шрифтов, используя Lorem Ipsum
+                            для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных
+                            изменений пять веков, но и перешагнул в
+                            электронный дизайн.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="service__directions">
+                <h4 class="direction__title item__title">В базе предоставлены все направления деятельности
+                    российских
+                    компаний</h4>
+
+                <div class="direction__body section__body">
+                    <div class="direction__background">
+                        <svg class="direction__background-img" width="100%" height="100%" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect class="direction__background-rect" x="0" y="0" width="100%" height="100%" rx="11.5"
+                                stroke="url(#paint0_linear)" stroke-dasharray="7 7" />
+                            <defs>
+                                <linearGradient id="paint0_linear" x1="-45.3488" y1="-7.68318e-05" x2="2195.15"
+                                    y2="853.559" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#1549D0" />
+                                    <stop offset="1" stop-color="#17CDCD" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+
+                    </div>
+                    <div class="direction__body-wrapper">
+                        <div class="direction__content">
+                            <ul class="direction__list">
+                                <li class="direction__item item__text-medium">CМИ / Средства массовой информации
                                 </li>
-                                <li class="nav__items footer__item"><a href="services.html"
-                                        class="nav__link item__text">Все
-                                        услуги</a>
+                                <li class="direction__item item__text-medium  direction__item--margin">Аварийные /
+                                    Экстренные и
+                                    прочие службы </li>
+                                <li class="direction__item item__text-medium  direction__item--margin">Автосервис /
+                                    Товары
+                                    для
+                                    автомобилей</li>
+                            </ul>
+                            <ul class="direction__list">
+                                <li class="direction__item item__text-medium">Агро-промышленность</li>
+                                <li class="direction__item direction__item--margin item__text-medium">Бытовая,
+                                    офисная и
+                                    компьютерная техника</li>
+                                <li class="direction__item  direction__item--margin item__text-medium">Все для
+                                    животных /
+                                    Ветеринария</li>
+                            </ul>
+                            <ul class="direction__list">
+                                <li class="direction__item item__text-medium">Домашняя и офисная мебель / Материалы
                                 </li>
-                                <li class="nav__items footer__item"><a href="articles.html"
-                                        class="nav__link item__text">Статьи</a></li>
-                                <li class="nav__items footer__item"><a href="contact.html"
-                                        class="nav__link item__text">Контакты</a>
+                                <li class="direction__item direction__item--margin item__text-medium">Инструмент /
+                                    Оборудование
+                                    / Инструмент технический
+                                </li>
+                                <li class="direction__item direction__item--margin item__text-medium">Интернет /
+                                    Информационные
+                                    сети</li>
+                            </ul>
+                            <ul class="direction__list">
+                                <li class="direction__item item__text-medium">Магазин одежды и обуви Медицинские
+                                    услуги /
+                                    Здоровье и красота</li>
+                                <li class="direction__item direction__item--margin item__text-medium">Металлы /
+                                    Химические
+                                    элементы / Топливо</li>
+                                <li class="direction__item direction__item--margin item__text-medium">Муниципалитет
+                                    / Власть
                                 </li>
                             </ul>
-                        </nav>
+                            <ul class="direction__list">
+                                <li class="direction__item item__text-medium">Научные учреждения / Наука</li>
+                                <li class="direction__item direction__item--margin item__text-medium">
+                                    Образовательные
+                                    учреждения
+                                    / Карьера / Работа</li>
+                                <li class="direction__item direction__item--margin item__text-medium">Общественный
+                                    досуг /
+                                    Развлечения</li>
+                            </ul>
+                            <ul class="direction__list">
+                                <li class="direction__item item__text-medium">Охранные предприятия / Безопасность
+                                </li>
+                                <li class="direction__item direction__item--margin item__text-medium">Повседневные,
+                                    коммунальные
+                                    и ритуальные услуги
+                                </li>
+                                <li class="direction__item direction__item--margin item__text-medium">
+                                    Полиграфическая и
+                                    рекламная продукция</li>
+                            </ul>
+                        </div>
+                        <div class="direction__content-overflow">
+                            <ul class="direction__list">
+                                <li class="direction__item item__text-medium">Производство / Курьерские службы /
+                                    Поставки
+                                </li>
+                                <li class="direction__item direction__item--margin item__text-medium">Производство и
+                                    продажа
+                                    продуктов питания / Напитки
+                                </li>
+                                <li class="direction__item direction__item--margin item__text-medium">Разные услуги
+                                    / Прочее
+                                </li>
+                            </ul>
+                            <ul class="direction__list">
+                                <li class="direction__item item__text-medium">Религия / Культурные центры /
+                                    Искусство</li>
+                                <li class="direction__item direction__item--margin item__text-medium">Семья /
+                                    Домашнее
+                                    хозяйство
+                                </li>
+                                <li class="direction__item direction__item--margin item__text-medium">Социальная
+                                    помощь /
+                                    Благотворительность</li>
+                            </ul>
+                            <ul class="direction__list">
+                                <li class="direction__item item__text-medium">Спортивная сфера / Туризм / Отдых</li>
+                                <li class="direction__item direction__item--margin item__text-medium">Строительная
+                                    сфера /
+                                    Ремонт / Недвижимость</li>
+                                <li class="direction__item direction__item--margin item__text-medium">Строительные
+                                    материалы
+                                    /
+                                    Материалы отделочные
+                                </li>
+                            </ul>
+                            <ul class="direction__list">
+                                <li class="direction__item item__text-medium">Текстиль / Предметы для интерьера</li>
+                                <li class="direction__item direction__item--margin item__text-medium">Торговые
+                                    центры,
+                                    комплексы
+                                    / Спецмагазины</li>
+                                <li class="direction__item direction__item--margin item__text-medium">Транспортная
+                                    сфера,
+                                    Грузовые перевозки</li>
+                            </ul>
+                            <ul class="direction__list">
+                                <li class="direction__item item__text-medium">Туризм / Гостиницы / Базы отдыха</li>
+                                <li class="direction__item direction__item--margin item__text-medium">Хозяйственные
+                                    товары /
+                                    Канцелярия / Упаковка</li>
+                                <li class="direction__item direction__item--margin item__text-medium">Электротехника
+                                    /
+                                    Электроника</li>
+                            </ul>
+                            <ul class="direction__list">
+                                <li class="direction__item item__text-medium">Энергетика / Электростанции</li>
+                                <li class="direction__item direction__item--margin item__text-medium">Юридические /
+                                    Бизнес /
+                                    Финансовые услуги</li>
+                            </ul>
+                        </div>
+
 
                     </div>
-                </div>
-            </div>
-            <div class="footer__company company">
-                <div class="container">
-                    <div class="company__logo">
-                        <img src="./assets/svg/footer/studio-logo.svg" alt="компания логотип" class="company__img">
-                        <span class="company__span">
-                            Разработка сайта web2.ru
-                        </span>
+                    <div class="text-accordion direction__accordion">
+                        <div class="text-accordion__body direction__accordion-body">
+
+                            <p class="text-accordion__link item__text direction__link">Все направления</p>
+                            <img src="./assets/svg/chevron.svg" alt="показать города"
+                                class="text-accordionicon__icon direction__icon">
+                        </div>
                     </div>
                 </div>
             </div>
-        </footer>
-        <script src="./js/script.js"></script>
+            <div class="service__interest interest-service">
+                <h4 class="interest-service__title item__title">Вам также может быть интересно</h4>
+                <div class="interest-service__body">
+                    <div class="content-services interest-service__slider slider slider--smooth">
+                        <div class="content-services__item interest-service__slider-item services-item">
+                            <div class="services-item__header">
+                                <img class="services-item__img" src="./assets/svg/services/illustration-1.svg"
+                                    alt="услуга" srcset="">
+                                <p class="services-item__text item__title-medium direction__link">Рассылка
+                                    по Новосибирску</p>
+
+                            </div>
+
+                        </div>
+                        <div class="content-services__item interest-service__slider-item services-item">
+                            <div class="services-item__header">
+                                <img class="services-item__img" src="./assets/svg/services/illustration-2.svg"
+                                    alt="услуга" srcset="">
+                                <p class="services-item__text item__title-medium direction__link">База email
+                                    Иркутска</p>
+                            </div>
+
+                        </div>
+                        <div class="content-services__item interest-service__slider-item services-item">
+                            <div class="services-item__header">
+                                <img class="services-item__img" src="./assets/svg/services/illustration-1.svg"
+                                    alt="услуга" srcset="">
+                                <p class="services-item__text item__title-medium direction__link">Рассылка
+                                    по Новосибирску</p>
+
+                            </div>
+
+                        </div>
+                        <div class="content-services__item interest-service__slider-item services-item">
+                            <div class="services-item__header">
+                                <img class="services-item__img" src="./assets/svg/services/illustration-2.svg"
+                                    alt="услуга" srcset="">
+                                <p class="services-item__text item__title-medium direction__link">База email
+                                    Иркутска</p>
+                            </div>
+
+                        </div>
+                        <div class="interest-service__resizer"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="service__articles usefull-articles">
+                <h4 class="usefull-articles__title item__title">Полезные статьи</h4>
+                <div class="usefull-articles__body">
+                    <div class="articles-content slider slider--smooth usefull-articles__slider">
+                        <div class="articles-content__artice  articles-content__slide usefull-article">
+                            <div class="usefull-article__header">
+                                <img class="usefull-article__img" src="./assets/svg/article/img-1.png" alt="услуга"
+                                    srcset="">
+
+                                <div class="usefull-article__date date-article">
+                                    <img src="./assets/svg/article/time-icon.svg" alt="время"
+                                        class="date-article__time-icon">
+                                    <p class="date-article__text">08.04.2020</p>
+                                </div>
+
+                            </div>
+                            <div class="usefull-article__body">
+                                <h4 class="usefull-article__title item__title-medium">Заголовок статьи
+                                    в 1 или 2 строки</h4>
+                                <a href="" class="usefull-article__link">Читать статью</a>
+                            </div>
+                        </div>
+                        <div class="articles-content__artice articles-content__slide usefull-article">
+                            <div class="usefull-article__header">
+                                <img class="usefull-article__img" src="./assets/svg/article/img-2.png" alt="услуга"
+                                    srcset="">
+                                <div class="usefull-article__date date-article">
+
+                                    <img src="./assets/svg/article/time-icon.svg" alt="время"
+                                        class="date-article__time-icon">
+                                    <p class="date-article__text">08.04.2020</p>
+                                </div>
+                            </div>
+                            <div class="usefull-article__body">
+                                <h4 class="usefull-article__title item__title-medium">Заголовок статьи
+                                    в 1 или 2 строки</h4>
+                                <a href="" class="usefull-article__link">Читать статью</a>
+                            </div>
+                        </div>
+                        <div class="articles-content__artice articles-content__slide usefull-article">
+                            <div class="usefull-article__header">
+                                <img class="usefull-article__img" src="./assets/svg/article/img-3.png" alt="услуга"
+                                    srcset="">
+
+                                <div class="usefull-article__date date-article">
+                                    <img src="./assets/svg/article/time-icon.svg" alt="время"
+                                        class="date-article__time-icon">
+                                    <p class="date-article__text">08.04.2020</p>
+                                </div>
+                            </div>
+                            <div class="usefull-article__body">
+                                <h4 class="usefull-article__title  item__title-medium">Заголовок статьи
+                                    в 1 или 2 строки</h4>
+                                <a href="" class="usefull-article__link">Читать статью</a>
+                            </div>
+                        </div>
+                        <div class="articles-content__resizer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="footer">
+        <div class="footer__main">
+            <div class="container">
+                <div class="footer__content">
+                    <div class="footer__logo logo">
+                        <img src="./assets/svg/SMTP logo.svg" alt="лого" class="logo__img">
+                        <p class="logo__title item__text-medium">Сервис e-mail рассылок</p>
+                    </div>
+                    <nav class="footer__nav nav">
+                        <ul class="nav__list footer__list">
+                            <li class="nav__items footer__item"><a href="base.html" class="nav__link item__text">База
+                                    организаций</a></li>
+                            <li class="nav__items footer__item"><a href="mail.html" class="nav__link item__text">E-mail
+                                    рассылка</a>
+                            </li>
+                            <li class="nav__items footer__item"><a href="services.html" class="nav__link item__text">Все
+                                    услуги</a>
+                            </li>
+                            <li class="nav__items footer__item"><a href="articles.html"
+                                    class="nav__link item__text">Статьи</a></li>
+                            <li class="nav__items footer__item"><a href="contact.html"
+                                    class="nav__link item__text">Контакты</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer__company company">
+            <div class="container">
+                <div class="company__logo">
+                    <img src="./assets/svg/footer/studio-logo.svg" alt="компания логотип" class="company__img">
+                    <span class="company__span">
+                        Разработка сайта web2.ru
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

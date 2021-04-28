@@ -238,8 +238,12 @@ img {
   -webkit-background-clip: text !important;
   -webkit-text-stroke: 1px transparent;
   background: linear-gradient(98.72deg, rgba(21, 73, 208, 0.26) 5.11%, #17cdcd 113.04%);
-  /* color: #0f2441; */
   color: #0f2441;
+  /* 
+        border: 1px solid;
+
+  border-image-source: linear-gradient(98.72deg, rgba(21, 73, 208, 0.26) 5.11%, #17CDCD 113.04%); */
+  /* color: #0f2441; */
 }
 .section__title {
   z-index: 1;
