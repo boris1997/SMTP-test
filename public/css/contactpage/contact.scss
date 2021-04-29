@@ -4,8 +4,6 @@
     font-size: rem(50px);
     font-weight: 700;
   }
-  background: url("../assets/backgrounds/main/programm-background.svg")
-    no-repeat center center/cover;
   &__body {
     @include flexbox(row, space-between, space-between);
   }

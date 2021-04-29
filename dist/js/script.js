@@ -2208,6 +2208,8 @@ class Scroll {
     }
 
     removeSidebar = () => {
+        this.sidebar.classList.contains('sidebar--full-page') && this.page.classList.remove('page_screen_full')
+
         this.sidebar.classList.remove('page__sidebar--active');
         this.page.classList.remove('page--noScroll');
         this.sidebarBody.classList.remove('sidebar__body--active');

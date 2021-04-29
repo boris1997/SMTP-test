@@ -1,18 +1,26 @@
 .card {
   &__blue {
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
     background-color: $accentColor;
+    visibility: hidden;
+    opacity: 0;
   }
   &__dark {
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
     background-color: #0e1e35;
+    visibility: visible;
+    opacity: 1;
   }
 
   &:hover &__blue {
     background-color: #255ae3;
+    visibility: visible;
+    opacity: 1;
   }
   &:hover &__dark {
     background-color: #0b213f;
+    visibility: hidden;
+    opacity: 0;
   }
 }
 /*     transition: background 0.3s ease-in-out;

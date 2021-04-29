@@ -1037,3 +1037,9 @@
     min-width: 43%;
   }
 }
+
+@media (max-height: 1000px) {
+  .page__contact {
+    height: 100% !important;
+  }
+}

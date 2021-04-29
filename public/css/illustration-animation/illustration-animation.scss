@@ -1,0 +1,25 @@
+.card__small-blue {
+  animation: 4s linear 0s infinite alternate small-blue-color;
+}
+
+.card__big-green {
+  animation: 4s linear 0s infinite alternate big-green-color;
+}
+
+@keyframes small-blue-color {
+  from {
+    fill: $accentColor;
+  }
+  to {
+    fill: red;
+  }
+}
+
+@keyframes big-green-color {
+  from {
+    fill: #6ac37e;
+  }
+  to {
+    fill: red;
+  }
+}

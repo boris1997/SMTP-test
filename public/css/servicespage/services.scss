@@ -128,7 +128,10 @@
   //   height: rem(276px);
   //   /*   position: relative; */
   // }
-  position: relative;
+
+  &__header {
+    position: relative;
+  }
   &__img {
     width: rem(276px);
   }
