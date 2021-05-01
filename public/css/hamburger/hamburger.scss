@@ -27,14 +27,14 @@
     --total-length: 70;
   }
   &__content--active > &__line--1,
-  &__content--active > &__line--3,
+  &__content--active > &__line--3/* ,
   &__content:hover > &__line--1,
-  &__content:hover > &__line--3 {
+  &__content:hover > &__line--3  */{
     --offset: -94.1149185097;
     --length: 22.627416998;
   }
-  &__content--active > &__line--2,
-  &__content:hover > &__line--2 {
+  &__content--active > &__line--2/* ,
+  &__content:hover > &__line--2 */ {
     --offset: -50;
     --length: 0;
   }

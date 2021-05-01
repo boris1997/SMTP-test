@@ -28,11 +28,20 @@
     color: $primaryColor;
     font-weight: 600;
     border: rem(1px) solid $accentColor;
-
+    position: relative;
+ &:before {
+   background-color: $accentColor;
+   @include position(absolute, "", 0, 0, 0, 0, auto);
+ }
     &:hover {
-      background-color: $accentColor;
+      border: rem(1px) solid $accentColor;
       border: none;
+      
     }
+    &:hover &:before {
+      background-color: $accentColor;
+       @include position(absolute, "", 0, 0, 0, 0, auto);
+     }
   }
 
   &__link {
