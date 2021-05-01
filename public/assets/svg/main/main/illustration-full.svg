@@ -35,7 +35,7 @@
     <g filter="url(#filter5_ddii)">
         <path class="card__big-red" d="M493.263 296.706C493.263 303.344 497.199 310.968 502.016 313.768C506.832 316.569 510.768 313.457 510.768 306.819C510.768 300.181 506.832 292.557 502.016 289.756C497.147 286.956 493.263 290.067 493.263 296.706Z" fill="#DD2265" />
     </g>
-    <g filter="url(#filter6_biiii)">
+    <g class='filter_06'>
         <path class="card__big-green card__big-green-filter" d="M537.854 221.454L691.981 310.553L692.033 390.991L551.475 309.723L537.906 314.183L537.854 221.454Z" fill="#6AC37E" fill-opacity="0.3" />
         <path class="card__big-green" d="M537.854 221.454L691.981 310.553L692.033 390.991L551.475 309.723L537.906 314.183L537.854 221.454Z" fill="url(#paint10_linear)" fill-opacity="0.1" />
     </g>
@@ -192,7 +192,22 @@
             <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
             <feOffset dx="-2.37826" dy="1.74406" />
             <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
-            <feColorMatrix type="matrix" values="0 0 0 0 0.866667 0 0 0 0 0.133333 0 0 0 0 0.396078 0 0 0 1 0" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0.866667 0 0 0 0 0.133333 0 0 0 0 0.396078 0 0 0 1 0">
+                <animate attributeType="XML" attributeName="values" id="filter6_01" from="0 0 0 0 0.866667 0 0 0 0 0.133333 0 0 0 0 0.396078 0 0 0 1 0" to="0.32 0 0 0 0
+0 0.08 0 0 0
+0 0 0.82 0 0
+0 0 0 0.31 0" dur="2s" begin="2s;filter6_02.end+2000ms" values="0 0 0 0 0.866667 0 0 0 0 0.133333 0 0 0 0 0.396078 0 0 0 1 0;0.32 0 0 0 0
+0 0.08 0 0 0
+0 0 0.82 0 0
+0 0 0 0.31 0" />
+                <animate attributeType="XML" attributeName="values" id="filter6_02" from="0.32 0 0 0 0
+0 0.08 0 0 0
+0 0 0.82 0 0
+0 0 0 0.31 0" to="0 0 0 0 0.866667 0 0 0 0 0.133333 0 0 0 0 0.396078 0 0 0 1 0" dur="2s" begin="filter6_01.end+2000ms" values="0 0 0 0 0.866667 0 0 0 0 0.133333 0 0 0 0 0.396078 0 0 0 1 0;0.32 0 0 0 0
+0 0.08 0 0 0
+0 0 0.82 0 0
+0 0 0 0.31 0" />
+            </feColorMatrix>
             <feBlend mode="normal" in2="shape" result="effect2_innerShadow" />
             <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
             <feOffset dx="1.58551" dy="-1.58551" />
@@ -279,8 +294,8 @@
 
 
             <feColorMatrix type="matrix" values="0 0 0 0 0.411765 0 0 0 0 0.760784 0 0 0 0 0.482353 0 0 0 1 0">
-                <animate attributeType="XML" attributeName="values" id="filter6_01" from="0 0 0 0 0.411765 0 0 0 0 0.760784 0 0 0 0 0.482353 0 0 0 1 0" to="0.41 0 0 0 0 0 0.76 0 0 0 0 0 0.48 0 0 0 0 0 1 0" dur="2s" begin="2s;filter6_02.end" values="0 0 0 0 0.411765 0 0 0 0 50.760784 0 0 0 0 50.482353 0 0 0 1 0;0.41 0 0 0 0 0 0.76 0 0 0 0 0 0.48 0 0 0 0 0 1 0" />
-                <animate attributeType="XML" attributeName="values" id="filter6_02" from="0.41 0 0 0 0 0 0.76 0 0 0 0 0 0.48 0 0 0 0 0 1 0" to="0 0 0 0 0.411765 0 0 0 0 0.760784 0 0 0 0 0.482353 0 0 0 1 0" dur="2s" begin="filter6_01.end+2000ms" values="0 0 0 0 0.411765 0 0 0 0 50.760784 0 0 0 0 50.482353 0 0 0 1 0;0.41 0 0 0 0 0 0.76 0 0 0 0 0 0.48 0 0 0 0 0 1 0" />
+                <animate attributeType="XML" attributeName="values" id="filter6_01" from="0 0 0 0 0.411765 0 0 0 0 0.760784 0 0 0 0 0.482353 0 0 0 1 0" to="0 0 0 0 0.415686 0 0 0 0 0.764706 0 0 0 0 0.494118 0 0 0 0.3 0" dur="2s" begin="2s;filter6_02.end+2000ms" values="0 0 0 0 0.411765 0 0 0 0 50.760784 0 0 0 0 50.482353 0 0 0 1 0;0 0 0 0 0.415686 0 0 0 0 0.764706 0 0 0 0 0.494118 0 0 0 0.3 0" />
+                <animate attributeType="XML" attributeName="values" id="filter6_02" from="0 0 0 0 0.415686 0 0 0 0 0.764706 0 0 0 0 0.494118 0 0 0 0.3 0" to="0 0 0 0 0.411765 0 0 0 0 0.760784 0 0 0 0 0.482353 0 0 0 1 0" dur="2s" begin="filter6_01.end+2000ms" values="0 0 0 0 0.411765 0 0 0 0 50.760784 0 0 0 0 50.482353 0 0 0 1 0;0 0 0 0 0.415686 0 0 0 0 0.764706 0 0 0 0 0.494118 0 0 0 0.3 0" />
             </feColorMatrix>
 
 
