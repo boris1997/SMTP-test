@@ -357,13 +357,16 @@
     margin-left: calc(76 / 991 * 100%);
   }
 
-  .card-tariff__footer,
-  .faq__item {
+  .card-tariff__footer {
     margin-top: rem(30px);
   }
 
   .item-faq__underline {
     margin-top: rem(17px);
+  }
+
+  .item-faq__wrapper {
+    margin: rem(28px) 0;
   }
 
   .afterMailing__body,
@@ -553,12 +556,12 @@
     display: none;
   }
 
-  .faq__item {
-    margin-top: rem(25px);
-  }
-
   .item-faq__underline {
     margin-top: rem(12px);
+  }
+
+  .item-faq__wrapper {
+    margin: rem(24px) 0;
   }
   .faq-btn {
     width: rem(24px);
@@ -784,12 +787,12 @@
     font-size: rem(14px);
     height: rem(50px);
   }
-  .faq__item {
-    margin-top: rem(20px);
-  }
 
   .item-faq__underline {
     margin-top: rem(7px);
+  }
+  .item-faq__wrapper {
+    margin: rem(20px) 0;
   }
 
   .cities__list,

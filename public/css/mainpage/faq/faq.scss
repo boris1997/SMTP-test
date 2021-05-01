@@ -1,14 +1,25 @@
 .faq {
   background: url("../assets/backgrounds/main/FAQ-background.svg") no-repeat
     center center/cover;
-  &__item {
-    margin-top: rem(35px);
-  }
+  /*   background: url("../../../assets/backgrounds/main/FAQ-background.svg") no-repeat
+    center center/cover; */
 }
 
 .item-faq {
-  &__body {
+  overflow: hidden;
+  cursor: pointer;
+  border-bottom: rem(1px) solid #2b4263;
+  &__wrapper {
+    margin: rem(32px) 0;
+  }
+
+  &__header {
     @include flexbox(row, space-between, center);
+    margin-bottom: rem(-12px);
+  }
+
+  &__body {
+    cursor: auto;
   }
 
   &__title {

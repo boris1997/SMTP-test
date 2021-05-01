@@ -97,6 +97,7 @@
                         <div class="main__body-wrapper">
                             <object class="main__illustration" data="./assets/svg/main/main/illustration-full.svg"
                                 type=""></object>
+
                             <!--  <img class="main__illustration" src="./assets/svg/main/main/illustration-full.svg" alt=""
                                 srcset=""> -->
                             <!--    <img class="main__plains main__plain-left" src="./assets/svg/main/main/left-plain.svg"
@@ -593,214 +594,201 @@
                 </div>
             </div>
             <div class="faq__body">
-                <div class="faq__item item-faq">
-                    <div class="item-faq__body">
-                        <div class="item-faq__left">
-                            <h4 class="item-faq__title item__title">
-                                Что такое SMTP?
-                            </h4>
-                            <!-- <div class="item-faq__slide"></div> -->
-                            <p class="item-faq__text item__text">Simple Mail Transfer Protocol представляет собой
+                <div class="faq__item item-faq accordion">
+                    <div class="item-faq__wrapper">
+                        <div class="item-faq__header accordion__header">
+                            <div class="item-faq__left">
+                                <h4 class="item-faq__title item__title">
+                                    Что такое SMTP?
+                                </h4>
+                                <!-- <div class="item-faq__slide"></div> -->
+                            </div>
+                            <div class="item-faq__right">
+                                <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect class="incDec-btn__body incDec-btn__inc" x="0.5" y="0.500244" width="23"
+                                        height="23" rx="11.5" stroke="#1549D0" fill="transparent" />
+                                    <path class="incDec-btn__horiz  incDec-btn__inc incDec-btn__item"
+                                        d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
+                                        fill="#1549D0" />
+                                    <path class="incDec-btn__vert incDec-btn__vertBig incDec-btn__item"
+                                        d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
+                                        fill="#1549D0" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div data-element="accordion-hidden" class="item-faq__body accordion__hidden">
+                            <p data-element="accordion-hidden" class="item-faq__text item__text">Simple Mail Transfer
+                                Protocol представляет
+                                собой
                                 протокол, по которому осуществляется передача сообщений в сети. Этот
                                 способ обмена данными был разработан несколько десятков лет назад, но несмотря на свой
                                 возраст, он до сих пор
                                 применяется при организации email-рассылок между почтовыми серверами и клиентами.</p>
                         </div>
-                        <div class="item-faq__right">
-                            <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect class="incDec-btn__body incDec-btn__inc" x="0.5" y="0.500244" width="23"
-                                    height="23" rx="11.5" stroke="#1549D0" fill="transparent" />
-                                <path class="incDec-btn__horiz  incDec-btn__inc incDec-btn__item"
-                                    d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
-                                    fill="#1549D0" />
-                                <path class="incDec-btn__vert incDec-btn__vertBig incDec-btn__item"
-                                    d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
-                                    fill="#1549D0" />
-                            </svg>
-                        </div>
                     </div>
-                    <hr class="item-faq__underline">
-                    </hr>
                 </div>
-                <div class="faq__item item-faq">
-                    <div class="item-faq__body">
-                        <div class="item-faq__left">
-                            <h4 class="item-faq__title item__title">Что такое SMTP?</h4>
-                            <div class="item-faq__slide">
-                                <p class="item-faq__text item__text">
-                                    Simple Mail Transfer Protocol представляет собой протокол, по которому
-                                    осуществляется
-                                    передача сообщений в сети. Этот
-                                    способ обмена данными был разработан несколько десятков лет назад, но несмотря на
-                                    свой
-                                    возраст, он до сих пор
-                                    применяется при организации email-рассылок между почтовыми серверами и клиентами.
-                                </p>
+                <div class="faq__item item-faq accordion">
+                    <div class="item-faq__wrapper">
+                        <div class="item-faq__header accordion__header">
+                            <div class="item-faq__left">
+                                <h4 class="item-faq__title item__title">
+                                    Для чего используется SMTP?
+                                </h4>
+                                <!-- <div class="item-faq__slide"></div> -->
+                            </div>
+                            <div class="item-faq__right">
+                                <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect class="incDec-btn__body incDec-btn__inc" x="0.5" y="0.500244" width="23"
+                                        height="23" rx="11.5" stroke="#1549D0" fill="transparent" />
+                                    <path class="incDec-btn__horiz  incDec-btn__inc incDec-btn__item"
+                                        d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
+                                        fill="#1549D0" />
+                                    <path class="incDec-btn__vert incDec-btn__vertBig incDec-btn__item"
+                                        d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
+                                        fill="#1549D0" />
+                                </svg>
                             </div>
                         </div>
-                        <div class="item-faq__right">
-                            <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect class="incDec-btn__body" x="0.5" y="0.500244" width="23" height="23" rx="11.5"
-                                    stroke="#1549D0" fill="transparent" />
-                                <path class="incDec-btn__horiz incDec-btn__item"
-                                    d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
-                                    fill="#1549D0" />
-                                <path class="incDec-btn__vert incDec-btn__item"
-                                    d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
-                                    fill="#1549D0" />
-                            </svg>
-                        </div>
-                    </div>
-                    <hr class="item-faq__underline">
-                    </hr>
-                </div>
-                <div class="faq__item item-faq">
-                    <div class="item-faq__body">
-                        <div class="item-faq__left">
-                            <h4 class="item-faq__title item__title">Для чего используется SMTP?
-                            </h4>
-                            <p class="item-faq__text item__text">
-                                Simple Mail Transfer Protocol представляет собой протокол, по которому осуществляется
-                                передача сообщений в сети. Этот
+                        <div data-element="accordion-hidden" class="item-faq__body accordion__hidden">
+                            <p data-element="accordion-hidden" class="item-faq__text item__text">Simple Mail Transfer
+                                Protocol представляет собой
+                                протокол, по которому осуществляется передача сообщений в сети. Этот
                                 способ обмена данными был разработан несколько десятков лет назад, но несмотря на свой
                                 возраст, он до сих пор
-                                применяется при организации email-рассылок между почтовыми серверами и клиентами.
-                            </p>
-                        </div>
-                        <div class="item-faq__right">
-                            <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect class="incDec-btn__body" x="0.5" y="0.500244" width="23" height="23" rx="11.5"
-                                    stroke="#1549D0" fill="transparent" />
-                                <path class="incDec-btn__horiz incDec-btn__item"
-                                    d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
-                                    fill="#1549D0" />
-                                <path class="incDec-btn__vert incDec-btn__item"
-                                    d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
-                                    fill="#1549D0" />
-                            </svg>
+                                применяется при организации email-рассылок между почтовыми серверами и клиентами.</p>
                         </div>
                     </div>
-                    <hr class="item-faq__underline">
-                    </hr>
                 </div>
-                <div class="faq__item item-faq">
-                    <div class="item-faq__body">
-                        <div class="item-faq__left">
-                            <h4 class="item-faq__title item__title">Как настроить сервер для стороннего ПО?</h4>
-                            <p class="item-faq__text item__text">
-                                Simple Mail Transfer Protocol представляет собой протокол, по которому осуществляется
-                                передача сообщений в сети. Этот
+                <div class="faq__item item-faq accordion">
+                    <div class="item-faq__wrapper">
+                        <div class="item-faq__header accordion__header">
+                            <div class="item-faq__left">
+                                <h4 class="item-faq__title item__title">
+                                    Как настроить сервер для стороннего ПО? </h4>
+                                <!-- <div class="item-faq__slide"></div> -->
+                            </div>
+                            <div class="item-faq__right">
+                                <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect class="incDec-btn__body incDec-btn__inc" x="0.5" y="0.500244" width="23"
+                                        height="23" rx="11.5" stroke="#1549D0" fill="transparent" />
+                                    <path class="incDec-btn__horiz  incDec-btn__inc incDec-btn__item"
+                                        d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
+                                        fill="#1549D0" />
+                                    <path class="incDec-btn__vert incDec-btn__vertBig incDec-btn__item"
+                                        d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
+                                        fill="#1549D0" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div data-element="accordion-hidden" class="item-faq__body accordion__hidden">
+                            <p data-element="accordion-hidden" class="item-faq__text item__text">Simple Mail Transfer
+                                Protocol представляет собой
+                                протокол, по которому осуществляется передача сообщений в сети. Этот
                                 способ обмена данными был разработан несколько десятков лет назад, но несмотря на свой
                                 возраст, он до сих пор
-                                применяется при организации email-рассылок между почтовыми серверами и клиентами.
-                            </p>
-                        </div>
-                        <div class="item-faq__right">
-                            <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect class="incDec-btn__body" x="0.5" y="0.500244" width="23" height="23" rx="11.5"
-                                    stroke="#1549D0" fill="transparent" />
-                                <path class="incDec-btn__horiz incDec-btn__item"
-                                    d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
-                                    fill="#1549D0" />
-                                <path class="incDec-btn__vert incDec-btn__item"
-                                    d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
-                                    fill="#1549D0" />
-                            </svg>
+                                применяется при организации email-рассылок между почтовыми серверами и клиентами.</p>
                         </div>
                     </div>
-                    <hr class="item-faq__underline">
-                    </hr>
                 </div>
-                <div class="faq__item item-faq">
-                    <div class="item-faq__body">
-                        <div class="item-faq__left">
-                            <h4 class="item-faq__title item__title">Зачем нужны SPF/DKIM/DMARC-записи?</h4>
-                            <p class="item-faq__text item__text">
-                                Simple Mail Transfer Protocol представляет собой протокол, по которому осуществляется
-                                передача сообщений в сети. Этот
+                <div class="faq__item item-faq accordion">
+                    <div class="item-faq__wrapper">
+                        <div class="item-faq__header accordion__header">
+                            <div class="item-faq__left">
+                                <h4 class="item-faq__title item__title">
+                                    Зачем нужны SPF/DKIM/DMARC-записи? </h4>
+                                <!-- <div class="item-faq__slide"></div> -->
+                            </div>
+                            <div class="item-faq__right">
+                                <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect class="incDec-btn__body incDec-btn__inc" x="0.5" y="0.500244" width="23"
+                                        height="23" rx="11.5" stroke="#1549D0" fill="transparent" />
+                                    <path class="incDec-btn__horiz  incDec-btn__inc incDec-btn__item"
+                                        d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
+                                        fill="#1549D0" />
+                                    <path class="incDec-btn__vert incDec-btn__vertBig incDec-btn__item"
+                                        d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
+                                        fill="#1549D0" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div data-element="accordion-hidden" class="item-faq__body accordion__hidden">
+                            <p data-element="accordion-hidden" class="item-faq__text item__text">Simple Mail Transfer
+                                Protocol представляет собой
+                                протокол, по которому осуществляется передача сообщений в сети. Этот
                                 способ обмена данными был разработан несколько десятков лет назад, но несмотря на свой
                                 возраст, он до сих пор
-                                применяется при организации email-рассылок между почтовыми серверами и клиентами.
-                            </p>
-                        </div>
-                        <div class="item-faq__right">
-                            <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect class="incDec-btn__body" x="0.5" y="0.500244" width="23" height="23" rx="11.5"
-                                    stroke="#1549D0" fill="transparent" />
-                                <path class="incDec-btn__horiz incDec-btn__bigLine incDec-btn__item"
-                                    d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
-                                    fill="#1549D0" />
-                                <path class="incDec-btn__vert incDec-btn__bigLine incDec-btn__item"
-                                    d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
-                                    fill="#1549D0" />
-                            </svg>
+                                применяется при организации email-рассылок между почтовыми серверами и клиентами.</p>
                         </div>
                     </div>
-                    <hr class="item-faq__underline">
-                    </hr>
                 </div>
-                <div class="faq__item item-faq">
-                    <div class="item-faq__body">
-                        <div class="item-faq__left">
-                            <h4 class="item-faq__title item__title">Стоимость аренды SMTP сервера?</h4>
-                            <p class="item-faq__text item__text">
-                                Simple Mail Transfer Protocol представляет собой протокол, по которому осуществляется
-                                передача сообщений в сети. Этот
+                <div class="faq__item item-faq accordion">
+                    <div class="item-faq__wrapper">
+                        <div class="item-faq__header accordion__header">
+                            <div class="item-faq__left">
+                                <h4 class="item-faq__title item__title">
+                                    Стоимость аренды SMTP сервера? </h4>
+                                <!-- <div class="item-faq__slide"></div> -->
+                            </div>
+                            <div class="item-faq__right">
+                                <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect class="incDec-btn__body incDec-btn__inc" x="0.5" y="0.500244" width="23"
+                                        height="23" rx="11.5" stroke="#1549D0" fill="transparent" />
+                                    <path class="incDec-btn__horiz  incDec-btn__inc incDec-btn__item"
+                                        d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
+                                        fill="#1549D0" />
+                                    <path class="incDec-btn__vert incDec-btn__vertBig incDec-btn__item"
+                                        d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
+                                        fill="#1549D0" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div data-element="accordion-hidden" class="item-faq__body accordion__hidden">
+                            <p data-element="accordion-hidden" class="item-faq__text item__text">Simple Mail Transfer
+                                Protocol представляет собой
+                                протокол, по которому осуществляется передача сообщений в сети. Этот
                                 способ обмена данными был разработан несколько десятков лет назад, но несмотря на свой
                                 возраст, он до сих пор
-                                применяется при организации email-рассылок между почтовыми серверами и клиентами.
-                            </p>
-                        </div>
-                        <div class="item-faq__right">
-                            <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect class="incDec-btn__body" x="0.5" y="0.500244" width="23" height="23" rx="11.5"
-                                    stroke="#1549D0" fill="transparent" />
-                                <path class="incDec-btn__horiz incDec-btn__item"
-                                    d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
-                                    fill="#1549D0" />
-                                <path class="incDec-btn__vert incDec-btn__item"
-                                    d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
-                                    fill="#1549D0" />
-                            </svg>
+                                применяется при организации email-рассылок между почтовыми серверами и клиентами.</p>
                         </div>
                     </div>
-                    <hr class="item-faq__underline">
-                    </hr>
                 </div>
-                <div class="faq__item item-faq">
-                    <div class="item-faq__body">
-                        <div class="item-faq__left">
-                            <h4 class="item-faq__title item__title">Как можно избежать попадания в «Спам»?</h4>
-                            <p class="item-faq__text item__text">
-                                Simple Mail Transfer Protocol представляет собой протокол, по которому осуществляется
-                                передача сообщений в сети. Этот
+                <div class="faq__item item-faq accordion">
+                    <div class="item-faq__wrapper">
+                        <div class="item-faq__header accordion__header">
+                            <div class="item-faq__left">
+                                <h4 class="item-faq__title item__title">
+                                    Как можно избежать попадания в «Спам»?
+                                </h4>
+                                <!-- <div class="item-faq__slide"></div> -->
+                            </div>
+                            <div class="item-faq__right">
+                                <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect class="incDec-btn__body incDec-btn__inc" x="0.5" y="0.500244" width="23"
+                                        height="23" rx="11.5" stroke="#1549D0" fill="transparent" />
+                                    <path class="incDec-btn__horiz  incDec-btn__inc incDec-btn__item"
+                                        d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
+                                        fill="#1549D0" />
+                                    <path class="incDec-btn__vert incDec-btn__vertBig incDec-btn__item"
+                                        d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
+                                        fill="#1549D0" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div data-element="accordion-hidden" class="item-faq__body accordion__hidden">
+                            <p data-element="accordion-hidden" class="item-faq__text item__text">Simple Mail Transfer
+                                Protocol представляет собой
+                                протокол, по которому осуществляется передача сообщений в сети. Этот
                                 способ обмена данными был разработан несколько десятков лет назад, но несмотря на свой
                                 возраст, он до сих пор
-                                применяется при организации email-рассылок между почтовыми серверами и клиентами.
-                            </p>
-                        </div>
-                        <div class="item-faq__right">
-                            <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect class="incDec-btn__body" x="0.5" y="0.500244" width="23" height="23" rx="11.5"
-                                    stroke="#1549D0" fill="transparent" />
-                                <path class="incDec-btn__horiz incDec-btn__item"
-                                    d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
-                                    fill="#1549D0" />
-                                <path class="incDec-btn__vert incDec-btn__item"
-                                    d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
-                                    fill="#1549D0" />
-                            </svg>
+                                применяется при организации email-рассылок между почтовыми серверами и клиентами.</p>
                         </div>
                     </div>
-                    <hr class="item-faq__underline">
-                    </hr>
                 </div>
             </div>
         </div>

@@ -44,6 +44,8 @@
     height: rem(264px);
     /*     margin-top: rem(220px); */
     z-index: 2;
+    visibility: visible;
+    opacity: 1;
     border-radius: rem(12px);
     background-color: $accentColor;
   }

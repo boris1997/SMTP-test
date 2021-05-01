@@ -77,10 +77,13 @@
     flex-wrap: wrap;
   }
   &__list + &__list {
-    margin-top: rem(42.25px);
+    margin-top: rem(24px);
   }
   &__list:hover {
     max-height: 1000px;
+  }
+  &__item {
+    margin-top: 0;
   }
   &__accordion {
     z-index: 2;
