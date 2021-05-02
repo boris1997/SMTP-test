@@ -1,7 +1,7 @@
 class LazyLoading {
 
-    constructor(sections) {
-        this.sections = sections;
+    constructor(dataLazy) {
+        this.dataLazy = dataLazy;
         /*         this.text = text;
                 this.activeBtn = activeBtn;
                 this.activeClasses = activeClasses;
@@ -45,12 +45,12 @@ class LazyLoading {
                 rootMargin: '0px',
                 threshold: 1.0 */
         }
-        console.log(this.sections[1])
+        console.log(this.dataLazy)
 
         const observer = new IntersectionObserver(this.scrollObserverCallback, options);
-        this.sections.map(section => {
+        this.dataLazy.map(data => {
 
-            observer.observe(section)
+            observer.observe(data)
         })
 
     }
@@ -62,10 +62,10 @@ class LazyLoading {
 document.addEventListener('DOMContentLoaded', () => {
 
     // faq
-    const sections = [...document.querySelectorAll(".section")];
+    const dataLazy = [...document.querySelectorAll(".data-lazy")];
 
 
-    new LazyLoading(sections);
+    new LazyLoading(dataLazy);
 
 })
 
