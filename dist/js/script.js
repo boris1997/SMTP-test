@@ -1,7 +1,8 @@
 class LazyLoading {
 
-    constructor(dataLazy) {
+    constructor(dataLazy, activeClass) {
         this.dataLazy = dataLazy;
+        this.activeClass = activeClass;
         /*         this.text = text;
                 this.activeBtn = activeBtn;
                 this.activeClasses = activeClasses;
@@ -34,23 +35,24 @@ class LazyLoading {
     }
 
     loadBackground = (element, backgroungUrl) => {
-        console.log(element, backgroungUrl)
-        element.style.backgroundImage = `url(${backgroungUrl}) `
+        element.style.backgroundImage = `url(${backgroungUrl})`
+        element.classList.add(this.activeClass);
+        this.observer.unobserve(element)
     }
 
 
     scrollObserver = () => {
-        const options = {
-            /*     root: document.querySelector('.page'),
-                rootMargin: '0px',
-                threshold: 1.0 */
-        }
-        console.log(this.dataLazy)
 
-        const observer = new IntersectionObserver(this.scrollObserverCallback, options);
+        const options = {
+            root: document.body,
+            threshold: 0,
+            rootMargin: '0px 0px 500px 0px'
+        }
+
+        this.observer = new IntersectionObserver(this.scrollObserverCallback, options);
         this.dataLazy.map(data => {
 
-            observer.observe(data)
+            this.observer.observe(data)
         })
 
     }
@@ -63,9 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // faq
     const dataLazy = [...document.querySelectorAll(".data-lazy")];
+    const activeClass = 'section--active'
 
-
-    new LazyLoading(dataLazy);
+    new LazyLoading(dataLazy, activeClass);
 
 })
 

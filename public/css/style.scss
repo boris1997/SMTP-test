@@ -52,6 +52,10 @@ body {
   color: $primaryColor;
   line-height: 1;
   font-family: "Open Sans";
+  overflow: auto;
+}
+.body {
+  height: 100vh;
 }
 input,
 button,
@@ -174,8 +178,8 @@ img {
 }
 
 .section {
-  display: none;
-
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in-out;
   &__header {
     margin-top: rem(140px);
     margin-bottom: rem(70px);
@@ -244,7 +248,7 @@ border-image-source: linear-gradient(98.72deg, rgba(21, 73, 208, 0.26) 5.11%, #1
   }
 }
 .section--active {
-  display: block;
+  opacity: 1;
 }
 
 .section--main-background {
