@@ -452,111 +452,18 @@ class Filter {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Coffee Slider
-
-    const productWrapper = document.querySelector(".content-products__body-wrapper");
-    const product = [...document.querySelectorAll(".product")];
-    const productPrice = [...document.querySelectorAll(".product__price")];
-    const productTitle = [...document.querySelectorAll(".product__title")];
 
 
     // price filter
-    const filterMinMaxAmount = [...document.querySelectorAll(".filter-minMax__amount")];
 
     const filterRailWrapper = document.querySelector(".filter");
-    const filterRailShifts = [...document.querySelectorAll(".filter__body")];
-    const filterRailLine = document.querySelector(".filter-rail__line");
-    const filterTransformVAr = '--body-transform';
+    if (filterRailWrapper) {
+        console.log('ok')
+        const filterRailShifts = [...document.querySelectorAll(".filter__body")];
+        const filterRailLine = document.querySelector(".filter-rail__line");
+        const filterTransformVAr = '--body-transform';
+        const productFilter = new Filter(null, null, null, null, null, filterRailWrapper, filterRailShifts, filterTransformVAr, filterRailLine, null, null, null);
 
-
-    // text filter
-    const filterCheckboxLabel = [...document.querySelectorAll(".checkbox__label")];
-    const filterCheckboxAmount = [...document.querySelectorAll(".checkbox__amount")];
-
-
-    // search filter
-    const filterSearcher = document.querySelector(".input__search");
-
-
-    const productFilter = new Filter(productWrapper, product, productPrice, productTitle, filterMinMaxAmount, filterRailWrapper, filterRailShifts, filterTransformVAr, filterRailLine, filterCheckboxLabel, filterCheckboxAmount, filterSearcher);
-
-
-    /*     productFilter.getMinMax();
-        productFilter.displayMinMax(filterMinMaxAmount[0], filterMinMaxAmount[1]); */
-    productFilter.initRailsShifts();
-    /*     productFilter.changePriceInput();
-        productFilter.contextMenu(); */
-    /*     sliderCoffee.getMargin();
-        sliderCoffee.getUnactiveElts();
-        sliderCoffee.getTranslateStepX();
-        sliderCoffee.initArrowsBtns();
-        sliderCoffee.initDrag();
-        sliderCoffee.slideResizeObserver(); */
-
-
-
-    // // Combo Slider
-
-    // const arrowCom = [...document.querySelectorAll(".combo__toggle-btn")];
-    // const contentCom = [...document.querySelectorAll(".combo__item")];
-    // const mainCom = document.querySelector(".combo__body-wrapper");
-    // const resizeOberverCom = document.querySelector(".combo__resizeOberver");
-
-    // const sliderCombo = new Slider(contentCom, mainCom, arrowCom, resizeOberverCom, null, null, 0, null, null);
-
-    // sliderCombo.getMargin();
-    // sliderCombo.getUnactiveElts();
-    // sliderCombo.getTranslateStepX();
-    // sliderCombo.initArrowsBtns();
-    // sliderCombo.initDrag();
-    // sliderCombo.contextMenu();
-    // sliderCombo.slideResizeObserver();
-
-
-
-    // // Giftset Slider
-
-    // const contentGif = [...document.querySelectorAll(".giftset__body-wrapper")];
-    // const mainGif = document.querySelector(".giftset__body");
-    // const toggleBtnGif = [...document.querySelectorAll(".togglers__item")];
-    // const toggleMoveGif = document.querySelector(".togglers__item-move");
-    // const slideNumber = document.querySelector(".togglers__slide-number");
-    // const toggleResizeOberverGif = document.querySelector(".togglers__resize-observer");
-    // const sliderGiftset = new Slider(contentGif, mainGif, null, null, toggleBtnGif, toggleMoveGif, null, slideNumber, toggleResizeOberverGif);
-
-    // sliderGiftset.getMargin();
-    // sliderGiftset.getTranslateStepX();
-    // sliderGiftset.initToggleBtns();
-    // sliderGiftset.toggleContainerResizeObserver();
-
+        productFilter.initRailsShifts();
+    }
 })
-
-
-/* const carousel = {
-    type: "carousel",
-    settings: {
-        customSetting: {
-            effects: "",
-            touch: "true/false",
-        },
-        switchers: {
-            dots: "true/false",
-            arrows: "true/false",
-        }
-    }
-}
-const slider3d = {
-    type: "3dslider",
-    settings: {
-        customSetting: {
-            effects: "rota",
-        },
-        switchers: {
-            dots:  "true/false",
-            arrows: "true/false",
-            togglers: "true/false",
-        }
-    }
-}
-const sliderGif = new Slider (
-) */

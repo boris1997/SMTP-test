@@ -130,7 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const switchLabel = [...document.querySelectorAll(".switch-radio__label")];
     const togglersTariff = [...document.querySelectorAll(".togglers-tariff__btn")];
     const totalPrice = document.querySelector(".total-price__amount");
-    console.log(switchRadio)
     if (switchRadio.length !== 0 && switchRadio.length !== 0 && togglersTariff.length !== 0 && totalPrice !== null) {
         const countTarif = new CountTarif(switchRadio, switchLabel, togglersTariff, totalPrice);
         countTarif.getindicators();

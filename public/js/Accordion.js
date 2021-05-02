@@ -86,48 +86,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // faq
     const faqBtn = [...document.querySelectorAll(".item-faq")];
-    const faqBtnText = [...document.querySelectorAll(".item-faq__text")];
-    const faqBtnActive = 'incDec-btn--minus';
-    const activeClasses = ['item-faq__body', 'item-faq__text']
-    const faqTransitionTime = 500;
-    const heightFaqVar = '--max-heightFaq'
-
-    console.log(faqBtn)
-
-    faqBtn.length !== 0 && new Accordion(faqBtn, faqBtnText, faqBtnActive, activeClasses, null, null, null, faqTransitionTime, heightFaqVar);
+    if (faqBtn.length !== 0) {
+        const faqBtnText = [...document.querySelectorAll(".item-faq__text")];
+        const faqBtnActive = 'incDec-btn--minus';
+        const activeClasses = ['item-faq__body', 'item-faq__text']
+        const faqTransitionTime = 500;
+        const heightFaqVar = '--max-heightFaq'
+        new Accordion(faqBtn, faqBtnText, faqBtnActive, activeClasses, null, null, null, faqTransitionTime, heightFaqVar);
+    }
 
 
     // Cities
-    const citiesBtn = document.querySelector(".cities__accordion-body");
     const citiesList = document.querySelector(".cities__list-hidden");
-
-    const citiesBtnActive = 'cities__accordion-body--hide';
-
-    const citiesTextToggleBtn = document.querySelector(".cities__link");
-    console.log(citiesTextToggleBtn)
-    const citiesTextToggle = ['Все города', 'Свернуть'];
-    const citiesTransitionTime = 300;
-    const heightCitiesVar = '--max-heightCities'
-    console.log(citiesList)
-    citiesList !== null && new Accordion(citiesBtn, citiesList, citiesBtnActive, null, null, citiesTextToggle, citiesTextToggleBtn, citiesTransitionTime, heightCitiesVar);
+    if (citiesList !== null) {
+        const citiesBtn = document.querySelector(".cities__accordion-body");
+        const citiesBtnActive = 'cities__accordion-body--hide';
+        const citiesTextToggleBtn = document.querySelector(".cities__link");
+        const citiesTextToggle = ['Все города', 'Свернуть'];
+        const citiesTransitionTime = 300;
+        const heightCitiesVar = '--max-heightCities'
+        new Accordion(citiesBtn, citiesList, citiesBtnActive, null, null, citiesTextToggle, citiesTextToggleBtn, citiesTransitionTime, heightCitiesVar);
+    }
 
 
 
     // Direction
-    const directionBtn = document.querySelector(".direction__accordion-body");
     const directionList = document.querySelector(".direction__content-overflow");
+    if (directionList !== null) {
+
+        const directionBtn = document.querySelector(".direction__accordion-body");
 
 
-    const directionBtnActive = 'direction__accordion-body--hide';
-    const directionListActive = 'direction__content-overflow--visible';
+        const directionBtnActive = 'direction__accordion-body--hide';
+        const directionListActive = 'direction__content-overflow--visible';
 
-    const directionTextToggleBtn = document.querySelector(".direction__link");
-    const directionTextToggle = ['Все направления', 'Свернуть'];
-    const directionTransitionTime = 300;
-    const heightDirectionVar = '--max-heightDirection';
+        const directionTextToggleBtn = document.querySelector(".direction__link");
+        const directionTextToggle = ['Все направления', 'Свернуть'];
+        const directionTransitionTime = 300;
+        const heightDirectionVar = '--max-heightDirection';
 
-    console.log(directionList)
-    directionList !== null && new Accordion(directionBtn, directionList, directionBtnActive, null, directionListActive, directionTextToggle, directionTextToggleBtn, directionTransitionTime, heightDirectionVar);
+        new Accordion(directionBtn, directionList, directionBtnActive, null, directionListActive, directionTextToggle, directionTextToggleBtn, directionTransitionTime, heightDirectionVar);
+    }
 
 
 })

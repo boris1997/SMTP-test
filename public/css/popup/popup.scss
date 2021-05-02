@@ -32,7 +32,8 @@
     position: relative;
     opacity: 0;
     @include flexbox(column, center, center);
-    transform: perspective(rem(600px)) translate(0, -100%) rotateX(45deg);
+    // transform: perspective(rem(600px)) translate(0, -100%) rotateX(45deg);
+    transform: translateY(-100%);
     transition: all 0.5s ease-in-out;
     max-width: rem(450px);
     /*  margin-right: rem(16px); */
@@ -46,13 +47,14 @@
     padding: 0 rem(16px);
   }
   &__modal--active > &__modal-wrapper {
-    transform: perspective(0) translate(0, 0) rotateX(0);
+    // transform: perspective(0) translate(0, 0) rotateX(0);
+    transform: translateY(0);
     opacity: 1;
   }
 
   &__modal-close {
     cursor: pointer;
-    @include position(absolute, "", 0, auto, auto, 0, auto);
+    @include position(absolute, "", rem(19px), auto, auto, rem(19px), auto);
   }
 }
 

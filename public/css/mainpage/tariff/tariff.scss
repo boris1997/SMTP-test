@@ -1,6 +1,9 @@
 .tariff {
-  background: url("../assets/backgrounds/main/tariff-background.png") no-repeat
-    center center/cover;
+  /*   background: url("../assets/backgrounds/main/tariff-background.svg") no-repeat
+    center center/cover; */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   &__title {
     max-width: rem(395px);
   }

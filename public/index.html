@@ -6,8 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:regular,600,700&display=swap" rel="stylesheet" />
+    <!--  <noscript id="deferred-styles">
+    </noscript> -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,600,700&display=swap"
+        as="style" />
     <title>SMTP</title>
 </head>
 
@@ -116,8 +119,8 @@
         </div>
     </div>
 
-    <section class="opportunity">
-        <div class="container section">
+    <section class="opportunity section section--active">
+        <div class="container section__content">
             <div class="section__header">
                 <div class="section__point"><img src="./assets/svg/point.svg" type=""
                         class="section__point-object"></img>
@@ -186,9 +189,11 @@
             </div>
         </div>
     </section>
-    <section class="community">
+    <section data-backgroung-img="./assets/backgrounds/main/cooperartion-background.svg"
+        class="community section section--active">
+        <!-- <object data="./assets/backgrounds/main/cooperartion-background.svg" type=""></object> -->
 
-        <div class="container section">
+        <div class="container section__content">
 
             <div class="section__header">
                 <div class="section__point"><img src="./assets/svg/point.svg" type=""
@@ -240,8 +245,8 @@
         </div>
     </section>
 
-    <section class="advantages">
-        <div class="container section">
+    <section class="advantages section section--active">
+        <div class="container section__content">
             <div class="section__header">
                 <div class="section__point"><img src="./assets/svg/point.svg" type=""
                         class="section__point-object"></img>
@@ -295,8 +300,9 @@
     </section>
 
 
-    <section class="tariff">
-        <div class="container section ">
+    <section data-backgroung-img="./assets/backgrounds/main/tariff-background.svg"
+        class="tariff section section--active">
+        <div class="container section__content">
             <div class="section__header">
                 <div class="section__point"><img src="./assets/svg/point.svg" type=""
                         class="section__point-object"></img>
@@ -472,11 +478,11 @@
             </div>
         </div>
     </section>
-    <section class="get">
-        <div class="container section get__section">
+    <section data-backgroung-img="./assets/backgrounds/main/buy-background.svg" class="get section section--active">
+        <div class="container section__content get__section">
             <div class="section__header">
-                <div class="section__point"><img src="./assets/svg/point.svg" type=""
-                        class="section__point-object"></img>
+                <div class="section__point"><img data-src="./assets/svg/point.svg" type=""
+                        class="section__point-object lazyload"></img>
                 </div>
                 <div class="section__header-content">
                     <h2 class="section__title">Что вы получите после покупки
@@ -501,13 +507,15 @@
                         </li>
                     </ul>
                 </div>
-                <div class="get__right"><img src="./assets/svg/main/whatGet/macbook.svg" alt="" class="get__img"></div>
+                <div class="get__right">
+                    <!-- <img src="./assets/svg/main/whatGet/macbook.svg" alt="" class="get__img"> -->
+                </div>
             </div>
 
         </div>
     </section>
-    <section class="programm">
-        <div class="container section">
+    <section class="programm section section--active">
+        <div class="container section__content">
             <div class="section__header">
                 <div class="section__point"><img src="./assets/svg/point.svg" type=""
                         class="section__point-object"></img>
@@ -531,7 +539,9 @@
                         программой или подключить любой другой софт для рассылки.
                     </p>
                 </div>
-                <div class="mailing__right"><img class="mailing__img" src="./assets/img/mailing/sreenshot.png" alt="">
+                <div class="mailing__right">
+                    <!-- <img class="mailing__img lazyload"
+                        data-src="./assets/img/mailing/sreenshot.png" alt=""> -->
                 </div>
             </div>
 
@@ -579,8 +589,8 @@
             </div>
         </div>
     </section>
-    <section class="faq">
-        <div class="container section">
+    <section class="faq section section--active">
+        <div class="container section__content">
             <div class="section__header">
                 <div class="section__point"><img src="./assets/svg/point.svg" type=""
                         class="section__point-object"></img>
@@ -925,7 +935,8 @@
 
     </div>
 
-    <script src="./js/script.js"></script>
+    <script defer src="./js/script.js"></script>
+
 </body>
 
 </html>

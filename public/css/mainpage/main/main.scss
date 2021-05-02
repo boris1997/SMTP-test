@@ -2,6 +2,7 @@
   overflow: hidden;
   margin-top: rem(124px);
   &__body {
+    width: 100%;
     margin-top: rem(50px);
     margin-bottom: rem(36px);
   }
@@ -14,7 +15,7 @@
     /*     position: relative;
 
     position: relative; */
-    width: 1000px;
+    width: 100%;
     display: flex;
     justify-content: center;
   }

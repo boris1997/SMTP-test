@@ -36,10 +36,8 @@ class Slider {
 
     initDrag = () => {
         this.content.map((dragableItem, i) => {
-            console.log(innerWidth)
             /* if (innerWidth < this.sliderBreakpoint) { */
             dragableItem.addEventListener('dragstart', (e) => e.preventDefault())
-            console.log(dragableItem)
             //touch event
             dragableItem.addEventListener('touchstart', this.touchStart(i), { passive: true })
             dragableItem.addEventListener('touchend', (e) => this.touchEnd(e))
@@ -101,22 +99,8 @@ class Slider {
 
             const wrapperRight = window.innerWidth - (this.wrapper.getBoundingClientRect().left + this.wrapper.clientWidth);
             const lastElementRight = window.innerWidth - (this.content[this.content.length - 1].getBoundingClientRect().left + this.content[this.content.length - 1].clientWidth);
-            /* console.log(this.prevTranslation, this.currentTranslationX) */
-            /*        console.log(translationtoAbs) */
 
-            /*  console.log(((this.translateStepX * this.content.length) + this.elemntsMargins).toFixed());
-             console.log(Math.abs(this.currentTranslationX).toFixed(), ((this.translateStepX * (this.content.length - 1)) + this.elemntsMargins).toFixed()); */
-            /*    console.log(Math.abs(this.currentTranslationX).toFixed(), ((this.translateStepX * (this.content.length - 1)) + this.elemntsMargins).toFixed())
-               console.log(Math.abs(this.currentTranslationX).toFixed()) */
-            /*  console.log(this.translateStepX) */
-            /*  console.log(this.currentTranslationX, this.prevTranslation, this.sliderLimit)
-             console.log(this.sliderLimit - wrapperRight, lastElementRight) */
-            /* console.log(this.sliderLimit + wrapperRight, lastElementRight) */
-            /*   console.log(lastElementRight, this.sliderLimit, wrapperRight)
-              console.log(lastElementRight < this.sliderLimit, wrapperRight) */
-            // +Math.abs(this.currentTranslationX).toFixed() <= ((this.translateStepX * (this.content.length - 1)) + this.elemntsMargins).toFixed()
             if ((lastElementRight <= this.sliderLimit && +Math.abs(this.currentTranslationX).toFixed() <= ((this.translateStepX * (this.content.length - 1)) + this.elemntsMargins).toFixed() && this.currentTranslationX < 2) || (this.currentTranslationX >= this.prevTranslation && this.currentTranslationX < 2)) {
-                /*   console.log(this.currentTranslationX) */
                 this.currentTranslationX = this.absToPercent(((this.prevTranslation * this.main.clientWidth / 100) + currentPosition - this.startPos), this.main.clientWidth);
             }
         }
@@ -133,7 +117,6 @@ class Slider {
 
             // Изменям индекс в зависимости от текущей трансформации
             if (this.currentIndex < this.content.length - 1) {
-                console.log(this.currentIndex, this.content.length)
                 Math.abs(this.currentTranslationX) > ((Math.abs(this.prevTranslation) + this.translateStepX / 3.5)) && (this.currentIndex++);
             }
             if (this.currentIndex >= 0) {
@@ -147,7 +130,6 @@ class Slider {
             this.setSliderPositionX(this.main, this.currentTranslationX);   // Устанавливаем транслэйт для слайдера
             this.getUnactiveElts();                                        // меняем опасити элементов 
 
-            console.log(this.currentIndex)
             if (this.circeTogglers) {
                 this.setCircleActivity(this.circeTogglers[this.currentIndex])
             }
@@ -170,7 +152,6 @@ class Slider {
     /*                                                СОБЫТИЕ НА КЛИК СТРЕЛОК                                             */
 
     initArrowsBtns = () => {
-        console.log('ok')
         this.arrow[0].addEventListener("click", () => this.left()); // левая стрелка
 
         this.arrow[1].addEventListener("click", () => this.rigth()); // праввая стрелка
@@ -236,7 +217,6 @@ class Slider {
             this.setCircleActivity(item)
 
             this.currentIndex = i;
-            console.log(this.currentIndex)
             this.setPrevTranslation();
             this.setCurrentXTranslation();                                  // Меняем текущий транслэйт слайдер 
             this.setSliderPositionX(this.main, this.currentTranslationX);  // Устанавливаем транслэйт для слайдера
@@ -261,7 +241,6 @@ class Slider {
 
         // меняем активность стрелок
 
-        console.log(this)
 
         if (this.arrow) {
             // Левая стрелка
@@ -310,19 +289,15 @@ class Slider {
             // Настройка слайдера после изменения ширина слайда(в процентом соотношении)
             this.getTranslateStepX(); // Узнаем шаг для X транслэйта
             this.getMargin();
-            console.log(this.margin, this.translateStepX)
 
             // Уменьшаем индекс при переполнении
             if (this.currentIndex > this.getMainToContentIndex()) {
                 const decresseIndex = this.currentIndex - this.getMainToContentIndex();
                 this.currentIndex -= decresseIndex;
-                console.log(this.currentIndex)
             }
 
-            console.log(this.sliderBreakpoint, innerWidth)
             if (this.sliderBreakpoint < innerWidth) {
                 this.currentIndex = 0;
-                console.log(this.currentIndex)
             }
 
             if (this.circeTogglers) {
@@ -343,7 +318,6 @@ class Slider {
     slideResizeObserver = () => {
 
         // resizeInteraction событие, которое срабатывает при измненнении ширины элемента
-        console.log(this.currentIndex, this.slideResizeOberverObj)
         this.resizerSlide = new ResizeObserver(this.slideRzeObrCallback);
         this.resizerSlide.observe(this.slideResizeOberverObj)
     }
@@ -363,7 +337,7 @@ class Slider {
 
     toggleContainerResizeObserver = () => {
         this.resizerToggler = new ResizeObserver(this.toggleContainerRzeObrCallback);
-        console.log(this.toggleResizeOberverObj)
+
         this.resizerToggler.observe(this.toggleResizeOberverObj)
     }
 
@@ -412,15 +386,12 @@ class Slider {
     getMargin = () => {
         // Узнаем отутупы для правельного транслэйта
         this.margin = +getComputedStyle(this.content[1]).marginLeft.split('px').join('');
-        /*  console.log(this.margin) */
         this.elemntsMargins = this.absToPercent((this.margin * this.content.length - 1), this.getTotalElementsWidth()) - this.stopperFactor;
 
     }
 
     getTranslateStepX = () => {
-        /*   console.log(this.content[1].getBoundingClientRect().width) */
-        console.log(this.content[1].clientWidth)
-        console.log(this.main.clientWidth)
+
         /*  setTimeout(() => { */
         this.translateStepX = ((this.content[1].clientWidth + this.margin) / this.main.clientWidth * 100).toFixed() // Узнаем шаг для X транслэйта
         /*         }, 500) */
@@ -444,7 +415,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const mainAdvantages = document.querySelector(".advantages__slider");
         const resizeOberverAdvantages = document.querySelector(".advantages__resizer");
         const sliderBreakpointAdvantages = 1225;
-        console.log(contentAdvantages)
         const sliderAdvantages = new Slider(contentAdvantages, mainAdvantages, wrapperAdvantages, sliderBreakpointAdvantages, null, null, null, resizeOberverAdvantages, null, null, 0, null, null);
 
         /*  sliderCoffee.getUnactiveElts(); */
@@ -466,7 +436,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const mainProgramm = document.querySelector(".programm__slider ");
         const resizeOberverProgramm = document.querySelector(".programm__resizer");
         const sliderBreakpointProgramm = 1225;
-        console.log(contentAdvantages)
         const sliderProgramm = new Slider(contentProgramm, mainProgramm, wrapperProgramm, sliderBreakpointProgramm, null, null, null, resizeOberverProgramm, null, null, 0, null, null);
 
         /*  sliderCoffee.getUnactiveElts(); */
@@ -488,7 +457,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const circeTogglersCard = [...document.querySelectorAll(".circe-togglers__item")];
         const circleActiveClass = 'circe-togglers__item--active'
         const sliderBreakpointCard = 480;
-        console.log(contentAdvantages)
         const sliderProgramm = new Slider(contentCard, mainCard, wrapperCard, sliderBreakpointCard, null, circeTogglersCard, circleActiveClass, resizeOberverCard, null, null, 0, null, null);
 
         /*  sliderCoffee.getUnactiveElts(); */
@@ -502,13 +470,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
     const contentService = [...document.querySelectorAll(".interest-service__slider-item")];
-    console.log(contentService)
     if (contentService.length !== 0) {
         const mainService = document.querySelector(".interest-service__slider");
         const wrapperService = document.querySelector(".interest-service__body");
         const resizeOberverService = document.querySelector(".interest-service__resizer");
         const sliderBreakpointService = 1225;
-        console.log(contentAdvantages)
         const sliderProgramm = new Slider(contentService, mainService, wrapperService, sliderBreakpointService, null, null, null, resizeOberverService, null, null, 0, null, null);
 
         /*  sliderCoffee.getUnactiveElts(); */
@@ -523,13 +489,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     const contentArticles = [...document.querySelectorAll(".articles-content__slide")];
-    console.log(contentService)
     if (contentService.length !== 0) {
         const mainArticles = document.querySelector(".usefull-articles__slider");
         const wrapperArticles = document.querySelector(".usefull-articles__body");
         const resizeOberverArticles = document.querySelector(".articles-content__resizer");
         const sliderBreakpointArticles = 1225;
-        console.log(contentAdvantages)
         const sliderProgramm = new Slider(contentArticles, mainArticles, wrapperArticles, sliderBreakpointArticles, null, null, null, resizeOberverArticles, null, null, 0, null, null);
 
         /*  sliderCoffee.getUnactiveElts(); */

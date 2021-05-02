@@ -1,30 +1,57 @@
-.card__small-blue {
+/* .card__small-blue {
   animation: 2s linear 0s infinite alternate small-blue-color;
+  transition: none !important;
+} */
+.card {
+  &__green {
+    animation: 3s linear 0s infinite green-color;
+  }
+
+  &__greenSec {
+    animation: 3s linear 0s infinite green-colorSec;
+  }
+
+  &__big-red {
+    animation: 3s linear 0s infinite big-red-color;
+  }
+  &__big-redSec {
+    animation: 3s linear 0s infinite big-red-colorSec;
+  }
+
+  &__greenToBlue {
+    animation: 3s linear 0s infinite greenToBlue-color;
+  }
+  &__greenToBlueSec {
+    animation: 3s linear 0s infinite greenToBlueSec-color;
+  }
+
+  &__blueToPurple {
+    animation: 3s linear 0s infinite blueToPurple-color;
+  }
+
+  &__blueToRed {
+    animation: 3s linear 0s infinite blueToRed-color;
+  }
+  &__blueToRedLine {
+    animation: 3s linear 0s infinite blueToRedLine-color;
+  }
+  &__blueToRedCircle {
+    animation: 3s linear 0s infinite blueToRedCircle-color;
+  }
+}
+.card__big-greenSquare {
 }
 
-.card__big-green {
-  // animation: 2s linear 0s infinite alternate big-green-color;
-  /*   filter: drop-shadow(
-    -0.428087px -0.428087px 0.433034px #9bccac,
-    inset 0.713478px -0.872029px 1.08258px rgba(255, 255, 255, 0.3),
-    inset 1.58551px -1.58551px 0px rgba(106, 195, 126, 0.3),
-    inset -2.37826px 1.74406px 0px #69c27b
-  ); */
-  box-shadow: inset -0.428087px -0.428087px 0.433034px #9bccac,
-    inset 0.713478px -0.872029px 1.08258px rgba(255, 255, 255, 0.3),
-    inset 1.58551px -1.58551px 0px rgba(106, 195, 126, 0.3),
-    inset -2.37826px 1.74406px 0px #69c27b;
-}
-.card__big-red {
-  animation: 2s linear 0s infinite alternate big-red-color;
+.card .card__big-red {
+  /*   animation: 3s step-start 0s infinite big-red-color; */
+  // animation: 3s linear 0s infinite big-red-color;
+  /* animation-timing-function: step-start; */
+  /*  1.8s linear 0s step-end infinite big-red-color-backward; */
+  // animation-timing-function: step-end;
 }
 
 .card__big-green-filter {
   animation: 2s linear 0s infinite alternate big-green-color;
-  filter: drop-shadow(-0.428087px -0.428087px 0.433034px #9bccac)
-    drop-shadow(inset 0.713478px -0.872029px 1.08258px rgba(255, 255, 255, 0.3))
-    drop-shadow(inset 1.58551px -1.58551px 0px rgba(106, 195, 126, 0.3))
-    drop-shadow(inset -2.37826px 1.74406px 0px #c26969);
 
   /*   background: linear-gradient(
       122.06deg,
@@ -35,42 +62,97 @@
     rgba(106, 195, 126, 0.3); */
 }
 
-.filter_06 {
-  filter: drop-shadow(-0.428087px -0.428087px 0.433034px #9bccac)
-    drop-shadow(0.713478px -0.872029px 1.08258px rgba(255, 255, 255, 0.3))
-    drop-shadow(1.58551px -1.58551px 0px rgba(106, 195, 126, 0.3))
-    drop-shadow(-2.37826px 1.74406px 0px #c26969);
-}
-
 @keyframes small-blue-color {
-  from {
+  0% {
     fill: $accentColor;
   }
-  to {
+
+  100% {
     fill: red;
   }
 }
 
-@keyframes big-green-color {
-  /*  from {
-    filter: drop-shadow(-0.428087px -0.428087px 0.433034px #9bccac)
-      drop-shadow(0.713478px -0.872029px 1.08258px rgba(255, 255, 255, 0.3))
-      drop-shadow(1.58551px -1.58551px 0px rgba(106, 195, 126, 0.3))
-      drop-shadow(-2.37826px 1.74406px 0px #6ac37e);
+@keyframes green-color {
+  from {
+    fill: #6ac37e;
   }
   to {
-    filter: drop-shadow(-0.428087px -0.428087px 0.433034px #9bccac)
-      drop-shadow(0.713478px -0.872029px 1.08258px rgba(255, 255, 255, 0.3))
-      drop-shadow(1.58551px -1.58551px 0px rgba(106, 195, 126, 0.3))
-      drop-shadow(-2.37826px 1.74406px 0px #69c27b);
-  } */
+    fill: #1bffff;
+  }
+}
+@keyframes green-colorSec {
+  from {
+    fill: #4cf253;
+  }
+  to {
+    fill: #4cf2c0;
+  }
 }
 
 @keyframes big-red-color {
-  from {
+  0% {
     fill: #dd2265;
+  }
+
+  100% {
+    fill: #5418ff;
+  }
+}
+@keyframes big-red-colorSec {
+  0% {
+    fill: #dd2265;
+  }
+
+  100% {
+    fill: #5115d0;
+  }
+}
+
+@keyframes greenToBlue-color {
+  from {
+    fill: #6ac37e;
+  }
+  to {
+    fill: #1549d0;
+  }
+}
+@keyframes greenToBlueSec-color {
+  from {
+    fill: #4cf253;
+  }
+  to {
+    fill: #275de8;
+  }
+}
+@keyframes blueToPurple-color {
+  from {
+    fill: #1549d0;
   }
   to {
     fill: #5115d0;
+  }
+}
+@keyframes blueToRed-color {
+  from {
+    fill: #1549d0;
+  }
+  to {
+    fill: #dd2265;
+  }
+}
+@keyframes blueToRedLine-color {
+  from {
+    fill: #5092de;
+  }
+  to {
+    fill: #ffdfeb;
+  }
+}
+@keyframes blueToRedCircle-color {
+  from {
+    fill: #2f80ed;
+  }
+  to {
+    fill: #ff045e;
   }
 }
