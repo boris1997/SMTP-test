@@ -7,12 +7,13 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:regular,600,700&display=swap" rel="stylesheet" />
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,600,700&display=swap"
+        rel="stylesheet" as="style" />
     <title>SMTP</title>
 </head>
 
-<body>
-    <div class="page">
+<body class="body">
+    <div class="page page--base">
         <div class="container page__wrapper">
             <header class="header">
                 <div class="header__content">
@@ -104,7 +105,7 @@
                             СНГ.
                             Более 1 800 000 организаций.</p>
                     </div>
-                    <div class="main__body">
+                    <div class="main__body main__body--base">
                         <img class="main__base-illustration" src="./assets/svg/bases/main/illustration.svg" alt=""
                             srcset="">
                     </div>
@@ -120,8 +121,8 @@
             </main>
         </div>
     </div>
-    <section class="direction">
-        <div class="container section">
+    <section class="direction section">
+        <div class="container section__content">
             <div class="section__header">
                 <div class="section__point"><img src="./assets/svg/point.svg" type=""
                         class="section__point-object"></img>
@@ -273,8 +274,8 @@
             </div>
         </div>
     </section>
-    <section class="suit">
-        <div class="container section">
+    <section class="suit section suit--base">
+        <div class="container section__content">
             <div class="section__header">
                 <div class="section__point"><img src="./assets/svg/point.svg" type=""
                         class="section__point-object"></img>
@@ -376,8 +377,9 @@
         </div>
     </section>
 
-    <section class="parametres">
-        <div class="container section parametres__section">
+    <section data-backgroung-img="../assets/backgrounds/base/parametres-background.svg"
+        class="data-lazy parametres section">
+        <div class="container section__content parametres__section">
             <div class="section__header">
                 <div class="section__point"><img src="./assets/svg/point.svg" type=""
                         class="section__point-object"></img>
@@ -410,17 +412,18 @@
                     </ul>
 
                 </div>
-                <div class="parametres__right"><img src="./assets/svg/bases/parametres/illustration.svg" alt=""
-                        class="parametres__img">
+                <div class="parametres__right">
+                    <!-- <img src="./assets/svg/bases/parametres/illustration.svg" alt=""
+                        class="parametres__img"> -->
                 </div>
             </div>
 
         </div>
     </section>
 
-    <section class="getInformation">
+    <section class="getInformation section">
 
-        <div class="container section">
+        <div class="container section__content">
 
             <div class="section__header getInformation__header">
 
@@ -444,9 +447,9 @@
         </div>
     </section>
 
-    <section class="difference">
+    <section class="difference section">
 
-        <div class="container section">
+        <div class="container section__content">
 
             <div class="section__header">
                 <div class="section__point"><img src="./assets/svg/point.svg" type=""
@@ -497,8 +500,8 @@
         </div>
     </section>
 
-    <section class="tariffsec">
-        <div class="container section ">
+    <section class="tariffsec data-lazy tariffsec--base section">
+        <div class="container section__content">
             <div class="section__header">
                 <div class="section__point"><img src="./assets/svg/point.svg" type=""
                         class="section__point-object"></img>
@@ -613,8 +616,8 @@
             </div>
         </div>
     </section>
-    <section class="download">
-        <div class="container section">
+    <section class="download section">
+        <div class="container section__content">
             <div class="section__header download__header">
 
                 <div class="section__header-content">
@@ -688,7 +691,7 @@
             </div>
         </div>
     </footer>
-    <script src="./js/script.js"></script>
+    <script defer src="./js/script.js"></script>
 </body>
 
 </html>

@@ -7,7 +7,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:regular,600,700&display=swap" rel="stylesheet" />
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,600,700&display=swap"
+        rel="stylesheet" as="style" />
     <title>SMTP</title>
 </head>
 
@@ -99,8 +100,10 @@
     </div>
 
     <section class="articles section--main-background section section--sec">
-        <div class="container">
-            <h1 class="articles__title main__item">Статьи</h1>
+        <div class="container section__content">
+            <div class="section__header">
+                <h1 class="articles__title main__item">Статьи</h1>
+            </div>
             <div class="articles__body">
                 <div class="articles__pages">
                     <div class="articles-content">
@@ -324,7 +327,7 @@
             </div>
         </div>
     </footer>
-    <script src="./js/script.js"></script>
+    <script defer src="./js/script.js"></script>
 </body>
 
 </html>

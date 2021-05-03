@@ -2,8 +2,8 @@
   &__section {
     padding-bottom: rem(40px);
   }
-  background: url("../assets/backgrounds/main/buy-background.png") no-repeat
-    center center/cover;
+  background: url("../assets/backgrounds/base/direction-background.svg")
+    no-repeat center center/cover;
   &__body {
     margin-top: rem(32px);
     @include flexbox(column, flex-start, flex-start);

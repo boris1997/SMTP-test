@@ -38,6 +38,11 @@
   }
 }
 
+.tariffsec--base {
+  background: url("../assets/backgrounds/base/buy-background.svg") no-repeat
+    center center/cover;
+}
+
 .card-tariffsec {
   &__header,
   &__price,

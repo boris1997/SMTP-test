@@ -7,7 +7,7 @@
     no-repeat center center/cover;
 
   &__main {
-    margin-top: rem(50px);
+    /*    margin-top: rem(50px); */
 
     @include flexbox(row, space-between, center);
   }

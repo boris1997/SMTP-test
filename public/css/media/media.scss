@@ -220,9 +220,9 @@
     line-height: rem(50px);
   }
 
-  .page {
+  /*  .page {
     height: 100%;
-  }
+  } */
   .page__contact {
     height: 100% !important;
   }
@@ -287,12 +287,12 @@
     margin-bottom: rem(55px);
   }
 
-  .service__header,
+  /*   .service__header,
   .services__body,
   .articles__body,
   .contact__left {
     margin-top: rem(60px);
-  }
+  } */
 
   .main,
   .contact {
@@ -300,7 +300,7 @@
     margin-top: calc(124 / 991 * 100%);
   }
 
-  .section {
+  .section__content {
     padding-bottom: rem(110px);
   }
   .get__left,
@@ -487,12 +487,12 @@
     line-height: rem(25px);
     font-size: rem(16px);
   }
-  .service__header,
+  /*   .service__header,
   .services__body,
   .articles__body,
   .contact__left {
     margin-top: rem(50px);
-  }
+  } */
 
   .main__downloads {
     top: calc(961 / 1251 * 100%);
@@ -521,7 +521,7 @@
     margin-bottom: rem(45px);
   }
 
-  .section {
+  .section__content {
     padding-bottom: rem(80px);
   }
 
@@ -646,15 +646,15 @@
   .header__hamburger-menu {
     width: rem(42px);
   }
-  .service__header,
+  /*   .service__header,
   .services__body,
   .articles__body,
   .articlee__body,
   .contact__left {
     margin-top: rem(40px);
-  }
+  } */
 
-  .section {
+  .section__content {
     padding-bottom: rem(50px);
   }
   .main,
@@ -1000,7 +1000,8 @@
   .footer-tariff__info {
     justify-content: flex-start;
   }
-  .footer-tariff__btn {
+  .footer-tariff__btn,
+  .main__body--base {
     width: 100%;
   }
 

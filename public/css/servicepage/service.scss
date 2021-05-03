@@ -5,7 +5,7 @@
   }
 
   &__header {
-    margin-top: rem(70px);
+    /*     margin-top: rem(70px); */
 
     @include flexbox(row, flex-start, flex-start);
   }

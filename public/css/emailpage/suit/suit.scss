@@ -59,6 +59,10 @@
     margin-top: rem(190px);
   }
 }
+.suit--base {
+  background: url("../assets/backgrounds/base/suit-background.svg") no-repeat
+    center center/cover;
+}
 
 .items-suit {
   @include flexbox(column, center, center);
