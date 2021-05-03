@@ -176,6 +176,14 @@ img {
   visibility: visible;
 }
 
+.page--mail {
+  background: url("../assets/backgrounds/mail/main-background.png") no-repeat center center/cover;
+}
+
+.page--base {
+  background: url("../assets/backgrounds/base/") no-repeat center center/cover;
+}
+
 .page_sec_color {
   background: #192942;
 }
@@ -202,11 +210,6 @@ img {
   height: 0.625rem;
 }
 
-.section {
-  opacity: 0.5;
-  -webkit-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
-}
 .section__header {
   margin-top: 8.75rem;
   margin-bottom: 4.375rem;
@@ -268,10 +271,6 @@ img {
   font-family: "Nunito";
   font-size: 1.25rem;
   font-weight: 600;
-}
-
-.section--active {
-  opacity: 1;
 }
 
 .section--main-background {

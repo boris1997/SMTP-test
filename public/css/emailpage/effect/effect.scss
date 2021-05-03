@@ -2,7 +2,7 @@
   &__section {
     padding-bottom: rem(40px);
   }
-  background: url("../assets/backgrounds/main/buy-background.png") no-repeat
+  background: url("../assets/backgrounds/mail/effect-background.svg") no-repeat
     center center/cover;
   &__body {
     @include flexbox(row, space-between, baseline);

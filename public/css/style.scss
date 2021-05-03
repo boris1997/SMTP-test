@@ -151,6 +151,14 @@ img {
   }
 }
 
+.page--mail {
+  background: url("../assets/backgrounds/mail/main-background.png") no-repeat
+    center center/cover;
+}
+.page--base {
+  background: url("../assets/backgrounds/base/") no-repeat center center/cover;
+}
+
 .page_sec_color {
   background: #192942;
 }
@@ -178,8 +186,6 @@ img {
 }
 
 .section {
-  opacity: 0.5;
-  transition: opacity 0.2s ease-in-out;
   &__header {
     margin-top: rem(140px);
     margin-bottom: rem(70px);
@@ -246,9 +252,6 @@ border-image-source: linear-gradient(98.72deg, rgba(21, 73, 208, 0.26) 5.11%, #1
     font-size: rem(20px);
     font-weight: 600;
   }
-}
-.section--active {
-  opacity: 1;
 }
 
 .section--main-background {

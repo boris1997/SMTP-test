@@ -2,8 +2,8 @@
   &__title {
     max-width: rem(704px);
   }
-  background: url("../assets/backgrounds/main/programm-background.svg")
-    no-repeat center center/cover;
+  background: url("../assets/backgrounds/mail/work-background.svg") no-repeat
+    center center/cover;
   &__body {
     @include flexbox(row, space-between, center);
     margin-top: rem(-31px);
