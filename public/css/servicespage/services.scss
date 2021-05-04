@@ -88,6 +88,8 @@
 
   &__list {
     @include flexbox(row, space-between, space-between);
+    flex-wrap: wrap;
+    column-gap: rem(40px);
   }
   &__link {
     position: relative;
@@ -98,7 +100,7 @@
       color: $accentColor;
     }
 
-    &::after {
+    /*     &::after {
       content: "";
       position: absolute;
       width: 0;
@@ -108,7 +110,7 @@
       border-radius: rem(2px);
       background-color: $accentColor;
       transition: width 0.4s ease-in-out;
-    }
+    } */
   }
   &__link--active {
     &:hover {

@@ -16,9 +16,11 @@
   &__sec-title {
     right: 0;
     left: 0;
-    top: rem(-23px);
+    top: rem(-50px);
     text-align: center;
     bottom: auto;
+    justify-content: center;
+    -webkit-text-stroke: 1px #1d56e9;
   }
   &__body {
     @include flexbox(row, center, center);

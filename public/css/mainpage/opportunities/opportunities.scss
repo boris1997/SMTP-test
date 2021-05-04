@@ -3,8 +3,7 @@
     no-repeat center center/cover;
   &__body {
     /*     @include flexbox(row, space-between, space-between); */
-    margin-top: rem(80px);
-    @include grid(0, rem(80px), rem(254px), 1, 1fr, auto-fit, rem(270px), 1fr);
+    @include grid(0, rem(42px), rem(254px), 1, 1fr, auto-fit, rem(270px), 1fr);
     justify-content: center;
   }
 

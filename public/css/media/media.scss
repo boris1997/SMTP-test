@@ -1,18 +1,18 @@
 /* Portrait tablets and medium desktops */
 // (min-width: 992px) and
 @media (max-width: 1224px) {
-  .main__body-wrapper {
+  .main__body-wrapper,
+  .effect__img {
     /*    margin-top: 10%; */
     width: 100%;
   }
 
-  .main__illustration,
-  .effect__img {
-    width: 100%;
+  .main__illustration {
+    width: 85%;
   }
 
   .main__email-illustration {
-    margin-top: -20%;
+    margin-top: -20% !important;
   }
 
   .main__body--mg-b {
@@ -114,7 +114,7 @@
   }
 
   .direction__list + .direction__list {
-    margin-top: rem(27px);
+    margin-top: rem(22px);
   }
 
   .direction__content-overflow {
@@ -128,7 +128,7 @@
   .direction__content-overflow--visible,
   .direction__content {
     margin-top: 0;
-    margin-bottom: rem(27px);
+    margin-bottom: rem(22px);
   }
 
   .direction__accordion {
@@ -219,7 +219,9 @@
     font-size: rem(40px);
     line-height: rem(50px);
   }
-
+  .getInformation__sec-title {
+    top: rem(-20px);
+  }
   /*  .page {
     height: 100%;
   } */
@@ -231,6 +233,10 @@
   .main__text-base {
     line-height: rem(27px);
     font-size: rem(18px);
+  }
+
+  .main__illustration {
+    margin-top: -3%;
   }
 
   .main__base-illustration {
@@ -439,9 +445,9 @@
     width: 8px;
   }
 
-  .filter__body {
+  /* .filter__body {
     min-width: rem(1116px);
-  }
+  } */
 
   .interest-service__slider-item + .interest-service__slider-item,
   .articles-content__slide + .articles-content__slide {
@@ -471,6 +477,7 @@
   }
 
   .logo__img {
+    width: auto;
     height: rem(32px);
   }
   .footer__list {
@@ -608,9 +615,9 @@
     width: 7px;
   }
 
-  .filter__body {
+  /*   .filter__body {
     min-width: rem(972px);
-  }
+  } */
 }
 
 /* Landscape phones and smaller */
@@ -635,7 +642,6 @@
     right: 0; */
   }
   .main__email-illustration {
-    margin-left: -17%;
     width: calc(643 / 480 * 100%);
   }
 
@@ -718,8 +724,12 @@
   }
 
   .item-advantages {
-    margin-left: rem(20px);
+    margin-left: rem(20px) !important;
     margin-top: rem(15px);
+  }
+
+  .item-advantages__text {
+    max-width: rem(280px);
   }
 
   .advantages__item:nth-child(3),
@@ -903,9 +913,9 @@
     width: 5px;
   }
 
-  .filter__body {
+  /*   .filter__body {
     min-width: rem(729px);
-  }
+  } */
 
   .services-item__img {
     width: 100%;

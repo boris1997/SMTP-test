@@ -4,39 +4,39 @@
 } */
 .card {
   &__green {
-    animation: 3s linear 0s infinite green-color;
+    animation: 3s linear 0s infinite alternate green-color;
   }
 
   &__greenSec {
-    animation: 3s linear 0s infinite green-colorSec;
+    animation: 3s linear 0s infinite alternate green-colorSec;
   }
 
   &__big-red {
-    animation: 3s linear 0s infinite big-red-color;
+    animation: 3s linear 0s infinite alternate big-red-color;
   }
   &__big-redSec {
-    animation: 3s linear 0s infinite big-red-colorSec;
+    animation: 3s linear 0s infinite alternate big-red-colorSec;
   }
 
   &__greenToBlue {
-    animation: 3s linear 0s infinite greenToBlue-color;
+    animation: 3s linear 0s infinite alternate greenToBlue-color;
   }
   &__greenToBlueSec {
-    animation: 3s linear 0s infinite greenToBlueSec-color;
+    animation: 3s linear 0s infinite alternate greenToBlueSec-color;
   }
 
   &__blueToPurple {
-    animation: 3s linear 0s infinite blueToPurple-color;
+    animation: 3s linear 0s infinite alternate blueToPurple-color;
   }
 
   &__blueToRed {
-    animation: 3s linear 0s infinite blueToRed-color;
+    animation: 3s linear 0s infinite alternate blueToRed-color;
   }
   &__blueToRedLine {
-    animation: 3s linear 0s infinite blueToRedLine-color;
+    animation: 3s linear 0s infinite alternate blueToRedLine-color;
   }
   &__blueToRedCircle {
-    animation: 3s linear 0s infinite blueToRedCircle-color;
+    animation: 3s linear 0s infinite alternate blueToRedCircle-color;
   }
 }
 .card__big-greenSquare {

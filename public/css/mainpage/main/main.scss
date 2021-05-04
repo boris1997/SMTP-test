@@ -78,6 +78,7 @@
 
   &__illustration {
     width: rem(1000px);
+    margin-top: rem(-90px);
   }
 
   &__email-illustration {
@@ -85,7 +86,8 @@
   }
   &__base-illustration,
   &__email-illustration {
-    width: 100%;
+    height: auto;
+    width: 100% !important;
   }
   /*   &__plains {
     width: 36%;
