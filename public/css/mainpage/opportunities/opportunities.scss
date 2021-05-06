@@ -1,9 +1,12 @@
 .opportunity {
   background: url("../assets/backgrounds/main/opportunity-background.svg")
     no-repeat center center/cover;
+  &__header {
+    margin-bottom: rem(108px);
+  }
   &__body {
     /*     @include flexbox(row, space-between, space-between); */
-    @include grid(0, rem(42px), rem(254px), 1, 1fr, auto-fit, rem(270px), 1fr);
+    @include grid(0, rem(75px), rem(32px), 1, 1fr, auto-fit, rem(300px), 1fr);
     justify-content: center;
   }
 
@@ -13,6 +16,17 @@
 }
 
 .item-opportunity {
+  background-color: #3f3d5f;
+  border-radius: rem(12px);
+  position: relative;
+  padding-bottom: 32px;
+  &__wrapper {
+    margin-top: rem(64px);
+    margin-left: rem(24px);
+  }
+  &__img {
+    @include position(absolute, "", rem(-256px), 0, rem(21.5px), auto, auto);
+  }
   &__text {
     max-width: rem(480px);
   }

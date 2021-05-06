@@ -1,6 +1,5 @@
 .faq {
-  background: url("../assets/backgrounds/main/FAQ-background.svg") no-repeat
-    center center/cover;
+  background: rgba(46, 45, 68, 1);
   /*   background: url("../../../assets/backgrounds/main/FAQ-background.svg") no-repeat
     center center/cover; */
 }
@@ -8,7 +7,7 @@
 .item-faq {
   overflow: hidden;
   cursor: pointer;
-  border-bottom: rem(1px) solid #2b4263;
+  border-bottom: rem(1px) solid #3f3d5f;
   &__wrapper {
     margin: rem(32px) 0;
   }
@@ -24,6 +23,7 @@
 
   &__title {
     margin-top: 0;
+    font-size: rem(28px);
     margin-right: rem(10px);
   }
 

@@ -4,19 +4,41 @@
 .btn {
   outline: none;
   background-color: transparent;
-  color: $primaryColor;
-  height: rem(58px);
-  border-radius: rem(8px);
-  font-size: rem(16px);
+  margin-top: 0;
+  height: rem(50px);
+  border-radius: rem(4px);
+  font-weight: 500;
+  // font-size: rem(16px);
   transition: background 0.3s ease-in-out;
   &:active {
     background-color: #0c3ab1 !important;
   }
   &__main {
-    background-color: $accentColor;
+    background-color: $primaryColor;
+    color: $secColor;
+    position: relative;
+    &:after {
+      @include position(
+        absolute,
+        url("../assets/svg/chevron-right.svg"),
+        0,
+        0,
+        auto,
+        rem(18px),
+        auto
+      );
+      @include flexbox(row, center, center);
+
+      height: rem(12px);
+    }
     &:hover {
       background-color: #255ae3;
     }
+  }
+
+  &__span {
+    align-self: baseline;
+    margin-left: rem(28px);
   }
   &__toggler {
     cursor: pointer;

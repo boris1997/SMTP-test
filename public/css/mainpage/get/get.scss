@@ -1,22 +1,24 @@
 .get {
-  &__section {
-    padding-bottom: rem(40px);
+  background: url("../assets/backgrounds/main/get-background.svg") no-repeat
+    center center/cover;
+
+  &__header {
+    margin-bottom: rem(40px);
   }
-  /*   background: url("../assets/backgrounds/main/buy-background.svg") no-repeat
-    center center/cover; */
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
   &__body {
-    @include flexbox(row, space-between, center);
+    @include flexbox(row, baseline, baseline);
   }
 
   &__left {
-    margin-bottom: rem(100px);
+    align-self: flex-start;
   }
 
   &__right {
-    margin-right: rem(-68px);
+    margin-left: rem(147px);
+    margin-top: rem(20px);
+  }
+  &__list {
+    padding-top: rem(50px);
   }
   &__img {
     margin-top: 0;
@@ -24,6 +26,7 @@
   &__item {
     margin-left: rem(16px);
     padding-left: rem(18px);
+    font-weight: 400;
   }
   &__item + &__item {
     margin-top: rem(18px);

@@ -1,6 +1,8 @@
 .main {
   overflow: hidden;
-  margin-top: rem(124px);
+  margin-top: rem(84px);
+  padding-bottom: rem(50px);
+
   &__body {
     width: 100%;
     margin-top: rem(50px);
@@ -25,17 +27,23 @@
   }
 
   &__content {
-    @include flexbox(column, space-between, center);
+    @include flexbox(row, space-between, flex-start);
     /* margin-top: rem(50px); */
     height: 100%;
     position: relative;
   }
-
+  &__left {
+    margin-top: rem(65px);
+  }
   &__title,
   &__title-base {
-    font-size: rem(50px);
+    font-size: rem(62px);
     font-weight: 700;
-    text-align: center;
+    margin-top: rem(28px);
+    max-width: rem(560px);
+  }
+  &__tariffs-btn {
+    width: rem(140px);
   }
 
   &__downloads,
@@ -62,12 +70,13 @@
 
   &__text,
   &__text-base {
-    margin: 0 auto;
-    margin-top: rem(32px);
-    text-align: center;
-    max-width: rem(512px);
-    line-height: rem(30px);
-    font-size: rem(20px);
+    margin-top: rem(38px);
+    max-width: rem(328px);
+    line-height: rem(22px);
+    font-size: rem(18px);
+  }
+  &__title-span {
+    color: #22dddd;
   }
   &__title-base {
     max-width: rem(816px);
@@ -75,58 +84,8 @@
   &__text-base {
     max-width: rem(568px);
   }
-
-  &__illustration {
-    width: rem(1000px);
-    margin-top: rem(-90px);
-  }
-
-  &__email-illustration {
-    margin-top: -251px;
-  }
-  &__base-illustration,
-  &__email-illustration {
-    height: auto;
-    width: 100% !important;
-  }
-  /*   &__plains {
-    width: 36%;
-    @include position(absolute, "", -81%, auto, 0, 0, auto);
-    transition: all 0.3s ease-in-out;
-  }
-  &__plain-left {
-    left: -37.5%;
-    right: auto;
-    transform: rotate(7deg);
-    bottom: 27%;
-  }
-  &__plain-right {
-    left: auto;
-    right: -42%;
-    bottom: 60%;
-  } */
-
-  &__plains {
-    width: 19%;
-    @include position(absolute, "", 0, rem(3%), 0, 0, auto);
-    transition: all 0.3s ease-in-out;
-  }
-  &__plain-left {
-    left: 8.5%;
-    right: auto;
-    /*   width: rem(220px); */
-    transform: rotate(7deg);
-  }
-  &__plain-right {
-    left: auto;
-    right: 0;
-    /* width: rem(220px); */
-    bottom: 23%;
-    /*     bottom: 60%; */
-  }
-
-  &__cards {
-    @include position(absolute, "", 0, rem(26%), rem(7%), 0, auto);
+  &__tariffs {
+    margin-top: rem(61px);
   }
 }
 

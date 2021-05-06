@@ -1,12 +1,9 @@
 @import "./vars&mixins.scss";
 
-@include font(
-  "NeueMachina-Ultrabold",
-  "NeueMachina-Ultrabold",
-  "800",
-  "normal"
-);
-@include font("TTCommons-Medium", "TTCommons-Medium", "600", "normal");
+@include font("TTCommons", "TTCommons-Regular", "400", "normal");
+@include font("TTCommons", "TTCommons-Medium", "500", "normal");
+@include font("TTCommons", "TTCommons-DemiBold", "600", "normal");
+@include font("TTCommons", "TTCommons-Bold", "700", "normal");
 
 @import "../../node_modules/sass-rem/rem";
 
@@ -51,7 +48,7 @@ body {
   width: 100%;
   color: $primaryColor;
   line-height: 1;
-  font-family: "Open Sans";
+  font-family: "TTCommons";
   overflow: auto;
 }
 .body {
@@ -115,10 +112,21 @@ img {
 }
 
 .page {
-  background: url("../assets/backgrounds/main/main-background.svg") no-repeat
-    center center/cover;
+  background-color: #1d1c39;
   position: relative;
-
+  z-index: 0;
+  &:after {
+    @include position(
+      absolute,
+      url("../assets/svg/main/main/Ellipse.svg"),
+      0,
+      auto,
+      auto,
+      0,
+      auto
+    );
+    z-index: -1;
+  }
   /*   transition: background 0.2s ease-in-out 0.2s; */
   &__wrapper {
     position: relative;
@@ -138,8 +146,6 @@ img {
     width: 100%;
 
     @include position(absolute, "", 0, auto, 0, auto, auto);
-    position: absolute;
-    top: 0;
     height: 100%;
     visibility: hidden;
 
@@ -188,66 +194,30 @@ img {
 
 .section {
   &__header {
-    margin-top: rem(140px);
+    margin-top: rem(120px);
     margin-bottom: rem(70px);
   }
 
-  &__header-content {
-    position: relative;
-    z-index: 0;
-  }
   &__content {
-    padding-bottom: rem(140px);
-  }
-
-  &__sec-title {
-    @include position(absolute, "", 0, 0, auto, 0, auto);
-    -webkit-text-stroke: 1px #203656;
-    color: transparent;
-    height: 100% !important;
-    display: flex;
-    align-items: center;
-
-    &:hover {
-      -webkit-background-clip: text !important;
-
-      -webkit-text-stroke: 1px transparent;
-
-      background: linear-gradient(
-        98.72deg,
-        rgba(21, 73, 208, 0.26) 5.11%,
-        #17cdcd 113.04%
-      );
-
-      color: #0f2441;
-
-      /* 
-      border: 1px solid;
-
-border-image-source: linear-gradient(98.72deg, rgba(21, 73, 208, 0.26) 5.11%, #17CDCD 113.04%); */
-
-      /* color: #0f2441; */
-    }
-
-    letter-spacing: 0.02em;
-    font-size: rem(80px);
-    font-weight: 700;
-    z-index: -1;
-    height: rem(58px);
-    line-height: rem(58px);
+    padding-bottom: rem(120px);
   }
 
   &__title {
     z-index: 1;
-    margin-top: rem(30px);
-    line-height: rem(58px);
-    font-size: rem(50px);
-    max-width: rem(584px);
+    line-height: rem(52px);
+    font-size: rem(45px);
+    max-width: rem(725px);
+    text-align: center;
+    margin: auto;
     letter-spacing: 0.02em;
     font-weight: 700;
     /* @include flexbox(column, space-between, center); */
   }
-
+  &__sec-title {
+    margin: auto;
+    margin-top: rem(30px) !important;
+    text-align: center;
+  }
   &__title-span {
     line-height: rem(24px);
     font-family: "Nunito";
@@ -270,7 +240,7 @@ border-image-source: linear-gradient(98.72deg, rgba(21, 73, 208, 0.26) 5.11%, #1
   &__title {
     line-height: rem(30px);
     font-size: rem(22px);
-    font-weight: 700;
+    font-weight: 500;
     margin-top: rem(18px);
   }
 
@@ -280,8 +250,8 @@ border-image-source: linear-gradient(98.72deg, rgba(21, 73, 208, 0.26) 5.11%, #1
     font-weight: 600;
   }
   &__text {
-    line-height: rem(26px);
-    font-size: rem(16px);
+    line-height: rem(24px);
+    font-size: rem(17px);
     font-weight: 400;
     margin-top: rem(12px);
   }

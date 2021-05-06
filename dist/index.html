@@ -11,13 +11,14 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,600,700&display=swap"
         as="style" />
+
     <title>SMTP</title>
 </head>
 
 <body class="body">
     <div class="page">
-        <div class="container">
-            <header class="header">
+        <header class="header">
+            <div class="container">
                 <div class="header__content">
                     <div class="header__logo logo">
                         <a href="index.html" class="logo__link">
@@ -27,14 +28,30 @@
                     </div>
                     <nav class="nav">
                         <ul class="nav__list">
-                            <li class="nav__items"><a href="base.html" class="nav__link">База организаций</a></li>
-                            <li class="nav__items"><a href="mail.html" class="nav__link">E-mail рассылка</a></li>
-                            <li class="nav__items"><a href="services.html" class="nav__link">Все услуги</a></li>
-                            <li class="nav__items"><a href="articles.html" class="nav__link">Статьи</a></li>
+                            <li class="nav__items item__text"><a href="index.html" class="nav__link">Главная</a></li>
+                            <li class="nav__items item__text"><a href="base.html" class="nav__link">База организаций</a>
+                            </li>
+                            <li class="nav__items item__text"><a href="mail.html" class="nav__link">E-mail рассылка</a>
+                            </li>
+                            <li class="nav__items item__text"><a href="services.html" class="nav__link">Все услуги</a>
+                            </li>
+                            <li class="nav__items item__text"><a href="articles.html" class="nav__link">Статьи</a></li>
+                            <li class="nav__items item__text"> <a href="articles.html" class="nav__link"><svg
+                                        class="nav__icon" width="18" height="16" viewBox="0 0 18 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1 4.6665C1 3.56193 1.89543 2.6665 3 2.6665H15C16.1046 2.6665 17 3.56193 17 4.6665V11.9998C17 13.1044 16.1046 13.9998 15 13.9998H3C1.89543 13.9998 1 13.1044 1 11.9998V4.6665Z"
+                                            stroke="white" stroke-linejoin="round" />
+                                        <path
+                                            d="M2.42131 3.96937C1.91709 3.50717 2.24409 2.6665 2.9281 2.6665H15.0719C15.7559 2.6665 16.0829 3.50717 15.5787 3.96937L11.0272 8.14159C9.88021 9.19298 8.11979 9.19298 6.97283 8.14159L2.42131 3.96937Z"
+                                            stroke="white" stroke-linejoin="round" />
+                                    </svg>
+                                    info@arendasmtp.ru</a></li>
                         </ul>
                     </nav>
                     <div class="header__contacts">
-                        <a href="contact.html" class="header__btn btn__link btn btn__main">Контакты</a>
+                        <a href="contact.html" class="header__btn btn__link btn btn__main item__text"><span
+                                class="btn__span">Контакты</span></a>
                     </div>
                     <div class="cross hamburger-menu header__hamburger-menu">
                         <svg class="hamburger-menu__content" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
@@ -85,213 +102,242 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-            </header>
+        </header>
 
-            <main class="main">
+        <main class="main">
+            <div class="container">
                 <div class="main__content">
-                    <div class="main__header">
+                    <div class="main__left">
+                        <span class="main__title-span">ПРЕДЛАГАЕМ САМЫЕ ВЫГОДНЫЕ ЦЕНЫ ДЛЯ РАССЫЛКИ</span>
                         <h1 class="main__title main__item">SMTP сервер для email рассылки</h1>
                         <p class="main__text">Уже более 5 лет поставляем качественные, абузоустойчивые серверы</p>
-                    </div>
-                    <div class="main__body mg_top_none">
-                        <!--  main__body--mg-b -->
-                        <!--     <img class="main__illustration" src="./assets/svg/main/main/illustration.svg"
-                                alt="сервер для рассылки" srcset=""> -->
-                        <div class="main__body-wrapper">
-                            <object class="main__illustration" data="./assets/svg/main/main/illustration-full.svg"
-                                type="" title="главная-иллюстрация"></object>
-
-                            <!--  <img class="main__illustration" src="./assets/svg/main/main/illustration-full.svg" alt=""
-                                srcset=""> -->
-                            <!--    <img class="main__plains main__plain-left" src="./assets/svg/main/main/left-plain.svg"
-                                alt="" srcset="">
-                            <img class="main__plains main__plain-right" src="./assets/svg/main/main/right-plain.svg"
-                                alt="" srcset="">
-                            <object class="main__cards" data="./assets/svg/main/main/Group-card.svg" type=""></object> -->
+                        <div class="main__tariffs">
+                            <a href="contact.html" class="btn__link btn btn__main main__tariffs-btn item__text"><span
+                                    class="btn__span">Тарифы</span> </a>
                         </div>
+                    </div>
+                    <div class="main__right mg_top_none">
+                        <object class="main__illustration" data="./assets/svg/main/main/Server.svg" type=""
+                            title="главная-иллюстрация"></object>
                     </div>
 
                     <!-- <div class="main__left">
                     </div> -->
                     <!--   <div class="main__right"><img src="assets/img/vehicleDvr.webp" alt="" class="main__img"></div> -->
                 </div>
-            </main>
-        </div>
+            </div>
+        </main>
     </div>
 
     <section class="opportunity section section--active">
         <div class="container section__content">
-            <div class="section__header">
-                <div class="section__point"><img src="./assets/svg/point.svg" type="" class="section__point-object"
-                        alt="раздел"></img>
-                </div>
-                <div class="section__header-content">
-                    <h2 class="section__title">Какие возможности предоставляет наш smtp сервис
-                    </h2>
-                    <h3 class="section__sec-title">ВОЗМОЖНОСТИ</h3>
-                </div>
+            <div class="section__header opportunity__header">
+                <h2 class="section__title">Какие возможности предоставляет наш smtp сервис
+                </h2>
             </div>
-
-
             <div class="opportunity__body section__body">
-                <div class="opportunity__item item-opportunity item">
-                    <img class="item-opportunity__img" src="./assets/svg/main/opportunity/Frame.svg" alt="ip" srcset="">
-                    <h4 class="item-opportunity__title item__title">Чистые IP-адреса</h4>
-                    <p class="item-opportunity__text item__text">Выделенные IP-адреса позволяет повысить доверие
-                        к отправителю и снижают риск попадания в черный лист
-                        в результате внешнего влияния. Мы даем нашим
-                        клиентам только новые IP адреса с чистой репутацией
-                    </p>
+                <div class="opportunity__item item-opportunity">
+                    <div class="item-opportunity__wrapper">
+                        <img class="item-opportunity__img" src="./assets/svg/main/opportunity/ic-1.svg" alt="ip"
+                            srcset="">
+                        <h3 class="item-opportunity__title item__title">Чистые IP-адреса</h3>
+                        <p class="item-opportunity__text item__text">Выделенные IP-адреса позволяет повысить доверие
+                            к отправителю и снижают риск попадания в черный лист
+                            в результате внешнего влияния. Мы даем нашим
+                            клиентам только новые IP адреса с чистой репутацией
+                        </p>
+                    </div>
                 </div>
-                <div class="opportunity__item item-opportunity item">
-                    <img class="item-opportunity__img" src="./assets/svg/main/opportunity/Frame-1.svg" alt="сервер"
-                        srcset="">
-                    <h4 class="item-opportunity__title item__title">Стабильные серверы</h4>
-                    <p class="item-opportunity__text item__text">Вы можете отправлять письма с высокой скоростью
-                        используя наши
-                        серверы. Все серверы находятся в data центре на
-                        территории России.</p>
+                <div class="opportunity__item item-opportunity">
+                    <div class="item-opportunity__wrapper">
+                        <img class="item-opportunity__img" src="./assets/svg/main/opportunity/ic-2.svg" alt="сервер"
+                            srcset="">
+                        <h3 class="item-opportunity__title item__title">Стабильные серверы</h3>
+                        <p class="item-opportunity__text item__text">Вы можете отправлять письма с высокой скоростью
+                            используя наши
+                            серверы. Все серверы находятся в data центре на
+                            территории России.</p>
+                    </div>
                 </div>
-                <div class="opportunity__item item-opportunity item">
-                    <img class="item-opportunity__img" src="./assets/svg/main/opportunity/Frame-2.svg" alt="записи"
-                        srcset="">
-                    <h4 class="item-opportunity__title item__title">SPF и DKIM записи</h4>
-                    <p class="item-opportunity__text item__text">Благодаря им вы можете доказать подлинность
-                        существования вашей
-                        фирмы и зарегистрированного домена. Минимизируйте
-                        попадание ваших писем в спам благодаря криптографическим подписям
-                    </p>
+                <div class="opportunity__item item-opportunity">
+                    <div class="item-opportunity__wrapper">
+                        <img class="item-opportunity__img" src="./assets/svg/main/opportunity/ic-3.svg" alt="записи"
+                            srcset="">
+                        <h3 class="item-opportunity__title item__title">SPF и DKIM записи</h3>
+                        <p class="item-opportunity__text item__text">Благодаря им вы можете доказать подлинность
+                            существования вашей
+                            фирмы и зарегистрированного домена. Минимизируйте
+                            попадание ваших писем в спам благодаря криптографическим подписям
+                        </p>
+                    </div>
                 </div>
-                <div class="opportunity__item item-opportunity item">
-                    <img class="item-opportunity__img" src="./assets/svg/main/opportunity/Frame-3.svg" alt="отчет"
-                        srcset="">
-                    <h4 class="item-opportunity__title item__title">Формирование отчета</h4>
-                    <p class="item-opportunity__text item__text">Наш сервис автоматически генерирует отчеты
-                        по отправкам и ошибкам, которые возникли в процессе доставки. Отчеты можно просмотреть и
-                        сохранить на ПК
-                        в любой момент.</p>
+                <div class="opportunity__item item-opportunity">
+                    <div class="item-opportunity__wrapper">
+                        <img class="item-opportunity__img" src="./assets/svg/main/opportunity/ic-4.svg" alt="отчет"
+                            srcset="">
+                        <h3 class="item-opportunity__title item__title">Формирование отчета</h3>
+                        <p class="item-opportunity__text item__text">Наш сервис автоматически генерирует отчеты
+                            по отправкам и ошибкам, которые возникли в процессе доставки. Отчеты можно просмотреть и
+                            сохранить на ПК
+                            в любой момент.</p>
+                    </div>
                 </div>
-                <div class="opportunity__item item-opportunity item">
-                    <img class="item-opportunity__img" src="./assets/svg/main/opportunity/Frame-4.svg" alt="список"
-                        srcset="">
-                    <h4 class="item-opportunity__title item__title">Список отписавшихся</h4>
-                    <p class="item-opportunity__text item__text">Автоматические рассылки не будут осуществляться
-                        по адресам тех получателей, которые отписались, даже если они сохраняются в базе.</p>
+                <div class="opportunity__item item-opportunity">
+                    <div class="item-opportunity__wrapper">
+                        <img class="item-opportunity__img" src="./assets/svg/main/opportunity/ic-5.svg" alt="список"
+                            srcset="">
+                        <h3 class="item-opportunity__title item__title">Список отписавшихся</h3>
+                        <p class="item-opportunity__text item__text">Автоматические рассылки не будут осуществляться
+                            по адресам тех получателей, которые отписались, даже если они сохраняются в базе.</p>
+                    </div>
                 </div>
-                <div class="opportunity__item item-opportunity item">
-                    <img class="item-opportunity__img" src="./assets/svg/main/opportunity/Frame-5.svg" alt="" srcset="">
-                    <h4 class="item-opportunity__title item__title">Формирование отчета</h4>
-                    <p class="item-opportunity__text item__text">Наш сервис автоматически генерирует отчеты
-                        по отправкам и ошибкам, которые возникли в процессе доставки. Отчеты можно просмотреть и
-                        сохранить на ПК
-                        в любой момент.</p>
+                <div class="opportunity__item item-opportunity">
+                    <div class="item-opportunity__wrapper">
+                        <img class="item-opportunity__img" src="./assets/svg/main/opportunity/ic-6.svg" alt=""
+                            srcset="">
+                        <h3 class="item-opportunity__title item__title">Статистика</h3>
+                        <p class="item-opportunity__text item__text">Вы можете точно определить число отправленных
+                            писем,
+                            переходов по ссылкам, кликов и другие параметры рассылая через наш
+                            SMTP сервис.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section data-backgroung-img="./assets/backgrounds/main/cooperartion-background.svg"
-        class="community section section--active data-lazy">
+    <section class="community section section--active data-lazy">
         <!-- <object data="./assets/backgrounds/main/cooperartion-background.svg" type=""></object> -->
 
         <div class="container section__content">
 
             <div class="section__header">
-                <div class="section__point"><img src="./assets/svg/point.svg" type="" class="section__point-object"
-                        alt="раздел"></img>
-                </div>
-                <div class="section__header-content">
-                    <h2 class="section__title">Как начать с нами сотрудничество
-                    </h2>
-                    <h3 class="section__sec-title">СОТРУДНИЧЕСТВО</р>
-                </div>
+                <h2 class="section__title">Как начать с нами сотрудничество
+
+                </h2>
+                <p class="section__sec-title community__sec-title  item__text">Вы можете использовать любые программы
+                    для рассылок,
+                    в том числе и нашу программу, которую мы предоставляем бесплатно.</р>
             </div>
-            <div class="community__body section__body order">
-                <div class="community__item order__wrapper">
-                    <div class=" item-community order__item">
-                        <span class="item-community__order order__num">01</span>
-                        <h4 class="item-community__title order__title item__title">Оформите заказ</h4>
-                        <p class="item-community__text order__text ">Мы гарантируем, что готовый сервер будет
-                            работать в бесперебойном
-                            режиме даже
-                            при объемных рассылках.
-                        </p>
+            <div class="community__body section__body">
+                <div class="community__left">
+                    <img class="community__img" src="./assets/svg/main/community/Site Stats-amico 1 (1).svg" alt=""
+                        srcset="">
+                </div>
+                <div class="community__right">
+                    <div class="community__item">
+                        <div class="item-community">
+                            <div class="item-community__left">
+
+                                <span class="item-community__order">1</span>
+                            </div>
+                            <div class="item-community__right">
+
+                                <h4 class="item-community__title item__title">Вы оформляете заказ
+                                </h4>
+                                <p class="item-community__text item__text">Мы гарантируем, что готовый сервер будет
+                                    работать в бесперебойном
+                                    режиме даже
+                                    при объемных рассылках.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="community__item">
+                        <div class="item-community">
+                            <div class="item-community__left">
+
+                                <span class="item-community__order">2</span>
+                            </div>
+                            <div class="item-community__right">
+
+                                <h4 class="item-community__title  item__title">Загружаете базу адресов</h4>
+                                <p class="item-community__text item__text">Загружаете списки адресов ваших подписчиков
+                                    или
+                                    потенциальных клиентов.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="community__item">
+                        <div class=" item-community">
+                            <div class="item-community__left">
+
+                                <span class="item-community__order">3</span>
+                            </div>
+                            <div class="item-community__right">
+
+                                <h4 class="item-community__title item__title">Запускайте рассылку</h4>
+                                <p class="item-community__text item__text">Вместе с доступами мы отправим
+                                    вам рекомендации для осуществления качественной email-рассылки
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="community__item order__wrapper">
-                    <div class="item-community order__item">
-                        <span class="item-community__order order__num">02</span>
-                        <h4 class="item-community__title  order__title item__title">Загрузите базу адресов</h4>
-                        <p class="item-community__text order__text">Загружаете списки адресов
-                            ваших подписчиков
-                            или потенциальных клиентов</p>
-                    </div>
-                </div>
-                <div class="community__item order__wrapper">
-                    <div class=" item-community order__item">
-                        <span class="item-community__order order__num">03</span>
-                        <h4 class="item-community__title order__title item__title">Запускайте рассылку</h4>
-                        <p class="item-community__text order__text">Вместе с доступами мы отправим
-                            вам рекомендации для осуществления качественной email-рассылки
-                        </p>
-                    </div>
-                </div>
             </div>
-            <div class="community__footer">
-                <p class="community__advantage item__text">
-                    Вы можете использовать любые программы для рассылок, в том
-                    числе и нашу программу, которую мы предоставляем бесплатно.
-                </p>
-            </div>
+
         </div>
     </section>
 
     <section class="advantages section section--active">
         <div class="container section__content">
             <div class="section__header">
-                <div class="section__point"><img src="./assets/svg/point.svg" type="" class="section__point-object"
-                        alt="раздел"></img>
-                </div>
-                <div class="section__header-content">
-                    <h2 class="section__title">Преимущества
-                        нашего сервиса
-                    </h2>
-                    <h3 class="section__sec-title">НАШИ ПРЕИМУЩЕСТВА</h3>
-                </div>
+                <h2 class="section__title">Преимущества
+                    нашего сервиса
+                </h2>
             </div>
             <div class="advantages__body section__body">
                 <div class="advantages__slider slider slider--smooth">
-                    <div class="advantages__item card__dark advantages__carousel-item">
-                        <div class="item-advantages">
+                    <div class="advantages__item item-advantages advantages__carousel-item">
+                        <div class="item-advantages__wrapper">
+                            <div class="item-advantages__header">
 
-                            <img class="item-advantages__img" src="./assets/svg/main/advantages/charts.svg"
-                                alt="дотовляемость" srcset="">
-                            <h4 class="item-advantages__title item__title">Уровень доставляемости</h4>
-                            <p class="item-advantages__text item__text">Мы следим за качеством продуктов.
-                                Перед передачей сервера клиенту
-                                мы тестируем доставляемость писем
-                                на почтовиках mail.ru, yandex.ru, ramdler.ru
-                            </p>
+                                <img class="item-advantages__img" src="./assets/svg/main/advantages/ic-1.svg"
+                                    alt="дотовляемость" srcset="">
+                            </div>
+                            <div class="item-advantages__body">
+
+                                <h3 class="item-advantages__title item__title">Уровень доставляемости</h3>
+                                <p class="item-advantages__text item__text">Мы следим за качеством продуктов.
+                                    Перед передачей сервера клиенту
+                                    мы тестируем доставляемость писем
+                                    на почтовиках mail.ru, yandex.ru, ramdler.ru
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="advantages__item-center card__blue advantages__carousel-item">
-                        <div class="item-advantages">
-                            <img class="item-advantages__img" src="./assets/svg/main/advantages/user.svg"
-                                alt="абузоустойчивость" srcset="">
-                            <h4 class="item-advantages__title item__title">Абузоустойчивость</h4>
-                            <p class="item-advantages__text item__text">Мы не блокируем без предупреждения серверы наших
-                                клиентов</p>
+                    <div class="advantages__item item-advantages advantages__carousel-item">
+                        <div class="item-advantages__wrapper">
+                            <div class="item-advantages__header">
+
+                                <img class="item-advantages__img" src="./assets/svg/main/advantages/ic-2.svg"
+                                    alt="Чистые ip" srcset="">
+                            </div>
+                            <div class="item-advantages__body">
+
+                                <h3 class="item-advantages__title item__title">Чистые ip</h3>
+                                <p class="item-advantages__text item__text">Вы получаете серверы на чистых
+                                    ip адресах, не состоящих ни в одном
+                                    из блэк-листов.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="advantages__item card__dark advantages__carousel-item">
-                        <div class="item-advantages">
-                            <img class="item-advantages__img" src="./assets/svg/main/advantages/shield.svg"
-                                alt="Чистые ip" srcset="">
-                            <h4 class="item-advantages__title item__title">Чистые ip</h4>
-                            <p class="item-advantages__text-short item__text">Вы получаете серверы на чистых
-                                ip адресах, не состоящих ни в одном
-                                из блэк-листов.
-                            </p>
+                    <div class="advantages__item item-advantages advantages__carousel-item">
+                        <div class="item-advantages__wrapper">
+                            <div class="item-advantages__header">
+
+                                <img class="item-advantages__img" src="./assets/svg/main/advantages/ic-3.svg"
+                                    alt="абузоустойчивость" srcset="">
+                            </div>
+                            <div class="item-advantages__body">
+
+                                <h3 class="item-advantages__title item__title">Абузоустойчивость</h3>
+                                <p class="item-advantages__text item__text">Мы не блокируем без предупреждения серверы
+                                    наших
+                                    клиентов</p>
+                            </div>
                         </div>
                     </div>
                     <div class="advantages__resizer"></div>
@@ -301,22 +347,15 @@
     </section>
 
 
-    <section data-backgroung-img="./assets/backgrounds/main/tariff-background.svg"
-        class="tariff section section--active data-lazy">
+    <section class="tariff section section--active data-lazy">
         <div class="container section__content">
             <div class="section__header">
-                <div class="section__point"><img src="./assets/svg/point.svg" type="" class="section__point-object"
-                        alt="раздел"></img>
-                </div>
-                <div class="section__header-content">
-                    <h2 class="section__title tariff__title">Выбор тарифа
-                    </h2>
-                    <h3 class="section__sec-title">СТОИМОСТЬ УСЛУГ</р>
-                </div>
+                <h2 class="section__title tariff__title">Выбор тарифа
+                </h2>
             </div>
             <div class="tariff__body">
                 <div class="togglers tariff__togglers">
-                    <button class="togglers__button  btn btn__main">Новый сервер</button>
+                    <button class="togglers__button togglers__button--active btn btn__main">Новый сервер</button>
                     <button class="togglers__button btn btn__transparent">Продление</button>
                 </div>
                 <div class="tariff__card card-tariff">
@@ -362,11 +401,11 @@
                                                     height="24" viewBox="0 0 24 24" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <rect class="incDec-btn__body incDec-btn__dec" x="0.5" y="0.500244"
-                                                        width="23" height="23" rx="11.5" stroke="#1549D0"
+                                                        width="23" height="23" rx="11.5" stroke="url(#paint0_linear)"
                                                         fill="transparent" />
                                                     <path class="incDec-btn__vert incDec-btn__dec incDec-btn__item"
                                                         d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
-                                                        fill="#1549D0" />
+                                                        fill="url(#paint1_linear)" />
                                                 </svg>
                                             </div>
                                             <div class="btn-tariff__amount btn-tariff__item">200 000</div>
@@ -375,14 +414,14 @@
                                                     height="24" viewBox="0 0 24 24" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <rect class="incDec-btn__body incDec-btn__inc" x="0.5" y="0.500244"
-                                                        width="23" height="23" rx="11.5" stroke="#1549D0"
+                                                        width="23" height="23" rx="11.5" stroke="url(#paint0_linear)"
                                                         fill="transparent" />
                                                     <path class="incDec-btn__horiz incDec-btn__inc incDec-btn__item"
                                                         d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
-                                                        fill="#1549D0" />
+                                                        fill="url(#paint1_linear)" />
                                                     <path class="incDec-btn__vert incDec-btn__inc incDec-btn__item"
                                                         d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
-                                                        fill="#1549D0" />
+                                                        fill="url(#paint1_linear)" />
                                                 </svg>
                                             </div>
                                         </div>
@@ -396,11 +435,11 @@
                                                     height="24" viewBox="0 0 24 24" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <rect class="incDec-btn__body incDec-btn__dec" x="0.5" y="0.500244"
-                                                        width="23" height="23" rx="11.5" stroke="#1549D0"
+                                                        width="23" height="23" rx="11.5" stroke="url(#paint0_linear)"
                                                         fill="transparent" />
                                                     <path class="incDec-btn__vert incDec-btn__dec incDec-btn__item"
                                                         d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
-                                                        fill="#1549D0" />
+                                                        fill="url(#paint1_linear)" />
                                                 </svg>
                                             </div>
                                             <div class="btn-tariff__amount btn-tariff__item">6 000 </div>
@@ -409,14 +448,14 @@
                                                     height="24" viewBox="0 0 24 24" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <rect class="incDec-btn__body incDec-btn__inc" x="0.5" y="0.500244"
-                                                        width="23" height="23" rx="11.5" stroke="#1549D0"
+                                                        width="23" height="23" rx="11.5" stroke="url(#paint0_linear)"
                                                         fill="transparent" />
                                                     <path class="incDec-btn__horiz incDec-btn__inc incDec-btn__item"
                                                         d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
-                                                        fill="#1549D0" />
+                                                        fill="url(#paint1_linear)" />
                                                     <path class="incDec-btn__vert incDec-btn__inc incDec-btn__item"
                                                         d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
-                                                        fill="#1549D0" />
+                                                        fill="url(#paint1_linear)" />
                                                 </svg>
                                             </div>
                                         </div>
@@ -430,12 +469,12 @@
                                                     height="24" viewBox="0 0 24 24" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <rect class="incDec-btn__body incDec-btn__dec" x="0.5" y="0.500244"
-                                                        width="23" height="23" rx="11.5" stroke="#1549D0"
+                                                        width="23" height="23" rx="11.5" stroke="url(#paint0_linear)"
                                                         fill="transparent" />
                                                     <path
                                                         class="incDec-btn__vert incDec-btn__dec incDec-btn__inc incDec-btn__item"
                                                         d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
-                                                        fill="#1549D0" />
+                                                        fill="url(#paint1_linear)" />
                                                 </svg>
                                             </div>
                                             <div class="btn-tariff__amount btn-tariff__item">1</div>
@@ -444,14 +483,14 @@
                                                     height="24" viewBox="0 0 24 24" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <rect class="incDec-btn__body incDec-btn__inc" x="0.5" y="0.500244"
-                                                        width="23" height="23" rx="11.5" stroke="#1549D0"
+                                                        width="23" height="23" rx="11.5" stroke="url(#paint0_linear)"
                                                         fill="transparent" />
                                                     <path class="incDec-btn__horiz incDec-btn__inc incDec-btn__item"
                                                         d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
-                                                        fill="#1549D0" />
+                                                        fill="url(#paint1_linear)" />
                                                     <path class="incDec-btn__vert incDec-btn__inc incDec-btn__item"
                                                         d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
-                                                        fill="#1549D0" />
+                                                        fill="url(#paint1_linear)" />
                                                 </svg>
                                             </div>
                                         </div>
@@ -479,129 +518,121 @@
             </div>
         </div>
     </section>
-    <section data-backgroung-img="./assets/backgrounds/main/buy-background.svg"
-        class="get section section--active data-lazy">
+    <section class="get section section--active">
         <div class="container section__content get__section">
-            <div class="section__header">
-                <div class="section__point"><img src="./assets/svg/point.svg" type=""
-                        class="section__point-object lazyload" alt="раздел"></img>
-                </div>
-                <div class="section__header-content">
-                    <h2 class="section__title">Что вы получите после покупки
-                    </h2>
-                    <h3 class="section__sec-title">ВАШИ ВОЗМОЖНОСТИ</р>
-                        <div class="section__decoration decoration">
-                            <div class="decoration__line"></div>
-                            <div class="decoration__line"></div>
-                        </div>
-                </div>
+            <div class="section__header get__header">
+                <h2 class="section__title">Что вы получите после покупки
+                </h2>
             </div>
             <div class="get__body">
-                <div class="get__left">
+                <div class="get__left"><img src="./assets/svg/main/whatGet/whatGet.svg" alt="что получите"
+                        class="get__img data-lazy">
+                </div>
+                <div class="get__right">
                     <ul class="get__list">
-                        <li class="get__item item__text">Домен в зоне .ru</li>
-                        <li class="get__item item__text">Выделенный ip адрес (Россия)</li>
-                        <li class="get__item item__text">Виртуальный сервер объемом 15 gb</li>
-                        <li class="get__item item__text">Панель для заведения ящиков</li>
-                        <li class="get__item item__text">Почтовый клиент</li>
-                        <li class="get__item item__text">Программу для рассылки</li>
-                        <li class="get__item item__text">Все необходимые записи: PTR, DKIM, SPF, DMARC, Precedence: bulk
+                        <li class="get__item item__title">Домен в зоне .ru</li>
+                        <li class="get__item item__title">Выделенный ip адрес (Россия)</li>
+                        <li class="get__item item__title">Виртуальный сервер объемом 15 gb</li>
+                        <li class="get__item item__title">Панель для заведения ящиков</li>
+                        <li class="get__item item__title">Почтовый клиент</li>
+                        <li class="get__item item__title">Программу для рассылки</li>
+                        <li class="get__item item__title">Все необходимые записи: PTR, DKIM, SPF, DMARC, Precedence:
+                            bulk
                         </li>
                     </ul>
                 </div>
-                <div class="get__right"><img data-src="./assets/svg/main/whatGet/macbook.svg" alt=""
-                        class="get__img data-lazy">
-                </div>
             </div>
-
         </div>
     </section>
     <section class="programm section section--active">
         <div class="container section__content">
             <div class="section__header">
-                <div class="section__point"><img src="./assets/svg/point.svg" type="" class="section__point-object"
-                        alt="раздел"></img>
-                </div>
-                <div class="section__header-content">
-                    <h2 class="section__title programm__title">Программа для рассылки
-                        в комплекте
-                    </h2>
-                    <h3 class="section__sec-title">ЕСТЬ КОМПЛЕКТ</р>
-                        <div class="section__decoration decoration">
-                            <div class="decoration__line"></div>
-                            <div class="decoration__line"></div>
-                        </div>
-                </div>
+
+                <h2 class="section__title programm__title">Программа для рассылки
+                    в комплекте
+                </h2>
+                <p class="section__sec-title  programm__sec-title  item__text">Для всех наших клиентов мы предоставляем
+                    бесплатную
+                    программу для рассылки. Вы можете пользоваться нашей
+                    программой или подключить любой другой софт для рассылки.</р>
             </div>
 
-            <div class="programm__body mailing">
-                <div class="mailing__left">
-                    <p class="mailing__text item__text">Для всех наших клиентов мы предоставляем бесплатную
-                        программу для рассылки. Вы можете пользоваться нашей
-                        программой или подключить любой другой софт для рассылки.
-                    </p>
+            <div class="programm__body programm-content mailing">
+
+                <div class="programm-content__header">
+                    <h4 class="programm-content__title item__title">
+                        Функционал нашего софта:
+                    </h4>
                 </div>
-                <div class="mailing__righ"><img class="mailing__img  data-lazy"
-                        data-src="./assets/img/mailing/sreenshot.png" alt="">
-                </div>
-            </div>
 
-            <div class="programm__footer">
-                <h4 class="programm__title item__title">
-                    Функционал нашего софта:
-                </h4>
+                <div class="programm-content__body">
+                    <div class="slider programm-content__wrapper">
+                        <div class="programm-content__item">
+                            <div class="item-programm">
+                                <div class="item-programm__left">
+                                    <span class="item-programm__order">1</span>
+                                </div>
+                                <div class="item-programm__right">
+                                    <h4 class="item-programm__title item__title">Создание списков
+                                        и категорий рассылки
+                                    </h4>
+                                </div>
+                            </div>
 
-
-                <div class="programm__order">
-                    <div class="slider programm__slider slider--smooth">
-                        <div class="programm__item order__wrapper">
-                            <div class="item-programm order__item">
-                                <span class="item-programm__order order__num">01</span>
-                                <h4 class="item-programm__title item__title-medium order__title">Создание списков
-                                    и категорий рассылки
-                                </h4>
+                        </div>
+                        <div class="programm-content__item">
+                            <div class="item-programm">
+                                <div class="item-programm__left">
+                                    <span class="item-programm__order">2</span>
+                                </div>
+                                <div class="item-programm__right">
+                                    <h4 class="item-programm__title item__title">Рандомизация текста
+                                    </h4>
+                                </div>
                             </div>
                         </div>
-                        <div class="programm__item order__wrapper">
-                            <div class=" item-programm order__item">
-                                <span class="item-programm__order order__num">02</span>
-                                <h4 class="item-programm__title item__title-medium order__title">Отчет о доставляемости
-                                    и прочтении писем</h4>
+                        <div class="programm-content__item">
+                            <div class="item-programm">
+                                <div class="item-programm__left">
+                                    <span class="item-programm__order">3</span>
+                                </div>
+                                <div class="item-programm__right">
+                                    <h4 class="item-programm__title item__title">Визуальный и HTML редактор писем
+                                    </h4>
+                                </div>
                             </div>
                         </div>
-                        <div class="programm__item order__wrapper">
-                            <div class=" item-programm order__item">
-                                <span class="item-programm__order order__num">03</span>
-                                <h4 class="item-programm__title item__title-medium order__title">Визуальный и HTML
-                                    редактор
-                                    писем</h4>
+                        <div class="programm-content__item">
+                            <div class="item-programm">
+                                <div class="item-programm__left">
+                                    <span class="item-programm__order">4</span>
+                                </div>
+                                <div class="item-programm__right">
+                                    <h4 class="item-programm__title item__title">Отчет о доставляемости
+                                        и прочтении писем
+                                    </h4>
+                                </div>
                             </div>
                         </div>
-                        <div class="programm__item order__wrapper">
-                            <div class=" item-programm order__item">
-                                <span class="item-programm__order order__num">04</span>
-                                <h4 class="item-programm__title item__title-medium order__title">Рандомизация текста
-                                </h4>
+                        <div class="programm-content__item">
+                            <div class="item-programm">
+                                <img src="./assets/svg/main/programm/programm.svg" alt="функционал"
+                                    class="item-programm__img">
                             </div>
                         </div>
-                        <div class="programm__resizer"></div>
+                        <div class="programm-content__resizer"></div>
                     </div>
                 </div>
+
             </div>
-        </div>
+
     </section>
     <section class="faq section section--active">
         <div class="container section__content">
             <div class="section__header">
-                <div class="section__point"><img src="./assets/svg/point.svg" type="" class="section__point-object"
-                        alt="раздел"></img>
-                </div>
-                <div class="section__header-content">
-                    <h2 class="section__title">Популярные
-                        вопросы
-                    </h2>
-                    <h3 class="section__sec-title">ОТВЕЧАЕМ ПОДРОБНО</р>
-                </div>
+                <h2 class="section__title">Популярные
+                    вопросы
+                </h2>
             </div>
             <div class="faq__body">
                 <div class="faq__item item-faq accordion">
@@ -617,13 +648,33 @@
                                 <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect class="incDec-btn__body incDec-btn__inc" x="0.5" y="0.500244" width="23"
-                                        height="23" rx="11.5" stroke="#1549D0" fill="transparent" />
+                                        height="23" rx="11.5" stroke="url(#paint0_linear)" fill="transparent" />
                                     <path class="incDec-btn__horiz  incDec-btn__inc incDec-btn__item"
                                         d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
-                                        fill="#1549D0" />
+                                        fill="url(#paint1_linear)" />
                                     <path class="incDec-btn__vert incDec-btn__vertBig incDec-btn__item"
                                         d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
-                                        fill="#1549D0" />
+                                        fill="url(#paint2_linear)" />
+                                    <defs>
+                                        <linearGradient id="paint0_linear" x1="0" y1="12" x2="24" y2="12"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#16D9E3" />
+                                            <stop offset="0.47" stop-color="#30C7EC" />
+                                            <stop offset="1" stop-color="#46AEF7" />
+                                        </linearGradient>
+                                        <linearGradient id="paint1_linear" x1="11.5" y1="9" x2="11.5" y2="15"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#16D9E3" />
+                                            <stop offset="0.47" stop-color="#30C7EC" />
+                                            <stop offset="1" stop-color="#46AEF7" />
+                                        </linearGradient>
+                                        <linearGradient id="paint2_linear" x1="9" y1="12.5" x2="15" y2="12.5"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#16D9E3" />
+                                            <stop offset="0.47" stop-color="#30C7EC" />
+                                            <stop offset="1" stop-color="#46AEF7" />
+                                        </linearGradient>
+                                    </defs>
                                 </svg>
                             </div>
                         </div>
@@ -651,13 +702,13 @@
                                 <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect class="incDec-btn__body incDec-btn__inc" x="0.5" y="0.500244" width="23"
-                                        height="23" rx="11.5" stroke="#1549D0" fill="transparent" />
+                                        height="23" rx="11.5" stroke="url(#paint0_linear)" fill="transparent" />
                                     <path class="incDec-btn__horiz  incDec-btn__inc incDec-btn__item"
                                         d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
-                                        fill="#1549D0" />
+                                        fill="url(#paint1_linear)" />
                                     <path class="incDec-btn__vert incDec-btn__vertBig incDec-btn__item"
                                         d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
-                                        fill="#1549D0" />
+                                        fill="url(#paint2_linear)" />
                                 </svg>
                             </div>
                         </div>
@@ -683,13 +734,13 @@
                                 <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect class="incDec-btn__body incDec-btn__inc" x="0.5" y="0.500244" width="23"
-                                        height="23" rx="11.5" stroke="#1549D0" fill="transparent" />
+                                        height="23" rx="11.5" stroke="url(#paint0_linear)" fill="transparent" />
                                     <path class="incDec-btn__horiz  incDec-btn__inc incDec-btn__item"
                                         d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
-                                        fill="#1549D0" />
+                                        fill="url(#paint1_linear)" />
                                     <path class="incDec-btn__vert incDec-btn__vertBig incDec-btn__item"
                                         d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
-                                        fill="#1549D0" />
+                                        fill="url(#paint2_linear)" />
                                 </svg>
                             </div>
                         </div>
@@ -715,13 +766,13 @@
                                 <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect class="incDec-btn__body incDec-btn__inc" x="0.5" y="0.500244" width="23"
-                                        height="23" rx="11.5" stroke="#1549D0" fill="transparent" />
+                                        height="23" rx="11.5" stroke="url(#paint0_linear)" fill="transparent" />
                                     <path class="incDec-btn__horiz  incDec-btn__inc incDec-btn__item"
                                         d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
-                                        fill="#1549D0" />
+                                        fill="url(#paint1_linear)" />
                                     <path class="incDec-btn__vert incDec-btn__vertBig incDec-btn__item"
                                         d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
-                                        fill="#1549D0" />
+                                        fill="url(#paint1_linear)" />
                                 </svg>
                             </div>
                         </div>
@@ -747,13 +798,13 @@
                                 <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect class="incDec-btn__body incDec-btn__inc" x="0.5" y="0.500244" width="23"
-                                        height="23" rx="11.5" stroke="#1549D0" fill="transparent" />
+                                        height="23" rx="11.5" stroke="url(#paint0_linear)" fill="transparent" />
                                     <path class="incDec-btn__horiz  incDec-btn__inc incDec-btn__item"
                                         d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
-                                        fill="#1549D0" />
+                                        fill="url(#paint1_linear)" />
                                     <path class="incDec-btn__vert incDec-btn__vertBig incDec-btn__item"
                                         d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
-                                        fill="#1549D0" />
+                                        fill="url(#paint1_linear)" />
                                 </svg>
                             </div>
                         </div>
@@ -780,13 +831,13 @@
                                 <svg class="btn__toggler faq-btn incDec-btn" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect class="incDec-btn__body incDec-btn__inc" x="0.5" y="0.500244" width="23"
-                                        height="23" rx="11.5" stroke="#1549D0" fill="transparent" />
+                                        height="23" rx="11.5" stroke="url(#paint0_linear)" fill="transparent" />
                                     <path class="incDec-btn__horiz  incDec-btn__inc incDec-btn__item"
                                         d="M12.5 9.00024C12.5 8.7241 12.2761 8.50024 12 8.50024C11.7239 8.50024 11.5 8.7241 11.5 9.00024L12.5 9.00024ZM11.5 15.0002C11.5 15.2764 11.7239 15.5002 12 15.5002C12.2761 15.5002 12.5 15.2764 12.5 15.0002L11.5 15.0002ZM11.5 9.00024L11.5 15.0002L12.5 15.0002L12.5 9.00024L11.5 9.00024Z"
-                                        fill="#1549D0" />
+                                        fill="url(#paint1_linear)" />
                                     <path class="incDec-btn__vert incDec-btn__vertBig incDec-btn__item"
                                         d="M9 11.5002C8.72386 11.5002 8.5 11.7241 8.5 12.0002C8.5 12.2764 8.72386 12.5002 9 12.5002V11.5002ZM15 12.5002C15.2761 12.5002 15.5 12.2764 15.5 12.0002C15.5 11.7241 15.2761 11.5002 15 11.5002V12.5002ZM9 12.5002H15V11.5002H9V12.5002Z"
-                                        fill="#1549D0" />
+                                        fill="url(#paint1_linear)" />
                                 </svg>
                             </div>
                         </div>
@@ -898,7 +949,7 @@
                     <img data-modal="reference" src="./assets/svg/close-btn.svg" alt="" class="popup__modal-close">
                     <div class="reference-info modal-reference__info">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12" cy="12" r="12" fill="#1549D0" />
+                            <circle cx="12" cy="12" r="12" fill="url(#paint1_linear)" />
                             <path d="M13.5 10.5H11.25V18.75H13.5V10.5Z" fill="white" />
                             <path d="M13.5 5.25H11.25V7.5H13.5V5.25Z" fill="white" />
                         </svg>
