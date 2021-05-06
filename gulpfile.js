@@ -158,6 +158,7 @@ function clean(params) {
 }
 
 
+/* return Promise.resolve(); */
 function fontsStyle(params) {
 
     let file_content = fs.readFileSync(source_folder + '/css/style.scss');
@@ -177,11 +178,12 @@ function fontsStyle(params) {
             }
         })
     }
+    params()
 }
 
 function cb() { }
 
-let build = gulp.series(fontsStyle, clean, gulp.parallel(html, css, js, images, fontsWoff));
+let build = gulp.series(clean, gulp.parallel(html, css, js, images, fontsWoff, fontsStyle));
 let watch = gulp.parallel(build, browserSync, watchFiles);
 
 exports.fontsStyle = fontsStyle;
