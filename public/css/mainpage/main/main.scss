@@ -35,6 +35,9 @@
   &__left {
     margin-top: rem(65px);
   }
+  &__left--email {
+    margin-top: rem(35px);
+  }
   &__title,
   &__title-base {
     font-size: rem(62px);
@@ -89,6 +92,9 @@
   }
 }
 
+.main--mail {
+  margin-top: rem(114px);
+}
 .downloads-main {
   border-radius: rem(100px);
   background-color: $accentColor;

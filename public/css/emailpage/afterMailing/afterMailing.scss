@@ -1,48 +1,40 @@
 .afterMailing {
-  &__title {
-    max-width: rem(704px);
-  }
-  /*   background: url("../assets/backgrounds/main/programm-background.svg")
-    no-repeat center center/cover; */
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: url("../assets/backgrounds/mail/afterMailing-background.svg")
+    no-repeat center center/cover;
   &__body {
-    @include flexbox(row, space-between, space-between);
+    @include flexbox(row, baseline, flex-start);
   }
 
-  &__item {
-    align-items: flex-start;
+  &__sec-title {
+    max-width: rem(451px);
+  }
+
+  &__right {
+    margin-left: rem(40px);
   }
 
   &__item + &__item {
-    margin-top: rem(38px);
+    margin-top: rem(80px);
   }
-  &__text {
-    max-width: rem(439px);
+  &__item:nth-child(2) {
+    margin-left: rem(82px);
   }
-
-  &__img {
-    margin-top: rem(58px);
-  }
-  /* 
-  &__footer {
-    @include grid(
-      0,
-      rem(80px),
-      rem(30px),
-      1,
-      1fr,
-      auto-fill,
-      rem(277px),
-      rem(277px)
-    );
-  }
- */
 }
 
 .item-afterMailing {
+  @include flexbox(row, baseline, flex-start);
+  &__title {
+    margin-top: 0;
+  }
   &__text {
-    max-width: rem(417px);
+    max-width: rem(384px);
+  }
+  &__right {
+    margin-left: rem(16px);
+  }
+  margin: 0;
+  &__order {
+    font-size: rem(62px);
+    font-weight: 700;
   }
 }

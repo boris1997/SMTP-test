@@ -399,7 +399,7 @@ img {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 62.5rem;
-  background-color: #233855;
+  background-color: #ffffff;
 }
 .switch-radio__input:checked:before {
   position: absolute;
@@ -413,7 +413,8 @@ img {
   height: 0.75rem;
   border-radius: 62.5rem;
   z-index: 2;
-  background-color: #1549d0;
+  background: -webkit-gradient(linear, left top, right top, from(#16d9e3), color-stop(47%, #30c7ec), to(#46aef7));
+  background: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
 }
 .switch-radio__label {
   margin-left: 1.25rem;

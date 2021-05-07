@@ -101,7 +101,7 @@
 
   .cities__list,
   .cities__list-hidden {
-    grid-template: repeat(1, 1fr) / repeat(auto-fill, minmax(rem(178px), 1fr));
+    grid-template: repeat(1, 1fr) / repeat(auto-fill, minmax(rem(178px), 0.3fr));
   }
 
   .direction__body-wrapper {
@@ -386,7 +386,16 @@
   }
   .cities__list,
   .cities__list-hidden {
-    @include grid(0, rem(18px), rem(30px), 1, 1fr, auto-fill, rem(150px), 1fr);
+    @include grid(
+      0,
+      rem(18px),
+      rem(30px),
+      1,
+      1fr,
+      auto-fill,
+      rem(150px),
+      0.3fr
+    );
   }
 
   .direction__body-wrapper {
@@ -808,7 +817,7 @@
   .cities__list,
   .cities__list-hidden {
     grid-column-gap: rem(16px);
-    grid-template: repeat(1, 1fr) / repeat(auto-fill, minmax(rem(140px), 1fr));
+    grid-template: repeat(1, 1fr) / repeat(auto-fill, minmax(rem(140px), 0.3fr));
   }
 
   .cities__item {

@@ -1,62 +1,49 @@
 .work {
-  &__title {
-    max-width: rem(704px);
-  }
-  background: url("../assets/backgrounds/mail/work-background.svg") no-repeat
-    center center/cover;
+  background: url("../assets/backgrounds/main/cooperartion-background.svg")
+    no-repeat center center/cover;
   &__body {
-    @include flexbox(row, space-between, center);
-    margin-top: rem(-31px);
+    @include flexbox(row, baseline, flex-start);
   }
 
+  &__right {
+    margin-left: rem(26px);
+  }
+
+  &__sec-title {
+    max-width: rem(451px);
+  }
+
+  &__advantage {
+    margin-left: rem(12px);
+    max-width: rem(554px);
+  }
+  &__item:nth-child(1) {
+    margin-top: rem(38px);
+  }
   &__item {
-    background: url("../assets/svg/dashed-image-small.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: rem(138px);
+    margin-top: rem(76px);
   }
-  /* 
-  &__footer {
-    @include grid(
-      0,
-      rem(80px),
-      rem(30px),
-      1,
-      1fr,
-      auto-fill,
-      rem(277px),
-      rem(277px)
-    );
-  }
- */
-  &__order {
-    @include grid(
-      rem(140px),
-      rem(80px),
-      rem(30px),
-      1,
-      1fr,
-      auto-fill,
-      rem(277px),
-      rem(277px)
-    );
+  &__item:nth-child(2),
+  &__item:nth-child(3) {
+    margin-left: rem(82px);
   }
 }
 
 .item-work {
-  height: 100%;
-  margin: 0;
+  @include flexbox(row, baseline, flex-start);
   &__title {
-    max-width: rem(229px);
-    text-align: center;
+    margin-top: 0;
+    max-width: rem(209px);
   }
-  &__order {
-    left: rem(23px);
-  }
-}
-
-.mailing {
   &__text {
-    max-width: rem(562px);
+    max-width: rem(384px);
+  }
+  &__right {
+    margin-left: rem(16px);
+  }
+  margin: 0;
+  &__order {
+    font-size: rem(62px);
+    font-weight: 700;
   }
 }

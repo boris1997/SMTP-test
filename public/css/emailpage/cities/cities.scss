@@ -2,22 +2,23 @@
   &__section {
     padding-bottom: rem(40px);
   }
-  /*   background: url("../assets/backgrounds/main/buy-background.png") no-repeat
-    center center/cover; */
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: url("../../../assets/backgrounds/mail/cities-background.svg")
+    no-repeat center center/cover;
+
+  &__header {
+    margin-bottom: rem(30px);
+  }
   &__body {
     @include flexbox(row, space-between, flex-start);
   }
 
   &__left {
-    margin-bottom: rem(80px);
+    align-self: center;
     flex: 1;
   }
   &__list,
   &__list-hidden {
-    @include grid(0, rem(18px), rem(30px), 1, 1fr, auto-fill, rem(200px), 1fr);
+    @include grid(0, rem(18px), rem(0px), 1, 1fr, auto-fill, rem(200px), 0.3fr);
   }
   &__list {
     margin-bottom: rem(18px);
@@ -32,6 +33,7 @@
   &__item {
     margin-left: rem(16px);
     padding-left: rem(18px);
+    max-width: rem(200px);
     margin-top: 0;
     position: relative;
     display: list-item;
@@ -40,7 +42,7 @@
       width: rem(8px);
       height: rem(8px);
       border-radius: rem(100px);
-      background: linear-gradient(101.62deg, #1549d0 -3.13%, #17cdcd 174.19%);
+      background: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
     }
 
     /*     list-style: ; */

@@ -9,8 +9,6 @@
     <!--  <noscript id="deferred-styles">
     </noscript> -->
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,600,700&display=swap"
-        as="style" />
 
     <title>SMTP</title>
 </head>
@@ -355,8 +353,9 @@
             </div>
             <div class="tariff__body">
                 <div class="togglers tariff__togglers">
-                    <button class="togglers__button togglers__button--active btn btn__main">Новый сервер</button>
-                    <button class="togglers__button btn btn__transparent">Продление</button>
+                    <button class="togglers__button item__text togglers__button--active btn btn__main">Новый
+                        сервер</button>
+                    <button class="togglers__button item__text btn btn__transparent">Продление</button>
                 </div>
                 <div class="tariff__card card-tariff">
                     <div class="card-tariff__wrapper">
@@ -364,23 +363,23 @@
                             <div class="card-tariff__price total-price">
                                 <span class="total-price__amount">1 600</span>
                                 <span class="total-price__amount-rub">₽</span>
-                                <div class="total-price__text card-tariff__text">
+                                <div class="total-price__text card-tariff__text item__text">
                                     Стоимость сервиса
-                                    <br><span class="card-tariff__span">/в месяц</span>
+                                    <br><span class="card-tariff__span item__text">/в месяц</span>
                                 </div>
                             </div>
                             <div class="card-tariff__switch switch-radio">
                                 <div class="switch-radio__item">
                                     <input id="radio-input-1" checked type="radio" name="options"
                                         class="switch-radio__input">
-                                    <label for="radio-input-1" class="switch-radio__label item__text-medium ">Уже есть
+                                    <label for="radio-input-1" class="switch-radio__label item__text">Уже есть
                                         домен
                                         для
                                         рассылки</label>
                                 </div>
                                 <div class="switch-radio__item">
                                     <input id="radio-input-2" type="radio" name="options" class="switch-radio__input">
-                                    <label for="radio-input-2" class="switch-radio__label item__text-medium">Заказать
+                                    <label for="radio-input-2" class="switch-radio__label item__text">Заказать
                                         сервер +
                                         домен
                                     </label>
@@ -392,8 +391,12 @@
                             <div class="card-tariff__body-wrapper">
                                 <div class="card-tariff__togglers togglers-tariff">
                                     <div class="togglers-tariff__item">
-                                        <div class="togglers-tariff__header card-tariff__text">Количество писем
-                                            <br><span class="card-tariff__span">/в месяц</span>
+                                        <div class="togglers-tariff__header ">
+                                            <h3 class="card-tariff__text item__text">
+                                                Количество
+                                                писем
+                                            </h3>
+                                            <span class="card-tariff__span item__text">/в месяц</span>
                                         </div>
                                         <div class="togglers-tariff__btn btn-tariff">
                                             <div class="btn-tariff__toggler btn-tariff__item">
@@ -408,7 +411,7 @@
                                                         fill="url(#paint1_linear)" />
                                                 </svg>
                                             </div>
-                                            <div class="btn-tariff__amount btn-tariff__item">200 000</div>
+                                            <div class="btn-tariff__amount btn-tariff__item item__text">200 000</div>
                                             <div class="btn-tariff__toggler btn-tariff__item">
                                                 <svg class="btn__toggler btn-tariff__incr incDec-btn" width="24"
                                                     height="24" viewBox="0 0 24 24" fill="none"
@@ -427,8 +430,11 @@
                                         </div>
                                     </div>
                                     <div class="togglers-tariff__item">
-                                        <div class="togglers-tariff__header card-tariff__text">Рекомендумый объем
-                                            рассылки <br><span class="card-tariff__span">/в день</span> </div>
+                                        <div class="togglers-tariff__header">
+                                            <h3 class="card-tariff__text item__text"> Рекомендумый объем
+                                                рассылки</h3><span class="card-tariff__span item__text">/в
+                                                день</span>
+                                        </div>
                                         <div class="togglers-tariff__btn btn-tariff">
                                             <div class="btn-tariff__toggler btn-tariff__item">
                                                 <svg class="btn__toggler btn-tariff__decr incDec-btn" width="24"
@@ -442,7 +448,7 @@
                                                         fill="url(#paint1_linear)" />
                                                 </svg>
                                             </div>
-                                            <div class="btn-tariff__amount btn-tariff__item">6 000 </div>
+                                            <div class="btn-tariff__amount btn-tariff__item item__text">6 000 </div>
                                             <div class="btn-tariff__toggler btn-tariff__item">
                                                 <svg class="btn__toggler btn-tariff__incr incDec-btn" width="24"
                                                     height="24" viewBox="0 0 24 24" fill="none"
@@ -461,8 +467,13 @@
                                         </div>
                                     </div>
                                     <div class="togglers-tariff__item">
-                                        <div class="togglers-tariff__header card-tariff__text">Количество
-                                            серверов<br><span class="card-tariff__span">/на выбор</span></div>
+                                        <div class="togglers-tariff__header">
+                                            <h3 class="card-tariff__text item__text">
+                                                Количество
+                                                серверов
+                                            </h3>
+                                            <span class="card-tariff__span item__text">/на выбор</span>
+                                        </div>
                                         <div class="togglers-tariff__btn btn-tariff">
                                             <div class="btn-tariff__toggler btn-tariff__item">
                                                 <svg class="btn__toggler btn-tariff__decr incDec-btn" width="24"
@@ -477,7 +488,7 @@
                                                         fill="url(#paint1_linear)" />
                                                 </svg>
                                             </div>
-                                            <div class="btn-tariff__amount btn-tariff__item">1</div>
+                                            <div class="btn-tariff__amount btn-tariff__item item__text">1</div>
                                             <div class="btn-tariff__toggler btn-tariff__item">
                                                 <svg class="btn__toggler btn-tariff__incr incDec-btn" width="24"
                                                     height="24" viewBox="0 0 24 24" fill="none"
@@ -494,20 +505,21 @@
                                                 </svg>
                                             </div>
                                         </div>
-                                        <p class="togglers-tariff__sale item__text-medium">
+                                        <p class="togglers-tariff__sale item__text">
                                             Скидка 10% при заказе 2 серверов, 3 и более - 15%
-                                            Активация сервера до 24 часов.
+                                            <br> Активация сервера до 24 часов.
                                         </p>
                                     </div>
                                 </div>
 
                                 <div class="card-tariff__footer footer-tariff">
                                     <button data-modal="form" type="button"
-                                        class="footer-tariff__btn btn__popup btn btn__main">Оформить заказ</button>
+                                        class="footer-tariff__btn item__text btn__popup btn btn__main">Оформить
+                                        заказ</button>
                                     <div class="footer-tariff__info reference-info">
                                         <img src="./assets/svg/main/tariff/info icon.svg" alt="" srcset="">
                                         <a data-modal="reference" type="button" href="##"
-                                            class="footer-tariff__text-info btn__popup reference-info__text">Справочная
+                                            class="footer-tariff__text-info btn__popup item__text reference-info__text">Справочная
                                             информация</a>
                                     </div>
                                 </div>

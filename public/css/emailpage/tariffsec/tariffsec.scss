@@ -1,6 +1,10 @@
 .tariffsec {
-  background: url("../assets/backgrounds/mail/tariff-background.svg") no-repeat
-    center center/cover;
+  background: linear-gradient(
+    100.74deg,
+    #191830 0%,
+    #1e1d38 48.96%,
+    #191830 100.96%
+  );
   &__title {
     max-width: rem(395px);
   }
@@ -21,8 +25,8 @@
     justify-content: center;
   }
   &__card {
-    background-color: $secColor;
-
+    background-color: #2c2c45;
+    box-shadow: 0px rem(5px) rem(50px) rem(2px) rgba(0, 0, 0, 0.1);
     border-radius: rem(12px);
   }
 
@@ -77,7 +81,8 @@
   }
 
   &__header-center {
-    background: linear-gradient(101.62deg, #1549d0 -3.13%, #17cdcd 174.19%);
+    background: linear-gradient(90deg, #83a6ff -0.49%, #4d6de2 99.88%);
+    box-shadow: rem(0px) rem(10px) rem(30px) rgba(21, 27, 60, 0.1);
   }
 
   &__title {
@@ -95,14 +100,10 @@
     margin-top: rem(32px);
   }
 
-  &__free {
-    color: #22dddd;
-    font-weight: 500;
-  }
   &__line {
     margin: 0 rem(15px);
     height: rem(1px);
-    background-color: #1f324f;
+    background-color: #474761;
   }
   &__span {
     opacity: 0.8;
@@ -131,13 +132,17 @@
   }
 
   &__free {
-    color: #22dddd;
+    background: linear-gradient(135.08deg, #2cf2e3 13.13%, #23de6c 86.12%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
     font-weight: 500;
   }
 }
 
 .footer-tariffsec {
   &__btn {
+    filter: drop-shadow(0px 10px 30px rgba(36, 110, 226, 0.1));
     width: rem(296px);
   }
 }

@@ -13,26 +13,42 @@
 </head>
 
 <body class="body">
-    <div class="page page--mail">
-        <div class="container page__wrapper">
-            <header class="header">
+    <div class="page">
+        <header class="header">
+            <div class="container">
                 <div class="header__content">
                     <div class="header__logo logo">
                         <a href="index.html" class="logo__link">
-                            <img src="./assets/svg/SMTP logo.svg" alt="лого" class="logo__img">
+                            <img width="139px" height="41px" src="./assets/svg/SMTP logo.svg" alt="лого"
+                                class="logo__img">
                         </a>
                     </div>
                     <nav class="nav">
                         <ul class="nav__list">
-                            <li class="nav__items"><a href="base.html" class="nav__link">База организаций</a></li>
-                            <li class="nav__items"><a href="mail.html" class="nav__link  nav__link--active">E-mail
-                                    рассылка</a></li>
-                            <li class="nav__items"><a href="services.html" class="nav__link">Все услуги</a></li>
-                            <li class="nav__items"><a href="articles.html" class="nav__link">Статьи</a></li>
+                            <li class="nav__items item__text"><a href="index.html" class="nav__link">Главная</a></li>
+                            <li class="nav__items item__text"><a href="base.html" class="nav__link">База организаций</a>
+                            </li>
+                            <li class="nav__items item__text"><a href="mail.html" class="nav__link">E-mail рассылка</a>
+                            </li>
+                            <li class="nav__items item__text"><a href="services.html" class="nav__link">Все услуги</a>
+                            </li>
+                            <li class="nav__items item__text"><a href="articles.html" class="nav__link">Статьи</a></li>
+                            <li class="nav__items item__text"> <a href="articles.html" class="nav__link"><svg
+                                        class="nav__icon" width="18" height="16" viewBox="0 0 18 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1 4.6665C1 3.56193 1.89543 2.6665 3 2.6665H15C16.1046 2.6665 17 3.56193 17 4.6665V11.9998C17 13.1044 16.1046 13.9998 15 13.9998H3C1.89543 13.9998 1 13.1044 1 11.9998V4.6665Z"
+                                            stroke="white" stroke-linejoin="round" />
+                                        <path
+                                            d="M2.42131 3.96937C1.91709 3.50717 2.24409 2.6665 2.9281 2.6665H15.0719C15.7559 2.6665 16.0829 3.50717 15.5787 3.96937L11.0272 8.14159C9.88021 9.19298 8.11979 9.19298 6.97283 8.14159L2.42131 3.96937Z"
+                                            stroke="white" stroke-linejoin="round" />
+                                    </svg>
+                                    info@arendasmtp.ru</a></li>
                         </ul>
                     </nav>
                     <div class="header__contacts">
-                        <a href="contact.html" class="header__btn btn__link btn btn__main">Контакты</a>
+                        <a href="contact.html" class="header__btn btn__link btn btn__main item__text"><span
+                                class="btn__span">Контакты</span></a>
                     </div>
                     <div class="cross hamburger-menu header__hamburger-menu">
                         <svg class="hamburger-menu__content" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
@@ -83,180 +99,153 @@
                         </div>
                     </div>
                 </div>
-            </header>
-            <div class="page__navigtion">
-                <ul class="navigtion-page">
-                    <li class="navigtion-page__item"><a href="index.html"
-                            class="nav__link navigtion-page__link">Главная</a>
-                    </li>
-                    <li class="navigtion-page__item"><a href="base.html" class="navigtion-page__link">Услуги</a>
-                    </li>
-                </ul>
             </div>
-            <main class="main">
-                <div class="container">
-                    <div class="main__content">
-                        <div class="main__header">
 
-                            <h1 class="main__title main__item">Email рассылки по России</h1>
-                        </div>
-                        <div class="main__body main__body--email">
-                            <img class="main__illustration  main__email-illustration"
-                                src="./assets/svg/email/email/illustration.svg" alt="" srcset="">
-                        </div>
+        </header>
 
-                        <!-- <div class="main__left">
+        <main class="main main--mail">
+            <div class="container">
+                <div class="main__content">
+                    <div class="main__left--email">
+                        <span class="main__title-span">ПРЕДЛАГАЕМ САМЫЕ ВЫГОДНЫЕ ЦЕНЫ ДЛЯ РАССЫЛКИ</span>
+                        <h1 class="main__title main__item">Email рассылки по России</h1>
+                        <p class="main__text">Уже более 5 лет поставляем качественные, абузоустойчивые серверы</p>
+                        <div class="main__tariffs">
+                            <a href="contact.html" class="btn__link btn btn__main main__tariffs-btn item__text"><span
+                                    class="btn__span">Тарифы</span> </a>
+                        </div>
+                    </div>
+                    <div class="main__right mg_top_none">
+                        <object class="main__illustration" data="./assets/svg/email/email/Email campaign-amico 1.svg"
+                            type="" title="главная-иллюстрация"></object>
+                    </div>
+
+                    <!-- <div class="main__left">
                         </div> -->
-                        <!--   <div class="main__right"><img src="assets/img/vehicleDvr.webp" alt="" class="main__img"></div> -->
-                    </div>
+                    <!--   <div class="main__right"><img src="assets/img/vehicleDvr.webp" alt="" class="main__img"></div> -->
                 </div>
-            </main>
-        </div>
+            </div>
+        </main>
     </div>
-
-    <section class="work section">
+    <section class="suit section section--active">
         <div class="container section__content">
-            <div class="section__header">
-                <div class="section__point"><img src="./assets/svg/point.svg" type=""
-                        class="section__point-object"></img>
-                </div>
-                <div class="section__header-content">
-                    <h2 class="section__title">Как мы работаем
-                    </h2>
-                    <h3 class="section__sec-title">ЭТАПЫ РАБОТ</h3>
-                    <div class="section__decoration decoration">
-                        <div class="decoration__line"></div>
-                        <div class="decoration__line"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="order work__order">
-                <div class="work__item order__wrapper">
-                    <div class="item-work order__item">
-                        <span class="item-work__order order__num">01</span>
-                        <h4 class="item-work__title item__title-medium order__title">Выбираете города для рассылки
-                        </h4>
-                    </div>
-                </div>
-                <div class="work__item order__wrapper">
-                    <div class=" item-work order__item">
-                        <span class="item-work__order order__num">02</span>
-                        <h4 class="item-work__title item__title-medium  order__title">Оплачиваете
-                            пакет услуг</h4>
-                    </div>
-                </div>
-                <div class="work__item order__wrapper">
-                    <div class=" item-work order__item">
-                        <span class="item-work__order order__num">03</span>
-                        <h4 class="item-work__title item__title-medium order__title">Мы подготавливаем макет письма</h4>
-                    </div>
-                </div>
-                <div class="work__item order__wrapper">
-                    <div class=" item-work order__item">
-                        <span class="item-work__order order__num">04</span>
-                        <h4 class="item-work__title item__title-medium order__title">Делаем рассылку</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="suit section">
-        <div class="container section__content">
-            <div class="section__header">
-                <div class="section__point"><img src="./assets/svg/point.svg" type=""
-                        class="section__point-object"></img>
-                </div>
-                <div class="section__header-content">
-                    <h2 class="section__title suit__main-title">Кому подойдет
-                        e-mail рассылка
-                    </h2>
-                    <h3 class="section__sec-title">КОМУ ПОДОЙДЕТ</h3>
-                    <div class="section__decoration decoration">
-                        <div class="decoration__line"></div>
-                        <div class="decoration__line"></div>
-                    </div>
-                </div>
+            <div class="section__header suit__header">
+                <h2 class="section__title">Какие возможности предоставляет наш smtp сервис
+                </h2>
             </div>
             <div class="suit__body section__body">
-                <div class="suit__item card">
-                    <div class="item-suit card__blue">
-                        <div class="item-suit__body-active">
-                            <p class="item-suit__text item__text">Вы можете отправлять новинки, акции, скидки и другие
-                                предложения вашим подписчикам.</p>
-                            <p class="item-suit__text item__text">Это позволит поддерживать лояльность,
-                                а также конвертировать «теплых»
-                                клиентов в «горячих».</p>
-                        </div>
-                    </div>
-                    <div class="item-suit card__dark">
-                        <div class="item-suit__body">
-                            <img width="72px" height="72px" class="item-suit__img"
-                                src="./assets/svg/email/suit/suit.svg" alt="для производителей" srcset="">
-                            <h4 class="item-suit__title item__title">Для торговли
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="suit__item card suit__item-sm ">
-                    <div class="item-suit card__blue">
-                        <div class="item-suit__body-active">
-                            <p class="item-suit__text item__text">Вы можете отправлять новинки, акции, скидки и другие
-                                предложения вашим подписчикам.</p>
-                            <p class="item-suit__text item__text">Это позволит поддерживать лояльность,
-                                а также конвертировать «теплых»
-                                клиентов в «горячих».</p>
-                        </div>
-                    </div>
-                    <div class="item-suit card__dark item--active">
-                        <div class="item-suit__body">
+                <div class="suit__item item-suit">
+                    <div class="item-suit__wrapper">
+                        <img class="item-suit__img" src="./assets/svg/email/suit/ic-1.svg" alt="ip" srcset="">
+                        <h3 class="item-suit__title item__title">Для торговли
+                        </h3>
+                        <p class="item-suit__text item__text">Вы можете отправлять новинки, акции, скидки и другие
+                            предложения вашим подписчикам. Это позволит поддерживать
+                            лояльность, а также конвертировать «теплых» клиентов в «горячих».
 
-                            <img width="72px" height="72px" class="item-suit__img"
-                                src="./assets/svg/email/suit/suit-1.svg" alt="для производителей" srcset="">
-                            <h4 class="item-suit__title item__title">Для производителей
-                            </h4>
-                        </div>
+                        </p>
                     </div>
                 </div>
-                <div class="card suit__item">
-                    <div class="item-suit card__blue">
-                        <div class="item-suit__body-active">
-                            <p class="item-suit__text item__text">Вы можете отправлять новинки, акции, скидки и другие
-                                предложения вашим подписчикам.</p>
-                            <p class="item-suit__text item__text">Это позволит поддерживать лояльность,
-                                а также конвертировать «теплых»
-                                клиентов в «горячих».</p>
-                        </div>
+                <div class="suit__item item-suit">
+                    <div class="item-suit__wrapper">
+                        <img class="item-suit__img" src="./assets/svg/email/suit/ic-2.svg" alt="сервер" srcset="">
+                        <h3 class="item-suit__title item__title">Для производителей</h3>
+                        <p class="item-suit__text item__text">Получите максимальных охват клиентской базы рассылая
+                            информацию о вашем продукте конечному потребителю.</p>
                     </div>
-                    <div class="item-suit card__dark">
-                        <div class="item-suit__body">
-                            <img width="72px" height="72px" class="item-suit__img"
-                                src="./assets/svg/email/suit/suit-2.svg" alt="для производителей" srcset="">
-                            <h4 class="item-suit__title item__title">Для сферы услуг
-                            </h4>
-                        </div>
+                </div>
+                <div class="suit__item item-suit">
+                    <div class="item-suit__wrapper">
+                        <img class="item-suit__img" src="./assets/svg/email/suit/ic-3.svg" alt="записи" srcset="">
+                        <h3 class="item-suit__title item__title">Для сферы услуг</h3>
+                        <p class="item-suit__text item__text">Производя рассылку коммерческих предложений по базе
+                            организаций, вы можете привлечь новых потенциальных клиентов.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cities section data-lazy" data-backgroung-img="./assets/backgrounds/mail/cities-background.png">
-        <div class="container section__content cities__section">
+    <section class="work section">
+        <!-- <object data="./assets/backgrounds/main/cooperartion-background.svg" type=""></object> -->
+
+        <div class="container section__content">
+
             <div class="section__header">
-                <div class="section__point"><img src="./assets/svg/point.svg" type=""
-                        class="section__point-object"></img>
+                <h2 class="section__title">Как мы работаем
+
+                </h2>
+            </div>
+            <div class="work__body section__body">
+                <div class="work__left">
+                    <img class="work__img" src="./assets/svg/main/community/Site Stats-amico 1 (1).svg" alt=""
+                        srcset="">
                 </div>
-                <div class="section__header-content">
-                    <h2 class="section__title">Города для рассылки
-                    </h2>
-                    <h3 class="section__sec-title">ДЛЯ РАССЫЛКИ</р>
-                        <div class="section__decoration decoration">
-                            <div class="decoration__line"></div>
-                            <div class="decoration__line"></div>
+                <div class="work__right">
+                    <div class="work__item">
+                        <div class="item-work">
+                            <div class="item-work__left">
+
+                                <span class="item-work__order">1</span>
+                            </div>
+                            <div class="item-work__right">
+
+                                <h3 class="item-work__title item__title">Выбираете города для рассылки
+                                </h3>
+                            </div>
                         </div>
+                    </div>
+                    <div class="work__item">
+                        <div class="item-work">
+                            <div class="item-work__left">
+
+                                <span class="item-work__order">2</span>
+                            </div>
+                            <div class="item-work__right">
+                                <h3 class="item-work__title  item__title">Оплачиваете
+                                    пакет услуг</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work__item">
+                        <div class=" item-work">
+                            <div class="item-work__left">
+
+                                <span class="item-work__order">3</span>
+                            </div>
+                            <div class="item-work__right">
+
+                                <h3 class="item-work__title item__title">Мы подготавливаем макет письма</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work__item">
+                        <div class=" item-work">
+                            <div class="item-work__left">
+
+                                <span class="item-work__order">4</span>
+                            </div>
+                            <div class="item-work__right">
+
+                                <h3 class="item-work__title item__title">Производим
+                                    рассылку</h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section class="cities section">
+        <div class="container section__content cities__section">
+            <div class="section__header cities__header">
+                <h2 class="section__title">Города для рассылки
+                </h2>
             </div>
             <div class="cities__body">
                 <div class="cities__left">
@@ -321,36 +310,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="cities__right"><img src="./assets/svg/email/cities/illustration.svg" alt="города"
+                <div class="cities__right"><img src="./assets/svg/email/cities/Navigation-amico.svg" alt="города"
                         class="cities__img">
                 </div>
             </div>
-
         </div>
     </section>
 
     <section class="tariffsec section">
         <div class="container section__content">
             <div class="section__header">
-                <div class="section__point"><img src="./assets/svg/point.svg" type=""
-                        class="section__point-object"></img>
-                </div>
-                <div class="section__header-content">
-                    <h2 class="section__title tariffsec__title">Выбор тарифа
-                    </h2>
-                    <h3 class="section__sec-title">СТОИМОСТЬ УСЛУГ</р>
-                        <div class="section__decoration decoration">
-                            <div class="decoration__line"></div>
-                            <div class="decoration__line"></div>
-                        </div>
-                </div>
+                <h2 class="section__title tariffsec__title">Выбор тарифа
+                </h2>
             </div>
             <div class="tariffsec__body">
                 <div class="tariffsec__slider slider slider--smooth">
 
                     <div class="tariffsec__card card-tariffsec">
                         <div class="card-tariffsec__header">
-                            <h4 class="card-tariffsec__title item__title">Разовая рассылка</h4>
+                            <h3 class="card-tariffsec__title item__title">Разовая рассылка</h3>
 
                         </div>
                         <hr class="card-tariffsec__line">
@@ -358,28 +336,29 @@
                             <div class="card-tariffsec__body-wrapper">
 
                                 <div class="card-tariffsec__item item-tariffseccard">
-                                    <p class="item-tariffseccard__text">По любому городу РФ
+                                    <p class="item-tariffseccard__text item__text">По любому городу РФ
                                     </p>
                                     <span class="item-tariffseccard__amount">6 000 ₽</span>
                                 </div>
 
                                 <div class="card-tariffsec__item item-tariffseccard">
-                                    <p class="item-tariffseccard__text">Москва,
+                                    <p class="item-tariffseccard__text item__text">Москва,
                                         Санкт-Петербург
                                     </p>
                                     <span class="item-tariffseccard__amount">8 000 ₽</span>
                                 </div>
 
                                 <div class="card-tariffsec__item item-tariffseccard">
-                                    <p class="item-tariffseccard__text"> Разработка макета
+                                    <p class="item-tariffseccard__text item__text"> Разработка макета
                                         для рассылки</p>
-                                    <h4 class="item-tariffseccard__free item__title">
+                                    <h3 class="item-tariffseccard__free item__title">
                                         БЕСПЛАТНО
-                                    </h4>
+                                    </h3>
                                 </div>
 
                                 <div class="card-tariffsec__footer footer-tariffsec">
-                                    <button class="footer-tariffsec__btn btn btn__transparent">Выбрать тариф</button>
+                                    <button class="footer-tariffsec__btn btn btn__transparent item__text">Выбрать
+                                        тариф</button>
 
                                 </div>
                             </div>
@@ -387,7 +366,7 @@
                     </div>
                     <div class="tariffsec__card card-tariffsec">
                         <div class="card-tariffsec__header card-tariffsec__header-center">
-                            <h4 class="card-tariffsec__title item__title">Две рассылки</h4>
+                            <h3 class="card-tariffsec__title item__title">Две рассылки</h3>
 
                         </div>
                         <hr class="card-tariffsec__line">
@@ -395,28 +374,29 @@
                             <div class="card-tariffsec__body-wrapper">
 
                                 <div class="card-tariffsec__item item-tariffseccard">
-                                    <p class="item-tariffseccard__text">По любому городу РФ
+                                    <p class="item-tariffseccard__text item__text">По любому городу РФ
                                     </p>
                                     <span class="item-tariffseccard__amount">7 500 ₽</span>
                                 </div>
 
                                 <div class="card-tariffsec__item item-tariffseccard">
-                                    <p class="item-tariffseccard__text">Москва,
+                                    <p class="item-tariffseccard__text item__text">Москва,
                                         Санкт-Петербург
                                     </p>
                                     <span class="item-tariffseccard__amount">9 500 ₽</span>
                                 </div>
 
                                 <div class="card-tariffsec__item item-tariffseccard">
-                                    <p class="item-tariffseccard__text"> Разработка макета
+                                    <p class="item-tariffseccard__text item__text"> Разработка макета
                                         для рассылки</p>
-                                    <h4 class="item-tariffseccard__free item__title">
+                                    <h3 class="item-tariffseccard__free item__title">
                                         БЕСПЛАТНО
-                                    </h4>
+                                    </h3>
                                 </div>
 
                                 <div class="card-tariffsec__footer footer-tariffsec">
-                                    <button class="footer-tariffsec__btn btn btn__transparent">Выбрать тариф</button>
+                                    <button class="footer-tariffsec__btn btn btn__transparent item__text">Выбрать
+                                        тариф</button>
 
                                 </div>
                             </div>
@@ -424,7 +404,7 @@
                     </div>
                     <div class="tariffsec__card card-tariffsec">
                         <div class="card-tariffsec__header">
-                            <h4 class="card-tariffsec__title item__title">Четыре рассылки</h4>
+                            <h3 class="card-tariffsec__title item__title">Четыре рассылки</h3>
 
                         </div>
                         <hr class="card-tariffsec__line">
@@ -432,28 +412,29 @@
                             <div class="card-tariffsec__body-wrapper">
 
                                 <div class="card-tariffsec__item item-tariffseccard">
-                                    <p class="item-tariffseccard__text">По любому городу РФ
+                                    <p class="item-tariffseccard__text item__text">По любому городу РФ
                                     </p>
                                     <span class="item-tariffseccard__amount">14 000 ₽</span>
                                 </div>
 
                                 <div class="card-tariffsec__item item-tariffseccard">
-                                    <p class="item-tariffseccard__text">Москва,
+                                    <p class="item-tariffseccard__text item__text">Москва,
                                         Санкт-Петербург
                                     </p>
                                     <span class="item-tariffseccard__amount">16 000 ₽</span>
                                 </div>
 
                                 <div class="card-tariffsec__item item-tariffseccard">
-                                    <p class="item-tariffseccard__text"> Разработка макета
+                                    <p class="item-tariffseccard__text item__text"> Разработка макета
                                         для рассылки</p>
-                                    <h4 class="item-tariffseccard__free item__title">
+                                    <h3 class="item-tariffseccard__free item__title">
                                         БЕСПЛАТНО
-                                    </h4>
+                                    </h3>
                                 </div>
 
                                 <div class="card-tariffsec__footer footer-tariffsec">
-                                    <button class="footer-tariffsec__btn btn btn__transparent">Выбрать тариф</button>
+                                    <button class="footer-tariffsec__btn btn btn__transparent item__text">Выбрать
+                                        тариф</button>
 
                                 </div>
                             </div>
@@ -472,103 +453,138 @@
         </div>
     </section>
 
-    <section class="afterMailing section data-lazy"
-        data-backgroung-img="./assets/backgrounds/mail/afterMailing-background.png">
+    <section class="afterMailing section section--active">
+        <!-- <object data="./assets/backgrounds/main/cooperartion-background.svg" type=""></object> -->
+
         <div class="container section__content">
+
             <div class="section__header">
-                <div class="section__point"><img src="./assets/svg/point.svg" type=""
-                        class="section__point-object"></img>
-                </div>
-                <div class="section__header-content">
-                    <h2 class="section__title afterMailing__title">Что вас ждет
-                        после рассылки
-                    </h2>
-                    <h3 class="section__sec-title">ВАШИ ВОЗМОЖНОСТИ</р>
-                        <div class="section__decoration decoration">
-                            <div class="decoration__line"></div>
-                            <div class="decoration__line"></div>
-                        </div>
-                </div>
+                <h2 class="section__title">Что вас ждет после рассылки
+
+                </h2>
+                <p class="section__sec-title afterMailing__sec-title  item__text">После выполнения рассылки мы
+                    обязательно составляем
+                    и отправляем вам подробный отчет.
+                    </р>
             </div>
-
-            <div class="afterMailing__body mailing">
+            <div class="afterMailing__body section__body">
                 <div class="afterMailing__left">
-                    <p class="afterMailing__text item__text">После выполнения рассылки мы обязательно составляем и
-                        отправляем вам подробный отчет:
-                    </p>
-                    <img class="afterMailing__img" src="./assets/svg/email/afterMailing/image 26.png" alt="ip"
-                        srcset="">
-
+                    <img class="afterMailing__img" src="./assets/svg/email/afterMailing/illustration.svg"
+                        alt="После рассылки" srcset="">
                 </div>
                 <div class="afterMailing__right">
-                    <div class="afterMailing__item item-afterMailing item">
-                        <img class="item-afterMailing__img" src="./assets/svg/email/afterMailing/ic-1.svg" alt="отчет"
-                            srcset="">
-                        <h4 class="item-afterMailing__title item__title">Сводная аналитика</h4>
-                        <p class="item-afterMailing__text item__text">Мы проведем анализ эффективности рассылки
-                            и сопоставим с предыдущими результатами, дадим
-                            ценные советы по усовершенствованию процесса</p>
+                    <div class="afterMailing__item">
+                        <div class="item-afterMailing">
+                            <div class="item-afterMailing__left">
+
+                                <span class="item-afterMailing__order">1</span>
+                            </div>
+                            <div class="item-afterMailing__right">
+
+                                <h4 class="item-afterMailing__title item__title">Сводная аналитика
+                                </h4>
+                                <p class="item-afterMailing__text item__text">Мы проведем анализ эффективности рассылки
+                                    и сопоставим с предыдущими результатами, дадим
+                                    ценные советы по усовершенствованию процесса.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="afterMailing__item item-afterMailing item">
-                        <img class="item-afterMailing__img" src="./assets/svg/email/afterMailing/ic-2.svg" alt="список"
-                            srcset="">
-                        <h4 class="item-afterMailing__title item__title">Список отписавшихся</h4>
-                        <p class="item-afterMailing__text item__text">Подсчитаем, в какое время и какого-типа
-                            клиенты
-                            чаще читают письма от вашей фирмы</p>
+                    <div class="afterMailing__item">
+                        <div class="item-afterMailing">
+                            <div class="item-afterMailing__left">
+
+                                <span class="item-afterMailing__order">2</span>
+                            </div>
+                            <div class="item-afterMailing__right">
+
+                                <h4 class="item-afterMailing__title  item__title">Динамика открытия писем</h4>
+                                <p class="item-afterMailing__text item__text">Подсчитаем, в какое время и какого-типа
+                                    клиенты чаще читают письма от вашей фирмы.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="afterMailing__item item-afterMailing item">
-                        <img class="item-afterMailing__img" src="./assets/svg/email/afterMailing/ic-3.svg" alt=""
-                            srcset="">
-                        <h4 class="item-afterMailing__title item__title">Карта кликов</h4>
-                        <p class="item-afterMailing__text item__text">Благодаря ней вы узнаете, по каким ссылкам
-                            в письме клиенты кликают чаще всего</p>
+                    <div class="afterMailing__item">
+                        <div class=" item-afterMailing">
+                            <div class="item-afterMailing__left">
+
+                                <span class="item-afterMailing__order">3</span>
+                            </div>
+                            <div class="item-afterMailing__right">
+
+                                <h4 class="item-afterMailing__title item__title">Динамика открытия писем</h4>
+                                <p class="item-afterMailing__text item__text">Подсчитаем, в какое время и какого-типа
+                                    клиенты чаще читают письма от вашей фирмы.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
 
         </div>
     </section>
 
-    <section class="effect section">
-        <div class="container section__content effect__section">
-            <div class="section__header">
-                <div class="section__point"><img src="./assets/svg/point.svg" type=""
-                        class="section__point-object"></img>
-                </div>
-                <div class="section__header-content">
-                    <h2 class="section__title effect__main-title">Мы помогаем создавать самые эффективные рассылки!
+    <section class="effect section section--active">
+        <div class="container section__content">
+            <div class="section__header effect__header">
+                <h2 class="section__title">Мы помогаем создавать самые
+                    эффективные рассылки!
 
-                    </h2>
-                    <h3 class="section__sec-title">РЕЗУЛЬТАТ</р>
-                        <div class="section__decoration decoration">
-                            <div class="decoration__line"></div>
-                            <div class="decoration__line"></div>
-                        </div>
-                </div>
+                </h2>
+                <p class="section__sec-title afterMailing__sec-title  item__text">В рамках описанных выше услуг наша
+                    команда выполнит «под ключ» весь перечень работ по email-маркетингу, а именно:
+                    </р>
             </div>
-            <div class="effect__body">
-                <div class="effect__left">
-                    <h4 class="effect__title item__title-medium">В рамках описанных выше услуг наша команда выполнит
-                        «под ключ» весь перечень работ по email-маркетингу, а именно:</h4>
-                    <ul class="effect__list">
-                        <li class="effect__item">Создание информативного и продающего текста</li>
-                        <li class="effect__item">Создание фирменного дизайна рассылки и верстка писем</li>
-                        <li class="effect__item">Составление базы получателей</li>
-                        <li class="effect__item">Обеспечение попадания писем во «Входящие»</li>
-                    </ul>
-                    <p class="effect__text item__text">Мы работаем на положительный результат и имидж, поэтому
-                        рассылки, сделаные при помощи нашего
-                        сервиса - самые эффективные!
+            <div class="effect__body section__body">
+                <div class="effect__item item-effect">
+
+                    <img class="item-effect__img" src="./assets/svg/email/effect/ic-1.svg" alt="Создание текста"
+                        srcset="">
+
+                    <p class="item-effect__text item__text">Создание информативного
+                        и продающего текста
+
                     </p>
                 </div>
-                <div class="effect__right"><img src="./assets/svg/email/effect/illustration.svg" alt=""
-                        class="effect__img"></div>
-            </div>
+                <div class="effect__item item-effect">
 
+                    <img class="item-effect__img" src="./assets/svg/email/effect/ic-2.svg"
+                        alt="Создание фирменного дизайна" srcset="">
+
+                    <p class="item-effect__text item__text">Создание фирменного дизайна рассылки и верстка писем
+
+                    </p>
+                </div>
+                <div class="effect__item item-effect">
+
+                    <img class="item-effect__img" src="./assets/svg/email/effect/ic-3.svg"
+                        alt="Составление базы получателей " srcset="">
+
+                    <p class="item-effect__text item__text">Составление базы получателей
+
+                    </p>
+                </div>
+                <div class="effect__item item-effect">
+
+                    <img class="item-effect__img" src="./assets/svg/email/effect/ic-4.svg"
+                        alt="Обеспечение попадания писем во «Входящие»" srcset="">
+
+                    <p class="item-effect__text item__text">Обеспечение попадания писем во «Входящие»
+
+                    </p>
+                </div>
+            </div>
+            <div class="effect__footer footer-effect">
+                <p class="footer-effect__text item__title">
+                    Мы работаем на положительный результат и имидж, поэтому рассылки, сделаные при помощи нашего сервиса
+                    - самые
+                    эффективные!
+                </p>
+            </div>
         </div>
     </section>
+
 
     <footer class="footer">
         <div class="footer__main">
