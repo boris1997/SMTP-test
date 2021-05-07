@@ -169,7 +169,6 @@ function fonts() {
         }))
         .pipe(dest(source_folder + '/fonts/'))
 })
-
  */
 
 function watchFiles(params) {
