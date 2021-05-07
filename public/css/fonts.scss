@@ -1,8 +1,6 @@
-/* @include font(
-  "NeueMachina-Ultrabold",
-  "NeueMachina-Ultrabold",
-  "800",
-  "normal"
-);
-@include font("TTCommons-Medium", "TTCommons-Medium", "600", "normal");
- */
+@import "./vars&mixins.scss";
+
+@include font("TTCommons", "TTCommons-Regular", "400", "normal");
+@include font("TTCommons", "TTCommons-Medium", "500", "normal");
+@include font("TTCommons", "TTCommons-DemiBold", "600", "normal");
+@include font("TTCommons", "TTCommons-Bold", "700", "normal");

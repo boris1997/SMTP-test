@@ -20,6 +20,7 @@ $lightGrey: #edf0f5; */
       url("../fonts/#{$file_name}.woff2") format("woff2");
     font-weight: #{$weight};
     font-style: #{$style};
+    font-display: swap;
   }
 }
 

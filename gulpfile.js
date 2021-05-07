@@ -13,7 +13,9 @@ let path = {
     },
     src: {
         html: [source_folder + "/*.html", "!" + source_folder + "/_*.html"],
-        css: source_folder + "/css/**/*.scss",
+        css: /* [ */source_folder + "/css/**/*.scss",
+        // , "!" + source_folder + "/css/**/*fonts.scss"]
+        cssFonts: source_folder + "/css/**/*fonts.scss",
         js: source_folder + "/js/**/*.js",
         assets: source_folder + "/assets/**/*.{jpg,png,svg,gif,ico,mp4}",
         fonts: source_folder + "/fonts/**/*.{ttf,woff,woff2,eot,css}"
@@ -136,6 +138,30 @@ function fontsWoff() {
         .pipe(dest(path.build.fonts))
 }
 
+function fonts() {
+    return src(path.src.cssFonts)
+        /*     .pipe(scss({
+                outputStyle: "expanded"
+            }))
+            .pipe(dest(path.src.outPutCss)) */
+        .pipe(scss({
+            outputStyle: "expanded"
+        }).on('error', scss.logError))
+
+        .pipe(dest(path.build.css))
+        .pipe(clean_css())
+        /*  .pipe(scss({
+             outputStyle: "expanded"
+         })) */
+        .pipe(
+            rename({
+                extname: ".min.css"
+            })
+        )
+        .pipe(dest(path.build.css))
+        .pipe(browsersync.stream())
+}
+
 /* gulp.task('otf2ttf', () => {
     return src([source_folder + '/fonts/*.otf'])
         .pipe(fonter({
@@ -183,7 +209,7 @@ function fontsStyle(params) {
 
 function cb() { }
 
-let build = gulp.series(clean, gulp.parallel(html, css, js, images, fontsWoff, fontsStyle));
+let build = gulp.series(clean, gulp.parallel(html, css, /* fonts, */ js, images, fontsWoff, fontsStyle));
 let watch = gulp.parallel(build, browserSync, watchFiles);
 
 exports.fontsStyle = fontsStyle;
@@ -192,6 +218,7 @@ exports.fontsWoff = fontsWoff;
 exports.images = images;
 exports.html = html;
 exports.css = css;
+// exports.fonts = fonts;
 exports.js = js;
 exports.build = build;
 exports.watch = watch;
