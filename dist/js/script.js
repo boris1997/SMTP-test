@@ -3,42 +3,34 @@ class LazyLoading {
     constructor(dataLazy, activeClass) {
         this.dataLazy = dataLazy;
         this.activeClass = activeClass;
-        /*         this.text = text;
-                this.activeBtn = activeBtn;
-                this.activeClasses = activeClasses;
-                this.activeText = activeText;
-                this.textToggle = textToggle;
-                this.textToggleBtn = textToggleBtn;
-                this.transitionTime = transitionTime;
-                this.heightVar = heightVar; */
         this.initEvents()
     }
 
     initEvents = () => {
         this.scrollObserver()
     }
-    scrollObserverCallback = (entries, observer) => {
-        /* Content excerpted, show below */
-        console.log(entries, observer)
-        entries.map(entry => {
-            if (entry.isIntersecting) {
-                this.loadContent(entry.target)
-                console.log(entry)
-            }
-        })
-    };
+    scrollObserverCallback = (entries, observer) => entries.map(entry => entry.isIntersecting && this.loadContent(entry.target));
 
     loadContent = (entry) => {
         console.log(entry.dataset)
+        entry.dataset.src && this.loadImg(entry, entry.dataset.src)
         entry.dataset.backgroungImg && this.loadBackground(entry, entry.dataset.backgroungImg)
         /*     if (entry) */
     }
 
     loadBackground = (element, backgroungUrl) => {
         element.style.backgroundImage = `url(${backgroungUrl})`
-        element.classList.add(this.activeClass);
+        this.addClass(element, this.activeClass)
         this.observer.unobserve(element)
     }
+    loadImg = (element, src) => {
+        element.src = src;
+        this.observer.unobserve(element)
+    }
+
+    addClass = (element, clas) => element.classList.add(this.activeClass);
+
+
 
 
     scrollObserver = () => {

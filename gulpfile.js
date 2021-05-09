@@ -45,8 +45,49 @@ let { src, dest } = require('gulp'),
     imagemin = require('gulp-imagemin'),
     webp = require('gulp-webp'),
     scss = require('gulp-dart-sass'),
+    /*     postcss = require('gulp-postcss'), */
+    uncss = require('gulp-uncss'),
+    purgecss = require('gulp-purgecss'),
     fs = require('fs')
 
+const cssFileObg = {
+    first: {
+        htmlName: 'index.html',
+        cssName: 'main',
+    },
+    second: {
+        htmlName: 'base.html',
+        cssName: 'base',
+    },
+    third: {
+        htmlName: 'mail.html',
+        cssName: 'mail',
+    },
+    fourth: {
+        htmlName: 'article.html',
+        cssName: 'article',
+    },
+    fifth: {
+        htmlName: 'articles.html',
+        cssName: 'articles',
+    },
+    sixth: {
+        htmlName: 'service.html',
+        cssName: 'service',
+    },
+    seventh: {
+        htmlName: 'services.html',
+        cssName: 'services',
+    },
+    eight: {
+        htmlName: 'contact.html',
+        cssName: 'contact',
+    },
+    ninth: {
+        htmlName: '404.html',
+        cssName: '404',
+    }
+}
 
 function browserSync(params) {
     browsersync.init({
@@ -86,13 +127,13 @@ function html() {
         .pipe(browsersync.stream())
 }
 
-function css() {
+function css(html, style) {
     return src(path.src.css)
         /*     .pipe(scss({
                 outputStyle: "expanded"
             }))
             .pipe(dest(path.src.outPutCss)) */
-        .pipe(concat("style.scss"))
+        .pipe(concat(`${style}.scss`))
         .pipe(scss({
             outputStyle: "expanded"
         }).on('error', scss.logError))
@@ -101,6 +142,9 @@ function css() {
             cascade: true,
         }))
         .pipe(group_media())
+        .pipe(purgecss({
+            content: [`public/${html}`]
+        }))
         .pipe(dest(path.build.css))
         .pipe(clean_css())
         /*  .pipe(scss({
@@ -114,6 +158,16 @@ function css() {
         .pipe(dest(path.build.css))
         .pipe(browsersync.stream())
 }
+
+const allCss = () => {
+    console.log(cssFileObg)
+    Object.entries(cssFileObg).map((item, i) => {
+        console.log(item[1].htmlName, item[1].cssName)
+        css(item[1].htmlName, item[1].cssName)
+    })
+}
+
+
 
 function js() {
     return src(path.src.js)
@@ -208,7 +262,7 @@ function fontsStyle(params) {
 
 function cb() { }
 
-let build = gulp.series(clean, gulp.parallel(html, css, /* fonts, */ js, images, fontsWoff, fontsStyle));
+let build = gulp.series(clean, gulp.parallel(html, allCss, /* fonts, */ js, images, fontsWoff, fontsStyle));
 let watch = gulp.parallel(build, browserSync, watchFiles);
 
 exports.fontsStyle = fontsStyle;
@@ -216,7 +270,7 @@ exports.fontsWoff = fontsWoff;
 
 exports.images = images;
 exports.html = html;
-exports.css = css;
+exports.allCss = allCss;
 // exports.fonts = fonts;
 exports.js = js;
 exports.build = build;

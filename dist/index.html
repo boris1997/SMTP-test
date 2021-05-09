@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--  <noscript id="deferred-styles">
     </noscript> -->
-    <link rel="stylesheet" type="text/css" href="./css/style.min.css">
+    <link rel="preload stylesheet" type="text/css" as="style" href="./css/main.min.css">
     <!-- <link rel="stylesheet prefetch preload" href="./css/fonts.css" as="style" crossorigin="anonymous"> -->
-    <!--     <link rel="preload" href="./fonts/TTCommons-Bold.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <!--   <link rel="preload" href="./fonts/TTCommons-Bold.woff" as="font" type="font/woff" crossorigin="anonymous">
     <link rel="preload" href="./fonts/TTCommons-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="./fonts/TTCommons-DemiBold.woff" as="font" type="font/woff" crossorigin="anonymous">
     <link rel="preload" href="./fonts/TTCommons-DemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -229,8 +229,8 @@
             </div>
             <div class="community__body section__body">
                 <div class="community__left">
-                    <img class="community__img" src="./assets/svg/main/community/Site Stats-amico 1 (1).svg" alt=""
-                        srcset="">
+                    <img class="community__img data-lazy"
+                        data-src="./assets/svg/main/community/Site Stats-amico 1 (1).svg" alt="" srcset="">
                 </div>
                 <div class="community__right">
                     <div class="community__item">
@@ -546,8 +546,8 @@
                 </h2>
             </div>
             <div class="get__body">
-                <div class="get__left"><img src="./assets/svg/main/whatGet/whatGet.svg" alt="что получите"
-                        class="get__img data-lazy">
+                <div class="get__left data-lazy"><img data-src="./assets/svg/main/whatGet/whatGet.svg"
+                        alt="что получите" class="get__img data-lazy">
                 </div>
                 <div class="get__right">
                     <ul class="get__list">
@@ -637,8 +637,8 @@
                         </div>
                         <div class="programm-content__item">
                             <div class="item-programm">
-                                <img src="./assets/svg/main/programm/programm.svg" alt="функционал"
-                                    class="item-programm__img">
+                                <img data-src="./assets/svg/main/programm/programm.svg" alt="функционал"
+                                    class="item-programm__img data-lazy">
                             </div>
                         </div>
                         <div class="programm-content__resizer"></div>
