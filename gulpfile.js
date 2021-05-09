@@ -159,12 +159,11 @@ function css(html, style) {
         .pipe(browsersync.stream())
 }
 
-const allCss = () => {
-    console.log(cssFileObg)
+const allCss = (params) => {
     Object.entries(cssFileObg).map((item, i) => {
-        console.log(item[1].htmlName, item[1].cssName)
         css(item[1].htmlName, item[1].cssName)
     })
+    params()
 }
 
 
