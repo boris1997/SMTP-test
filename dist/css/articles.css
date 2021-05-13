@@ -127,9 +127,9 @@ body {
   overflow: auto;
 }
 
-.body {
+/* .body {
   height: 100vh;
-}
+} */
 
 a {
   color: #ffffff;
@@ -179,15 +179,16 @@ img {
   z-index: -1;
 }
 
-.page__wrapper {
+.page__wrapper--overflow {
   position: relative;
+  overflow: visible;
 }
 
 .page__navigtion {
   padding-left: 0.75rem;
   position: absolute;
   content: "";
-  top: 6.75rem;
+  top: 1.75rem;
   bottom: auto;
   left: 0;
   right: auto;
@@ -209,10 +210,6 @@ img {
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-}
-
-.page_sec_color {
-  background: #192942;
 }
 
 .navigtion-page {
@@ -249,8 +246,12 @@ img {
 }
 
 .section--main-background {
-  background-color: #192942 !important;
+  background-color: #2d2c45 !important;
   background-image: none !important;
+}
+
+.section--main-background:after {
+  content: none;
 }
 
 .item__title-medium {
@@ -276,6 +277,17 @@ img {
 /* $accentColorSec: #f9f5e8;
 $darkGrey: #151d28;
 $lightGrey: #edf0f5; */
+
+/*!
+ * Waves v0.6.0
+ * http://fian.my.id/Waves
+ *
+ * Copyright 2014 Alfiana E. Sibuea and other contributors
+ * Released under the MIT license
+ * https://github.com/fians/Waves/blob/master/LICENSE
+ */
+
+/* Firefox Bug: link not triggered */
 
 .article {
   background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
@@ -362,6 +374,12 @@ $lightGrey: #edf0f5; */
 
 .btn__main:hover {
   background-color: #255ae3;
+}
+
+.btn__span {
+  -ms-flex-item-align: baseline;
+  align-self: baseline;
+  margin-left: 1.75rem;
 }
 
 .btn__link {
@@ -601,16 +619,8 @@ $lightGrey: #edf0f5; */
   transition: width 0.4s ease-in-out;
 }
 
-.nav__link--active:hover {
-  color: #ffffff !important;
-}
-
-.nav__link--active:active {
-  color: #ffffff !important;
-}
-
-.nav__link--active::after {
-  width: 100%;
+.nav__icon {
+  margin-right: 0.625rem;
 }
 
 /* .card__small-blue {
@@ -737,7 +747,7 @@ $lightGrey: #edf0f5; */
 /* Landscape phones and smaller */
 
 .articles-content {
-  margin-top: 3.125rem;
+  margin-top: 1.5rem;
   display: grid;
   grid-row-gap: 2rem;
   grid-column-gap: 2rem;
@@ -809,7 +819,7 @@ $lightGrey: #edf0f5; */
 }
 
 .pagination {
-  margin-top: 6.25rem;
+  margin-top: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -862,12 +872,14 @@ $lightGrey: #edf0f5; */
   position: absolute;
   content: "";
   top: 0;
-  bottom: 0;
-  left: -0.4375rem;
+  bottom: 0.25rem;
+  left: -0.53125rem;
   right: 0;
   margin: auto;
   border-radius: 6.25rem;
-  background-color: #1549d0;
+  background: -webkit-gradient(linear, left top, right top, from(#16d9e3), color-stop(47%, #30c7ec), to(#46aef7));
+  background: -o-linear-gradient(left, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+  background: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
   height: 1.375rem;
   width: 1.375rem;
   z-index: -1;
@@ -875,6 +887,10 @@ $lightGrey: #edf0f5; */
   -webkit-transition: opacity 0.4s ease-in-out;
   -o-transition: opacity 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out;
+}
+
+.pagination__arrow {
+  fill: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
 }
 
 .pagination__btn--active:hover {
@@ -993,6 +1009,10 @@ $lightGrey: #edf0f5; */
   background: rgba(0, 0, 0, 0.36);
   height: 100%;
   visibility: hidden;
+}
+
+.main__title--sec {
+  font-size: 2.8125rem;
 }
 
 @media (max-width: 1224px) {

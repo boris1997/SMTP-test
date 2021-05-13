@@ -16,15 +16,22 @@
   &__interest,
   &__articles,
   &__directions {
-    margin-top: rem(82px);
+    margin-top: rem(120px);
+  }
+
+  &__left {
+    flex: 1.1;
+  }
+
+  &__left-wrapper {
+    width: rem(242px);
+    height: rem(242px);
+    border-radius: 100%;
+    @include flexbox(column, center, center);
   }
 
   &__right {
-    margin-left: rem(135px);
-  }
-
-  &__img {
-    margin-left: rem(-29px);
+    flex: 2;
   }
 
   /* 
@@ -50,29 +57,33 @@
  */
   }
   &__btn {
-    width: rem(166px);
+    width: rem(130px);
+    color: $primaryColor;
     align-self: flex-end;
     margin-bottom: rem(13px);
   }
 
   &__text {
-    margin-top: rem(40px);
+    margin-top: rem(28px);
   }
-  &__item + &__item,
-  &__btn {
-    margin-left: rem(72px);
+  &__item:nth-child(1) {
+    flex: 1.1;
+  }
+  &__item:nth-child(2) {
+    flex: 2;
   }
 }
 
 .item-datas {
   &__amount {
-    font-size: rem(36px) !important;
+    font-size: rem(28px) !important;
+    font-weight: 500 !important;
   }
 }
 
 .interest-service {
   &__body {
-    margin-top: rem(30px) !important;
+    margin-top: rem(24px) !important;
   }
 
   &__img {
@@ -104,7 +115,7 @@
 
 .articles-content {
   @include grid(
-    rem(50px),
+    rem(24px),
     rem(32px),
     rem(32px),
     1,

@@ -45,6 +45,10 @@
     margin-top: rem(28px);
     max-width: rem(560px);
   }
+  &__title--sec {
+    font-size: rem(45px);
+  }
+
   &__tariffs-btn {
     width: rem(140px);
   }
@@ -59,16 +63,17 @@
     width: rem(117.5px);
     height: rem(117.5px);
     right: auto;
-    left: 0;
-    top: rem(-448px);
+    left: rem(672px);
+    top: auto;
+    bottom: 0;
   }
 
   &__updates {
-    width: rem(187px);
-    height: rem(187px);
-    right: 0;
-    left: auto;
-    top: rem(-230px);
+    width: rem(146px);
+    height: rem(146px);
+    left: rem(540px);
+    right: auto;
+    top: rem(170px);
   }
 
   &__text,
@@ -97,15 +102,15 @@
 }
 .downloads-main {
   border-radius: rem(100px);
-  background-color: $accentColor;
+  background: linear-gradient(90deg, #83a6ff -0.49%, #4d6de2 99.88%);
+
   &__title {
     margin: 0;
   }
 }
 
 .updates-main {
-  background-color: transparent;
-  border: 1px solid #dd2265;
+  background: url("../assets/svg/ellipse.svg") no-repeat center center/cover;
   border-radius: rem(100px);
   &__title {
     margin: 0;

@@ -83,10 +83,9 @@ body {
   overflow: auto;
 }
 
-.body {
+/* .body {
   height: 100vh;
-}
-
+} */
 input,
 button,
 textarea {
@@ -169,14 +168,15 @@ img {
 .page__wrapper {
   position: relative;
 }
-.page__contact {
-  height: calc(100vh - 200px) !important;
+.page__wrapper--overflow {
+  position: relative;
+  overflow: visible;
 }
 .page__navigtion {
   padding-left: 0.75rem;
   position: absolute;
   content: "";
-  top: 6.75rem;
+  top: 1.75rem;
   bottom: auto;
   left: 0;
   right: auto;
@@ -199,6 +199,10 @@ img {
 }
 .page__sidebar--active {
   visibility: visible;
+}
+
+.page--contact {
+  height: calc(100vh - 200px) !important;
 }
 
 .page--mail {
@@ -266,8 +270,11 @@ img {
 }
 
 .section--main-background {
-  background-color: #192942 !important;
+  background-color: #2d2c45 !important;
   background-image: none !important;
+}
+.section--main-background:after {
+  content: none;
 }
 
 .page_screen_full + .section--sec {
@@ -295,6 +302,11 @@ img {
   font-weight: 500;
   margin-top: 1.125rem;
 }
+.item__title-modal {
+  line-height: 1.875rem;
+  font-size: 1.75rem;
+  font-weight: 500;
+}
 .item__title-medium {
   font-size: 1.125rem;
   line-height: 1.625rem;
@@ -316,6 +328,14 @@ img {
   font-size: 1.25rem;
   line-height: 1.5rem;
   font-weight: 600;
+}
+.item__main-gradient {
+  background: -webkit-gradient(linear, left top, right top, from(#16d9e3), color-stop(47%, #30c7ec), to(#46aef7));
+  background: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+}
+.item__sec-gradient {
+  background: -webkit-gradient(linear, left top, right top, color-stop(-0.49%, #83a6ff), color-stop(99.88%, #4d6de2));
+  background: linear-gradient(90deg, #83a6ff -0.49%, #4d6de2 99.88%);
 }
 
 .mg_top_none {

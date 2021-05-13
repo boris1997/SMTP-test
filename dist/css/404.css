@@ -126,9 +126,9 @@ body {
   overflow: auto;
 }
 
-.body {
+/* .body {
   height: 100vh;
-}
+} */
 
 a {
   color: #ffffff;
@@ -228,6 +228,17 @@ img {
 /* $accentColorSec: #f9f5e8;
 $darkGrey: #151d28;
 $lightGrey: #edf0f5; */
+
+/*!
+ * Waves v0.6.0
+ * http://fian.my.id/Waves
+ *
+ * Copyright 2014 Alfiana E. Sibuea and other contributors
+ * Released under the MIT license
+ * https://github.com/fians/Waves/blob/master/LICENSE
+ */
+
+/* Firefox Bug: link not triggered */
 
 .notFound {
   overflow: hidden;

@@ -1,31 +1,63 @@
 .difference {
   background: url("../assets/backgrounds/base/difference-background.svg")
     no-repeat center center/cover;
+
+  &__title {
+    max-width: rem(811px);
+  }
   &__body {
-    /*     margin-top: rem(105px); */
-    @include grid(
-      rem(70px),
-      rem(80px),
-      rem(30px),
-      1,
-      1fr,
-      auto-fill,
-      rem(296px),
-      rem(584px)
-    );
-    justify-content: center;
+    @include flexbox(row, baseline, flex-start);
   }
 
-  &__item {
-    background: url("../assets/svg/dashed-image-big.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
+  &__sec-title {
+    max-width: rem(451px);
+  }
+
+  &__right {
+    margin-left: rem(40px);
+  }
+
+  &__item + &__item {
+    margin-top: rem(152px);
+  }
+  &__item:nth-child(2) {
+    margin-left: rem(82px);
+  }
+  &__item:nth-child(2) .item-difference__order {
+    &::after {
+      background: linear-gradient(90deg, #83a6ff -0.49%, #4d6de2 99.88%);
+    }
   }
 }
 
 .item-difference {
-  align-items: flex-start;
-  margin: rem(32px) 0;
-  margin-left: rem(23px);
-  max-width: rem(500px);
+  @include flexbox(row, baseline, flex-start);
+  &__title {
+    margin-top: 0;
+  }
+  &__text {
+    max-width: rem(484px);
+  }
+  &__right {
+    margin-left: rem(12px);
+    z-index: 1;
+  }
+  margin: 0;
+  &__order {
+    font-size: rem(76px);
+    font-weight: 700;
+    z-index: 1;
+    padding-top: rem(12px);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    &::after {
+      @include position(absolute, "", rem(-5px), 0, 0, 0, auto);
+      border-radius: rem(100px);
+      width: rem(122px);
+      height: rem(122px);
+      z-index: -1;
+      background: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+    }
+  }
 }

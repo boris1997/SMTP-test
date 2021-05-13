@@ -31,12 +31,14 @@
     }
     width: rem(196px);
     z-index: 0;
-    position: relative;
-    background-clip: padding-box; /* !importanté */
-    border: solid rem(1px) transparent; /* !importanté */
-    border-left: none;
-    border-image: linear-gradient(90deg, #83a6ff -0.49%, #4d6de2 99.88%);
-    border-image-slice: 1;
+    background: url("../assets/svg/button-linear-bg.svg");
+    // position: relative;
+    // background-clip: padding-box; /* !importanté */
+    // border: solid rem(1px) transparent; /* !importanté */
+    // border-left: none;
+    // border-image: 10px;
+    // border-image: linear-gradient(90deg, #83a6ff -0.49%, #4d6de2 99.88%);
+    // border-image-slice: 1;
   }
 
   &__button--active {
@@ -107,7 +109,7 @@
 .togglers-tariff {
   &__btn {
     @include flexbox(row, baseline, center);
-    margin-top: rem(22px);
+    margin-top: rem(17px);
   }
 
   &__text {
@@ -141,12 +143,17 @@
   }
   &__amount {
     margin-top: 0;
+    padding-top: rem(6px);
   }
 }
 
 .footer-tariff {
   &__btn {
     width: rem(200px);
+    background: none;
+    box-shadow: none;
+    color: $secColor;
+    background-color: $primaryColor;
   }
   &__info {
     @include flexbox(row, center, center);
@@ -156,9 +163,14 @@
   &__info {
     margin-top: rem(-32px);
   }
+  &__span {
+    margin-left: rem(-25px);
+  }
   &__text-info {
     color: $primaryColor;
     margin-left: rem(12px);
     text-decoration: underline;
+    background: none;
+    box-shadow: none;
   }
 }

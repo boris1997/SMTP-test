@@ -48,11 +48,16 @@
   &__transparent {
     background-color: transparent;
     color: $primaryColor;
-    font-weight: 600;
     border: rem(1px) solid $primaryColor;
     &:hover {
       background-color: $accentColor;
     }
+  }
+
+  &__popup {
+    color: $primaryColor;
+    box-shadow: rem(0px) rem(10px) rem(30px) rem(0px) rgba(36, 192, 226, 0.1);
+    background: linear-gradient(90deg, #16d9e3 0%, #26c2e9 47%, #46aef7 100%);
   }
 
   &__link {
@@ -63,22 +68,24 @@
 .incDec-btn {
   width: 100%;
   height: 100%;
+  transition: transform 0.3s, box-shadow 0.3s;
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgb (0 0 0 / 30%);
+  }
   &__body {
-    transition: all 0.2s ease-in-out;
   }
   &__item {
-    transition: fill 0.2s ease-in-out;
+    transition: fill 0.3s ease-in-out;
   }
 
-  &:hover &__item {
+  &:active &__item {
     fill: $primaryColor;
   }
   &:hover &__body {
-    fill: $accentColor;
   }
   &:active &__body {
-    fill: #0c3ab1;
-    stroke: #0c3ab1;
+    fill: url(#paint0_linear);
   }
   /*    &:active  &__item  {
 

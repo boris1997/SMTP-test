@@ -1,22 +1,19 @@
 .parametres {
-  /* &__section {
-    padding-bottom: rem(40px);
-  } */
-  /*   background: url("../assets/backgrounds/base/parametres-background.svg")
-    no-repeat center center/cover; */
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  &__section {
+    padding-bottom: rem(60px);
+  }
+  background: url("../assets/backgrounds/base/parametres-background.svg")
+    no-repeat center center/cover;
   &__body {
     @include flexbox(row, space-between, baseline);
   }
 
   &__main-title {
-    max-width: rem(632px);
+    max-width: rem(888px);
   }
 
-  &__title {
-    max-width: rem(585px);
+  &__sec-title {
+    max-width: rem(563px);
   }
 
   &__left {
@@ -25,9 +22,9 @@
   }
   &__list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 230px 230px;
     margin-top: rem(32px);
-    grid-column-gap: rem(32px);
+    grid-column-gap: 0;
   }
 
   &__img {

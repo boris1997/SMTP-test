@@ -6,34 +6,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,600,700&display=swap"
-        rel="stylesheet" as="style" />
+    <link rel="stylesheet" href="./css/articles.min.css">
     <title>SMTP</title>
 </head>
 
 <body>
-    <div class="page page_sec_color">
-        <div class="container section  page__wrapper">
-            <header class="header">
+    <div class="page section--main-background">
+        <header class="header">
+            <div class="container">
                 <div class="header__content">
                     <div class="header__logo logo">
                         <a href="index.html" class="logo__link">
-                            <img src="./assets/svg/SMTP logo.svg" alt="лого" class="logo__img">
+                            <img width="139px" height="41px" src="./assets/svg/SMTP logo.svg" alt="лого"
+                                class="logo__img">
                         </a>
                     </div>
                     <nav class="nav">
                         <ul class="nav__list">
-                            <li class="nav__items"><a href="base.html" class="nav__link">База организаций</a></li>
-                            <li class="nav__items"><a href="mail.html" class="nav__link">E-mail рассылка</a></li>
-                            <li class="nav__items"><a href="services.html" class="nav__link">Все
-                                    услуги</a></li>
-                            <li class="nav__items"><a href="articles.html"
-                                    class="nav__link nav__link--active">Статьи</a></li>
+                            <li class="nav__items item__text"><a href="index.html" class="nav__link">Главная</a>
+                            </li>
+                            <li class="nav__items item__text"><a href="base.html" class="nav__link">База
+                                    организаций</a>
+                            </li>
+                            <li class="nav__items item__text"><a href="mail.html" class="nav__link">E-mail
+                                    рассылка</a>
+                            </li>
+                            <li class="nav__items item__text"><a href="services.html" class="nav__link">Все
+                                    услуги</a>
+                            </li>
+                            <li class="nav__items item__text"><a href="articles.html" class="nav__link">Статьи</a>
+                            </li>
+                            <li class="nav__items item__text"> <a href="articles.html" class="nav__link"><svg
+                                        class="nav__icon" width="18" height="16" viewBox="0 0 18 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1 4.6665C1 3.56193 1.89543 2.6665 3 2.6665H15C16.1046 2.6665 17 3.56193 17 4.6665V11.9998C17 13.1044 16.1046 13.9998 15 13.9998H3C1.89543 13.9998 1 13.1044 1 11.9998V4.6665Z"
+                                            stroke="white" stroke-linejoin="round" />
+                                        <path
+                                            d="M2.42131 3.96937C1.91709 3.50717 2.24409 2.6665 2.9281 2.6665H15.0719C15.7559 2.6665 16.0829 3.50717 15.5787 3.96937L11.0272 8.14159C9.88021 9.19298 8.11979 9.19298 6.97283 8.14159L2.42131 3.96937Z"
+                                            stroke="white" stroke-linejoin="round" />
+                                    </svg>
+                                    info@arendasmtp.ru</a></li>
                         </ul>
                     </nav>
                     <div class="header__contacts">
-                        <a href="contact.html" class="header__btn btn__link btn btn__main">Контакты</a>
+                        <a href="contact.html" class="header__btn btn__link btn btn__main item__text"><span
+                                class="btn__span">Контакты</span></a>
                     </div>
                     <div class="cross hamburger-menu header__hamburger-menu">
                         <svg class="hamburger-menu__content" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +63,7 @@
                                 d="M0 60h62c13 0 6-28-4-18L35 65" />
                         </svg>
                     </div>
-                    <div class="page__sidebar sidebar sidebar--full-page">
+                    <div class="page__sidebar sidebar ">
                         <div class="sidebar__body">
                             <div class="sidebar__content">
                                 <div class="sidebar__menu mobile-menu">
@@ -84,25 +102,26 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-            </header>
+        </header>
+        <div class="container  page__wrapper--overflow">
             <div class="page__navigtion">
                 <ul class="navigtion-page">
                     <li class="navigtion-page__item"><a href="index.html"
                             class="nav__link navigtion-page__link">Главная</a>
                     </li>
-                    <li class="navigtion-page__item"><a href="base.html" class="navigtion-page__link">Статьи</a>
+                    <li class="navigtion-page__item"><a href="base.html" class="navigtion-page__link">Услуги</a>
                     </li>
                 </ul>
             </div>
-
         </div>
     </div>
 
     <section class="articles section--main-background section section--sec">
         <div class="container section__content">
             <div class="section__header">
-                <h1 class="articles__title main__item">Статьи</h1>
+                <h1 class="articles__title main__item main__title--sec">Статьи</h1>
             </div>
             <div class="articles__body">
                 <div class="articles__pages">
@@ -327,7 +346,7 @@
             </div>
         </div>
     </footer>
-    <script defer src="./js/script.js"></script>
+    <script defer src="./js/script.min.js"></script>
 </body>
 
 </html>

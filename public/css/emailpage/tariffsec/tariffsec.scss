@@ -6,7 +6,7 @@
     #191830 100.96%
   );
   &__title {
-    max-width: rem(395px);
+    max-width: rem(539px);
   }
   /*   &__body {
   } */
@@ -30,6 +30,10 @@
     border-radius: rem(12px);
   }
 
+  &__card--base {
+    background-color: #3f3d5f;
+  }
+
   &__togglers {
     display: none;
   }
@@ -43,8 +47,7 @@
 }
 
 .tariffsec--base {
-  background: url("../assets/backgrounds/base/buy-background.svg") no-repeat
-    center center/cover;
+  background: rgba(46, 45, 68, 1);
 }
 
 .card-tariffsec {
@@ -86,8 +89,8 @@
   }
 
   &__title {
-    font-weight: 600;
     margin-top: 0;
+    font-size: rem(26px);
   }
 
   /*   &__sale {
@@ -122,13 +125,15 @@
     font-weight: 700;
   }
   &__date {
-    font-weight: 600;
+    font-size: rem(28px);
+    line-height: rem(30px);
+    font-weight: 400;
     margin-top: rem(8px);
   }
   &__text {
     max-width: rem(269px);
     line-height: rem(26px);
-    margin-top: rem(20px);
+    margin-top: rem(32px);
   }
 
   &__free {

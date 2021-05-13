@@ -51,9 +51,9 @@ body {
   font-family: "TTCommons";
   overflow: auto;
 }
-.body {
+/* .body {
   height: 100vh;
-}
+} */
 input,
 button,
 textarea {
@@ -132,13 +132,14 @@ img {
     position: relative;
   }
 
-  &__contact {
-    height: calc(100vh - 200px) !important;
+  &__wrapper--overflow {
+    position: relative;
+    overflow: visible;
   }
 
   &__navigtion {
     padding-left: rem(12px);
-    @include position(absolute, "", rem(108px), auto, 0, auto, auto);
+    @include position(absolute, "", rem(28px), auto, 0, auto, auto);
   }
 
   &__sidebar {
@@ -155,6 +156,9 @@ img {
   &__sidebar--active {
     visibility: visible;
   }
+}
+.page--contact {
+  height: calc(100vh - 200px) !important;
 }
 
 .page--mail {
@@ -227,8 +231,11 @@ img {
 }
 
 .section--main-background {
-  background-color: #192942 !important;
+  background-color: #2d2c45 !important;
   background-image: none !important;
+  &:after {
+    content: none;
+  }
 }
 
 .page_screen_full + .section--sec {
@@ -242,6 +249,12 @@ img {
     font-size: rem(22px);
     font-weight: 500;
     margin-top: rem(18px);
+  }
+
+  &__title-modal {
+    line-height: rem(30px);
+    font-size: rem(28px);
+    font-weight: 500;
   }
 
   &__title-medium {
@@ -265,6 +278,14 @@ img {
     font-size: rem(20px);
     line-height: rem(24px);
     font-weight: 600;
+  }
+
+  &__main-gradient {
+    background: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+  }
+
+  &__sec-gradient {
+    background: linear-gradient(90deg, #83a6ff -0.49%, #4d6de2 99.88%);
   }
 }
 

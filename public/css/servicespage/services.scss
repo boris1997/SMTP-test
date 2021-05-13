@@ -19,17 +19,43 @@
   &__line {
     margin-top: rem(32px);
     height: rem(1px);
-    background-color: #2b4263;
+    background-color: #302F4B;
   }
 }
 
 .content-services {
   @include grid(0, rem(50px), rem(32px), 1, 1fr, auto-fit, rem(255px), 1fr);
   justify-items: center;
+  &__item {
+    /*    height: rem(316px); */
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    flex: 1;
+    background-color: #3f3d5f;
+    border-radius: rem(12px);
+    transition: all 0.2s ease-in-out;
+  }
+  &__item:hover .services-item__title {
+    display: none;
+  }
+  &__item:hover .services-item__btn {
+    display: flex;
+    margin-top: rem(32px);
+    &:after {
+      content: none;
+    }
+  }
+
+  &__item:nth-child(even) .services-item__header {
+    &::after {
+      background: linear-gradient(90deg, #83a6ff -0.49%, #6381ee 99.88%);
+    }
+  }
 }
 
 .pagination {
-  margin-top: rem(100px);
+  margin-top: rem(80px);
   @include flexbox(row, center, center);
   &__content {
     @include flexbox(row, space-between, center);
@@ -50,15 +76,19 @@
     }
 
     &::after {
-      @include position(absolute, "", 0, 0, rem(-7px), 0, auto);
+      @include position(absolute, "", 0, rem(4px), rem(-8.5px), 0, auto);
       border-radius: rem(100px);
-      background-color: $accentColor;
+      background: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
       height: rem(22px);
       width: rem(22px);
       z-index: -1;
       opacity: 0;
       transition: opacity 0.4s ease-in-out;
     }
+  }
+
+  &__arrow {
+    fill: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
   }
   &__btn--active {
     &:hover {
@@ -126,37 +156,72 @@
 }
 
 .services-item {
-  // &__header {
-  //   height: rem(276px);
-  //   /*   position: relative; */
-  // }
-
   &__header {
+    border-top-left-radius: rem(12px);
+    border-top-right-radius: rem(12px);
+    @include flexbox(row, center, center);
     position: relative;
+    overflow: hidden;
+    /* 
+    background: url("../assets/svg/main/advantages/Intersect.svg") no-repeat
+    center center/cover; */
+
+    &::after {
+      @include position(absolute, "", 0, 0, -25%, 0, auto);
+      background: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+      border-bottom-right-radius: 50%;
+      border-bottom-left-radius: 50%;
+      width: 150%;
+      /*     width: 100%;
+      height: 100%; */
+
+      z-index: -1;
+    }
+  }
+
+  &__background {
+    @include position(
+      absolute,
+      url("../assets/svg/main/advantages/intersect.svg"),
+      0,
+      auto,
+      0,
+      0,
+      auto
+    );
+    z-index: -1;
+  }
+
+  &__body {
+    overflow: hidden;
+    padding: 0 rem(12px);
+  }
+
+  &__text,
+  &__title {
+    text-align: center;
+  }
+
+  &__title {
+    max-width: 155px;
+    margin: auto;
+    margin-top: rem(28px);
+    margin-bottom: rem(33px);
+  }
+  &__text {
+    margin: auto;
+    max-width: rem(322px);
+  }
+
+  &__text-short {
+    max-width: rem(312px);
   }
   &__img {
-    width: rem(276px);
+    margin: auto;
+    display: block;
   }
 
   &__btn {
-    margin-top: rem(32px);
-    width: 100%;
+    display: none;
   }
-
-  &__text {
-    max-width: rem(182px);
-    @include position(absolute, "", auto, rem(20px), rem(20px), auto, auto);
-  }
-
-  /* &__link--active {
-    &:hover {
-      color: $accentColor !important;
-    }
-    &:active {
-      color: $accentColor !important;
-    }
-    &::after {
-      width: 100%;
-    }
-  } */
 }
