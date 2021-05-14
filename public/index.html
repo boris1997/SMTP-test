@@ -58,8 +58,8 @@
                         </ul>
                     </nav>
                     <div class="header__contacts">
-                        <a href="#" class="header__btn btn__link btn btn__main item__text"><span
-                                class="btn__span">Контакты</span>
+                        <a href="contact.html" class="header__btn btn__link btn btn__main item__text">
+                            <span class="btn__span">Контакты</span>
                             <div class="rippleJS"></div>
                         </a>
                     </div>
@@ -529,7 +529,7 @@
 
                                 <div class="card-tariff__footer footer-tariff">
                                     <button data-modal="form" type="button"
-                                        class="footer-tariff__btn item__text btn__popup btn btn__main"><span
+                                        class="footer-tariff__btn item__text btn__shadow btn__linear btn btn__popup btn__main"><span
                                             class="btn__span footer-tariff__span">
                                             Оформить
                                             заказ</span></button>
@@ -956,8 +956,11 @@
                                 данных </a>
                         </p>
                     </div>
-                    <button data-modal="success" type="submit" class="btn btn__main contact-form__btn">
-                        Отправить
+                    <button data-modal="success" type="submit"
+                        class="btn contact-form__btn btn__popup btn__linear  btn__shadow">
+                        <span class="btn__span"> Отправить</span>
+                        <div class="rippleJS"></div>
+
                     </button>
                 </form>
             </div>
@@ -968,7 +971,7 @@
                     <img src="./assets/svg/success.svg" alt="" srcset="">
                     <h2 class="modal-success__title item__title">Спасибо за заявку!</h2>
                     <p class="modal-success__text item__text">Мы свяжемся с вами в ближайшее время.</p>
-                    <button data-modal="close" type="button" class="btn btn__main contact-form__btn">
+                    <button data-modal="close" type="button" class="btn contact-form__btn btn__shadow btn__linear ">
                         Закрыть
                     </button>
                 </div>
@@ -1016,7 +1019,7 @@
 
     </div>
 
-    <script defer src="./js/script.min.js"></script>
+    <script defer src="./js/script.js"></script>
 
 </body>
 

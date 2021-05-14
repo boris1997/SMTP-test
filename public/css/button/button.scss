@@ -52,22 +52,30 @@
   }
   &__transparent {
     background-color: transparent;
-    color: $primaryColor;
-    @include flexbox(column, center, center);
     border: rem(1px) solid $primaryColor;
     &:active {
       border: none;
     }
   }
 
-  &__transparent &__span {
+  &__linear,
+  &__transparent {
+    color: $primaryColor;
+    @include flexbox(column, center, center);
+  }
+
+  &__transparent &__span,
+  &__linear &__span {
     margin-left: 0;
     align-self: center;
   }
 
-  &__popup {
+  &__shadow {
     color: $primaryColor;
     box-shadow: rem(0px) rem(10px) rem(30px) rem(0px) rgba(36, 192, 226, 0.1);
+  }
+
+  &__linear {
     background: linear-gradient(90deg, #16d9e3 0%, #26c2e9 47%, #46aef7 100%);
   }
 
