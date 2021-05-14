@@ -5,14 +5,18 @@
   outline: none;
   background-color: transparent;
   margin-top: 0;
+  position: relative;
   height: rem(50px);
   border-radius: rem(4px);
   font-weight: 500;
   // font-size: rem(16px);
-  transition: background 0.3s ease-in-out;
-  &:active {
+  transition: transform 0.3s, box-shadow 0.3s;
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgb (0 0 0 / 30%);
+  } /*   &:active {
     background-color: #0c3ab1 !important;
-  }
+  } */
   &__main {
     background-color: $primaryColor;
     color: $secColor;
@@ -32,13 +36,14 @@
       height: rem(12px);
     }
     &:hover {
-      background-color: #255ae3;
+      border: none;
     }
   }
 
   &__span {
     align-self: baseline;
     margin-left: rem(28px);
+    z-index: 1;
   }
   &__toggler {
     cursor: pointer;
@@ -48,10 +53,16 @@
   &__transparent {
     background-color: transparent;
     color: $primaryColor;
+    @include flexbox(column, center, center);
     border: rem(1px) solid $primaryColor;
-    &:hover {
-      background-color: $accentColor;
+    &:active {
+      border: none;
     }
+  }
+
+  &__transparent &__span {
+    margin-left: 0;
+    align-self: center;
   }
 
   &__popup {

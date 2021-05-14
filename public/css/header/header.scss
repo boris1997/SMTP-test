@@ -39,10 +39,12 @@
   }
   &__link {
     position: relative;
-    transition: color 0.2s ease-in-out;
+    /*    transition: background-clip 0.2s ease-in-out; */
     @include flexbox(row, space-between, center);
     &:hover {
-      color: #2561fa;
+      background: rgba(41, 227, 249, 1);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     &:active {
       color: $accentColor;
@@ -52,10 +54,11 @@
       content: "";
       position: absolute;
       width: 0;
-      left: 0;
-      bottom: rem(-2px);
-      height: rem(2px);
-      background-color: $accentColor;
+      left: -4%;
+      bottom: rem(-9px);
+      height: rem(4px);
+      border-radius: rem(1000px);
+      background: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
       transition: width 0.4s ease-in-out;
     }
   }
@@ -67,7 +70,7 @@
       color: $primaryColor !important;
     }
     &::after {
-      width: 100%;
+      width: 110% !important;
     }
   }
   &__icon {

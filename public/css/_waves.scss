@@ -1,114 +1,85 @@
+/** NOTE: When this is updated, refresh ripple.js' minified version. */
 
-/*!
- * Waves v0.6.0
- * http://fian.my.id/Waves
- *
- * Copyright 2014 Alfiana E. Sibuea and other contributors
- * Released under the MIT license
- * https://github.com/fians/Waves/blob/master/LICENSE
+/**
+ * contains a ripple. Will normally grow to fixed size (200px/200px), not
+ * related to the holder itself.
  */
 
-
-.waves-effect {
-  position: relative;
-  cursor: pointer;
-  display: inline-block;
-  overflow: hidden;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  vertical-align: middle;
-  z-index: 1;
-  transition: .3s ease-out;
-
-  .waves-ripple {
-    position: absolute;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    margin-top:-10px;
-    margin-left:-10px;
-    opacity: 0;
-
-    background: rgba(0,0,0,0.2);
-    transition: all 0.7s ease-out;
-    transition-property: transform, opacity;
-    transform: scale(0);
-    pointer-events: none;
-  }
-
-  // Waves Colors
-  &.waves-light .waves-ripple {
-    background-color: rgba(255, 255, 255, 0.45);
-  }
-  &.waves-red .waves-ripple {
-    background-color: rgba(244, 67, 54, .70);
-  }
-  &.waves-yellow .waves-ripple {
-    background-color: rgba(255, 235, 59, .70);
-  }
-  &.waves-orange .waves-ripple {
-    background-color: rgba(255, 152, 0, .70);
-  }
-  &.waves-purple .waves-ripple {
-    background-color: rgba(156, 39, 176, 0.70);
-  }
-  &.waves-green .waves-ripple {
-    background-color: rgba(76, 175, 80, 0.70);
-  }
-  &.waves-teal .waves-ripple {
-    background-color: rgba(0, 150, 136, 0.70);
-  }
-
-  // Style input button bug.
-  input[type="button"], input[type="reset"], input[type="submit"] {
-    border: 0;
-    font-style: normal;
-    font-size: inherit;
-    text-transform: inherit;
-    background: none;
-  }
-
-  img {
-    position: relative;
-    z-index: -1;
-  }
-}
-
-.waves-notransition {
-  transition: none #{"!important"};
-}
-
-.waves-circle {
-  transform: translateZ(0);
-  -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
-}
-
-.waves-input-wrapper {
-  border-radius: 0.2em;
-  vertical-align: bottom;
-
-  .waves-button-input {
-    position: relative;
-    top: 0;
-    left: 0;
-    z-index: 1;
-  }
-}
-
-.waves-circle {
-  text-align: center;
-  width: 2.5em;
-  height: 2.5em;
-  line-height: 2.5em;
-  border-radius: 50%;
-  -webkit-mask-image: none;
-}
-
-.waves-block {
+/* .rippleJS {
   display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  -webkit-mask-image: -webkit-radial-gradient(circle, #fff, #000) !important;
+} */
+// .rippleJS.fill::after {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   content: "";
+// }
+// .rippleJS.fill.active {
+//   border-radius: 1000000px;
+// }
+// .rippleJS .ripple {
+//   position: absolute;
+//   border-radius: 100%;
+//   background: #eceff4 !important;
+//   opacity: 0.2 !important;
+//   transition: all 0.4s ease-out !important;
+//   width: 0;
+//   height: 0;
+//   pointer-events: none;
+//   -webkit-touch-callout: none;
+//   -webkit-user-select: none;
+//   -khtml-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+// }
+// .rippleJS .ripple.held {
+//   background: #eceff4 !important;
+//   opacity: 0.4 !important;
+// }
+// .rippleJS .ripple.done {
+//   opacity: 0;
+// }
+
+.btn__main,
+.btn__transparent {
+  vertical-align: bottom;
+  transition: box-shadow 0.25s;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transition: border 0.15s;
+  margin-bottom: 8px;
 }
 
-/* Firefox Bug: link not triggered */
-.waves-effect .waves-ripple {
-  z-index: -1;
+.btn__main .rippleJS,
+.btn__transparent .rippleJS {
+  opacity: 1;
+  border-radius: 4px; /** parent border-radius minus border width */
+}
+
+.btn__main .rippleJS .ripple {
+  opacity: 1;
+  background: #eceff4 !important;
+}
+
+.btn__transparent .rippleJS .ripple {
+  opacity: 1;
+  z-index: 0;
+  background: linear-gradient(
+    90deg,
+    #16d9e3 0%,
+    #26c2e9 47%,
+    #46aef7 100%
+  ) !important;
+  /*  background: red !important; */
 }
