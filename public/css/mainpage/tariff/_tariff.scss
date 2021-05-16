@@ -166,7 +166,7 @@
     margin-top: rem(-32px);
   }
   &__span {
-    margin-left: rem(-25px);
+    margin-left: rem(-25px) !important;
   }
   &__text-info {
     color: $primaryColor;

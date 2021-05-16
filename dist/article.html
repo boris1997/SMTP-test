@@ -65,34 +65,32 @@
                                 d="M0 60h62c13 0 6-28-4-18L35 65" />
                         </svg>
                     </div>
-                    <div class="page__sidebar sidebar ">
+                    <div class="page__sidebar sidebar sidebar--full-page">
                         <div class="sidebar__body">
                             <div class="sidebar__content">
                                 <div class="sidebar__menu mobile-menu">
                                     <ul class="mobile-menu__wrapper mobile-menu__active">
                                         <li class="mobile-menu__item mobile-menu__item--active">
-                                            <a class="mobile-menu__link item__text-medium mobile-menu__toggler"
+                                            <a class="mobile-menu__link item__title mobile-menu__toggler"
                                                 href="base.html" class="menu__link">База организаций</a>
                                         </li>
                                         <li class="mobile-menu__item mobile-menu__item--active">
-                                            <a class="mobile-menu__link item__text-medium mobile-menu__toggler"
+                                            <a class="mobile-menu__link item__title mobile-menu__toggler"
                                                 href="mail.html">E-mail
                                                 рассылка</a>
 
                                         </li>
                                         <li class="mobile-menu__item mobile-menu__item--active">
-                                            <a class="mobile-menu__link item__text-medium mobile-menu__toggler"
+                                            <a class="mobile-menu__link item__title mobile-menu__toggler"
                                                 href="services.html">Все
                                                 услуги</a>
 
                                         </li>
                                         <li class="mobile-menu__item mobile-menu__item--active">
-                                            <a class="mobile-menu__link item__text-medium"
-                                                href="articles.html">Статьи</a>
+                                            <a class="mobile-menu__link item__title" href="articles.html">Статьи</a>
                                         </li>
                                         <li class="mobile-menu__item mobile-menu__item--active"><a
-                                                class="mobile-menu__link item__text-medium "
-                                                href="contact.html">Контакты</a>
+                                                class="mobile-menu__link item__title " href="contact.html">Контакты</a>
                                         </li>
 
                                     </ul>
@@ -107,22 +105,22 @@
             </div>
 
         </header>
-        <div class="container  page__wrapper--overflow">
-            <div class="page__navigtion">
-                <ul class="navigtion-page">
-                    <li class="navigtion-page__item"><a href="index.html"
-                            class="nav__link navigtion-page__link">Главная</a>
-                    </li>
-                    <li class="navigtion-page__item"><a href="base.html" class="navigtion-page__link">Услуги</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
     </div>
     <section class="article section section--main-background section--sec">
         <div class="container section__content">
+            <div class="container  page__wrapper--overflow">
+                <div class="page__navigtion">
+                    <ul class="navigtion-page">
+                        <li class="navigtion-page__item"><a href="index.html"
+                                class="nav__link navigtion-page__link">Главная</a>
+                        </li>
+                        <li class="navigtion-page__item"><a href="base.html" class="navigtion-page__link">Статья</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <div class="section__header">
-                <h1 class="article__title main__item">Заголовок статьи</h1>
+                <h1 class="article__title main__item main__title--sec ">Заголовок статьи</h1>
             </div>
             <div class="article__header">
                 <div class="article__main">
@@ -165,7 +163,7 @@
                     шаблонах которых используется Lorem Ipsum.</p>
             </div>
 
-            <div class="article__articles usefull-articles">
+            <div class="article__articles usefull-articles section__second">
                 <h4 class="usefull-articles__title item__title">Вам также может быть интересно</h4>
                 <div class="usefull-articles__body">
                     <div class="articles-content slider slider--smooth usefull-articles__slider">
@@ -225,11 +223,11 @@
                     </div>
                 </div>
             </div>
-            <div class="article__interest interest-service">
+            <div class="article__interest interest-service section__second">
                 <h4 class="interest-service__title item__title">Лучшие предложения для вас</h4>
                 <div class="interest-service__body">
                     <div class="content-services interest-service__slider slider slider--smooth">
-                        <div class="content-services__item services-item advantages__carousel-item">
+                        <div class="content-services__item services-item interest-service__slider-item">
                             <div class="services-item__wrapper">
                                 <div class="services-item__header">
                                     <img class="services-item__img" src="./assets/svg/services/ic-1.svg" alt="Рассылка
@@ -239,20 +237,15 @@
 
                                     <h3 class="services-item__title item__title">Рассылка
                                         по Новосибирску</h3>
+
                                     <a href="service.html"
-                                        class="btn__link btn btn__main services-item__btn item__text"> <span
-                                            class="btn__span"> Подробнее</span>
-                                        <div class="rippleJS"></div>
-                                    </a>
-                                    <a href="service.html"
-                                        class="btn__link btn btn__main services-item__btn item__text"> <span
-                                            class="btn__span"> Подробнее</span>
+                                        class="btn__link btn btn__main services-item__btn item__text"> Подробнее
                                         <div class="rippleJS"></div>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="content-services__item services-item advantages__carousel-item">
+                        <div class="content-services__item services-item interest-service__slider-item">
                             <div class="services-item__wrapper">
                                 <div class="services-item__header">
                                     <img class="services-item__img" src="./assets/svg/services/ic-2.svg"
@@ -262,15 +255,14 @@
 
                                     <h3 class="services-item__title item__title">База email Иркутска</h3>
                                     <a href="service.html"
-                                        class="btn__link btn btn__main services-item__btn item__text"> <span
-                                            class="btn__span"> Подробнее</span>
+                                        class="btn__link btn btn__main services-item__btn item__text"> Подробнее
                                         <div class="rippleJS"></div>
                                     </a>
 
                                 </div>
                             </div>
                         </div>
-                        <div class="content-services__item services-item advantages__carousel-item">
+                        <div class="content-services__item services-item interest-service__slider-item">
                             <div class="services-item__wrapper">
                                 <div class="services-item__header">
                                     <img class="services-item__img" src="./assets/svg/services/ic-1.svg" alt="Рассылка
@@ -281,15 +273,14 @@
                                     <h3 class="services-item__title item__title">Рассылка
                                         по Новосибирску</h3>
                                     <a href="service.html"
-                                        class="btn__link btn btn__main services-item__btn item__text"> <span
-                                            class="btn__span"> Подробнее</span>
+                                        class="btn__link btn btn__main services-item__btn item__text"> Подробнее
                                         <div class="rippleJS"></div>
                                     </a>
 
                                 </div>
                             </div>
                         </div>
-                        <div class="content-services__item services-item advantages__carousel-item">
+                        <div class="content-services__item services-item interest-service__slider-item">
                             <div class="services-item__wrapper">
                                 <div class="services-item__header">
                                     <img class="services-item__img" src="./assets/svg/services/ic-2.svg"
@@ -299,8 +290,7 @@
 
                                     <h3 class="services-item__title item__title">База email Иркутска</h3>
                                     <a href="service.html"
-                                        class="btn__link btn btn__main services-item__btn item__text"> <span
-                                            class="btn__span"> Подробнее</span>
+                                        class="btn__link btn btn__main services-item__btn item__text"> Подробнее
                                         <div class="rippleJS"></div>
                                     </a>
 

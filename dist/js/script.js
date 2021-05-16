@@ -1564,7 +1564,7 @@ class Scroll {
 
         console.log('ok')
         window.onresize = () => {
-            if (window.innerWidth > 1024 && this.sidebar.classList.contains('page__sidebar--active')) {
+            if (window.innerWidth > 1224 && this.sidebar.classList.contains('page__sidebar--active')) {
                 this.sidebar.classList.contains('sidebar--full-page') && this.page.classList.toggle('page_screen_full')
                 this.removeSidebar()
             }
@@ -2064,6 +2064,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
+    const contentEffect = [...document.querySelectorAll(".effect__item")];
+    if (contentEffect.length !== 0) {
+
+        const wrapperEffect = document.querySelector(".effect__body");
+        const mainEffect = document.querySelector(".effect__slider");
+        const resizeOberverEffect = document.querySelector(".effect__resizer");
+        const sliderBreakpointEffect = 768;
+        const sliderEffect = new Slider(contentEffect, mainEffect, wrapperEffect, sliderBreakpointEffect, null, null, null, resizeOberverEffect, null, null, 0, null, null);
+
+        /*  sliderCoffee.getUnactiveElts(); */
+        /* sliderCoffee.initArrowsBtns(); */
+        sliderEffect.getMargin();
+        sliderEffect.getTranslateStepX();
+        sliderEffect.initDrag();
+        sliderEffect.contextMenu();
+        sliderEffect.slideResizeObserver();
+    }
+
+
     // Advantages Slider
 
     const contentProgramm = [...document.querySelectorAll(".programm__item ")];
@@ -2106,6 +2125,9 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderProgramm.slideResizeObserver();
 
     }
+
+
+
     const contentService = [...document.querySelectorAll(".interest-service__slider-item")];
     if (contentService.length !== 0) {
         const mainService = document.querySelector(".interest-service__slider");

@@ -143,7 +143,8 @@ function css(html, style) {
         }))
         .pipe(group_media())
         .pipe(purgecss({
-            content: [`public/${html}`]
+            content: [`public/${html}`],
+            safelist: ['page__sidebar--active', 'sidebar__body--active', 'overlay--show', 'hamburger-menu__content--active', 'direction__accordion-body--hide', 'page_screen_full']
         }))
         .pipe(dest(path.build.css))
         .pipe(clean_css())

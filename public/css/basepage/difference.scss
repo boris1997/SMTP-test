@@ -31,17 +31,40 @@
 }
 
 .item-difference {
-  @include flexbox(row, baseline, flex-start);
+  display: grid;
+  grid-template-areas:
+    "order title"
+    "order text"
+    ".     text"
+    ".     text";
+  grid-template-columns: 0.18fr 1fr;
+  grid-template-rows: 0.4fr 1fr 1fr 1fr;
   &__title {
     margin-top: 0;
   }
+
+  &__left {
+    grid-area: order;
+  }
+
+  &__title {
+    z-index: 1;
+    grid-area: title;
+  }
   &__text {
+    z-index: 1;
+    grid-area: text;
     max-width: rem(484px);
   }
   &__right {
     margin-left: rem(12px);
     z-index: 1;
   }
+
+  &__sec {
+    margin-left: rem(10px);
+  }
+
   margin: 0;
   &__order {
     font-size: rem(76px);
@@ -49,8 +72,9 @@
     z-index: 1;
     padding-top: rem(12px);
     position: relative;
-    display: flex;
-    justify-content: center;
+    /*   display: flex;
+    justify-content: center; */
+    display: block;
     &::after {
       @include position(absolute, "", rem(-5px), 0, 0, 0, auto);
       border-radius: rem(100px);

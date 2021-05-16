@@ -4,8 +4,9 @@
   }
   background: url("../assets/backgrounds/mail/effect-background.svg") no-repeat
     center center/cover;
-  &__body {
+  &__slider {
     @include flexbox(row, space-between, baseline);
+    gap: rem(16px);
   }
 
   &__main-title {
@@ -37,6 +38,11 @@
 
   &__item::marker {
     content: url("../../assets/svg/check.svg");
+  }
+  &__resizer {
+    position: absolute;
+    visibility: hidden;
+    width: 10px;
   }
 }
 

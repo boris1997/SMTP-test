@@ -1,17 +1,22 @@
 .cities {
   z-index: 1;
   overflow: hidden;
-  position: relative;
+
   &__map {
-    @include position(absolute, "", rem(177px), 0, 0, auto, none);
-    left: calc(790 / 1920 * 100%);
-    right: min(100px);
+    @include position(absolute, "", rem(-25px), 0, rem(-304px), auto, none);
+
     z-index: -1;
   }
 
   &__section {
     padding-bottom: rem(40px);
   }
+
+  &__body,
+  &__section {
+    overflow: visible;
+  }
+
   background: #2e2d44;
 
   &__header {
@@ -24,7 +29,14 @@
   &__left {
     align-self: center;
     flex: 1;
+    z-index: 2;
   }
+
+  &__right {
+    z-index: 1;
+    position: relative;
+  }
+
   &__list,
   &__list-hidden {
     @include grid(0, rem(18px), rem(0px), 1, 1fr, auto-fill, rem(200px), 0.3fr);
