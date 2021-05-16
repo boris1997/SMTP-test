@@ -6,7 +6,8 @@
   }
   &__body {
     /*     @include flexbox(row, space-between, space-between); */
-    @include grid(0, rem(75px), rem(32px), 1, 1fr, auto-fit, rem(300px), 1fr);
+    @include grid(0, rem(75px), rem(32px), 1, 1fr, auto-fit, rem(300px), 0.8fr);
+    // grid-template: repeat(1,1fr)/repeat(auto-fit,minmax(18.75rem,0.8fr));
     justify-content: center;
   }
 

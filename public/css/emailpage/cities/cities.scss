@@ -1,9 +1,18 @@
 .cities {
+  z-index: 1;
+  overflow: hidden;
+  position: relative;
+  &__map {
+    @include position(absolute, "", rem(177px), 0, 0, auto, none);
+    left: calc(790 / 1920 * 100%);
+    right: min(100px);
+    z-index: -1;
+  }
+
   &__section {
     padding-bottom: rem(40px);
   }
-  background: url("../../../assets/backgrounds/mail/cities-background.svg")
-    no-repeat center center/cover;
+  background: #2e2d44;
 
   &__header {
     margin-bottom: rem(30px);

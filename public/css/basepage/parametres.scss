@@ -5,7 +5,7 @@
   background: url("../assets/backgrounds/base/parametres-background.svg")
     no-repeat center center/cover;
   &__body {
-    @include flexbox(row, space-between, baseline);
+    @include flexbox(row, space-between, center);
   }
 
   &__main-title {
@@ -22,8 +22,7 @@
   }
   &__list {
     display: grid;
-    grid-template-columns: 230px 230px;
-    margin-top: rem(32px);
+    grid-template-columns: rem(230px) rem(120px);
     grid-column-gap: 0;
   }
 

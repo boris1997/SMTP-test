@@ -38,6 +38,7 @@
   &__left--email {
     margin-top: rem(35px);
   }
+
   &__title,
   &__title-base {
     font-size: rem(62px);
@@ -53,6 +54,11 @@
     width: rem(140px);
   }
 
+  &__right {
+    @include flexbox(row, flex-end, baseline);
+    flex: 0.9;
+  }
+
   &__downloads,
   &__updates {
     @include position(absolute, "", 0, 0, 0, 0, auto);
@@ -62,8 +68,8 @@
   &__downloads {
     width: rem(117.5px);
     height: rem(117.5px);
-    right: auto;
-    left: rem(672px);
+    left: 0;
+    right: rem(-352px);
     top: auto;
     bottom: 0;
   }
@@ -71,8 +77,8 @@
   &__updates {
     width: rem(146px);
     height: rem(146px);
-    left: rem(540px);
-    right: auto;
+    left: 0;
+    right: rem(-112px);
     top: rem(170px);
   }
 

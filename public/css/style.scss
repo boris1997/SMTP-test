@@ -115,17 +115,25 @@ img {
   background-color: #1d1c39;
   position: relative;
   z-index: 0;
+  overflow: hidden !important;
   &:after {
     @include position(
       absolute,
-      url("../assets/svg/main/main/Ellipse.svg"),
-      0,
+      url("../assets/svg/main/main/Ellipse-full.svg"),
+      rem(-407px),
       auto,
-      auto,
+      54%,
       0,
       auto
     );
+    object-fit: cover;
+    width: rem(1173px);
+    height: rem(1173px);
     z-index: -1;
+    display: flex;
+    /*   @media (max-width: 1920px) {
+      width: 45%;
+    } */
   }
   /*   transition: background 0.2s ease-in-out 0.2s; */
   &__wrapper {
@@ -177,14 +185,14 @@ img {
 .navigtion-page {
   display: flex;
   &__item + &__item {
-    margin-left: rem(22px);
+    margin-left: rem(26px);
     position: relative;
     opacity: 0.6;
     &:before {
       @include position(
         absolute,
         url("../assets/svg/page-pagination-icon.svg"),
-        rem(-10px),
+        rem(-5px),
         0,
         rem(-15px),
         auto,
@@ -289,6 +297,20 @@ img {
   }
 }
 
+.link {
+  &__underline {
+    &:hover {
+      color: #29e3f9;
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: #17b6c9;
+      text-decoration: underline;
+    }
+  }
+}
+
 .mg_top_none {
   margin-top: 0 !important;
 }
@@ -358,6 +380,9 @@ img {
 }
 
 .switch-radio {
+  &__item + &__item {
+    margin-top: rem(15px);
+  }
   &__input {
     position: relative;
     width: rem(12px);
@@ -384,4 +409,10 @@ img {
   &__label {
     margin-left: rem(20px);
   }
+}
+
+.opportunity__body,
+.suit__body,
+.suitBase__body {
+  margin-top: rem(90px) !important;
 }

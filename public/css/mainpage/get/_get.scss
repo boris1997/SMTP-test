@@ -12,6 +12,10 @@
   &__left {
     align-self: flex-start;
   }
+  &__left,
+  &__right {
+    flex: 1;
+  }
 
   &__right {
     margin-left: rem(147px);

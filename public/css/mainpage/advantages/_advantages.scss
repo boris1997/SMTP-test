@@ -1,7 +1,17 @@
 .advantages {
   background-color: #2e2d44;
   &__slider {
-    @include flexbox(row, space-between, center);
+    @include grid(
+      0,
+      rem(80px),
+      rem(30px),
+      1,
+      1fr,
+      auto-fill,
+      rem(380px),
+      rem(380px)
+    );
+    justify-content: center;
     position: relative;
   }
 
@@ -21,9 +31,9 @@
     } */
   }
 
-  &__item + &__item {
+  /*   &__item + &__item {
     margin-left: rem(32px);
-  }
+  } */
   //   &__item:nth-child(1), &__item:nth-child(3) {
   //     &:after {
   //       left: rem(-70px);

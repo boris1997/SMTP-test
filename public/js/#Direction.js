@@ -39,14 +39,26 @@ class Direction {
         parentTop = +parentTop.toFixed();
         let childTop = direction.getBoundingClientRect().top;
         childTop = +childTop.toFixed()
+
+
+        // let directionUlLength = direction.parentNode.children.length;
+        let directionUl = [...direction.parentNode.children];
         if (window.innerWidth > 1190) {
             childMarginRight > 0 && (direction.style.marginRight = '0') // console.log 
         }
-        if ((childTop - parentTop) > childMarginTop && direction.classList.contains(this.directionActive) && this.directions.indexOf(direction) % 3 !== 0) {
+        if ((childTop - parentTop) > childMarginTop && direction.classList.contains(this.directionActive) && directionUl.indexOf(direction) !== 0) {
             this.removeClass(direction, this.directionActive)
             direction.previousElementSibling.style.marginRight = '34px'
         }
-        if (childTop - parentTop === childMarginTop && !direction.classList.contains(this.directionActive) && this.directions.indexOf(direction) % 3 !== 0) {
+
+        if (childTop - parentTop === childMarginTop && !direction.classList.contains(this.directionActive) && directionUl.indexOf(direction) !== 0) {
+            // console.log(direction.classList.contains(this.directionActive))
+            /*       console.log(childTop, parentTop)
+            console.log(childMarginTop) */
+            /*    console.log(this.directions)
+               console.log(this.directions.indexOf(direction))
+               console.log(directionUlLength)
+               console.log(direction) */
             direction.previousElementSibling.style.marginRight = '0'
             this.addClass(direction, this.directionActive)
         }
@@ -60,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const directions = [...document.querySelectorAll(".direction__item")];
     const directionsBody = document.querySelector(".direction__body-wrapper");
     const directionActive = 'direction__item--margin';
-    directions.length !== 0 && new Direction(directionsBody, directions, directionActive); 
+    directions.length !== 0 && new Direction(directionsBody, directions, directionActive);
 
 
 

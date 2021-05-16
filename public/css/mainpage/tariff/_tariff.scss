@@ -31,8 +31,9 @@
     }
     width: rem(196px);
     z-index: 0;
-    background: url("../assets/svg/button-linear-bg.svg");
-    
+    background: url("../assets/svg/button-linear-bg.svg") no-repeat center
+      center/cover;
+
     // position: relative;
     // background-clip: padding-box; /* !importanté */
     // border: solid rem(1px) transparent; /* !importanté */

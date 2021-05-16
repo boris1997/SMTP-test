@@ -7,6 +7,11 @@
     max-width: rem(670px);
   }
 
+  &__body {
+    display: flex;
+    flex-direction: column;
+  }
+
   background: linear-gradient(
     100.74deg,
     #191830 0%,
@@ -27,56 +32,64 @@
 .programm-content {
   &__title {
     text-align: center;
+    margin-top: 0;
+    font-size: rem(22px) !important;
   }
-  &__body {
+  /*   &__body {
     margin-top: rem(50px);
-  }
+  } */
 
-  &__wrapper {
+  &__body {
     display: grid;
     grid-template-areas:
+      "header header header"
       "first img third"
       "second img fourth";
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 0.4fr 1fr 1fr;
   }
+
   &__item:nth-child(1) {
+    grid-area: header;
+  }
+
+  &__item:nth-child(2) {
     grid-area: first;
   }
-  &__item:nth-child(1) > .item-programm {
+  &__item:nth-child(2) > .item-programm {
     margin-top: rem(92px);
     margin-left: rem(97px);
   }
 
-  &__item:nth-child(1) .item-programm__title {
+  &__item:nth-child(2) .item-programm__title {
     max-width: rem(509px);
   }
-  &__item:nth-child(2) {
+  &__item:nth-child(3) {
     grid-area: second;
   }
 
-  &__item:nth-child(2) > .item-programm {
+  &__item:nth-child(3) > .item-programm {
     margin-top: rem(29px);
   }
-  &__item:nth-child(2) .item-programm__title {
+  &__item:nth-child(3) .item-programm__title {
     max-width: rem(174px);
   }
-  &__item:nth-child(3) {
+  &__item:nth-child(4) {
     grid-area: third;
   }
-  &__item:nth-child(3) > .item-programm {
+  &__item:nth-child(4) > .item-programm {
     margin-top: rem(92px);
     margin-left: rem(20px);
   }
-  &__item:nth-child(4) {
+  &__item:nth-child(5) {
     grid-area: fourth;
   }
-  &__item:nth-child(4) > .item-programm {
+  &__item:nth-child(5) > .item-programm {
     margin-top: rem(29px);
     margin-left: rem(70px);
   }
 
-  &__item:nth-child(5) {
+  &__item:nth-child(6) {
     grid-area: img;
   }
 }
