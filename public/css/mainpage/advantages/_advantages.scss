@@ -3,13 +3,13 @@
   &__slider {
     @include grid(
       0,
-      rem(80px),
+      rem(32px),
       rem(32px),
       1,
       1fr,
       auto-fill,
-      rem(380px),
-      rem(380px)
+      rem(364px),
+      rem(364px)
     );
     justify-content: center;
     position: relative;
