@@ -804,17 +804,17 @@
   }
 
   .content-services__item:hover .services-item__btn {
-    margin: 0 rem(22px);
     margin-top: 0;
+  }
+
+  .services-item__btn {
+    margin: 0 rem(19px) !important;
+    display: flex;
+    margin-bottom: rem(17px) !important;
   }
 
   .services-item__title {
     margin-bottom: rem(15px);
-  }
-
-  .services-item__btn {
-    display: flex;
-    margin-bottom: rem(17px);
   }
 
   .popup__modal-wrapper {

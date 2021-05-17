@@ -179,11 +179,15 @@
     }
   }
   &__btn {
+    margin-bottom: rem(39px);
     &::after {
       content: "" !important;
     }
   }
 
+  &__btn .btn__span {
+    margin: auto;
+  }
   &__background {
     @include position(
       absolute,
