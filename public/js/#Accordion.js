@@ -1,6 +1,6 @@
 class Accordion {
 
-    constructor(btn, text, activeBtn, activeClasses, activeText, textToggle, textToggleBtn, transitionTime, heightVar, additionalElement) {
+    constructor(btn, text, activeBtn, activeClasses, activeText, textToggle, textToggleBtn, transitionTime, heightVar, additionalElement, elementBody) {
         this.btn = btn;
         this.text = text;
         this.activeBtn = activeBtn;
@@ -11,6 +11,7 @@ class Accordion {
         this.transitionTime = transitionTime;
         this.heightVar = heightVar;
         this.additionalElement = additionalElement;
+        this.elementBody = elementBody;
         this.initEvents()
     }
 
@@ -19,18 +20,24 @@ class Accordion {
         this.initArrayBtn()
     }
 
-    fullHeight = (element) => { console.log(element); element.style.height = '500px'; }
+    fullHeight = (element) => {
+        setTimeout(() => {
+            console.log(this.elementBody.clientHeight);
+            element.style.height = this.elementBody.clientHeight + 'px';
+            element.style.height = '100%';
+        }, this.transitionTime)
+    }
 
 
     initArrayBtn = () => {
         console.log(this.btn)
         this.btn.map((item, i) => {
             item.addEventListener('click', (e) => {
-                this.additionalElement && this.fullHeight(this.additionalElement)
                 if (!e.target.dataset.element) {
                     this.textToggle && this.changeBtnText(item, this.textToggleBtn)
                     this.changeTextVisibility(this.text[i], item);
                 }
+                this.additionalElement && this.fullHeight(this.additionalElement)
             })
         }
         )
@@ -119,6 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const directionList = [...document.querySelectorAll(".direction__content-overflow")];
     console.log(directionList)
     if (directionList.length !== 0) {
+        const directionBody = document.querySelector(".direction__body ");
         const directionBtn = [...document.querySelectorAll(".direction__accordion-body")];
         const directionBtnActive = 'direction__accordion-body--hide';
         const directionListActive = 'direction__content-overflow--visible';
@@ -128,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const directionTransitionTime = 300;
         const heightDirectionVar = '--max-heightDirection';
 
-        new Accordion(directionBtn, directionList, directionBtnActive, null, directionListActive, directionTextToggle, directionTextToggleBtn, directionTransitionTime, heightDirectionVar, directionBackgroundRect);
+        new Accordion(directionBtn, directionList, directionBtnActive, null, directionListActive, directionTextToggle, directionTextToggleBtn, directionTransitionTime, heightDirectionVar, directionBackgroundRect, directionBody);
     }
 
 
