@@ -313,7 +313,8 @@ $lightGrey: #edf0f5; */
 } */
 
 .btn__main,
-.btn__transparent {
+.btn__transparent,
+.btn__linear {
   vertical-align: bottom;
   -webkit-transition: -webkit-box-shadow 0.25s;
   transition: -webkit-box-shadow 0.25s;
@@ -329,7 +330,8 @@ $lightGrey: #edf0f5; */
 }
 
 .btn__main .rippleJS,
-.btn__transparent .rippleJS {
+.btn__transparent .rippleJS,
+.btn__linear .rippleJS {
   opacity: 1;
   border-radius: 4px;
   /** parent border-radius minus border width */
@@ -348,8 +350,8 @@ $lightGrey: #edf0f5; */
   /*  background: red !important; */
 }
 
-.articles {
-  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
+.btn__linear .rippleJS .ripple {
+  background: #44d5fc;
 }
 
 .difference {
@@ -866,6 +868,10 @@ $lightGrey: #edf0f5; */
   max-width: 20rem;
 }
 
+.articles {
+  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
+}
+
 .btn {
   outline: none;
   background-color: transparent;
@@ -942,7 +948,7 @@ $lightGrey: #edf0f5; */
   border: none;
 }
 
-
+.btn__linear,
 .btn__transparent {
   color: #ffffff;
   display: -webkit-box;
@@ -960,10 +966,17 @@ $lightGrey: #edf0f5; */
   align-items: center;
 }
 
-.btn__transparent .btn__span {
+.btn__transparent .btn__span,
+.btn__linear .btn__span {
   margin-left: 0;
   -ms-flex-item-align: center;
   align-self: center;
+}
+
+.btn__linear {
+  background: -webkit-gradient(linear, left top, right top, from(#16d9e3), color-stop(47%, #26c2e9), to(#46aef7));
+  background: -o-linear-gradient(left, #16d9e3 0%, #26c2e9 47%, #46aef7 100%);
+  background: linear-gradient(90deg, #16d9e3 0%, #26c2e9 47%, #46aef7 100%);
 }
 
 .btn__link {
@@ -980,29 +993,6 @@ $lightGrey: #edf0f5; */
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-/*     transition: background 0.3s ease-in-out;
-    &:hover .item-suit {
-      background-color: #0b213f;
-    } */
-
-.contact {
-  margin-top: 7.75rem;
-  /* 
-   &__footer {
-     @include grid(
-       0,
-       rem(80px),
-       rem(30px),
-       1,
-       1fr,
-       auto-fill,
-       rem(277px),
-       rem(277px)
-     );
-   }
-  */
 }
 
 .footer {
@@ -1064,52 +1054,27 @@ $lightGrey: #edf0f5; */
   margin-left: 0.1875rem;
 }
 
-.hamburger-menu {
-  cursor: pointer;
-  width: 3.125rem;
-}
+/*     transition: background 0.3s ease-in-out;
+    &:hover .item-suit {
+      background-color: #0b213f;
+    } */
 
-.hamburger-menu__content {
-  width: 100%;
-  height: 100%;
-}
-
-.hamburger-menu__line {
-  fill: none;
-  stroke: #ffffff;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  --length: 24;
-  --offset: -38;
-  -webkit-transform: translate(-40%, -45%);
-  -ms-transform: translate(-40%, -45%);
-  transform: translate(-40%, -45%);
-  stroke-dasharray: var(--length) var(--total-length);
-  stroke-dashoffset: var(--offset);
-  -webkit-transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
-  -o-transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.hamburger-menu__line--1,
-.hamburger-menu__line--3 {
-  --total-length: 126.64183044433594;
-}
-
-.hamburger-menu__line--2 {
-  --total-length: 70;
-}
-
-.hamburger-menu__content--active > .hamburger-menu__line--1,
-.hamburger-menu__content--active > .hamburger-menu__line--3 {
-  --offset: -94.1149185097;
-  --length: 22.627416998;
-}
-
-.hamburger-menu__content--active > .hamburger-menu__line--2 {
-  --offset: -50;
-  --length: 0;
+.contact {
+  margin-top: 7.75rem;
+  /* 
+   &__footer {
+     @include grid(
+       0,
+       rem(80px),
+       rem(30px),
+       1,
+       1fr,
+       auto-fill,
+       rem(277px),
+       rem(277px)
+     );
+   }
+  */
 }
 
 .header {
@@ -1234,6 +1199,62 @@ $lightGrey: #edf0f5; */
   margin-right: 0.625rem;
 }
 
+.hamburger-menu {
+  cursor: pointer;
+  width: 3.125rem;
+}
+
+.hamburger-menu__content {
+  width: 100%;
+  height: 100%;
+}
+
+.hamburger-menu__line {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  --length: 24;
+  --offset: -38;
+  -webkit-transform: translate(-40%, -45%);
+  -ms-transform: translate(-40%, -45%);
+  transform: translate(-40%, -45%);
+  stroke-dasharray: var(--length) var(--total-length);
+  stroke-dashoffset: var(--offset);
+  -webkit-transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger-menu__line--1,
+.hamburger-menu__line--3 {
+  --total-length: 126.64183044433594;
+}
+
+.hamburger-menu__line--2 {
+  --total-length: 70;
+}
+
+.hamburger-menu__content--active > .hamburger-menu__line--1,
+.hamburger-menu__content--active > .hamburger-menu__line--3 {
+  --offset: -94.1149185097;
+  --length: 22.627416998;
+}
+
+.hamburger-menu__content--active > .hamburger-menu__line--2 {
+  --offset: -50;
+  --length: 0;
+}
+
+/* Portrait tablets and medium desktops */
+
+/* Portrait tablets and small desktops */
+
+/* Landscape phones and portrait tablets */
+
+/* Landscape phones and smaller */
+
 /* .card__small-blue {
   animation: 2s linear 0s infinite alternate small-blue-color;
   transition: none !important;
@@ -1347,18 +1368,6 @@ $lightGrey: #edf0f5; */
   to {
     fill: #ff045e;
   }
-}
-
-/* Portrait tablets and medium desktops */
-
-/* Portrait tablets and small desktops */
-
-/* Landscape phones and portrait tablets */
-
-/* Landscape phones and smaller */
-
-.services {
-  background: #192942;
 }
 
 .sidebar {
@@ -1552,6 +1561,14 @@ $lightGrey: #edf0f5; */
   opacity: 1;
 }
 
+.services {
+  background: #192942;
+}
+
+.suit {
+  background: url("../assets/backgrounds/mail/suit-background.svg") no-repeat center center/cover;
+}
+
 .text-accordion__body {
   cursor: pointer;
   display: -webkit-box;
@@ -1703,10 +1720,6 @@ $lightGrey: #edf0f5; */
   filter: drop-shadow(0px 10px 30px rgba(36, 110, 226, 0.1));
   width: 18.5rem;
   margin-top: 0 !important;
-}
-
-.suit {
-  background: url("../assets/backgrounds/mail/suit-background.svg") no-repeat center center/cover;
 }
 
 .main {

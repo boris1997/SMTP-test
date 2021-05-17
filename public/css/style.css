@@ -240,7 +240,6 @@ img {
 .navigtion-page__item + .navigtion-page__item {
   margin-left: 1.625rem;
   position: relative;
-  opacity: 0.6;
 }
 .navigtion-page__item + .navigtion-page__item:before {
   position: absolute;
@@ -252,6 +251,9 @@ img {
   margin: auto;
   width: 0.625rem;
   height: 0.625rem;
+}
+.navigtion-page__item + .navigtion-page__item > .navigtion-page__link {
+  opacity: 0.6;
 }
 
 .section__header {

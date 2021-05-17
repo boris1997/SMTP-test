@@ -74,6 +74,10 @@
     margin-bottom: rem(13px);
   }
 
+  &__btn .btn__span {
+    margin: 0;
+  }
+
   &__item:nth-child(1) {
     flex: 1.1;
   }

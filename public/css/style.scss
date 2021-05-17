@@ -192,7 +192,6 @@ img {
   &__item + &__item {
     margin-left: rem(26px);
     position: relative;
-    opacity: 0.6;
     &:before {
       @include position(
         absolute,
@@ -206,6 +205,10 @@ img {
       width: rem(10px);
       height: rem(10px);
     }
+  }
+
+  &__item + &__item > &__link {
+    opacity: 0.6;
   }
 }
 
