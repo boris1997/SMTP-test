@@ -481,24 +481,6 @@ $lightGrey: #edf0f5; */
   align-items: center;
 }
 
-.contact {
-  margin-top: 7.75rem;
-  /* 
-   &__footer {
-     @include grid(
-       0,
-       rem(80px),
-       rem(30px),
-       1,
-       1fr,
-       auto-fill,
-       rem(277px),
-       rem(277px)
-     );
-   }
-  */
-}
-
 .direction__body {
   margin-top: 2rem;
   display: -webkit-box;
@@ -635,6 +617,24 @@ $lightGrey: #edf0f5; */
     &:hover .item-suit {
       background-color: #0b213f;
     } */
+
+.contact {
+  margin-top: 7.75rem;
+  /* 
+   &__footer {
+     @include grid(
+       0,
+       rem(80px),
+       rem(30px),
+       1,
+       1fr,
+       auto-fill,
+       rem(277px),
+       rem(277px)
+     );
+   }
+  */
+}
 
 .footer {
   width: 100%;
