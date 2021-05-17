@@ -19,7 +19,7 @@ class Accordion {
         this.initArrayBtn()
     }
 
-    fullHeight = (element) => { console.log(element); element.style.height = '100%'; }
+    fullHeight = (element) => { console.log(element); element.style.height = '500px'; }
 
 
     initArrayBtn = () => {
