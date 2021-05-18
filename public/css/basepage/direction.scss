@@ -18,11 +18,13 @@
 
   &__background {
     @include position(absolute, "", 0, 0, 0, 0, auto);
+    background: url("../../assets/svg/dashed-image-large.svg") no-repeat center
+      center/cover;
     width: 100%;
     height: 100%;
     z-index: 0;
-    max-height: 100%;
-    transition: max-height 0.3s ease-in-out;
+    /*   max-height: 100%;
+    transition: max-height 0.3s ease-in-out; */
     /*   overflow: visible;
     border: 8px solid transparent;
     -webkit-border-image: url("../assets/svg/dashed-image-large.svg"); */

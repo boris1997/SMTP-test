@@ -27,6 +27,7 @@ class Accordion {
             console.log(this.elementBody.clientHeight);
             // element.style.maxHeight = 1000 + 'px';
             element.style.maxHeight = this.elementBody.clientHeight + 'px';
+            // element.style.height = this.elementBody.clientHeight + 'px';
             setTimeout(() => {
                 console.log(this.elementBody.clientHeight);
                 element.style.maxHeight = '100%';
@@ -43,7 +44,7 @@ class Accordion {
                     this.textToggle && this.changeBtnText(item, this.textToggleBtn)
                     this.changeTextVisibility(this.text[i], item);
                 }
-                this.additionalElement && this.fullHeight(this.additionalElement)
+                // this.additionalElement && this.fullHeight(this.additionalElement)
             })
         }
         )
