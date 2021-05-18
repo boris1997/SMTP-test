@@ -24,10 +24,11 @@ class Accordion {
         /*   */
         setTimeout(() => {
             console.log(this.elementBody.clientHeight);
-            element.style.height = this.elementBody.clientHeight + 'px';
+            // element.style.maxHeight = 1000 + 'px';
+            element.style.maxHeight = this.elementBody.clientHeight + 'px';
             setTimeout(() => {
                 console.log(this.elementBody.clientHeight);
-                element.style.height = '100%';
+                element.style.maxHeight = '100%';
             })
         }, this.transitionTime)
     }
@@ -51,7 +52,6 @@ class Accordion {
         this.btn.addEventListener('click', (e) => {
             this.textToggle && this.changeBtnText(this.btn, this.textToggleBtn)
             this.changeTextVisibility(this.text, this.btn)
-            console.log('ok')
         })
     }
 
