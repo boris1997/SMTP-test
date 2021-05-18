@@ -1597,6 +1597,10 @@ $lightGrey: #edf0f5; */
   text-decoration: underline;
 }
 
+.suit {
+  background: url("../assets/backgrounds/mail/suit-background.svg") no-repeat center center/cover;
+}
+
 .afterMailing__sec-title {
   max-width: 28.1875rem;
 }
@@ -1723,10 +1727,6 @@ $lightGrey: #edf0f5; */
   filter: drop-shadow(0px 10px 30px rgba(36, 110, 226, 0.1));
   width: 18.5rem;
   margin-top: 0 !important;
-}
-
-.suit {
-  background: url("../assets/backgrounds/mail/suit-background.svg") no-repeat center center/cover;
 }
 
 .main {
