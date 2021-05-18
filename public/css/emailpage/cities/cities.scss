@@ -47,7 +47,7 @@
   &__list-hidden {
     --max-heightCities: 0;
     max-height: var(--max-heightCities);
-    transition: max-height 0.3s ease-in-out;
+    transition: max-height 0.5s ease-in-out;
     overflow: hidden;
   }
 

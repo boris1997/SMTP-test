@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const citiesBtnActive = 'cities__accordion-body--hide';
         const citiesTextToggleBtn = document.querySelector(".cities__link");
         const citiesTextToggle = ['Все города', 'Свернуть'];
-        const citiesTransitionTime = 300;
+        const citiesTransitionTime = 500;
         const heightCitiesVar = '--max-heightCities'
         new Accordion(citiesBtn, citiesList, citiesBtnActive, null, null, citiesTextToggle, citiesTextToggleBtn, citiesTransitionTime, heightCitiesVar);
     }
