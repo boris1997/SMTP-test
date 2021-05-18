@@ -23,6 +23,7 @@ class Accordion {
     fullHeight = (element) => {
         /*   */
         setTimeout(() => {
+            // element.style.maxHeight = 300 + 'px';
             console.log(this.elementBody.clientHeight);
             // element.style.maxHeight = 1000 + 'px';
             element.style.maxHeight = this.elementBody.clientHeight + 'px';
