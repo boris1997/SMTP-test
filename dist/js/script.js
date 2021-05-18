@@ -21,11 +21,15 @@ class Accordion {
     }
 
     fullHeight = (element) => {
-        /*    setTimeout(() => {
-               console.log(this.elementBody.clientHeight);
-               element.style.height = this.elementBody.clientHeight + 'px';
-               element.style.height = '100%';
-           }, this.transitionTime) */
+        /*   */
+        setTimeout(() => {
+            console.log(this.elementBody.clientHeight);
+            element.style.height = this.elementBody.clientHeight + 'px';
+            setTimeout(() => {
+                console.log(this.elementBody.clientHeight);
+                element.style.height = '100%';
+            })
+        }, this.transitionTime)
     }
 
 

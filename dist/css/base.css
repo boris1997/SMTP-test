@@ -354,6 +354,10 @@ $lightGrey: #edf0f5; */
   background: #44d5fc;
 }
 
+.articles {
+  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
+}
+
 .difference {
   background: url("../assets/backgrounds/base/difference-background.svg") no-repeat center center/cover;
 }
@@ -868,10 +872,6 @@ $lightGrey: #edf0f5; */
   max-width: 20rem;
 }
 
-.articles {
-  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
-}
-
 .btn {
   outline: none;
   background-color: transparent;
@@ -995,6 +995,29 @@ $lightGrey: #edf0f5; */
   align-items: center;
 }
 
+/*     transition: background 0.3s ease-in-out;
+    &:hover .item-suit {
+      background-color: #0b213f;
+    } */
+
+.contact {
+  margin-top: 7.75rem;
+  /* 
+   &__footer {
+     @include grid(
+       0,
+       rem(80px),
+       rem(30px),
+       1,
+       1fr,
+       auto-fill,
+       rem(277px),
+       rem(277px)
+     );
+   }
+  */
+}
+
 .footer {
   width: 100%;
   background-color: #131320;
@@ -1052,29 +1075,6 @@ $lightGrey: #edf0f5; */
   font-size: 0.8125rem;
   line-height: 1.4375rem;
   margin-left: 0.1875rem;
-}
-
-/*     transition: background 0.3s ease-in-out;
-    &:hover .item-suit {
-      background-color: #0b213f;
-    } */
-
-.contact {
-  margin-top: 7.75rem;
-  /* 
-   &__footer {
-     @include grid(
-       0,
-       rem(80px),
-       rem(30px),
-       1,
-       1fr,
-       auto-fill,
-       rem(277px),
-       rem(277px)
-     );
-   }
-  */
 }
 
 .header {
@@ -1370,6 +1370,10 @@ $lightGrey: #edf0f5; */
   }
 }
 
+.services {
+  background: #192942;
+}
+
 .sidebar {
   z-index: 2;
 }
@@ -1561,12 +1565,8 @@ $lightGrey: #edf0f5; */
   opacity: 1;
 }
 
-.services {
-  background: #192942;
-}
-
-.suit {
-  background: url("../assets/backgrounds/mail/suit-background.svg") no-repeat center center/cover;
+.afterMailing__sec-title {
+  max-width: 28.1875rem;
 }
 
 .text-accordion__body {
@@ -1592,10 +1592,6 @@ $lightGrey: #edf0f5; */
 .text-accordion__link {
   margin-top: 0 !important;
   text-decoration: underline;
-}
-
-.afterMailing__sec-title {
-  max-width: 28.1875rem;
 }
 
 .tariffsec {
@@ -1720,6 +1716,10 @@ $lightGrey: #edf0f5; */
   filter: drop-shadow(0px 10px 30px rgba(36, 110, 226, 0.1));
   width: 18.5rem;
   margin-top: 0 !important;
+}
+
+.suit {
+  background: url("../assets/backgrounds/mail/suit-background.svg") no-repeat center center/cover;
 }
 
 .main {
