@@ -477,6 +477,14 @@ $lightGrey: #edf0f5; */
   align-items: center;
 }
 
+.incDec-btn--minus {
+  position: relative;
+}
+
+.articles {
+  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
+}
+
 .difference {
   background: url("../assets/backgrounds/base/difference-background.svg") no-repeat center center/cover;
 }
@@ -1016,10 +1024,6 @@ $lightGrey: #edf0f5; */
   */
 }
 
-.articles {
-  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
-}
-
 /*     transition: background 0.3s ease-in-out;
     &:hover .item-suit {
       background-color: #0b213f;
@@ -1377,6 +1381,10 @@ $lightGrey: #edf0f5; */
 
 /* Landscape phones and smaller */
 
+.services {
+  background: #192942;
+}
+
 .sidebar {
   z-index: 2;
 }
@@ -1503,10 +1511,6 @@ $lightGrey: #edf0f5; */
   -o-transition: visibility 0s ease-in-out 0.35s;
   transition: visibility 0s ease-in-out 0.35s;
   visibility: visible;
-}
-
-.services {
-  background: #192942;
 }
 
 .slider--smooth {

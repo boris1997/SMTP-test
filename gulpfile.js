@@ -144,7 +144,7 @@ function css(html, style) {
         .pipe(group_media())
         .pipe(purgecss({
             content: [`public/${html}`],
-            safelist: ['page__sidebar--active', 'sidebar__body--active', 'overlay--show', 'hamburger-menu__content--active', 'direction__accordion-body--hide', 'page_screen_full']
+            safelist: ['page__sidebar--active', 'sidebar__body--active', 'overlay--show', 'hamburger-menu__content--active', 'direction__accordion-body--hide', 'page_screen_full', 'incDec-btn--minus']
         }))
         .pipe(dest(path.build.css))
         .pipe(clean_css())

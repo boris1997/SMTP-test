@@ -2068,14 +2068,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const wrapperAdvantages = document.querySelector(".advantages__body");
         const mainAdvantages = document.querySelector(".advantages__slider");
         const resizeOberverAdvantages = document.querySelector(".advantages__resizer");
-        const sliderBreakpointAdvantages = 1225;
-        const sliderAdvantages = new Slider(contentAdvantages, mainAdvantages, wrapperAdvantages, sliderBreakpointAdvantages, null, null, null, resizeOberverAdvantages, null, null, 0, null, null);
+        const circeTogglersCard = [...document.querySelectorAll(".circe-togglers__advantages")];
+        console.log(circeTogglersCard)
+        const circleActiveClass = 'circe-togglers__item--active'
+        const sliderBreakpointAdvantages = 480;
+        const sliderAdvantages = new Slider(contentAdvantages, mainAdvantages, wrapperAdvantages, sliderBreakpointAdvantages, null, circeTogglersCard, circleActiveClass, resizeOberverAdvantages, null, null, 0, null, null);
 
         /*  sliderCoffee.getUnactiveElts(); */
         /* sliderCoffee.initArrowsBtns(); */
         sliderAdvantages.getMargin();
         sliderAdvantages.getTranslateStepX();
         sliderAdvantages.initDrag();
+        sliderAdvantages.initCirceTogglers()
         sliderAdvantages.contextMenu();
         sliderAdvantages.slideResizeObserver();
     }
