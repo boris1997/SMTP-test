@@ -30,7 +30,7 @@ class Accordion {
             setTimeout(() => {
                 console.log(this.elementBody.clientHeight);
                 element.style.maxHeight = '100%';
-            })
+            }, this.transitionTime)
         }, this.transitionTime)
     }
 
