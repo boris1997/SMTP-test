@@ -812,23 +812,6 @@ $lightGrey: #edf0f5; */
   }
 }
 
-.service {
-  /* 
-   &__footer {
-     @include grid(
-       0,
-       rem(80px),
-       rem(30px),
-       1,
-       1fr,
-       auto-fill,
-       rem(277px),
-       rem(277px)
-     );
-   }
-  */
-}
-
 /* Portrait tablets and medium desktops */
 
 /* Portrait tablets and small desktops */
@@ -1156,6 +1139,23 @@ $lightGrey: #edf0f5; */
 
 .services-item__btn {
   display: none;
+}
+
+.service {
+  /* 
+   &__footer {
+     @include grid(
+       0,
+       rem(80px),
+       rem(30px),
+       1,
+       1fr,
+       auto-fill,
+       rem(277px),
+       rem(277px)
+     );
+   }
+  */
 }
 
 .sidebar {

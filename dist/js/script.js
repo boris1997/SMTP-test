@@ -284,10 +284,20 @@ class Slider {
 
     slideRzeObrCallback = (entries) => {
 
-
+        const waitMargin = new Promise((resolve, reject) => {
+            console.log('ok')
+            setTimeout(() => {
+                this.getMargin()
+                resolve()
+            }, 300)
+        })
 
         // Настройка слайдера после изменения ширина слайда(в процентом соотношении)
-        this.getMargin().then(() => {
+        console.log('ok')
+        waitMargin.then(() => {
+
+
+            console.log('ok')
             this.getTranslateStepX(); // Узнаем шаг для X транслэйта
 
             // Уменьшаем индекс при переполнении
@@ -311,7 +321,7 @@ class Slider {
             this.changeArrowActivity();          // Изменяем активность кнопопок
             this.setSliderPositionX(this.main, this.currentTranslationX);  // Устанавливаем транслэйт для слайдера
             this.getUnactiveElts();              // меняем опасити элементов 
-        });
+        })
 
 
     }
@@ -384,12 +394,15 @@ class Slider {
     setCurrentFullBodyTranslation = (translate) => (this.currentIndex) * translate; //Меняем текущий Y транслэйт
 
 
-    async getMargin() {
+    getMargin(a) {
         // Узнаем отутупы для правельного транслэйта
-
+        /*  const result = */
+        a++
         this.margin = +getComputedStyle(this.content[1]).marginLeft.split('px').join('');
-        console.log(this.content[1], this.margin)
         this.elemntsMargins = this.absToPercent((this.margin * this.content.length - 1), this.getTotalElementsWidth()) - this.stopperFactor;
+        console.log(window.getComputedStyle(this.content[1]).marginLeft)
+        console.log(this.content[1], getComputedStyle(this.content[1]).marginLeft, this.margin)
+        return a
 
     }
 
@@ -427,13 +440,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         /*  sliderCoffee.getUnactiveElts(); */
         /* sliderCoffee.initArrowsBtns(); */
-        sliderAdvantages.getMargin().then(() => {
-            sliderAdvantages.getTranslateStepX();
-            sliderAdvantages.initDrag();
-            sliderAdvantages.initCirceTogglers()
-            sliderAdvantages.contextMenu();
-            sliderAdvantages.slideResizeObserver();
-        })
+
+
+        sliderAdvantages.getMargin()
+        sliderAdvantages.getTranslateStepX();
+        sliderAdvantages.initDrag();
+        sliderAdvantages.initCirceTogglers()
+        sliderAdvantages.contextMenu();
+        sliderAdvantages.slideResizeObserver();
+
     }
 
 
@@ -487,16 +502,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const circleActiveClass = 'circe-togglers__item--active'
         const sliderBreakpointCard = 480;
         const sliderProgramm = new Slider(contentCard, mainCard, wrapperCard, sliderBreakpointCard, null, circeTogglersCard, circleActiveClass, resizeOberverCard, null, null, 0, null, null);
-
         /*  sliderCoffee.getUnactiveElts(); */
         /* sliderCoffee.initArrowsBtns(); */
-        sliderProgramm.getMargin();
-        sliderProgramm.getTranslateStepX();
-        sliderProgramm.initDrag();
-        sliderProgramm.initCirceTogglers()
-        sliderProgramm.contextMenu();
-        sliderProgramm.slideResizeObserver();
-
+        const waitMargin = new Promise((resolve, reject) => {
+            console.log('ok')
+            setTimeout(() => {
+                sliderProgramm.getMargin()
+                resolve()
+            }, 100)
+        })
+        console.log('ok')
+        waitMargin.then(() => {
+            sliderProgramm.getTranslateStepX();
+            sliderProgramm.initDrag();
+            sliderProgramm.initCirceTogglers()
+            sliderProgramm.contextMenu();
+            sliderProgramm.slideResizeObserver();
+        })
     }
 
 
