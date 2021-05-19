@@ -476,11 +476,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contentCard.length !== 0) {
         const mainCard = document.querySelector(".tariffsec__slider");
         const wrapperCard = document.querySelector(".tariffsec__body");
-        const resizeOberverCard = document.querySelector(".tariffsec__resizer");
+        /* const resizeOberverCard = document.querySelector(".tariffsec__resizer"); */
         const circeTogglersCard = [...document.querySelectorAll(".circe-togglers__item")];
         const circleActiveClass = 'circe-togglers__item--active'
         const sliderBreakpointCard = 480;
-        const sliderProgramm = new Slider(contentCard, mainCard, wrapperCard, sliderBreakpointCard, null, circeTogglersCard, circleActiveClass, resizeOberverCard, null, null, 0, null, null);
+        const sliderProgramm = new Slider(contentCard, mainCard, wrapperCard, sliderBreakpointCard, null, circeTogglersCard, circleActiveClass, null, null, null, 0, null, null);
 
         /*  sliderCoffee.getUnactiveElts(); */
         /* sliderCoffee.initArrowsBtns(); */
