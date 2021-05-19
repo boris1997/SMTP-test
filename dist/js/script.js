@@ -395,6 +395,7 @@ class Slider {
         /*  setTimeout(() => { */
         this.translateStepX = ((this.content[1].clientWidth + this.margin) / this.main.clientWidth * 100).toFixed() // Узнаем шаг для X транслэйта
         /*         }, 500) */
+        console.log(this.translateStepX)
 
     }
 
@@ -489,7 +490,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderProgramm.initDrag();
         sliderProgramm.initCirceTogglers()
         sliderProgramm.contextMenu();
-        sliderProgramm.slideResizeObserver();
+        /*    sliderProgramm.slideResizeObserver(); */
 
     }
 
