@@ -283,12 +283,12 @@ class Slider {
 
 
     slideRzeObrCallback = (entries) => {
-        setTimeout(() => {
 
 
-            // Настройка слайдера после изменения ширина слайда(в процентом соотношении)
+
+        // Настройка слайдера после изменения ширина слайда(в процентом соотношении)
+        this.getMargin().then(() => {
             this.getTranslateStepX(); // Узнаем шаг для X транслэйта
-            this.getMargin();
 
             // Уменьшаем индекс при переполнении
             if (this.currentIndex > this.getMainToContentIndex()) {
@@ -311,8 +311,9 @@ class Slider {
             this.changeArrowActivity();          // Изменяем активность кнопопок
             this.setSliderPositionX(this.main, this.currentTranslationX);  // Устанавливаем транслэйт для слайдера
             this.getUnactiveElts();              // меняем опасити элементов 
+        });
 
-        }, 500)
+
     }
 
     slideResizeObserver = () => {
@@ -383,9 +384,11 @@ class Slider {
     setCurrentFullBodyTranslation = (translate) => (this.currentIndex) * translate; //Меняем текущий Y транслэйт
 
 
-    getMargin = () => {
+    async getMargin() {
         // Узнаем отутупы для правельного транслэйта
+
         this.margin = +getComputedStyle(this.content[1]).marginLeft.split('px').join('');
+        console.log(this.content[1], this.margin)
         this.elemntsMargins = this.absToPercent((this.margin * this.content.length - 1), this.getTotalElementsWidth()) - this.stopperFactor;
 
     }
@@ -395,7 +398,8 @@ class Slider {
         /*  setTimeout(() => { */
         this.translateStepX = ((this.content[1].clientWidth + this.margin) / this.main.clientWidth * 100).toFixed() // Узнаем шаг для X транслэйта
         /*         }, 500) */
-        console.log(this.translateStepX)
+        console.log(this.margin)
+        /*  console.log(this.translateStepX) */
 
     }
 
@@ -423,12 +427,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         /*  sliderCoffee.getUnactiveElts(); */
         /* sliderCoffee.initArrowsBtns(); */
-        sliderAdvantages.getMargin();
-        sliderAdvantages.getTranslateStepX();
-        sliderAdvantages.initDrag();
-        sliderAdvantages.initCirceTogglers()
-        sliderAdvantages.contextMenu();
-        sliderAdvantages.slideResizeObserver();
+        sliderAdvantages.getMargin().then(() => {
+            sliderAdvantages.getTranslateStepX();
+            sliderAdvantages.initDrag();
+            sliderAdvantages.initCirceTogglers()
+            sliderAdvantages.contextMenu();
+            sliderAdvantages.slideResizeObserver();
+        })
     }
 
 
@@ -477,11 +482,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contentCard.length !== 0) {
         const mainCard = document.querySelector(".tariffsec__slider");
         const wrapperCard = document.querySelector(".tariffsec__body");
-        /* const resizeOberverCard = document.querySelector(".tariffsec__resizer"); */
+        const resizeOberverCard = document.querySelector(".tariffsec__resizer");
         const circeTogglersCard = [...document.querySelectorAll(".circe-togglers__item")];
         const circleActiveClass = 'circe-togglers__item--active'
         const sliderBreakpointCard = 480;
-        const sliderProgramm = new Slider(contentCard, mainCard, wrapperCard, sliderBreakpointCard, null, circeTogglersCard, circleActiveClass, null, null, null, 0, null, null);
+        const sliderProgramm = new Slider(contentCard, mainCard, wrapperCard, sliderBreakpointCard, null, circeTogglersCard, circleActiveClass, resizeOberverCard, null, null, 0, null, null);
 
         /*  sliderCoffee.getUnactiveElts(); */
         /* sliderCoffee.initArrowsBtns(); */
@@ -490,7 +495,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderProgramm.initDrag();
         sliderProgramm.initCirceTogglers()
         sliderProgramm.contextMenu();
-        /*    sliderProgramm.slideResizeObserver(); */
+        sliderProgramm.slideResizeObserver();
 
     }
 

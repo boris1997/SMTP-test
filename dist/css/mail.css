@@ -1039,6 +1039,76 @@ $lightGrey: #edf0f5; */
   opacity: 1;
 }
 
+.afterMailing {
+  background: url("../assets/backgrounds/mail/afterMailing-background.svg") no-repeat center center/cover;
+}
+
+.afterMailing__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: baseline;
+  -ms-flex-pack: baseline;
+  justify-content: baseline;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.afterMailing__sec-title {
+  max-width: 28.1875rem;
+}
+
+.afterMailing__right {
+  margin-left: 2.5rem;
+}
+
+.afterMailing__item + .afterMailing__item {
+  margin-top: 5rem;
+}
+
+.afterMailing__item:nth-child(2) {
+  margin-left: 5.125rem;
+}
+
+.item-afterMailing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: baseline;
+  -ms-flex-pack: baseline;
+  justify-content: baseline;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin: 0;
+}
+
+.item-afterMailing__title {
+  margin-top: 0;
+}
+
+.item-afterMailing__text {
+  max-width: 24rem;
+}
+
+.item-afterMailing__right {
+  margin-left: 1rem;
+}
+
+.item-afterMailing__order {
+  font-size: 3.875rem;
+  font-weight: 700;
+}
+
 .cities {
   z-index: 1;
   overflow: hidden;
@@ -1474,76 +1544,6 @@ $lightGrey: #edf0f5; */
 }
 
 .item-work__order {
-  font-size: 3.875rem;
-  font-weight: 700;
-}
-
-.afterMailing {
-  background: url("../assets/backgrounds/mail/afterMailing-background.svg") no-repeat center center/cover;
-}
-
-.afterMailing__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: baseline;
-  -ms-flex-pack: baseline;
-  justify-content: baseline;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-}
-
-.afterMailing__sec-title {
-  max-width: 28.1875rem;
-}
-
-.afterMailing__right {
-  margin-left: 2.5rem;
-}
-
-.afterMailing__item + .afterMailing__item {
-  margin-top: 5rem;
-}
-
-.afterMailing__item:nth-child(2) {
-  margin-left: 5.125rem;
-}
-
-.item-afterMailing {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: baseline;
-  -ms-flex-pack: baseline;
-  justify-content: baseline;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-  margin: 0;
-}
-
-.item-afterMailing__title {
-  margin-top: 0;
-}
-
-.item-afterMailing__text {
-  max-width: 24rem;
-}
-
-.item-afterMailing__right {
-  margin-left: 1rem;
-}
-
-.item-afterMailing__order {
   font-size: 3.875rem;
   font-weight: 700;
 }

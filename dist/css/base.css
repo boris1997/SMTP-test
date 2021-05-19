@@ -354,6 +354,10 @@ $lightGrey: #edf0f5; */
   background: #44d5fc;
 }
 
+.articles {
+  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
+}
+
 .difference {
   background: url("../assets/backgrounds/base/difference-background.svg") no-repeat center center/cover;
 }
@@ -873,10 +877,6 @@ $lightGrey: #edf0f5; */
 
 .item-suitBase__text {
   max-width: 20rem;
-}
-
-.articles {
-  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
 }
 
 .btn {
@@ -1576,6 +1576,10 @@ $lightGrey: #edf0f5; */
   opacity: 1;
 }
 
+.afterMailing__sec-title {
+  max-width: 28.1875rem;
+}
+
 .text-accordion__body {
   cursor: pointer;
   display: -webkit-box;
@@ -1727,10 +1731,6 @@ $lightGrey: #edf0f5; */
   filter: drop-shadow(0px 10px 30px rgba(36, 110, 226, 0.1));
   width: 18.5rem;
   margin-top: 0 !important;
-}
-
-.afterMailing__sec-title {
-  max-width: 28.1875rem;
 }
 
 .main {
