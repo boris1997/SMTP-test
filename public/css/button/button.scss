@@ -90,7 +90,7 @@
   transition: transform 0.3s, box-shadow 0.3s;
   &:hover {
     transform: scale(1.02);
-    box-shadow: 0 0 10px rgb (0 0 0 / 30%);
+    box-shadow: 0 0 10px rgba(0 0 0 / 30%);
   }
   &__body {
   }
@@ -110,9 +110,9 @@
 
    } */
 }
-.incDec-btn--minus {
+/* .incDec-btn--minus {
   position: relative;
-}
+} */
 
 .incDec-btn--minus .incDec-btn__horiz {
   display: none;

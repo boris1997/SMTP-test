@@ -687,7 +687,7 @@ class Accordion {
             element.style.setProperty(this.heightVar, `${element.scrollHeight}px`)
             setTimeout(() => {
                 element.style.setProperty(this.heightVar, '0px')
-            })
+            }, 100)
         }
     }
 
