@@ -88,9 +88,11 @@ class Accordion {
             element.style.setProperty(this.heightVar, `${element.scrollHeight}px`)
             setTimeout(() => {
                 element.style.setProperty(this.heightVar, '0px')
-            }, 100)
+            }, 50)
         }
     }
+
+
 
     changeBtnText = (btn) => {
         console.log(this.textToggleBtn, this);
@@ -114,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // Cities
-    const citiesList = [...document.querySelectorAll(".cities__list-hidden")];
+    const citiesList = [...document.querySelectorAll(".cities__content-hidden")];
     console.log(citiesList)
     if (citiesList.length !== 0) {
         const citiesBtn = [...document.querySelectorAll(".cities__accordion-body")];

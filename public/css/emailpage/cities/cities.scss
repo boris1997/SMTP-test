@@ -41,14 +41,18 @@
   &__list-hidden {
     @include grid(0, rem(18px), rem(0px), 1, 1fr, auto-fill, rem(200px), 0.3fr);
   }
-  &__list {
+  &__content {
     margin-bottom: rem(18px);
   }
-  &__list-hidden {
+
+  &__content-hidden {
     --max-heightCities: 0;
     max-height: var(--max-heightCities);
     transition: max-height 0.5s ease-in-out;
     overflow: hidden;
+  }
+
+  &__list-hidden {
   }
 
   &__item {
