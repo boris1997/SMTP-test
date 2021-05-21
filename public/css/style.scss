@@ -382,33 +382,62 @@ img {
 
 .switch-radio {
   &__item + &__item {
-    margin-top: rem(15px);
+    margin-top: rem(10px);
   }
+
+  &__item {
+    display: flex;
+  }
+
+  &__input-wrapper {
+    position: relative;
+  }
+
   &__input {
     position: relative;
-    width: rem(12px);
-    height: rem(12px);
+    width: rem(18px);
+    z-index: 1;
+    height: rem(18px);
+    opacity: 0;
     &:after {
       @include position(absolute, "", 0, 0, rem(-50%), 0, auto);
-      width: rem(24px);
-      height: rem(24px);
       border-radius: rem(1000px);
       background-color: $primaryColor;
     }
   }
-  &__input:checked {
+  &__input:checked ~ .custom-radio > .custom-radio__field {
     &:before {
-      @include position(absolute, "", 0, 0, 0, 0, auto);
-      width: rem(12px);
-      height: rem(12px);
-      border-radius: rem(1000px);
-      z-index: 2;
       background: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
     }
   }
 
   &__label {
-    margin-left: rem(20px);
+    margin-top: 0;
+    margin-left: rem(12px);
+    padding-top: rem(3px);
+    @include flexbox(row, baseline, center);
+  }
+}
+
+.custom-radio {
+  @include position(absolute, "", 0, 0, 0, 0, auto);
+  width: rem(18px);
+  height: rem(18px);
+  z-index: 0;
+  border-radius: rem(1000px);
+  background-color: $primaryColor;
+  &__field {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    &:before {
+      @include position(absolute, "", 0, 0, 0, 0, auto);
+      width: 50%;
+      height: 50%;
+      border-radius: rem(1000px);
+      z-index: 2;
+      background: transparent;
+    }
   }
 }
 

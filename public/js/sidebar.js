@@ -1,4 +1,4 @@
-class Scroll {
+class Sidebar {
     constructor(page, sections, menuItems, mobileMenuItems, hamburgerMenu, sidebar, sidebarBody, sidebarOverlay) {
         this.page = page,
             this.sections = sections,
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebarBody = document.querySelector('.sidebar__content');
     const sidebarOverlay = document.querySelector('.overlay');
     const hamburgerMenu = document.querySelector('.hamburger-menu__content');
-    const scroll = new Scroll(page, sections, menuItems, mobileMenuItems, hamburgerMenu, sidebar, sidebarBody, sidebarOverlay);
+    const scroll = new Sidebar(page, sections, menuItems, mobileMenuItems, hamburgerMenu, sidebar, sidebarBody, sidebarOverlay);
 
     scroll.menuItemsInit();
     scroll.sidebarManipulation()

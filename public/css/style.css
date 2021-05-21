@@ -431,12 +431,22 @@ img {
 }
 
 .switch-radio__item + .switch-radio__item {
-  margin-top: 0.9375rem;
+  margin-top: 0.625rem;
+}
+.switch-radio__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.switch-radio__input-wrapper {
+  position: relative;
 }
 .switch-radio__input {
   position: relative;
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 1.125rem;
+  z-index: 1;
+  height: 1.125rem;
+  opacity: 0;
 }
 .switch-radio__input:after {
   position: absolute;
@@ -446,12 +456,33 @@ img {
   left: -50%;
   right: 0;
   margin: auto;
-  width: 1.5rem;
-  height: 1.5rem;
   border-radius: 62.5rem;
   background-color: #ffffff;
 }
-.switch-radio__input:checked:before {
+.switch-radio__input:checked ~ .custom-radio > .custom-radio__field:before {
+  background: -webkit-gradient(linear, left top, right top, from(#16d9e3), color-stop(47%, #30c7ec), to(#46aef7));
+  background: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+}
+.switch-radio__label {
+  margin-top: 0;
+  margin-left: 0.75rem;
+  padding-top: 0.1875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: baseline;
+      -ms-flex-pack: baseline;
+          justify-content: baseline;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.custom-radio {
   position: absolute;
   content: "";
   top: 0;
@@ -459,15 +490,30 @@ img {
   left: 0;
   right: 0;
   margin: auto;
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  z-index: 0;
+  border-radius: 62.5rem;
+  background-color: #ffffff;
+}
+.custom-radio__field {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.custom-radio__field:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 50%;
+  height: 50%;
   border-radius: 62.5rem;
   z-index: 2;
-  background: -webkit-gradient(linear, left top, right top, from(#16d9e3), color-stop(47%, #30c7ec), to(#46aef7));
-  background: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
-}
-.switch-radio__label {
-  margin-left: 1.25rem;
+  background: transparent;
 }
 
 .opportunity__body,

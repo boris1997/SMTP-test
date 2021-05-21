@@ -124,7 +124,8 @@
                         <h1 class="main__title main__item">SMTP сервер для email рассылки</h1>
                         <p class="main__text">Уже более 5 лет поставляем качественные, абузоустойчивые серверы</p>
                         <div class="main__tariffs">
-                            <a href="contact.html" class="btn__link btn btn__main main__tariffs-btn item__text">
+                            <a href="#" data-scroll="tariff"
+                                class="btn__link data-scroll__btn btn btn__main main__tariffs-btn item__text">
                                 <span class="btn__span">Тарифы</span>
                                 <div class="rippleJS active">
                                     <div class="ripple"></div>
@@ -372,7 +373,7 @@
     </section>
 
 
-    <section class="tariff section section--active data-lazy">
+    <section id="tariff" data-scroll="tariff" class="tariff data-scrollTo section section--active data-lazy">
         <div class="container section__content">
             <div class="section__header">
                 <h2 class="section__title tariff__title">Выбор тарифа
@@ -397,15 +398,30 @@
                             </div>
                             <div class="card-tariff__switch switch-radio">
                                 <div class="switch-radio__item">
-                                    <input id="radio-input-1" checked type="radio" name="options"
-                                        class="switch-radio__input">
+                                    <div class="switch-radio__input-wrapper">
+                                        <input id="radio-input-1" checked type="radio" name="options"
+                                            class="switch-radio__input">
+                                        <div class="custom-radio">
+                                            <div class="custom-radio__field">
+                                                <!-- <div class="custom-radio__radio"></div> -->
+                                            </div>
+                                        </div>
+                                    </div>
                                     <label for="radio-input-1" class="switch-radio__label item__text">Уже есть
                                         домен
                                         для
                                         рассылки</label>
                                 </div>
                                 <div class="switch-radio__item">
-                                    <input id="radio-input-2" type="radio" name="options" class="switch-radio__input">
+                                    <div class="switch-radio__input-wrapper">
+                                        <input id="radio-input-2" checked type="radio" name="options"
+                                            class="switch-radio__input">
+                                        <div class="custom-radio">
+                                            <div class="custom-radio__field">
+                                                <!-- <div class="custom-radio__radio"></div> -->
+                                            </div>
+                                        </div>
+                                    </div>
                                     <label for="radio-input-2" class="switch-radio__label item__text">Заказать
                                         сервер +
                                         домен

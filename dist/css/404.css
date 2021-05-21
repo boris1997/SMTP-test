@@ -299,6 +299,52 @@ $lightGrey: #edf0f5; */
   /** parent border-radius minus border width */
 }
 
+.notFound {
+  overflow: hidden;
+  margin-top: 5.625rem;
+}
+
+.notFound__content {
+  /* margin-top: rem(50px); */
+  height: 100%;
+  position: relative;
+}
+
+.notFound__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: baseline;
+  -ms-flex-pack: baseline;
+  justify-content: baseline;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.notFound__title {
+  text-transform: uppercase;
+  margin-top: 2.1875rem;
+  margin-left: 2.0625rem;
+}
+
+.notFound__sec-title {
+  max-width: 61.25rem;
+}
+
+.notFound__text {
+  margin-top: 1.6875rem;
+  max-width: 38rem;
+}
+
+.articles {
+  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
+}
+
 .btn {
   outline: none;
   background-color: transparent;
@@ -385,52 +431,6 @@ $lightGrey: #edf0f5; */
 /* .incDec-btn--minus {
   position: relative;
 } */
-
-.articles {
-  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
-}
-
-.notFound {
-  overflow: hidden;
-  margin-top: 5.625rem;
-}
-
-.notFound__content {
-  /* margin-top: rem(50px); */
-  height: 100%;
-  position: relative;
-}
-
-.notFound__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: baseline;
-  -ms-flex-pack: baseline;
-  justify-content: baseline;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.notFound__title {
-  text-transform: uppercase;
-  margin-top: 2.1875rem;
-  margin-left: 2.0625rem;
-}
-
-.notFound__sec-title {
-  max-width: 61.25rem;
-}
-
-.notFound__text {
-  margin-top: 1.6875rem;
-  max-width: 38rem;
-}
 
 /*     transition: background 0.3s ease-in-out;
     &:hover .item-suit {
