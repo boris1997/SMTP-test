@@ -158,12 +158,13 @@ img {
 }
 .page:after {
   position: absolute;
-  content: url("../assets/svg/main/main/Ellipse-full.svg");
+  content: "";
   top: -25.4375rem;
   bottom: auto;
   left: 54%;
   right: 0;
   margin: auto;
+  background: url("../assets/svg/main/main/Ellipse-full.svg");
   -o-object-fit: cover;
      object-fit: cover;
   width: 73.3125rem;

@@ -117,15 +117,8 @@ img {
   z-index: 0;
   overflow: hidden !important;
   &:after {
-    @include position(
-      absolute,
-      url("../assets/svg/main/main/Ellipse-full.svg"),
-      rem(-407px),
-      auto,
-      54%,
-      0,
-      auto
-    );
+    @include position(absolute, "", rem(-407px), auto, 54%, 0, auto);
+    background: url("../assets/svg/main/main/Ellipse-full.svg");
     object-fit: cover;
     width: rem(1173px);
     height: rem(1173px);
