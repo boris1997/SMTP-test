@@ -34,7 +34,7 @@
     @include flexbox(column, center, center);
     // transform: perspective(rem(600px)) translate(0, -100%) rotateX(45deg);
     transform: translateY(-100%);
-    transition: all 0.5s ease-in-out;
+    // transition: all 0.5s ease-in-out;
     max-width: rem(450px);
     /*  margin-right: rem(16px); */
   }

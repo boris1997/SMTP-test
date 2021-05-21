@@ -57,7 +57,9 @@ class Modal {
             } else {
                 btnPopup.addEventListener('click', () => {
                     this.popupModal.map((popupModal, i) => {
-                        console.log(popupModal.dataset.modal, btnPopup.dataset.modal)
+                        // console.log(popupModal.children[0])
+                        Style.addTransition(popupModal.children[0], 'all', '0.5s', 'ease-in-out')
+
                         if (btnPopup.dataset.modal === popupModal.dataset.modal) {
                             popupModal.dataset.modal === 'form' && this.submitForm(popupModal)
                             /* this.addNoScrollStyles(popupModal) */
