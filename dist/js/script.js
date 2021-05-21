@@ -1366,7 +1366,7 @@ class Modal {
                 btnPopup.addEventListener('click', () => {
                     this.popupModal.map((popupModal, i) => {
                         // console.log(popupModal.children[0])
-                        Style.addTransition(popupModal.children[0], 'all', '0.5s', 'ease-in-out')
+                        // Style.addTransition(popupModal.children[0], 'all', '0.5s', 'ease-in-out')
 
                         if (btnPopup.dataset.modal === popupModal.dataset.modal) {
                             popupModal.dataset.modal === 'form' && this.submitForm(popupModal)
@@ -2476,9 +2476,9 @@ const slider3d = {
 const sliderGif = new Slider (
 
 ) */
-class Style {
-    static addTransition = (element, type, dur, effect) => {
-        console.log(element, type, dur, effect)
-        element.style.transition = `${type} ${dur} ${effect}`
-    }
-}
+// class Style {
+//     static addTransition = (element, type, dur, effect) => {
+//         console.log(element, type, dur, effect)
+//         element.style.transition = `${type} ${dur} ${effect}`
+//     }
+// }
