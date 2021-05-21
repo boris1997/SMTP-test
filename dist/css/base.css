@@ -355,10 +355,6 @@ $lightGrey: #edf0f5; */
   background: #44d5fc;
 }
 
-.articles {
-  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
-}
-
 .difference {
   background: url("../assets/backgrounds/base/difference-background.svg") no-repeat center center/cover;
 }
@@ -1007,6 +1003,10 @@ $lightGrey: #edf0f5; */
   position: relative;
 } */
 
+.articles {
+  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
+}
+
 /*     transition: background 0.3s ease-in-out;
     &:hover .item-suit {
       background-color: #0b213f;
@@ -1577,6 +1577,10 @@ $lightGrey: #edf0f5; */
   opacity: 1;
 }
 
+.afterMailing__sec-title {
+  max-width: 28.1875rem;
+}
+
 .text-accordion__body {
   cursor: pointer;
   display: -webkit-box;
@@ -1600,14 +1604,6 @@ $lightGrey: #edf0f5; */
 .text-accordion__link {
   margin-top: 0 !important;
   text-decoration: underline;
-}
-
-.afterMailing__sec-title {
-  max-width: 28.1875rem;
-}
-
-.suit {
-  background: url("../assets/backgrounds/mail/suit-background.svg") no-repeat center center/cover;
 }
 
 .tariffsec {
@@ -1732,6 +1728,10 @@ $lightGrey: #edf0f5; */
   filter: drop-shadow(0px 10px 30px rgba(36, 110, 226, 0.1));
   width: 18.5rem;
   margin-top: 0 !important;
+}
+
+.suit {
+  background: url("../assets/backgrounds/mail/suit-background.svg") no-repeat center center/cover;
 }
 
 .main {
