@@ -108,6 +108,12 @@
     left: -1000px;
     width: 10px;
   }
+
+  &__slider-item:hover .services-item__body {
+    @media (min-width: 768px) {
+      height: rem(121px);
+    }
+  }
 }
 
 .item-service {

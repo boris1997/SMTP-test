@@ -3,11 +3,12 @@
 /* smoothscroll.polyfill(); */
 class Scroll {
 
-    constructor(btn, scrollToSection) {
+    constructor(btn, scrollToSection, speed) {
         this.btn = btn;
         this.scrollToSection = scrollToSection;
         this.scrollTop = null;
         this.scrollTo = null;
+        this.speed = speed;
         // this.smoothScroll = require('smoothscroll');
         this.initEvents()
     }
@@ -16,7 +17,6 @@ class Scroll {
     initEvents = () => {
         this.initArrayBtn()
     }
-
 
 
     initArrayBtn = () => {
@@ -34,29 +34,21 @@ class Scroll {
 
     setScroll = (scrollToSection) => {
         // this.smoothScroll(scrollToSection)
-        console.log(window.scrollY)
         this.scrollTop = window.scrollY;
-        this.scrollTo = scrollToSection.getBoundingClientRect().top;
-        console.log('ok')
+        this.scrollTo = scrollToSection.getBoundingClientRect().top + this.scrollTop;
+
         this.animation()
     }
 
 
     animation = () => {
-        console.log(this.scrollTop)
-        this.scrollTop += 100;
+        this.scrollTop += this.speed;
         window.scrollTo({
             top: this.scrollTop,
             behavior: "auto"
         });
         this.scrollTop < this.scrollTo && requestAnimationFrame(this.animation)
     }
-
-
-
-
-
-
 }
 
 
@@ -66,8 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(scrollBtn)
     if (scrollBtn.length !== 0) {
         const scrollToSection = [...document.querySelectorAll(".data-scrollTo")];
+        const speed = 200;
         console.log(scrollToSection)
-        new Scroll(scrollBtn, scrollToSection);
+        new Scroll(scrollBtn, scrollToSection, speed);
     }
 })
 

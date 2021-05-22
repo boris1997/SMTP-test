@@ -123,27 +123,7 @@
     flex-wrap: wrap;
     column-gap: rem(40px);
   }
-  &__link {
-    position: relative;
-    &:hover {
-      color: #2561fa;
-    }
-    &:active {
-      color: $accentColor;
-    }
 
-    /*     &::after {
-      content: "";
-      position: absolute;
-      width: 0;
-      left: rem(-11px);
-      bottom: rem(-35px);
-      height: rem(6px);
-      border-radius: rem(2px);
-      background-color: $accentColor;
-      transition: width 0.4s ease-in-out;
-    } */
-  }
   &__link--active {
     &:hover {
       color: $accentColor !important;
@@ -183,12 +163,16 @@
   &__btn {
     margin-bottom: rem(39px);
     transition: opacity 0.3s ease-in-out;
-    opacity: 0;
     /*  display: none; */
-    @include position(absolute, "", 0, auto, 0, 0, auto);
-    visibility: hidden;
+
     &::after {
       content: "" !important;
+    }
+    @media (min-width: 768px) {
+      @include position(absolute, "", 0, auto, 0, 0, auto);
+      opacity: 0;
+      margin: 0 rem(12px);
+      visibility: hidden;
     }
   }
 

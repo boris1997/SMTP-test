@@ -21,7 +21,7 @@ class Sidebar {
 
         }
         this.sidebarOverlay.onclick = () => this.removeSidebar();
-        this.hamburgerMenu.onclick = (e) => this.toggleSidebar();
+        this.hamburgerMenu.onclick = (e) => this.toggleSidebar(), Styles.addTransition(this.sidebarBody, 'transform', '0.3s', 'ease-in-out');
         this.mobileMenuItems.map(item => item.onclick = () => this.removeSidebar())
     }
 

@@ -85,15 +85,18 @@ ul li {
   list-style: none;
 }
 
-li > a {
+li > a,
+.notFound__link {
   transition: color 0.3s ease-in-out;
 }
 
-li > a:hover {
+li > a:hover,
+.notFound__link:hover {
   color: #29e3f9;
 }
 
-li > a:active {
+li > a:active,
+.notFound__link:active {
   color: #17b6c9;
 }
 

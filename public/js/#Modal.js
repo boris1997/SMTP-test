@@ -26,17 +26,20 @@ class Modal {
 
     initCloseBtn = () => {
         this.popup.addEventListener('click', (e) => {
-            console.log(e.target.dataset)
+            console.log(e.target)
 
             if (e.target.classList.contains('popup__modal--active') || e.target.classList.contains('popup__modal-close') || e.target.dataset.modal === 'close') {
                 e.stopPropagation()
-                console.log(e.target.classList)
+                console.log(e.target.classList, this.popupModal)
 
                 this.popupModal.map((popupModal, i) => {
+                    console.log(popupModal.classList.contains(this.popupModalActive))
                     if (popupModal.classList.contains(this.popupModalActive)) {
+                        console.log(this.body)
                         this.removeClass(this.body, this.bodyNoScroll);
                         this.removeNoScrollStyles(this.body);
                         /*  !popupModal.classList.contains(this.staticForm) && this.removeNoScrollStyles(popupModal); */
+                        console.log(popupModal)
                         !popupModal.classList.contains(this.staticForm) && this.removeClass(popupModal, this.popupModalActive);
                         this.addClass(this.popup, this.popupHidden)
                     }
@@ -50,6 +53,7 @@ class Modal {
         this.btnPopup.map((btnPopup, i) => {
             console.log(btnPopup, btnPopup.type)
             if (btnPopup.type === 'submit') {
+                console.log('ok')
                 /* console.log(this.btnPopup[i], this.popupModal[i]) */
                 this.popupModal.map((popupModal, i) => {
                     popupModal.dataset.modal === 'form' && this.submitForm(popupModal)
@@ -58,7 +62,7 @@ class Modal {
                 btnPopup.addEventListener('click', () => {
                     this.popupModal.map((popupModal, i) => {
                         // console.log(popupModal.children[0])
-                        // Style.addTransition(popupModal.children[0], 'all', '0.5s', 'ease-in-out')
+                        Styles.addTransition(popupModal.children[0], 'all', '0.5s', 'ease-in-out')
 
                         if (btnPopup.dataset.modal === popupModal.dataset.modal) {
                             popupModal.dataset.modal === 'form' && this.submitForm(popupModal)
@@ -66,6 +70,7 @@ class Modal {
                             window.innerWidth - this.body.offsetWidth > 0 && this.addMarginToBlock(this.popupModalWrapper[i])
                             !this.body.classList.contains(this.bodyNoScroll) && (this.addNoScrollStyles(this.body), this.addClass(this.body, this.bodyNoScroll))
                             this.addClass(popupModal, this.popupModalActive);
+                            console.log('ok')
                             this.popup.classList.contains(this.popupHidden) && this.removeClass(this.popup, this.popupHidden)
 
                         }
@@ -99,6 +104,7 @@ class Modal {
 
 
     removeClass = (element, clas) => {
+        console.log(element)
         element.classList.remove(clas)
     }
 
@@ -151,12 +157,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const popupContact = document.getElementById("popup-contact");
     if (popupContact !== null) {
+        console.log('ok')
         let body = document.querySelector(".body");
         let popup = document.querySelector(".popup");
         let popupModal = [...document.querySelectorAll(".popup__modal")];
         let popupModalWrapper = [...document.querySelectorAll(".popup__modal-wrapper")];
         let btnPopup = [...document.querySelectorAll(".btn__popup")];
         let closeBtn = [...document.querySelectorAll(".popup__modal-close")];
+        console.log(closeBtn)
         let formInputs = [...document.querySelectorAll(".contact-form__input")];
         let popupModalActive = 'popup__modal--active';
         let popupHidden = 'popup--hidden';
