@@ -484,6 +484,11 @@ $lightGrey: #edf0f5; */
   position: relative;
 } */
 
+/*     transition: background 0.3s ease-in-out;
+    &:hover .item-suit {
+      background-color: #0b213f;
+    } */
+
 .contact {
   margin-top: 7.75rem;
   /* 
@@ -501,11 +506,6 @@ $lightGrey: #edf0f5; */
    }
   */
 }
-
-/*     transition: background 0.3s ease-in-out;
-    &:hover .item-suit {
-      background-color: #0b213f;
-    } */
 
 .hamburger-menu {
   cursor: pointer;
@@ -976,6 +976,10 @@ $lightGrey: #edf0f5; */
   visibility: visible;
 }
 
+.services {
+  background: #192942;
+}
+
 .slider--smooth {
   -webkit-transition: -webkit-transform 0.5s ease-in-out !important;
   transition: -webkit-transform 0.5s ease-in-out !important;
@@ -1037,10 +1041,6 @@ $lightGrey: #edf0f5; */
 
 .circe-togglers__item--active {
   opacity: 1;
-}
-
-.services {
-  background: #192942;
 }
 
 .afterMailing {
@@ -1111,59 +1111,6 @@ $lightGrey: #edf0f5; */
 .item-afterMailing__order {
   font-size: 3.875rem;
   font-weight: 700;
-}
-
-.effect {
-  background: url("../assets/backgrounds/mail/effect-background.svg") no-repeat center center/cover;
-}
-
-.effect__slider {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: baseline;
-  -ms-flex-align: baseline;
-  align-items: baseline;
-  gap: 1rem;
-}
-
-.effect__item::marker {
-  content: url("../../assets/svg/check.svg");
-}
-
-.effect__resizer {
-  position: absolute;
-  visibility: hidden;
-  width: 10px;
-}
-
-.item-effect__img {
-  margin: auto;
-  display: block;
-}
-
-.item-effect__text {
-  max-width: 13.6875rem;
-  text-align: center;
-}
-
-.footer-effect__text {
-  text-align: center;
-  max-width: 46.5rem;
-  margin: auto;
-  margin-top: 16.875rem;
-  background: -webkit-gradient(linear, left top, right top, color-stop(-0.49%, #83a6ff), color-stop(99.88%, #4d6de2));
-  background: -o-linear-gradient(left, #83a6ff -0.49%, #4d6de2 99.88%);
-  background: linear-gradient(90deg, #83a6ff -0.49%, #4d6de2 99.88%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .cities {
@@ -1313,6 +1260,59 @@ $lightGrey: #edf0f5; */
 .text-accordion__link {
   margin-top: 0 !important;
   text-decoration: underline;
+}
+
+.effect {
+  background: url("../assets/backgrounds/mail/effect-background.svg") no-repeat center center/cover;
+}
+
+.effect__slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.effect__item::marker {
+  content: url("../../assets/svg/check.svg");
+}
+
+.effect__resizer {
+  position: absolute;
+  visibility: hidden;
+  width: 10px;
+}
+
+.item-effect__img {
+  margin: auto;
+  display: block;
+}
+
+.item-effect__text {
+  max-width: 13.6875rem;
+  text-align: center;
+}
+
+.footer-effect__text {
+  text-align: center;
+  max-width: 46.5rem;
+  margin: auto;
+  margin-top: 16.875rem;
+  background: -webkit-gradient(linear, left top, right top, color-stop(-0.49%, #83a6ff), color-stop(99.88%, #4d6de2));
+  background: -o-linear-gradient(left, #83a6ff -0.49%, #4d6de2 99.88%);
+  background: linear-gradient(90deg, #83a6ff -0.49%, #4d6de2 99.88%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .tariffsec {

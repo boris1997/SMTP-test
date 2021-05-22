@@ -369,6 +369,10 @@ $lightGrey: #edf0f5; */
   background: #44d5fc;
 }
 
+.articles {
+  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
+}
+
 .difference {
   background: url("../assets/backgrounds/base/difference-background.svg") no-repeat center center/cover;
 }
@@ -890,10 +894,6 @@ $lightGrey: #edf0f5; */
   max-width: 20rem;
 }
 
-.articles {
-  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
-}
-
 .btn {
   outline: none;
   background-color: transparent;
@@ -1021,6 +1021,11 @@ $lightGrey: #edf0f5; */
   position: relative;
 } */
 
+/*     transition: background 0.3s ease-in-out;
+    &:hover .item-suit {
+      background-color: #0b213f;
+    } */
+
 .contact {
   margin-top: 7.75rem;
   /* 
@@ -1038,11 +1043,6 @@ $lightGrey: #edf0f5; */
    }
   */
 }
-
-/*     transition: background 0.3s ease-in-out;
-    &:hover .item-suit {
-      background-color: #0b213f;
-    } */
 
 .hamburger-menu {
   cursor: pointer;
@@ -1513,6 +1513,10 @@ $lightGrey: #edf0f5; */
   visibility: visible;
 }
 
+.services {
+  background: #192942;
+}
+
 .slider--smooth {
   -webkit-transition: -webkit-transform 0.5s ease-in-out !important;
   transition: -webkit-transform 0.5s ease-in-out !important;
@@ -1574,10 +1578,6 @@ $lightGrey: #edf0f5; */
 
 .circe-togglers__item--active {
   opacity: 1;
-}
-
-.services {
-  background: #192942;
 }
 
 .afterMailing__sec-title {
