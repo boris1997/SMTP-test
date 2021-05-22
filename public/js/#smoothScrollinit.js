@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (scrollBtn.length !== 0) {
         const scrollToSection = [...document.querySelectorAll(".data-scrollTo")];
         console.log(scrollToSection)
-        new Scroll(scrollBtn, scrollToSection);
+        // new Scroll(scrollBtn, scrollToSection);
     }
 })
 
