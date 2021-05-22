@@ -753,6 +753,20 @@ $lightGrey: #edf0f5; */
   transition: width 0.4s ease-in-out;
 }
 
+.nav__link:hover .nav__stroke {
+  stroke: #29e3f9;
+}
+
+.nav__link:active .nav__stroke {
+  stroke: #17b6c9;
+}
+
+.nav__stroke {
+  -webkit-transition: stroke 0.3s ease-in-out;
+  -o-transition: stroke 0.3s ease-in-out;
+  transition: stroke 0.3s ease-in-out;
+}
+
 .nav__icon {
   margin-right: 0.625rem;
 }

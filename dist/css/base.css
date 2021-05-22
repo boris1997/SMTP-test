@@ -1243,6 +1243,20 @@ $lightGrey: #edf0f5; */
   transition: width 0.4s ease-in-out;
 }
 
+.nav__link:hover .nav__stroke {
+  stroke: #29e3f9;
+}
+
+.nav__link:active .nav__stroke {
+  stroke: #17b6c9;
+}
+
+.nav__stroke {
+  -webkit-transition: stroke 0.3s ease-in-out;
+  -o-transition: stroke 0.3s ease-in-out;
+  transition: stroke 0.3s ease-in-out;
+}
+
 .nav__link--active:hover {
   color: #ffffff !important;
 }
@@ -1601,6 +1615,10 @@ $lightGrey: #edf0f5; */
   text-decoration: underline;
 }
 
+.suit {
+  background: url("../assets/backgrounds/mail/suit-background.svg") no-repeat center center/cover;
+}
+
 .tariffsec {
   background: -o-linear-gradient(349.26deg, #191830 0%, #1e1d38 48.96%, #191830 100.96%);
   background: linear-gradient(100.74deg, #191830 0%, #1e1d38 48.96%, #191830 100.96%);
@@ -1723,10 +1741,6 @@ $lightGrey: #edf0f5; */
   filter: drop-shadow(0px 10px 30px rgba(36, 110, 226, 0.1));
   width: 18.5rem;
   margin-top: 0 !important;
-}
-
-.suit {
-  background: url("../assets/backgrounds/mail/suit-background.svg") no-repeat center center/cover;
 }
 
 .main {
