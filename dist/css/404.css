@@ -313,10 +313,6 @@ $lightGrey: #edf0f5; */
   /** parent border-radius minus border width */
 }
 
-.articles {
-  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
-}
-
 .notFound {
   overflow: hidden;
   margin-top: 5.625rem;
@@ -445,6 +441,10 @@ $lightGrey: #edf0f5; */
 /* .incDec-btn--minus {
   position: relative;
 } */
+
+.articles {
+  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
+}
 
 /*     transition: background 0.3s ease-in-out;
     &:hover .item-suit {
