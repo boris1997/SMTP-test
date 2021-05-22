@@ -2490,9 +2490,9 @@ const slider3d = {
 const sliderGif = new Slider (
 
 ) */
-class Style {
-    static addTransition = (element, type, dur, effect) => {
-        console.log(element, type, dur, effect)
-        element.style.transition = `${type} ${dur} ${effect}`
-    }
-}
+// class Style {
+//     static addTransition = (element, type, dur, effect) => {
+//         console.log(element, type, dur, effect)
+//         element.style.transition = `${type} ${dur} ${effect}`
+//     }
+// }
