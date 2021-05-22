@@ -41,14 +41,6 @@
     position: relative;
     /*    transition: background-clip 0.2s ease-in-out; */
     @include flexbox(row, space-between, center);
-    &:hover {
-      background: rgba(41, 227, 249, 1);
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    &:active {
-      color: $accentColor;
-    }
 
     &::after {
       content: "";

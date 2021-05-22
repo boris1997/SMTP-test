@@ -41,6 +41,8 @@
   }
   &__item:hover .services-item__btn {
     display: flex;
+    visibility: visible;
+    opacity: 1;
     margin-top: rem(32px);
     &:after {
       content: none;
@@ -180,6 +182,11 @@
   }
   &__btn {
     margin-bottom: rem(39px);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    /*  display: none; */
+    @include position(absolute, "", 0, auto, 0, 0, auto);
+    visibility: hidden;
     &::after {
       content: "" !important;
     }
@@ -202,7 +209,8 @@
   }
 
   &__body {
-    overflow: hidden;
+    // overflow: hidden;
+    position: relative;
     padding: 0 rem(12px);
   }
 
@@ -228,9 +236,5 @@
   &__img {
     margin: auto;
     display: block;
-  }
-
-  &__btn {
-    display: none;
   }
 }

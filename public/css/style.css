@@ -122,6 +122,19 @@ ul li {
   list-style: none;
 }
 
+li > a {
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+li > a:hover {
+  color: #29e3f9;
+}
+
+li > a:active {
+  color: #17b6c9;
+}
+
 img {
   vertical-align: top;
 }

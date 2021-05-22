@@ -84,6 +84,19 @@ a:hover {
 ul li {
   list-style: none;
 }
+
+li > a {
+  transition: color 0.3s ease-in-out;
+}
+
+li > a:hover {
+  color: #29e3f9;
+}
+
+li > a:active {
+  color: #17b6c9;
+}
+
 img {
   vertical-align: top;
 }

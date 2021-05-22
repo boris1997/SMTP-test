@@ -126,6 +126,8 @@ class Scroll {
     constructor(btn, scrollToSection) {
         this.btn = btn;
         this.scrollToSection = scrollToSection;
+        this.scrollTop = null;
+        this.scrollTo = null;
         // this.smoothScroll = require('smoothscroll');
         this.initEvents()
     }
@@ -152,14 +154,23 @@ class Scroll {
 
     setScroll = (scrollToSection) => {
         // this.smoothScroll(scrollToSection)
-        const scrollValue = scrollToSection.getBoundingClientRect().top;
+        console.log(window.scrollY)
+        this.scrollTop = window.scrollY;
+        this.scrollTo = scrollToSection.getBoundingClientRect().top;
         console.log('ok')
-        window.scrollTo({
-            top: scrollValue,
-            behavior: "smooth"
-        });
+        this.animation()
     }
 
+
+    animation = () => {
+        console.log(this.scrollTop)
+        this.scrollTop += 100;
+        window.scrollTo({
+            top: this.scrollTop,
+            behavior: "auto"
+        });
+        this.scrollTop < this.scrollTo && requestAnimationFrame(this.animation)
+    }
 
 
     changeTextVisibility = (text, btn) => {
@@ -169,6 +180,9 @@ class Scroll {
         btn.classList.toggle(this.activeBtn);
         this.activeText && text.classList.toggle(this.activeText)
     }
+
+
+
 
     setMaxHeight = (element, btn) => {
         console.log(this.activeBtn)
@@ -2476,9 +2490,9 @@ const slider3d = {
 const sliderGif = new Slider (
 
 ) */
-// class Style {
-//     static addTransition = (element, type, dur, effect) => {
-//         console.log(element, type, dur, effect)
-//         element.style.transition = `${type} ${dur} ${effect}`
-//     }
-// }
+class Style {
+    static addTransition = (element, type, dur, effect) => {
+        console.log(element, type, dur, effect)
+        element.style.transition = `${type} ${dur} ${effect}`
+    }
+}
