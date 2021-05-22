@@ -316,6 +316,10 @@ $lightGrey: #edf0f5; */
   /** parent border-radius minus border width */
 }
 
+.articles {
+  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
+}
+
 .notFound {
   overflow: hidden;
   margin-top: 5.625rem;
@@ -441,10 +445,6 @@ $lightGrey: #edf0f5; */
 /* .incDec-btn--minus {
   position: relative;
 } */
-
-.articles {
-  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
-}
 
 /*     transition: background 0.3s ease-in-out;
     &:hover .item-suit {
@@ -675,14 +675,6 @@ $lightGrey: #edf0f5; */
   margin-right: 0.625rem;
 }
 
-/* Portrait tablets and medium desktops */
-
-/* Portrait tablets and small desktops */
-
-/* Landscape phones and portrait tablets */
-
-/* Landscape phones and smaller */
-
 /* .card__small-blue {
   animation: 2s linear 0s infinite alternate small-blue-color;
   transition: none !important;
@@ -797,6 +789,14 @@ $lightGrey: #edf0f5; */
     fill: #ff045e;
   }
 }
+
+/* Portrait tablets and medium desktops */
+
+/* Portrait tablets and small desktops */
+
+/* Landscape phones and portrait tablets */
+
+/* Landscape phones and smaller */
 
 .services {
   background: #192942;

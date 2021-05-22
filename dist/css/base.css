@@ -369,6 +369,10 @@ $lightGrey: #edf0f5; */
   background: #44d5fc;
 }
 
+.articles {
+  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
+}
+
 .difference {
   background: url("../assets/backgrounds/base/difference-background.svg") no-repeat center center/cover;
 }
@@ -1014,10 +1018,6 @@ $lightGrey: #edf0f5; */
   position: relative;
 } */
 
-.articles {
-  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
-}
-
 /*     transition: background 0.3s ease-in-out;
     &:hover .item-suit {
       background-color: #0b213f;
@@ -1259,14 +1259,6 @@ $lightGrey: #edf0f5; */
   margin-right: 0.625rem;
 }
 
-/* Portrait tablets and medium desktops */
-
-/* Portrait tablets and small desktops */
-
-/* Landscape phones and portrait tablets */
-
-/* Landscape phones and smaller */
-
 /* .card__small-blue {
   animation: 2s linear 0s infinite alternate small-blue-color;
   transition: none !important;
@@ -1381,6 +1373,14 @@ $lightGrey: #edf0f5; */
     fill: #ff045e;
   }
 }
+
+/* Portrait tablets and medium desktops */
+
+/* Portrait tablets and small desktops */
+
+/* Landscape phones and portrait tablets */
+
+/* Landscape phones and smaller */
 
 .services {
   background: #192942;
@@ -1572,6 +1572,10 @@ $lightGrey: #edf0f5; */
   opacity: 1;
 }
 
+.afterMailing__sec-title {
+  max-width: 28.1875rem;
+}
+
 .text-accordion__body {
   cursor: pointer;
   display: -webkit-box;
@@ -1595,10 +1599,6 @@ $lightGrey: #edf0f5; */
 .text-accordion__link {
   margin-top: 0 !important;
   text-decoration: underline;
-}
-
-.afterMailing__sec-title {
-  max-width: 28.1875rem;
 }
 
 .tariffsec {

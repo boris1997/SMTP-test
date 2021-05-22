@@ -411,6 +411,10 @@ $lightGrey: #edf0f5; */
   background: #44d5fc;
 }
 
+.articles {
+  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
+}
+
 .direction__body {
   margin-top: 2rem;
   display: -webkit-box;
@@ -550,6 +554,13 @@ $lightGrey: #edf0f5; */
   transform: rotate(180deg);
 }
 
+.article {
+  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
+  /*   &__right {
+    margin-left: rem(135px);
+  } */
+}
+
 .btn {
   outline: none;
   background-color: transparent;
@@ -663,17 +674,6 @@ $lightGrey: #edf0f5; */
 /* .incDec-btn--minus {
   position: relative;
 } */
-
-.articles {
-  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
-}
-
-.article {
-  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
-  /*   &__right {
-    margin-left: rem(135px);
-  } */
-}
 
 /*     transition: background 0.3s ease-in-out;
     &:hover .item-suit {
@@ -904,14 +904,6 @@ $lightGrey: #edf0f5; */
   margin-right: 0.625rem;
 }
 
-/* Portrait tablets and medium desktops */
-
-/* Portrait tablets and small desktops */
-
-/* Landscape phones and portrait tablets */
-
-/* Landscape phones and smaller */
-
 /* .card__small-blue {
   animation: 2s linear 0s infinite alternate small-blue-color;
   transition: none !important;
@@ -1026,6 +1018,14 @@ $lightGrey: #edf0f5; */
     fill: #ff045e;
   }
 }
+
+/* Portrait tablets and medium desktops */
+
+/* Portrait tablets and small desktops */
+
+/* Landscape phones and portrait tablets */
+
+/* Landscape phones and smaller */
 
 .service {
   /* 

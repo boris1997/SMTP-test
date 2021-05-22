@@ -2452,7 +2452,7 @@ const sliderGif = new Slider (
 
 ) */
 class Styles {
-    addTransition = (element, type, dur, effect) => {
+    static addTransition(element, type, dur, effect) {
         console.log(element, type, dur, effect)
         element.style.transition = `${type} ${dur} ${effect}`
     }
