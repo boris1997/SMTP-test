@@ -291,7 +291,6 @@
     min-width: 50%;
     height: rem(316px);
   }
-
   .advantages__item:nth-child(3),
   .advantages__item-center {
     margin-left: rem(27px) !important;
@@ -329,11 +328,9 @@
   /*   .programm__item {
     min-width: 30%;
   }
-
   .programm__item + .programm__item {
     margin-left: rem(16px);
   }
-
   .programm__item {
     font-size: rem(17px);
   } */
@@ -425,10 +422,10 @@
     margin-left: 0;
   }
 
-  .togglers-tariff__item:nth-child(2) {
+  .togglers-tariff__item:nth-child(3) {
     margin-left: calc(133 / 991 * 100%);
   }
-  .togglers-tariff__item:nth-child(3) {
+  .togglers-tariff__item:nth-child(4) {
     margin-left: calc(76 / 991 * 100%);
   }
 
@@ -1000,7 +997,6 @@
     margin-left: rem(20px) !important;
     margin-top: rem(15px);
   }
-
   .item-advantages__text {
     max-width: rem(280px);
   } */
@@ -1058,6 +1054,19 @@
   .total-price__amount-rub {
     margin-left: rem(8px);
   }
+
+  .total-price__text {
+    margin-left: rem(12px);
+  }
+
+  .card-tariff__footer {
+    margin-top: 0;
+  }
+
+  .togglers-tariff__btn {
+    margin-top: rem(14px);
+  }
+
   .footer-tariff__btn {
     font-size: rem(14px);
     height: rem(50px);
@@ -1410,8 +1419,8 @@
     align-self: baseline;
   }
 
-  .togglers-tariff__item:nth-child(2),
   .togglers-tariff__item:nth-child(3),
+  .togglers-tariff__item:nth-child(4),
   .footer-tariff__info,
   .service-data__item,
   .mailing__right,
@@ -1420,8 +1429,11 @@
   .service__right {
     margin-left: 0 !important ;
   }
+  .togglers-tariff__input-content {
+    margin-bottom: rem(25px);
+  }
 
-  .togglers-tariff__item:nth-child(3) .togglers-tariff__header {
+  .togglers-tariff__item:nth-child(4) .togglers-tariff__header {
     margin-bottom: 0;
   }
 
@@ -1460,7 +1472,9 @@
     justify-content: flex-start;
   }
   .footer-tariff__btn,
-  .main__body--base {
+  .main__body--base,
+  .togglers-tariff__input,
+  .togglers-tariff__input-content {
     width: 100%;
   }
 

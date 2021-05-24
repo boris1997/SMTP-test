@@ -36,12 +36,12 @@ class Modal {
                     console.log(popupModal.classList.contains(this.popupModalActive))
                     if (popupModal.classList.contains(this.popupModalActive)) {
                         console.log(this.body)
-                        this.removeClass(this.body, this.bodyNoScroll);
+                        ClassToggle.removeClass(this.body, this.bodyNoScroll);
                         this.removeNoScrollStyles(this.body);
                         /*  !popupModal.classList.contains(this.staticForm) && this.removeNoScrollStyles(popupModal); */
                         console.log(popupModal)
-                        !popupModal.classList.contains(this.staticForm) && this.removeClass(popupModal, this.popupModalActive);
-                        this.addClass(this.popup, this.popupHidden)
+                        !popupModal.classList.contains(this.staticForm) && ClassToggle.removeClass(popupModal, this.popupModalActive);
+                        ClassToggle.addClass(this.popup, this.popupHidden)
                     }
                 })
 
@@ -68,10 +68,10 @@ class Modal {
                             popupModal.dataset.modal === 'form' && this.submitForm(popupModal)
                             /* this.addNoScrollStyles(popupModal) */
                             window.innerWidth - this.body.offsetWidth > 0 && this.addMarginToBlock(this.popupModalWrapper[i])
-                            !this.body.classList.contains(this.bodyNoScroll) && (this.addNoScrollStyles(this.body), this.addClass(this.body, this.bodyNoScroll))
-                            this.addClass(popupModal, this.popupModalActive);
+                            !this.body.classList.contains(this.bodyNoScroll) && (this.addNoScrollStyles(this.body), ClassToggle.addClass(this.body, this.bodyNoScroll))
+                            ClassToggle.addClass(popupModal, this.popupModalActive);
                             console.log('ok')
-                            this.popup.classList.contains(this.popupHidden) && this.removeClass(this.popup, this.popupHidden)
+                            this.popup.classList.contains(this.popupHidden) && ClassToggle.removeClass(this.popup, this.popupHidden)
 
                         }
                     })
@@ -90,7 +90,7 @@ class Modal {
     }
 
     addMarginToBlock = (element) => {
-        this.addClass(element, this.wrapperMargin)
+        ClassToggle.addClass(element, this.wrapperMargin)
     }
 
     removeNoScrollStyles = (element) => {
@@ -98,28 +98,19 @@ class Modal {
         element.style.width = '100%';
     }
 
-    addClass = (element, clas) => {
-        element.classList.add(clas)
-    }
-
-
-    removeClass = (element, clas) => {
-        console.log(element)
-        element.classList.remove(clas)
-    }
 
     submitForm = (popupModalForm) => {
         console.log(popupModalForm)
         popupModalForm.addEventListener('submit', (e) => {
             console.log('ok')
             e.preventDefault()
-            !popupModalForm.classList.contains(this.staticForm) && this.removeClass(popupModalForm, this.popupModalActive)
-            this.popup.classList.contains(this.popupHidden) && this.removeClass(this.popup, this.popupHidden)
+            !popupModalForm.classList.contains(this.staticForm) && ClassToggle.removeClass(popupModalForm, this.popupModalActive)
+            this.popup.classList.contains(this.popupHidden) && ClassToggle.removeClass(this.popup, this.popupHidden)
             this.clearFields(this.formInputs)
             this.popupModal.map((popupModal, i) => {
                 if (popupModal.dataset.modal === 'success') {
                     console.log(this.staticForm)
-                    this.addClass(popupModal, this.popupModalActive);
+                    ClassToggle.addClass(popupModal, this.popupModalActive);
                 }
                 console.log(e.target, popupModal)
             })

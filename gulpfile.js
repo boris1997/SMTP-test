@@ -48,6 +48,7 @@ let { src, dest } = require('gulp'),
     /*     postcss = require('gulp-postcss'), */
     uncss = require('gulp-uncss'),
     purgecss = require('gulp-purgecss'),
+    svgSprite = require('gulp-svg-sprite'),
     fs = require('fs')
 
 const cssFileObg = {
@@ -144,7 +145,7 @@ function css(html, style) {
         .pipe(group_media())
         .pipe(purgecss({
             content: [`public/${html}`],
-            safelist: ['page__sidebar--active', 'sidebar__body--active', 'overlay--show', 'hamburger-menu__content--active', 'direction__accordion-body--hide', 'page_screen_full', 'incDec-btn--minus']
+            safelist: ['page__sidebar--active', 'body--noscroll', 'sidebar__body--active', 'overlay--show', 'hamburger-menu__content--active', 'direction__accordion-body--hide', 'page_screen_full', 'incDec-btn--minus']
         }))
         .pipe(dest(path.build.css))
         .pipe(clean_css())
@@ -192,29 +193,22 @@ function fontsWoff() {
         .pipe(dest(path.build.fonts))
 }
 
-function fonts() {
-    return src(path.src.cssFonts)
-        /*     .pipe(scss({
-                outputStyle: "expanded"
-            }))
-            .pipe(dest(path.src.outPutCss)) */
-        .pipe(scss({
-            outputStyle: "expanded"
-        }).on('error', scss.logError))
 
-        .pipe(dest(path.build.css))
-        .pipe(clean_css())
-        /*  .pipe(scss({
-             outputStyle: "expanded"
-         })) */
-        .pipe(
-            rename({
-                extname: ".min.css"
-            })
+gulp.task('svgSprite', () => {
+    return gulp.src([source_folder + '/assets/**/*.svg'])
+        .pipe(svgSprite({
+            mode: {
+                stack: { // Activate the «css» mode
+                    sprite: "../icons/icons.svg",
+                    example: true
+                }
+            }
+        })
         )
-        .pipe(dest(path.build.css))
-        .pipe(browsersync.stream())
-}
+        .pipe(dest(path.build.assets))
+})
+
+
 
 /* gulp.task('otf2ttf', () => {
     return src([source_folder + '/fonts/*.otf'])

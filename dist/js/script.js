@@ -1,319 +1,10 @@
-class Modal {
+class Togglers {
 
-    constructor(body, popup, popupModal, popupModalWrapper, wrapperMargin, btnPopup, closeBtn, formInputs, popupModalActive, popupHidden, bodyNoScroll, staticForm) {
-        this.body = body;
-        this.popup = popup;
-        this.popupModal = popupModal;
-        this.popupModalWrapper = popupModalWrapper;
-        this.wrapperMargin = wrapperMargin;
-        this.btnPopup = btnPopup;
-        this.closeBtn = closeBtn;
-        this.formInputs = formInputs;
-        this.popupModalActive = popupModalActive;
-        this.popupHidden = popupHidden;
-        this.bodyNoScroll = bodyNoScroll;
-        this.staticForm = staticForm;
-/*         this.textBtn = textBtn;
- */        this.initEvents()
-    }
-
-    initEvents = () => {
-        console.log(this.btnPopup)
-        this.initArrayBtnPopup();
-        this.initCloseBtn();
-    }
-
-
-    initCloseBtn = () => {
-        this.popup.addEventListener('click', (e) => {
-            console.log(e.target)
-
-            if (e.target.classList.contains('popup__modal--active') || e.target.classList.contains('popup__modal-close') || e.target.dataset.modal === 'close') {
-                e.stopPropagation()
-                console.log(e.target.classList, this.popupModal)
-
-                this.popupModal.map((popupModal, i) => {
-                    console.log(popupModal.classList.contains(this.popupModalActive))
-                    if (popupModal.classList.contains(this.popupModalActive)) {
-                        console.log(this.body)
-                        this.removeClass(this.body, this.bodyNoScroll);
-                        this.removeNoScrollStyles(this.body);
-                        /*  !popupModal.classList.contains(this.staticForm) && this.removeNoScrollStyles(popupModal); */
-                        console.log(popupModal)
-                        !popupModal.classList.contains(this.staticForm) && this.removeClass(popupModal, this.popupModalActive);
-                        this.addClass(this.popup, this.popupHidden)
-                    }
-                })
-
-            }
-        })
-    }
-
-    initArrayBtnPopup = () => {
-        this.btnPopup.map((btnPopup, i) => {
-            console.log(btnPopup, btnPopup.type)
-            if (btnPopup.type === 'submit') {
-                console.log('ok')
-                /* console.log(this.btnPopup[i], this.popupModal[i]) */
-                this.popupModal.map((popupModal, i) => {
-                    popupModal.dataset.modal === 'form' && this.submitForm(popupModal)
-                })
-            } else {
-                btnPopup.addEventListener('click', () => {
-                    this.popupModal.map((popupModal, i) => {
-                        // console.log(popupModal.children[0])
-                        Styles.addTransition(popupModal.children[0], 'all', '0.5s', 'ease-in-out')
-
-                        if (btnPopup.dataset.modal === popupModal.dataset.modal) {
-                            popupModal.dataset.modal === 'form' && this.submitForm(popupModal)
-                            /* this.addNoScrollStyles(popupModal) */
-                            window.innerWidth - this.body.offsetWidth > 0 && this.addMarginToBlock(this.popupModalWrapper[i])
-                            !this.body.classList.contains(this.bodyNoScroll) && (this.addNoScrollStyles(this.body), this.addClass(this.body, this.bodyNoScroll))
-                            this.addClass(popupModal, this.popupModalActive);
-                            console.log('ok')
-                            this.popup.classList.contains(this.popupHidden) && this.removeClass(this.popup, this.popupHidden)
-
-                        }
-                    })
-                    /*      this.changeTextVisibility(this.text[i], item);
-                         this.textBtn && this.changeBtnText(item) */
-                })
-            }
-        }
-        )
-    }
-
-    addNoScrollStyles = (element) => {
-        console.log('pk')
-        element.style.paddingRight = window.innerWidth - this.body.offsetWidth + /* 12 +  */'px';
-        element.style.width = '100vw'; // ? 
-    }
-
-    addMarginToBlock = (element) => {
-        this.addClass(element, this.wrapperMargin)
-    }
-
-    removeNoScrollStyles = (element) => {
-        element.style.paddingRight = 0 + 'px';
-        element.style.width = '100%';
-    }
-
-    addClass = (element, clas) => {
-        element.classList.add(clas)
-    }
-
-
-    removeClass = (element, clas) => {
-        console.log(element)
-        element.classList.remove(clas)
-    }
-
-    submitForm = (popupModalForm) => {
-        console.log(popupModalForm)
-        popupModalForm.addEventListener('submit', (e) => {
-            console.log('ok')
-            e.preventDefault()
-            !popupModalForm.classList.contains(this.staticForm) && this.removeClass(popupModalForm, this.popupModalActive)
-            this.popup.classList.contains(this.popupHidden) && this.removeClass(this.popup, this.popupHidden)
-            this.clearFields(this.formInputs)
-            this.popupModal.map((popupModal, i) => {
-                if (popupModal.dataset.modal === 'success') {
-                    console.log(this.staticForm)
-                    this.addClass(popupModal, this.popupModalActive);
-                }
-                console.log(e.target, popupModal)
-            })
-        })
-    }
-
-    clearFields = (fields) => {
-        console.log(fields)
-        fields.map((field, i) => field.value = '')
-    }
-
-}
-
-
-document.addEventListener('DOMContentLoaded', () => {
-
-    // Coffee Slider
-    const popupMain = document.getElementById("popup-main");
-    if (popupMain !== null) {
-        let body = document.querySelector(".body");
-        let popup = document.querySelector(".popup");
-        let popupModal = [...document.querySelectorAll(".popup__modal")];
-        let popupModalWrapper = [...document.querySelectorAll(".popup__modal-wrapper")];
-        let btnPopup = [...document.querySelectorAll(".btn__popup")];
-        let closeBtn = [...document.querySelectorAll(".popup__modal-close")];
-        let formInputs = [...document.querySelectorAll(".contact-form__input")];
-        let popupModalActive = 'popup__modal--active';
-        let popupHidden = 'popup--hidden';
-        let bodyNoScroll = 'body--noscroll';
-        let wrapperMargin = 'popup__modal-wrapper--margin'
-        console.log(closeBtn)
-        new Modal(body, popup, popupModal, popupModalWrapper, wrapperMargin, btnPopup, closeBtn, formInputs, popupModalActive, popupHidden, bodyNoScroll);
-    }
-
-
-    const popupContact = document.getElementById("popup-contact");
-    if (popupContact !== null) {
-        console.log('ok')
-        let body = document.querySelector(".body");
-        let popup = document.querySelector(".popup");
-        let popupModal = [...document.querySelectorAll(".popup__modal")];
-        let popupModalWrapper = [...document.querySelectorAll(".popup__modal-wrapper")];
-        let btnPopup = [...document.querySelectorAll(".btn__popup")];
-        let closeBtn = [...document.querySelectorAll(".popup__modal-close")];
-        console.log(closeBtn)
-        let formInputs = [...document.querySelectorAll(".contact-form__input")];
-        let popupModalActive = 'popup__modal--active';
-        let popupHidden = 'popup--hidden';
-        let bodyNoScroll = 'body--noscroll';
-        let staticForm = 'contact__form';
-        let wrapperMargin = 'popup__modal-wrapper--margin'
-        new Modal(body, popup, popupModal, popupModalWrapper, wrapperMargin, btnPopup, closeBtn, formInputs, popupModalActive, popupHidden, bodyNoScroll, staticForm);
-    }
-    // const citiesList = document.querySelector(".cities__list-hidden");
-    // const citiesBtn = document.querySelector(".cities__link");
-    // const citiesBtnActive = 'cities__link--hide';
-    // const textToggleBtn = ['Все города', 'Свернуть']
-    // console.log(citiesList)
-    // citiesList !== null && new Accordion(citiesBtn, citiesList, citiesBtnActive, textToggleBtn);
-
-
-})
-// (function (root, smoothScroll) {
-//     'use strict';
-
-//     // Support RequireJS and CommonJS/NodeJS module formats.
-//     // Attach smoothScroll to the `window` when executed as a <script>.
-
-//     // RequireJS
-//     if (typeof define === 'function' && define.amd) {
-//         define(smoothScroll);
-
-//         // CommonJS
-//     } else if (typeof exports === 'object' && typeof module === 'object') {
-//         module.exports = smoothScroll();
-
-//     } else {
-//         root.smoothScroll = smoothScroll();
-//     }
-
-// })(this, function () {
-//     'use strict';
-
-//     // Do not initialize smoothScroll when running server side, handle it in client:
-//     if (typeof window !== 'object') return;
-
-//     // We do not want this script to be applied in browsers that do not support those
-//     // That means no smoothscroll on IE9 and below.
-//     if (document.querySelectorAll === void 0 || window.pageYOffset === void 0 || history.pushState === void 0) { return; }
-
-//     // Get the top position of an element in the document
-//     var getTop = function (element, start) {
-//         // return value of html.getBoundingClientRect().top ... IE : 0, other browsers : -pageYOffset
-//         if (element.nodeName === 'HTML') return -start
-//         return element.getBoundingClientRect().top + start
-//     }
-//     // ease in out function thanks to:
-//     // http://blog.greweb.fr/2012/02/bezier-curve-based-easing-functions-from-concept-to-implementation/
-//     var easeInOutCubic = function (t) { return t < .5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1 }
-
-//     // calculate the scroll position we should be in
-//     // given the start and end point of the scroll
-//     // the time elapsed from the beginning of the scroll
-//     // and the total duration of the scroll (default 500ms)
-//     var position = function (start, end, elapsed, duration) {
-//         if (elapsed > duration) return end;
-//         return start + (end - start) * easeInOutCubic(elapsed / duration); // <-- you can change the easing funtion there
-//         // return start + (end - start) * (elapsed / duration); // <-- this would give a linear scroll
-//     }
-
-//     // we use requestAnimationFrame to be called by the browser before every repaint
-//     // if the first argument is an element then scroll to the top of this element
-//     // if the first argument is numeric then scroll to this location
-//     // if the callback exist, it is called when the scrolling is finished
-//     // if context is set then scroll that element, else scroll window
-//     var smoothScroll = function (el, duration, callback, context) {
-//         duration = duration || 500;
-//         context = context || window;
-//         var start = context.scrollTop || window.pageYOffset;
-
-//         if (typeof el === 'number') {
-//             var end = parseInt(el);
-//         } else {
-//             var end = getTop(el, start);
-//         }
-
-//         var clock = Date.now();
-//         var requestAnimationFrame = window.requestAnimationFrame ||
-//             window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame ||
-//             function (fn) { window.setTimeout(fn, 15); };
-
-//         var step = function () {
-//             var elapsed = Date.now() - clock;
-//             if (context !== window) {
-//                 context.scrollTop = position(start, end, elapsed, duration);
-//             }
-//             else {
-//                 window.scroll(0, position(start, end, elapsed, duration));
-//             }
-
-//             if (elapsed > duration) {
-//                 if (typeof callback === 'function') {
-//                     callback(el);
-//                 }
-//             } else {
-//                 requestAnimationFrame(step);
-//             }
-//         }
-//         step();
-//     }
-
-//     var linkHandler = function (ev) {
-//         if (!ev.defaultPrevented) {
-//             ev.preventDefault();
-
-//             if (location.hash !== this.hash) window.history.pushState(null, null, this.hash)
-//             // using the history api to solve issue #1 - back doesn't work
-//             // most browser don't update :target when the history api is used:
-//             // THIS IS A BUG FROM THE BROWSERS.
-//             // change the scrolling duration in this call
-//             var node = document.getElementById(this.hash.substring(1))
-//             if (!node) return; // Do not scroll to non-existing node
-
-//             smoothScroll(node, 500, function (el) {
-//                 location.replace('#' + el.id)
-//                 // this will cause the :target to be activated.
-//             });
-//         }
-//     }
-
-//     // We look for all the internal links in the documents and attach the smoothscroll function
-//     document.addEventListener("DOMContentLoaded", function () {
-//         var internal = document.querySelectorAll('a[href^="#"]:not([href="#"])'), a;
-//         for (var i = internal.length; a = internal[--i];) {
-//             a.addEventListener("click", linkHandler, false);
-//         }
-//     });
-
-//     // return smoothscroll API
-//     return smoothScroll;
-
-// });
-// import smoothscroll from 'smoothscroll-polyfill';
-
-/* smoothscroll.polyfill(); */
-class Scroll {
-
-    constructor(btn, scrollToSection, speed) {
+    constructor(btn, item, btnActiveClass, itemActiveClass) {
         this.btn = btn;
-        this.scrollToSection = scrollToSection;
-        this.scrollTop = null;
-        this.scrollTo = null;
-        this.speed = speed;
-        // this.smoothScroll = require('smoothscroll');
+        this.item = item;
+        this.btnActiveClass = btnActiveClass;
+        this.itemActiveClass = itemActiveClass;
         this.initEvents()
     }
 
@@ -325,47 +16,44 @@ class Scroll {
 
     initArrayBtn = () => {
         console.log(this.btn)
-        this.btn.map((item, i) => {
-            item.addEventListener('click', (e) => {
-                e.preventDefault()
-                this.scrollToSection[i].dataset.scroll === this.btn[i].dataset.scroll && this.setScroll(this.scrollToSection[i])
-
-                // this.additionalElement && this.fullHeight(this.additionalElement)
+        this.btn.map((btn, i) => {
+            btn.addEventListener('click', (e) => {
+                const activeBtn = document.querySelector(`.${this.btnActiveClass}`);
+                ClassToggle.removeClass(activeBtn, this.btnActiveClass);
+                ClassToggle.addClass(btn, this.btnActiveClass)
+                this.switchContent(btn)
             })
         }
         )
     }
 
-    setScroll = (scrollToSection) => {
-        // this.smoothScroll(scrollToSection)
-        this.scrollTop = window.scrollY;
-        this.scrollTo = scrollToSection.getBoundingClientRect().top + this.scrollTop;
-
-        this.animation()
+    switchContent = (btn) => {
+        this.item.map((item, i) => {
+            console.log('ok')
+            btn.dataset.show === item.dataset.show ? ClassToggle.addClass(item, this.itemActiveClass) : ClassToggle.removeClass(item, this.itemActiveClass);
+        })
     }
 
 
-    animation = () => {
-        this.scrollTop += this.speed;
-        window.scrollTo({
-            top: this.scrollTop,
-            behavior: "auto"
-        });
-        this.scrollTop < this.scrollTo && requestAnimationFrame(this.animation)
-    }
+
 }
 
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const scrollBtn = [...document.querySelectorAll(".data-scroll__btn")];
-    console.log(scrollBtn)
-    if (scrollBtn.length !== 0) {
-        const scrollToSection = [...document.querySelectorAll(".data-scrollTo")];
-        const speed = 200;
-        console.log(scrollToSection)
-        new Scroll(scrollBtn, scrollToSection, speed);
+    // faq
+    const togglersBtn = [...document.querySelectorAll(".togglers__button")];
+    if (togglersBtn.length !== 0) {
+
+        const tariffItem = [...document.querySelectorAll(".tariff__switch")];
+        const togglersActiveClass = 'togglers__button--active';
+        const itemActiveClass = 'tariff__switch--active';
+
+        new Togglers(togglersBtn, tariffItem, togglersActiveClass, itemActiveClass);
     }
+
+
+
 })
 
 
@@ -1392,8 +1080,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 class LazyLoading {
 
-    constructor(dataLazy, activeClass) {
+    constructor(dataLazy, observerRoot, activeClass) {
         this.dataLazy = dataLazy;
+        this.observerRoot = observerRoot;
         this.activeClass = activeClass;
         this.initEvents()
     }
@@ -1428,7 +1117,7 @@ class LazyLoading {
     scrollObserver = () => {
 
         const options = {
-            root: document.body,
+            root: this.observerRoot,
             threshold: 0,
             rootMargin: '0px 0px 500px 0px'
         }
@@ -1449,14 +1138,189 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // faq
     const dataLazy = [...document.querySelectorAll(".data-lazy")];
+    const observerRoot = document.querySelector("intersaction-observer");
     const activeClass = 'section--active'
-
-    new LazyLoading(dataLazy, activeClass);
+    new LazyLoading(dataLazy, observerRoot, activeClass);
 
 })
 
 
 
+class Modal {
+
+    constructor(body, popup, popupModal, popupModalWrapper, wrapperMargin, btnPopup, closeBtn, formInputs, popupModalActive, popupHidden, bodyNoScroll, staticForm) {
+        this.body = body;
+        this.popup = popup;
+        this.popupModal = popupModal;
+        this.popupModalWrapper = popupModalWrapper;
+        this.wrapperMargin = wrapperMargin;
+        this.btnPopup = btnPopup;
+        this.closeBtn = closeBtn;
+        this.formInputs = formInputs;
+        this.popupModalActive = popupModalActive;
+        this.popupHidden = popupHidden;
+        this.bodyNoScroll = bodyNoScroll;
+        this.staticForm = staticForm;
+/*         this.textBtn = textBtn;
+ */        this.initEvents()
+    }
+
+    initEvents = () => {
+        console.log(this.btnPopup)
+        this.initArrayBtnPopup();
+        this.initCloseBtn();
+    }
+
+
+    initCloseBtn = () => {
+        this.popup.addEventListener('click', (e) => {
+            console.log(e.target)
+
+            if (e.target.classList.contains('popup__modal--active') || e.target.classList.contains('popup__modal-close') || e.target.dataset.modal === 'close') {
+                e.stopPropagation()
+                console.log(e.target.classList, this.popupModal)
+
+                this.popupModal.map((popupModal, i) => {
+                    console.log(popupModal.classList.contains(this.popupModalActive))
+                    if (popupModal.classList.contains(this.popupModalActive)) {
+                        console.log(this.body)
+                        ClassToggle.removeClass(this.body, this.bodyNoScroll);
+                        this.removeNoScrollStyles(this.body);
+                        /*  !popupModal.classList.contains(this.staticForm) && this.removeNoScrollStyles(popupModal); */
+                        console.log(popupModal)
+                        !popupModal.classList.contains(this.staticForm) && ClassToggle.removeClass(popupModal, this.popupModalActive);
+                        ClassToggle.addClass(this.popup, this.popupHidden)
+                    }
+                })
+
+            }
+        })
+    }
+
+    initArrayBtnPopup = () => {
+        this.btnPopup.map((btnPopup, i) => {
+            console.log(btnPopup, btnPopup.type)
+            if (btnPopup.type === 'submit') {
+                console.log('ok')
+                /* console.log(this.btnPopup[i], this.popupModal[i]) */
+                this.popupModal.map((popupModal, i) => {
+                    popupModal.dataset.modal === 'form' && this.submitForm(popupModal)
+                })
+            } else {
+                btnPopup.addEventListener('click', () => {
+                    this.popupModal.map((popupModal, i) => {
+                        // console.log(popupModal.children[0])
+                        Styles.addTransition(popupModal.children[0], 'all', '0.5s', 'ease-in-out')
+
+                        if (btnPopup.dataset.modal === popupModal.dataset.modal) {
+                            popupModal.dataset.modal === 'form' && this.submitForm(popupModal)
+                            /* this.addNoScrollStyles(popupModal) */
+                            window.innerWidth - this.body.offsetWidth > 0 && this.addMarginToBlock(this.popupModalWrapper[i])
+                            !this.body.classList.contains(this.bodyNoScroll) && (this.addNoScrollStyles(this.body), ClassToggle.addClass(this.body, this.bodyNoScroll))
+                            ClassToggle.addClass(popupModal, this.popupModalActive);
+                            console.log('ok')
+                            this.popup.classList.contains(this.popupHidden) && ClassToggle.removeClass(this.popup, this.popupHidden)
+
+                        }
+                    })
+                    /*      this.changeTextVisibility(this.text[i], item);
+                         this.textBtn && this.changeBtnText(item) */
+                })
+            }
+        }
+        )
+    }
+
+    addNoScrollStyles = (element) => {
+        console.log('pk')
+        element.style.paddingRight = window.innerWidth - this.body.offsetWidth + /* 12 +  */'px';
+        element.style.width = '100vw'; // ? 
+    }
+
+    addMarginToBlock = (element) => {
+        ClassToggle.addClass(element, this.wrapperMargin)
+    }
+
+    removeNoScrollStyles = (element) => {
+        element.style.paddingRight = 0 + 'px';
+        element.style.width = '100%';
+    }
+
+
+    submitForm = (popupModalForm) => {
+        console.log(popupModalForm)
+        popupModalForm.addEventListener('submit', (e) => {
+            console.log('ok')
+            e.preventDefault()
+            !popupModalForm.classList.contains(this.staticForm) && ClassToggle.removeClass(popupModalForm, this.popupModalActive)
+            this.popup.classList.contains(this.popupHidden) && ClassToggle.removeClass(this.popup, this.popupHidden)
+            this.clearFields(this.formInputs)
+            this.popupModal.map((popupModal, i) => {
+                if (popupModal.dataset.modal === 'success') {
+                    console.log(this.staticForm)
+                    ClassToggle.addClass(popupModal, this.popupModalActive);
+                }
+                console.log(e.target, popupModal)
+            })
+        })
+    }
+
+    clearFields = (fields) => {
+        console.log(fields)
+        fields.map((field, i) => field.value = '')
+    }
+
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Coffee Slider
+    const popupMain = document.getElementById("popup-main");
+    if (popupMain !== null) {
+        let body = document.querySelector(".body");
+        let popup = document.querySelector(".popup");
+        let popupModal = [...document.querySelectorAll(".popup__modal")];
+        let popupModalWrapper = [...document.querySelectorAll(".popup__modal-wrapper")];
+        let btnPopup = [...document.querySelectorAll(".btn__popup")];
+        let closeBtn = [...document.querySelectorAll(".popup__modal-close")];
+        let formInputs = [...document.querySelectorAll(".contact-form__input")];
+        let popupModalActive = 'popup__modal--active';
+        let popupHidden = 'popup--hidden';
+        let bodyNoScroll = 'body--noscroll';
+        let wrapperMargin = 'popup__modal-wrapper--margin'
+        console.log(closeBtn)
+        new Modal(body, popup, popupModal, popupModalWrapper, wrapperMargin, btnPopup, closeBtn, formInputs, popupModalActive, popupHidden, bodyNoScroll);
+    }
+
+
+    const popupContact = document.getElementById("popup-contact");
+    if (popupContact !== null) {
+        console.log('ok')
+        let body = document.querySelector(".body");
+        let popup = document.querySelector(".popup");
+        let popupModal = [...document.querySelectorAll(".popup__modal")];
+        let popupModalWrapper = [...document.querySelectorAll(".popup__modal-wrapper")];
+        let btnPopup = [...document.querySelectorAll(".btn__popup")];
+        let closeBtn = [...document.querySelectorAll(".popup__modal-close")];
+        console.log(closeBtn)
+        let formInputs = [...document.querySelectorAll(".contact-form__input")];
+        let popupModalActive = 'popup__modal--active';
+        let popupHidden = 'popup--hidden';
+        let bodyNoScroll = 'body--noscroll';
+        let staticForm = 'contact__form';
+        let wrapperMargin = 'popup__modal-wrapper--margin'
+        new Modal(body, popup, popupModal, popupModalWrapper, wrapperMargin, btnPopup, closeBtn, formInputs, popupModalActive, popupHidden, bodyNoScroll, staticForm);
+    }
+    // const citiesList = document.querySelector(".cities__list-hidden");
+    // const citiesBtn = document.querySelector(".cities__link");
+    // const citiesBtnActive = 'cities__link--hide';
+    // const textToggleBtn = ['Все города', 'Свернуть']
+    // console.log(citiesList)
+    // citiesList !== null && new Accordion(citiesBtn, citiesList, citiesBtnActive, textToggleBtn);
+
+
+})
 
 // // import init from './lib.js';
 
@@ -2451,9 +2315,83 @@ const slider3d = {
 const sliderGif = new Slider (
 
 ) */
+// import smoothscroll from 'smoothscroll-polyfill';
+
+/* smoothscroll.polyfill(); */
+class Scroll {
+
+    constructor(btn, scrollToSection, speed) {
+        this.btn = btn;
+        this.scrollToSection = scrollToSection;
+        this.scrollTop = null;
+        this.scrollTo = null;
+        this.speed = speed;
+        // this.smoothScroll = require('smoothscroll');
+        this.initEvents()
+    }
+
+
+    initEvents = () => {
+        this.initArrayBtn()
+    }
+
+
+    initArrayBtn = () => {
+        console.log(this.btn)
+        this.btn.map((item, i) => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault()
+                this.scrollToSection[i].dataset.scroll === this.btn[i].dataset.scroll && this.setScroll(this.scrollToSection[i])
+
+                // this.additionalElement && this.fullHeight(this.additionalElement)
+            })
+        }
+        )
+    }
+
+    setScroll = (scrollToSection) => {
+        // this.smoothScroll(scrollToSection)
+        this.scrollTop = window.scrollY;
+        this.scrollTo = scrollToSection.getBoundingClientRect().top + this.scrollTop;
+
+        this.animation()
+    }
+
+
+    animation = () => {
+        this.scrollTop += this.speed;
+        window.scrollTo({
+            top: this.scrollTop,
+            behavior: "auto"
+        });
+        this.scrollTop < this.scrollTo && requestAnimationFrame(this.animation)
+    }
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const scrollBtn = [...document.querySelectorAll(".data-scroll__btn")];
+    console.log(scrollBtn)
+    if (scrollBtn.length !== 0) {
+        const scrollToSection = [...document.querySelectorAll(".data-scrollTo")];
+        const speed = 200;
+        console.log(scrollToSection)
+        new Scroll(scrollBtn, scrollToSection, speed);
+    }
+})
+
+
+
 class Styles {
     static addTransition(element, type, dur, effect) {
         console.log(element, type, dur, effect)
         element.style.transition = `${type} ${dur} ${effect}`
     }
+}
+
+class ClassToggle {
+    static addClass(element, clas) { element.classList.add(clas) }
+    static removeClass(element, clas) { element.classList.remove(clas) }
+    static toggleClass(element, clas) { element.classList.toggle(clas) }
 }

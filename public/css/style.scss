@@ -49,7 +49,6 @@ body {
   color: $primaryColor;
   line-height: 1;
   font-family: "TTCommons";
-  overflow: auto;
 }
 /* .body {
   height: 100vh;
@@ -58,6 +57,9 @@ input,
 button,
 textarea {
   font-family: inherit;
+}
+input:focus {
+  outline: none;
 }
 
 input::-ms-clear {
@@ -86,18 +88,21 @@ ul li {
 }
 
 li > a,
-.notFound__link {
+.notFound__link,
+.link__underline {
   transition: color 0.3s ease-in-out;
 }
 
 li > a:hover,
-.notFound__link:hover {
-  color: #29e3f9;
+.notFound__link:hover,
+.link__underline:hover {
+  color: #29e3f9 !important;
 }
 
 li > a:active,
-.notFound__link:active {
-  color: #17b6c9;
+.notFound__link:active,
+.link__underline:active {
+  color: #17b6c9 !important;
 }
 
 img {

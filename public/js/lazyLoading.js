@@ -1,7 +1,8 @@
 class LazyLoading {
 
-    constructor(dataLazy, activeClass) {
+    constructor(dataLazy, observerRoot, activeClass) {
         this.dataLazy = dataLazy;
+        this.observerRoot = observerRoot;
         this.activeClass = activeClass;
         this.initEvents()
     }
@@ -36,7 +37,7 @@ class LazyLoading {
     scrollObserver = () => {
 
         const options = {
-            root: document.body,
+            root: this.observerRoot,
             threshold: 0,
             rootMargin: '0px 0px 500px 0px'
         }
@@ -57,9 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // faq
     const dataLazy = [...document.querySelectorAll(".data-lazy")];
+    const observerRoot = document.querySelector("intersaction-observer");
     const activeClass = 'section--active'
-
-    new LazyLoading(dataLazy, activeClass);
+    new LazyLoading(dataLazy, observerRoot, activeClass);
 
 })
 

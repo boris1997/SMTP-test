@@ -88,10 +88,7 @@
   width: 100%;
   height: 100%;
   transition: transform 0.3s, box-shadow 0.3s;
-  &:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 10px rgba(0 0 0 / 30%);
-  }
+
   &__body {
   }
   &__item {

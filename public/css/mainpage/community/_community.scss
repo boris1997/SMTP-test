@@ -6,19 +6,19 @@
   }
 
   &__sec-title {
-    max-width: rem(451px);
+    max-width: 451px;
   }
 
   &__advantage {
-    margin-left: rem(12px);
-    max-width: rem(554px);
+    margin-left: 12px;
+    max-width: 554px;
   }
 
   &__item {
-    margin-top: rem(80px);
+    margin-top: 80px;
   }
   &__item:nth-child(2) {
-    margin-left: rem(82px);
+    margin-left: 82px;
   }
 }
 
@@ -28,14 +28,14 @@
     margin-top: 0;
   }
   &__text {
-    max-width: rem(384px);
+    max-width: 384px;
   }
   &__right {
-    margin-left: rem(16px);
+    margin-left: 16px;
   }
   margin: 0;
   &__order {
-    font-size: rem(62px);
+    font-size: 62px;
     font-weight: 700;
   }
 }
