@@ -1652,7 +1652,7 @@ class Sidebar {
 
         }
         this.sidebarOverlay.onclick = () => this.removeSidebar();
-        this.hamburgerMenu.onclick = (e) => this.toggleSidebar(), Styles.addTransition(this.sidebarBody, 'transform', '0.3s', 'ease-in-out');
+        this.hamburgerMenu.onclick = (e) => this.toggleSidebar(), Styles.addTransition(this.sidebarBody, 'all', '0.3s', 'ease-in-out');
         this.mobileMenuItems.map(item => item.onclick = () => this.removeSidebar())
     }
 
@@ -1663,7 +1663,7 @@ class Sidebar {
         this.sidebar.classList.contains('sidebar--full-page') && this.page.classList.toggle('page_screen_full')
         this.sidebar.classList.toggle('page__sidebar--active');
         this.page.classList.toggle('page--noScroll');
-        this.sidebarBody.classList.toggle('sidebar__body--active');
+        this.sidebarBody.classList.toggle('sidebar__content--active');
         this.sidebarOverlay.classList.toggle('overlay--show');
         this.hamburgerMenu.classList.toggle('hamburger-menu__content--active');
         /*      window.scrollTo({
@@ -1677,7 +1677,7 @@ class Sidebar {
 
         this.sidebar.classList.remove('page__sidebar--active');
         this.page.classList.remove('page--noScroll');
-        this.sidebarBody.classList.remove('sidebar__body--active');
+        this.sidebarBody.classList.remove('sidebar__content--active');
         this.sidebarOverlay.classList.remove('overlay--show');
         this.hamburgerMenu.classList.remove('hamburger-menu__content--active');
     }
