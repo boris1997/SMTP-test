@@ -391,10 +391,6 @@ $lightGrey: #edf0f5; */
   background: #eceff4 !important;
 }
 
-.articles {
-  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
-}
-
 .article {
   background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
   /*   &__right {
@@ -448,6 +444,10 @@ $lightGrey: #edf0f5; */
 
 .article-data__text-overflow {
   margin-top: 1.25rem;
+}
+
+.articles {
+  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
 }
 
 .btn {

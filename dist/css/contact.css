@@ -1044,6 +1044,14 @@ $lightGrey: #edf0f5; */
   }
 }
 
+/* Portrait tablets and medium desktops */
+
+/* Portrait tablets and small desktops */
+
+/* Landscape phones and portrait tablets */
+
+/* Landscape phones and smaller */
+
 .popup {
   position: fixed;
   width: 100%;
@@ -1143,14 +1151,6 @@ $lightGrey: #edf0f5; */
 .popup--hidden {
   visibility: hidden;
 }
-
-/* Portrait tablets and medium desktops */
-
-/* Portrait tablets and small desktops */
-
-/* Landscape phones and portrait tablets */
-
-/* Landscape phones and smaller */
 
 .services {
   background: #192942;
