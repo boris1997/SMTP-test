@@ -319,6 +319,48 @@ $lightGrey: #edf0f5; */
   /** parent border-radius minus border width */
 }
 
+.notFound {
+  overflow: hidden;
+  margin-top: 5.625rem;
+}
+
+.notFound__content {
+  /* margin-top: rem(50px); */
+  height: 100%;
+  position: relative;
+}
+
+.notFound__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: baseline;
+  -ms-flex-pack: baseline;
+  justify-content: baseline;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.notFound__title {
+  text-transform: uppercase;
+  margin-top: 2.1875rem;
+  margin-left: 2.0625rem;
+}
+
+.notFound__sec-title {
+  max-width: 61.25rem;
+}
+
+.notFound__text {
+  margin-top: 1.6875rem;
+  max-width: 38rem;
+}
+
 .articles {
   background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
 }
@@ -428,48 +470,6 @@ $lightGrey: #edf0f5; */
      );
    }
   */
-}
-
-.notFound {
-  overflow: hidden;
-  margin-top: 5.625rem;
-}
-
-.notFound__content {
-  /* margin-top: rem(50px); */
-  height: 100%;
-  position: relative;
-}
-
-.notFound__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: baseline;
-  -ms-flex-pack: baseline;
-  justify-content: baseline;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.notFound__title {
-  text-transform: uppercase;
-  margin-top: 2.1875rem;
-  margin-left: 2.0625rem;
-}
-
-.notFound__sec-title {
-  max-width: 61.25rem;
-}
-
-.notFound__text {
-  margin-top: 1.6875rem;
-  max-width: 38rem;
 }
 
 .footer {
@@ -819,10 +819,6 @@ $lightGrey: #edf0f5; */
 
 /* Landscape phones and smaller */
 
-.services {
-  background: #192942;
-}
-
 .sidebar {
   z-index: 2;
 }
@@ -852,8 +848,10 @@ $lightGrey: #edf0f5; */
   z-index: 1;
   padding: 5.125rem 1rem;
   background: url("../assets/backgrounds/menu-background.svg") no-repeat center center/cover;
+  will-change: transform;
   overflow: hidden;
-  margin-left: -100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   /*  transform: translateX(-100%); */
   /*  inset 0px 0px 0px rgba(0, 0, 0, 0.16),
     inset 0px 0px 0px rgba(0, 0, 0, 0.16); */
@@ -863,7 +861,6 @@ $lightGrey: #edf0f5; */
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
-  margin-left: 0;
 }
 
 .sidebar__menu {
@@ -944,6 +941,10 @@ $lightGrey: #edf0f5; */
   -o-transition: visibility 0s ease-in-out 0.35s;
   transition: visibility 0s ease-in-out 0.35s;
   visibility: visible;
+}
+
+.services {
+  background: #192942;
 }
 
 .main__left {
