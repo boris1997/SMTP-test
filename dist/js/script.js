@@ -1577,6 +1577,7 @@ window.addEventListener('load', function () {
     ripple.className = 'ripple';
     ripple.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
     ripple.style.webkitTransform = ripple.style.transform;
+    ripple.style.zIndex = -1;
 
     // Activate/add the element, forcing an animation (setTimeout).
     cl.add('active');
@@ -2173,7 +2174,6 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderAdvantages.getTranslateStepX();
         sliderAdvantages.initDrag();
         sliderAdvantages.initCirceTogglers()
-        sliderAdvantages.contextMenu();
         sliderAdvantages.slideResizeObserver();
 
     }
@@ -2193,7 +2193,6 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderEffect.getMargin();
         sliderEffect.getTranslateStepX();
         sliderEffect.initDrag();
-        sliderEffect.contextMenu();
         sliderEffect.slideResizeObserver();
     }
 
@@ -2214,7 +2213,6 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderProgramm.getMargin();
         sliderProgramm.getTranslateStepX();
         sliderProgramm.initDrag();
-        sliderProgramm.contextMenu();
         sliderProgramm.slideResizeObserver();
 
     }
@@ -2243,7 +2241,6 @@ document.addEventListener('DOMContentLoaded', () => {
             sliderProgramm.getTranslateStepX();
             sliderProgramm.initDrag();
             sliderProgramm.initCirceTogglers()
-            sliderProgramm.contextMenu();
             sliderProgramm.slideResizeObserver();
         })
     }
@@ -2263,7 +2260,6 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderProgramm.getMargin();
         sliderProgramm.getTranslateStepX();
         sliderProgramm.initDrag();
-        sliderProgramm.contextMenu();
         sliderProgramm.slideResizeObserver();
 
     }
@@ -2282,7 +2278,6 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderProgramm.getMargin();
         sliderProgramm.getTranslateStepX();
         sliderProgramm.initDrag();
-        sliderProgramm.contextMenu();
         sliderProgramm.slideResizeObserver();
 
     }
@@ -2384,7 +2379,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(scrollBtn)
     if (scrollBtn.length !== 0) {
         const scrollToSection = [...document.querySelectorAll(".data-scrollTo")];
-        const speed = 200;
+        const speed = 100;
         console.log(scrollToSection)
         new Scroll(scrollBtn, scrollToSection, speed);
     }

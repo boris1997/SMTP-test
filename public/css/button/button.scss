@@ -17,6 +17,13 @@
   } /*   &:active {
     background-color: #0c3ab1 !important;
   } */
+  /*   &:not(:active) .btn__span {
+    transition: z-index 0s ease-in-out;
+    transition-delay: 0.25s;
+  } */
+  /*   &:active &__span {
+    z-index: 1;
+  } */
   &__main {
     background-color: $primaryColor;
     color: $secColor;
@@ -43,8 +50,9 @@
   &__span {
     align-self: baseline;
     margin-left: rem(28px);
-    z-index: 1;
+    z-index: 0;
   }
+
   &__toggler {
     cursor: pointer;
     width: 100%;

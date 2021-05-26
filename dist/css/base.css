@@ -162,20 +162,32 @@ ul li {
 }
 
 li > a,
-.link__underline {
-  -webkit-transition: color 0.3s ease-in-out;
-  -o-transition: color 0.3s ease-in-out;
-  transition: color 0.3s ease-in-out;
+.link__underline,
+.company__link .company__span,
+.company__link .company__path {
+  -webkit-transition: color 0.3s ease-in-out, fill 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out, fill 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, fill 0.3s ease-in-out;
 }
 
 li > a:hover,
-.link__underline:hover {
+.link__underline:hover,
+.company__link:hover .company__span {
   color: #29e3f9 !important;
 }
 
 li > a:active,
-.link__underline:active {
+.link__underline:active,
+.company__link:active .company__span {
   color: #17b6c9 !important;
+}
+
+.company__link:hover .company__path {
+  fill: #29e3f9 !important;
+}
+
+.company__link:active .company__path {
+  fill: #17b6c9 !important;
 }
 
 img {
@@ -378,6 +390,11 @@ $lightGrey: #edf0f5; */
 .articles {
   background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
 }
+
+/*     transition: background 0.3s ease-in-out;
+    &:hover .item-suit {
+      background-color: #0b213f;
+    } */
 
 .difference {
   background: url("../assets/backgrounds/base/difference-background.svg") no-repeat center center/cover;
@@ -900,6 +917,13 @@ $lightGrey: #edf0f5; */
   /*   &:active {
     background-color: #0c3ab1 !important;
   } */
+  /*   &:not(:active) .btn__span {
+    transition: z-index 0s ease-in-out;
+    transition-delay: 0.25s;
+  } */
+  /*   &:active &__span {
+    z-index: 1;
+  } */
 }
 
 .btn:hover {
@@ -945,7 +969,7 @@ $lightGrey: #edf0f5; */
   -ms-flex-item-align: baseline;
   align-self: baseline;
   margin-left: 1.75rem;
-  z-index: 1;
+  z-index: 0;
 }
 
 .btn__transparent {
@@ -1007,11 +1031,6 @@ $lightGrey: #edf0f5; */
 /* .incDec-btn--minus {
   position: relative;
 } */
-
-/*     transition: background 0.3s ease-in-out;
-    &:hover .item-suit {
-      background-color: #0b213f;
-    } */
 
 .contact {
   margin-top: 7.75rem;
@@ -1589,10 +1608,6 @@ $lightGrey: #edf0f5; */
   opacity: 1;
 }
 
-.afterMailing__sec-title {
-  max-width: 28.1875rem;
-}
-
 .text-accordion__body {
   cursor: pointer;
   display: -webkit-box;
@@ -1618,8 +1633,8 @@ $lightGrey: #edf0f5; */
   text-decoration: underline;
 }
 
-.suit {
-  background: url("../assets/backgrounds/mail/suit-background.svg") no-repeat center center/cover;
+.afterMailing__sec-title {
+  max-width: 28.1875rem;
 }
 
 .tariffsec {
@@ -1744,6 +1759,10 @@ $lightGrey: #edf0f5; */
   filter: drop-shadow(0px 10px 30px rgba(36, 110, 226, 0.1));
   width: 18.5rem;
   margin-top: 0 !important;
+}
+
+.suit {
+  background: url("../assets/backgrounds/mail/suit-background.svg") no-repeat center center/cover;
 }
 
 .main {

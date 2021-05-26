@@ -89,20 +89,31 @@ ul li {
 
 li > a,
 .notFound__link,
-.link__underline {
-  transition: color 0.3s ease-in-out;
+.link__underline,
+.company__link .company__span,
+.company__link .company__path {
+  transition: color 0.3s ease-in-out, fill 0.3s ease-in-out;
 }
 
 li > a:hover,
 .notFound__link:hover,
-.link__underline:hover {
+.link__underline:hover,
+.company__link:hover .company__span {
   color: #29e3f9 !important;
 }
 
 li > a:active,
 .notFound__link:active,
-.link__underline:active {
+.link__underline:active,
+.company__link:active .company__span {
   color: #17b6c9 !important;
+}
+
+.company__link:hover .company__path {
+  fill: #29e3f9 !important;
+}
+.company__link:active .company__path {
+  fill: #17b6c9 !important;
 }
 
 img {

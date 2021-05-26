@@ -170,18 +170,30 @@ ul li {
   list-style: none;
 }
 
-li > a {
-  -webkit-transition: color 0.3s ease-in-out;
-  -o-transition: color 0.3s ease-in-out;
-  transition: color 0.3s ease-in-out;
+li > a,
+.company__link .company__span,
+.company__link .company__path {
+  -webkit-transition: color 0.3s ease-in-out, fill 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out, fill 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, fill 0.3s ease-in-out;
 }
 
-li > a:hover {
+li > a:hover,
+.company__link:hover .company__span {
   color: #29e3f9 !important;
 }
 
-li > a:active {
+li > a:active,
+.company__link:active .company__span {
   color: #17b6c9 !important;
+}
+
+.company__link:hover .company__path {
+  fill: #29e3f9 !important;
+}
+
+.company__link:active .company__path {
+  fill: #17b6c9 !important;
 }
 
 img {
@@ -421,6 +433,11 @@ $lightGrey: #edf0f5; */
   background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
 }
 
+/*     transition: background 0.3s ease-in-out;
+    &:hover .item-suit {
+      background-color: #0b213f;
+    } */
+
 .btn {
   outline: none;
   background-color: transparent;
@@ -436,6 +453,13 @@ $lightGrey: #edf0f5; */
   transition: transform 0.3s, box-shadow 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
   /*   &:active {
     background-color: #0c3ab1 !important;
+  } */
+  /*   &:not(:active) .btn__span {
+    transition: z-index 0s ease-in-out;
+    transition-delay: 0.25s;
+  } */
+  /*   &:active &__span {
+    z-index: 1;
   } */
 }
 
@@ -482,7 +506,7 @@ $lightGrey: #edf0f5; */
   -ms-flex-item-align: baseline;
   align-self: baseline;
   margin-left: 1.75rem;
-  z-index: 1;
+  z-index: 0;
 }
 
 .btn__linear {
@@ -540,11 +564,6 @@ $lightGrey: #edf0f5; */
 /* .incDec-btn--minus {
   position: relative;
 } */
-
-/*     transition: background 0.3s ease-in-out;
-    &:hover .item-suit {
-      background-color: #0b213f;
-    } */
 
 .contact {
   margin-top: 7.75rem;

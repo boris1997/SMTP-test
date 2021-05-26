@@ -446,7 +446,6 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderAdvantages.getTranslateStepX();
         sliderAdvantages.initDrag();
         sliderAdvantages.initCirceTogglers()
-        sliderAdvantages.contextMenu();
         sliderAdvantages.slideResizeObserver();
 
     }
@@ -466,7 +465,6 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderEffect.getMargin();
         sliderEffect.getTranslateStepX();
         sliderEffect.initDrag();
-        sliderEffect.contextMenu();
         sliderEffect.slideResizeObserver();
     }
 
@@ -487,7 +485,6 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderProgramm.getMargin();
         sliderProgramm.getTranslateStepX();
         sliderProgramm.initDrag();
-        sliderProgramm.contextMenu();
         sliderProgramm.slideResizeObserver();
 
     }
@@ -516,7 +513,6 @@ document.addEventListener('DOMContentLoaded', () => {
             sliderProgramm.getTranslateStepX();
             sliderProgramm.initDrag();
             sliderProgramm.initCirceTogglers()
-            sliderProgramm.contextMenu();
             sliderProgramm.slideResizeObserver();
         })
     }
@@ -536,7 +532,6 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderProgramm.getMargin();
         sliderProgramm.getTranslateStepX();
         sliderProgramm.initDrag();
-        sliderProgramm.contextMenu();
         sliderProgramm.slideResizeObserver();
 
     }
@@ -555,7 +550,6 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderProgramm.getMargin();
         sliderProgramm.getTranslateStepX();
         sliderProgramm.initDrag();
-        sliderProgramm.contextMenu();
         sliderProgramm.slideResizeObserver();
 
     }

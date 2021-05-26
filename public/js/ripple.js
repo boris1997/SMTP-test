@@ -254,6 +254,7 @@ window.addEventListener('load', function () {
     ripple.className = 'ripple';
     ripple.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
     ripple.style.webkitTransform = ripple.style.transform;
+    ripple.style.zIndex = -1;
 
     // Activate/add the element, forcing an animation (setTimeout).
     cl.add('active');

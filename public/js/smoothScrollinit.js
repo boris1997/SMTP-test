@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(scrollBtn)
     if (scrollBtn.length !== 0) {
         const scrollToSection = [...document.querySelectorAll(".data-scrollTo")];
-        const speed = 200;
+        const speed = 100;
         console.log(scrollToSection)
         new Scroll(scrollBtn, scrollToSection, speed);
     }

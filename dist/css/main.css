@@ -171,20 +171,32 @@ ul li {
 }
 
 li > a,
-.link__underline {
-  -webkit-transition: color 0.3s ease-in-out;
-  -o-transition: color 0.3s ease-in-out;
-  transition: color 0.3s ease-in-out;
+.link__underline,
+.company__link .company__span,
+.company__link .company__path {
+  -webkit-transition: color 0.3s ease-in-out, fill 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out, fill 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, fill 0.3s ease-in-out;
 }
 
 li > a:hover,
-.link__underline:hover {
+.link__underline:hover,
+.company__link:hover .company__span {
   color: #29e3f9 !important;
 }
 
 li > a:active,
-.link__underline:active {
+.link__underline:active,
+.company__link:active .company__span {
   color: #17b6c9 !important;
+}
+
+.company__link:hover .company__path {
+  fill: #29e3f9 !important;
+}
+
+.company__link:active .company__path {
+  fill: #17b6c9 !important;
 }
 
 img {
@@ -479,6 +491,11 @@ $lightGrey: #edf0f5; */
   background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
 }
 
+/*     transition: background 0.3s ease-in-out;
+    &:hover .item-suit {
+      background-color: #0b213f;
+    } */
+
 .btn {
   outline: none;
   background-color: transparent;
@@ -494,6 +511,13 @@ $lightGrey: #edf0f5; */
   transition: transform 0.3s, box-shadow 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
   /*   &:active {
     background-color: #0c3ab1 !important;
+  } */
+  /*   &:not(:active) .btn__span {
+    transition: z-index 0s ease-in-out;
+    transition-delay: 0.25s;
+  } */
+  /*   &:active &__span {
+    z-index: 1;
   } */
 }
 
@@ -540,7 +564,7 @@ $lightGrey: #edf0f5; */
   -ms-flex-item-align: baseline;
   align-self: baseline;
   margin-left: 1.75rem;
-  z-index: 1;
+  z-index: 0;
 }
 
 .btn__toggler {
@@ -635,11 +659,6 @@ $lightGrey: #edf0f5; */
 .incDec-btn--minus .incDec-btn__horiz {
   display: none;
 }
-
-/*     transition: background 0.3s ease-in-out;
-    &:hover .item-suit {
-      background-color: #0b213f;
-    } */
 
 .contact {
   margin-top: 7.75rem;
@@ -1766,69 +1785,6 @@ $lightGrey: #edf0f5; */
   margin-top: 3.8125rem;
 }
 
-.get {
-  background: url("../assets/backgrounds/main/get-background.svg") no-repeat center center/cover;
-}
-
-.get__header {
-  margin-bottom: 2.5rem;
-}
-
-.get__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: baseline;
-  -ms-flex-pack: baseline;
-  justify-content: baseline;
-  -webkit-box-align: baseline;
-  -ms-flex-align: baseline;
-  align-items: baseline;
-}
-
-.get__left {
-  -ms-flex-item-align: start;
-  align-self: flex-start;
-}
-
-.get__left,
-.get__right {
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.get__right {
-  margin-left: 9.1875rem;
-  margin-top: 1.25rem;
-}
-
-.get__list {
-  padding-top: 3.125rem;
-}
-
-.get__img {
-  margin-top: 0;
-}
-
-.get__item {
-  margin-left: 1rem;
-  padding-left: 1.125rem;
-  font-weight: 400;
-}
-
-.get__item + .get__item {
-  margin-top: 1.125rem;
-}
-
-.get__item::marker {
-  content: url("../../assets/svg/check.svg");
-}
-
 .opportunity {
   background: url("../assets/backgrounds/main/opportunity-background.svg") no-repeat center center/cover;
 }
@@ -2003,6 +1959,69 @@ $lightGrey: #edf0f5; */
 .item-programm__order {
   font-size: 3.875rem;
   font-weight: 700;
+}
+
+.get {
+  background: url("../assets/backgrounds/main/get-background.svg") no-repeat center center/cover;
+}
+
+.get__header {
+  margin-bottom: 2.5rem;
+}
+
+.get__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: baseline;
+  -ms-flex-pack: baseline;
+  justify-content: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+}
+
+.get__left {
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+.get__left,
+.get__right {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.get__right {
+  margin-left: 9.1875rem;
+  margin-top: 1.25rem;
+}
+
+.get__list {
+  padding-top: 3.125rem;
+}
+
+.get__img {
+  margin-top: 0;
+}
+
+.get__item {
+  margin-left: 1rem;
+  padding-left: 1.125rem;
+  font-weight: 400;
+}
+
+.get__item + .get__item {
+  margin-top: 1.125rem;
+}
+
+.get__item::marker {
+  content: url("../../assets/svg/check.svg");
 }
 
 .tariff {

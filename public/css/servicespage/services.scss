@@ -124,17 +124,17 @@
     column-gap: rem(40px);
   }
 
-  &__link--active {
-    &:hover {
-      color: $accentColor !important;
-    }
-    &:active {
-      color: $accentColor !important;
-    }
-    &::after {
-      width: 126%;
-    }
-  }
+  // &__link--active {
+  //   &:hover {
+  //     color: $accentColor !important;
+  //   }
+  //   &:active {
+  //     color: $accentColor !important;
+  //   }
+  //   &::after {
+  //     width: 126%;
+  //   }
+  // }
 }
 
 .services-item {
