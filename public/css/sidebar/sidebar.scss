@@ -10,6 +10,7 @@
     height: 100%;
     width: 30rem;
     z-index: 1;
+    visibility: hidden;
     transform: translate(-100%);
     padding: rem(82px) 1rem;
     background: url("../assets/backgrounds/menu-background.svg") no-repeat
@@ -28,6 +29,10 @@
 
   &__content--active {
     transform: translateX(0);
+  }
+
+  &__content--visible {
+    visibility: visible;
   }
 
   &__menu {

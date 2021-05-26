@@ -372,10 +372,6 @@ $lightGrey: #edf0f5; */
   background: #eceff4 !important;
 }
 
-.articles {
-  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
-}
-
 .btn {
   outline: none;
   background-color: transparent;
@@ -460,6 +456,15 @@ $lightGrey: #edf0f5; */
   position: relative;
 } */
 
+.articles {
+  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
+}
+
+/*     transition: background 0.3s ease-in-out;
+    &:hover .item-suit {
+      background-color: #0b213f;
+    } */
+
 .contact {
   margin-top: 7.75rem;
   /* 
@@ -477,11 +482,6 @@ $lightGrey: #edf0f5; */
    }
   */
 }
-
-/*     transition: background 0.3s ease-in-out;
-    &:hover .item-suit {
-      background-color: #0b213f;
-    } */
 
 .footer {
   width: 100%;
@@ -592,121 +592,6 @@ $lightGrey: #edf0f5; */
 .hamburger-menu__content--active > .hamburger-menu__line--2 {
   --offset: -50;
   --length: 0;
-}
-
-/* .card__small-blue {
-  animation: 2s linear 0s infinite alternate small-blue-color;
-  transition: none !important;
-} */
-
-@keyframes small-blue-color {
-  0% {
-    fill: #1549d0;
-  }
-
-  100% {
-    fill: red;
-  }
-}
-
-@keyframes green-color {
-  from {
-    fill: #6ac37e;
-  }
-
-  to {
-    fill: #1bffff;
-  }
-}
-
-@keyframes green-colorSec {
-  from {
-    fill: #4cf253;
-  }
-
-  to {
-    fill: #4cf2c0;
-  }
-}
-
-@keyframes big-red-color {
-  0% {
-    fill: #dd2265;
-  }
-
-  100% {
-    fill: #5418ff;
-  }
-}
-
-@keyframes big-red-colorSec {
-  0% {
-    fill: #dd2265;
-  }
-
-  100% {
-    fill: #5115d0;
-  }
-}
-
-@keyframes greenToBlue-color {
-  from {
-    fill: #6ac37e;
-  }
-
-  to {
-    fill: #1549d0;
-  }
-}
-
-@keyframes greenToBlueSec-color {
-  from {
-    fill: #4cf253;
-  }
-
-  to {
-    fill: #275de8;
-  }
-}
-
-@keyframes blueToPurple-color {
-  from {
-    fill: #1549d0;
-  }
-
-  to {
-    fill: #5115d0;
-  }
-}
-
-@keyframes blueToRed-color {
-  from {
-    fill: #1549d0;
-  }
-
-  to {
-    fill: #dd2265;
-  }
-}
-
-@keyframes blueToRedLine-color {
-  from {
-    fill: #5092de;
-  }
-
-  to {
-    fill: #ffdfeb;
-  }
-}
-
-@keyframes blueToRedCircle-color {
-  from {
-    fill: #2f80ed;
-  }
-
-  to {
-    fill: #ff045e;
-  }
 }
 
 .header {
@@ -832,6 +717,121 @@ $lightGrey: #edf0f5; */
 
 .nav__icon {
   margin-right: 0.625rem;
+}
+
+/* .card__small-blue {
+  animation: 2s linear 0s infinite alternate small-blue-color;
+  transition: none !important;
+} */
+
+@keyframes small-blue-color {
+  0% {
+    fill: #1549d0;
+  }
+
+  100% {
+    fill: red;
+  }
+}
+
+@keyframes green-color {
+  from {
+    fill: #6ac37e;
+  }
+
+  to {
+    fill: #1bffff;
+  }
+}
+
+@keyframes green-colorSec {
+  from {
+    fill: #4cf253;
+  }
+
+  to {
+    fill: #4cf2c0;
+  }
+}
+
+@keyframes big-red-color {
+  0% {
+    fill: #dd2265;
+  }
+
+  100% {
+    fill: #5418ff;
+  }
+}
+
+@keyframes big-red-colorSec {
+  0% {
+    fill: #dd2265;
+  }
+
+  100% {
+    fill: #5115d0;
+  }
+}
+
+@keyframes greenToBlue-color {
+  from {
+    fill: #6ac37e;
+  }
+
+  to {
+    fill: #1549d0;
+  }
+}
+
+@keyframes greenToBlueSec-color {
+  from {
+    fill: #4cf253;
+  }
+
+  to {
+    fill: #275de8;
+  }
+}
+
+@keyframes blueToPurple-color {
+  from {
+    fill: #1549d0;
+  }
+
+  to {
+    fill: #5115d0;
+  }
+}
+
+@keyframes blueToRed-color {
+  from {
+    fill: #1549d0;
+  }
+
+  to {
+    fill: #dd2265;
+  }
+}
+
+@keyframes blueToRedLine-color {
+  from {
+    fill: #5092de;
+  }
+
+  to {
+    fill: #ffdfeb;
+  }
+}
+
+@keyframes blueToRedCircle-color {
+  from {
+    fill: #2f80ed;
+  }
+
+  to {
+    fill: #ff045e;
+  }
 }
 
 /* Portrait tablets and medium desktops */
@@ -1186,6 +1186,7 @@ $lightGrey: #edf0f5; */
   height: 100%;
   width: 30rem;
   z-index: 1;
+  visibility: hidden;
   -webkit-transform: translate(-100%);
   -ms-transform: translate(-100%);
   transform: translate(-100%);
@@ -1204,6 +1205,10 @@ $lightGrey: #edf0f5; */
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
+}
+
+.sidebar__content--visible {
+  visibility: visible;
 }
 
 .sidebar__menu {

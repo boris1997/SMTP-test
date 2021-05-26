@@ -1,5 +1,5 @@
 class Sidebar {
-    constructor(page, sections, menuItems, mobileMenuItems, hamburgerMenu, sidebar, sidebarBody, sidebarOverlay) {
+    constructor(page, sections, menuItems, mobileMenuItems, hamburgerMenu, sidebar, sidebarBody, sidebarOverlay, transitionTime) {
         this.page = page,
             this.sections = sections,
             this.menuItems = menuItems,
@@ -8,7 +8,8 @@ class Sidebar {
             this.sidebar = sidebar,
             this.hamburgerMenu = hamburgerMenu,
             this.sidebarBody = sidebarBody,
-            this.sidebarOverlay = sidebarOverlay
+            this.sidebarOverlay = sidebarOverlay,
+            this.transitionTime = transitionTime
     }
     sidebarManipulation = () => {
 
@@ -29,10 +30,14 @@ class Sidebar {
 
     toggleSidebar = () => {
         console.log('ok')
-        this.sidebar.classList.contains('sidebar--full-page') && this.page.classList.toggle('page_screen_full')
+        this.sidebar.classList.contains('sidebar--full-page') && this.page.classList.toggle('page_screen_full');
         this.sidebar.classList.toggle('page__sidebar--active');
         this.page.classList.toggle('page--noScroll');
         this.sidebarBody.classList.toggle('sidebar__content--active');
+        console.log(this.sidebarBody)
+        setTimeout(() => {
+            this.sidebarBody.classList.toggle('sidebar__content--visible');
+        }, this.sidebarBody.classList.contains('sidebar__content--active') ? 0 : this.transitionTime)
         this.sidebarOverlay.classList.toggle('overlay--show');
         this.hamburgerMenu.classList.toggle('hamburger-menu__content--active');
         /*      window.scrollTo({
@@ -43,7 +48,10 @@ class Sidebar {
 
     removeSidebar = () => {
         this.sidebar.classList.contains('sidebar--full-page') && this.page.classList.remove('page_screen_full')
-
+        setTimeout(() => {
+            console.log('ok')
+            this.sidebarBody.classList.remove('sidebar__content--visible');
+        }, this.transitionTime)
         this.sidebar.classList.remove('page__sidebar--active');
         this.page.classList.remove('page--noScroll');
         this.sidebarBody.classList.remove('sidebar__content--active');
@@ -78,7 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebarBody = document.querySelector('.sidebar__content');
     const sidebarOverlay = document.querySelector('.overlay');
     const hamburgerMenu = document.querySelector('.hamburger-menu__content');
-    const scroll = new Sidebar(page, sections, menuItems, mobileMenuItems, hamburgerMenu, sidebar, sidebarBody, sidebarOverlay);
+    const transitionTime = 300;
+    const scroll = new Sidebar(page, sections, menuItems, mobileMenuItems, hamburgerMenu, sidebar, sidebarBody, sidebarOverlay, transitionTime);
 
     scroll.menuItemsInit();
     scroll.sidebarManipulation()
