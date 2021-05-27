@@ -562,10 +562,9 @@ $lightGrey: #edf0f5; */
   position: relative;
 } */
 
-/*     transition: background 0.3s ease-in-out;
-    &:hover .item-suit {
-      background-color: #0b213f;
-    } */
+.articles {
+  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
+}
 
 .contact {
   margin-top: 7.75rem;
@@ -726,9 +725,10 @@ $lightGrey: #edf0f5; */
   outline: none;
 }
 
-.articles {
-  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
-}
+/*     transition: background 0.3s ease-in-out;
+    &:hover .item-suit {
+      background-color: #0b213f;
+    } */
 
 .footer {
   width: 100%;

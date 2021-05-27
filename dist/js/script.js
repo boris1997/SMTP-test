@@ -1632,6 +1632,7 @@ window.addEventListener('load', function () {
     }
   });
 });
+
 class Sidebar {
     constructor(page, sections, menuItems, mobileMenuItems, hamburgerMenu, sidebar, sidebarBody, sidebarOverlay, transitionTime) {
         this.page = page,

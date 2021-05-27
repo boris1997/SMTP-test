@@ -481,10 +481,9 @@ $lightGrey: #edf0f5; */
   position: relative;
 } */
 
-/*     transition: background 0.3s ease-in-out;
-    &:hover .item-suit {
-      background-color: #0b213f;
-    } */
+.articles {
+  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
+}
 
 .contact {
   margin-top: 7.75rem;
@@ -504,9 +503,10 @@ $lightGrey: #edf0f5; */
   */
 }
 
-.articles {
-  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
-}
+/*     transition: background 0.3s ease-in-out;
+    &:hover .item-suit {
+      background-color: #0b213f;
+    } */
 
 .footer {
   width: 100%;
@@ -867,6 +867,23 @@ $lightGrey: #edf0f5; */
 
 /* Landscape phones and smaller */
 
+.service {
+  /* 
+   &__footer {
+     @include grid(
+       0,
+       rem(80px),
+       rem(30px),
+       1,
+       1fr,
+       auto-fill,
+       rem(277px),
+       rem(277px)
+     );
+   }
+  */
+}
+
 .services {
   background: #192942;
 }
@@ -1155,23 +1172,6 @@ $lightGrey: #edf0f5; */
   display: block;
 }
 
-.service {
-  /* 
-   &__footer {
-     @include grid(
-       0,
-       rem(80px),
-       rem(30px),
-       1,
-       1fr,
-       auto-fill,
-       rem(277px),
-       rem(277px)
-     );
-   }
-  */
-}
-
 .sidebar {
   z-index: 2;
 }
@@ -1309,6 +1309,7 @@ $lightGrey: #edf0f5; */
 }
 
 @media (min-width: 768px) {
+
   .services-item__btn {
     position: absolute;
     content: "";
