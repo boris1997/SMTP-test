@@ -1549,6 +1549,8 @@ window.addEventListener('load', function () {
   function startRipple(type, at) {
     console.log('ok')
     var holder = at.target;
+    console.log(holder)
+    // holder.style.zIndex = 0;
     var cl = holder.classList;
     if (!cl.contains('rippleJS')) {
       return false;  // ignore
@@ -1577,7 +1579,7 @@ window.addEventListener('load', function () {
     ripple.className = 'ripple';
     ripple.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
     ripple.style.webkitTransform = ripple.style.transform;
-    ripple.style.zIndex = -1;
+    // ripple.style.zIndex = -1;
 
     // Activate/add the element, forcing an animation (setTimeout).
     cl.add('active');

@@ -69,6 +69,18 @@
   border-radius: 4px; /** parent border-radius minus border width */
 }
 
+.btn__transparent {
+  overflow: hidden;
+}
+
+.btn__transparent .rippleJS {
+  top: -2%;
+  left: -1%;
+  overflow: hidden;
+  height: 104%;
+  width: 102%;
+}
+
 .btn__main .rippleJS .ripple {
   opacity: 1;
   background: #eceff4 !important;

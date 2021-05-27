@@ -331,56 +331,10 @@ $lightGrey: #edf0f5; */
   /** parent border-radius minus border width */
 }
 
-.notFound {
-  overflow: hidden;
-  margin-top: 5.625rem;
+.btn__main .rippleJS .ripple {
+  opacity: 1;
+  background: #eceff4 !important;
 }
-
-.notFound__content {
-  /* margin-top: rem(50px); */
-  height: 100%;
-  position: relative;
-}
-
-.notFound__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: baseline;
-  -ms-flex-pack: baseline;
-  justify-content: baseline;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.notFound__title {
-  text-transform: uppercase;
-  margin-top: 2.1875rem;
-  margin-left: 2.0625rem;
-}
-
-.notFound__sec-title {
-  max-width: 61.25rem;
-}
-
-.notFound__text {
-  margin-top: 1.6875rem;
-  max-width: 38rem;
-}
-
-.articles {
-  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
-}
-
-/*     transition: background 0.3s ease-in-out;
-    &:hover .item-suit {
-      background-color: #0b213f;
-    } */
 
 .btn {
   outline: none;
@@ -398,18 +352,24 @@ $lightGrey: #edf0f5; */
   /*   &:active {
     background-color: #0c3ab1 !important;
   } */
-  /*   &:not(:active) .btn__span {
-    transition: z-index 0s ease-in-out;
-    transition-delay: 0.25s;
-  } */
-  /*   &:active &__span {
-    z-index: 1;
-  } */
 }
 
 .btn:hover {
   -webkit-box-shadow: 0 0 10px rgb 0 0 0/30%;
   box-shadow: 0 0 10px rgb 0 0 0/30%;
+}
+
+.btn:not(:active) .btn__span {
+  -webkit-transition: z-index 0s ease-in-out;
+  -o-transition: z-index 0s ease-in-out;
+  transition: z-index 0s ease-in-out;
+  -webkit-transition-delay: 0.25s;
+  -o-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+}
+
+.btn:active .btn__span {
+  z-index: 1;
 }
 
 .btn__main {
@@ -473,6 +433,53 @@ $lightGrey: #edf0f5; */
   position: relative;
 } */
 
+.notFound {
+  overflow: hidden;
+  margin-top: 5.625rem;
+}
+
+.notFound__content {
+  /* margin-top: rem(50px); */
+  height: 100%;
+  position: relative;
+}
+
+.notFound__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: baseline;
+  -ms-flex-pack: baseline;
+  justify-content: baseline;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.notFound__title {
+  text-transform: uppercase;
+  margin-top: 2.1875rem;
+  margin-left: 2.0625rem;
+}
+
+.notFound__sec-title {
+  max-width: 61.25rem;
+}
+
+.notFound__text {
+  margin-top: 1.6875rem;
+  max-width: 38rem;
+}
+
+/*     transition: background 0.3s ease-in-out;
+    &:hover .item-suit {
+      background-color: #0b213f;
+    } */
+
 .contact {
   margin-top: 7.75rem;
   /* 
@@ -489,6 +496,10 @@ $lightGrey: #edf0f5; */
      );
    }
   */
+}
+
+.articles {
+  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
 }
 
 .footer {

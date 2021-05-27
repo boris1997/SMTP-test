@@ -384,15 +384,6 @@ $lightGrey: #edf0f5; */
   background: #eceff4 !important;
 }
 
-.articles {
-  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
-}
-
-/*     transition: background 0.3s ease-in-out;
-    &:hover .item-suit {
-      background-color: #0b213f;
-    } */
-
 .btn {
   outline: none;
   background-color: transparent;
@@ -409,18 +400,24 @@ $lightGrey: #edf0f5; */
   /*   &:active {
     background-color: #0c3ab1 !important;
   } */
-  /*   &:not(:active) .btn__span {
-    transition: z-index 0s ease-in-out;
-    transition-delay: 0.25s;
-  } */
-  /*   &:active &__span {
-    z-index: 1;
-  } */
 }
 
 .btn:hover {
   -webkit-box-shadow: 0 0 10px rgb 0 0 0/30%;
   box-shadow: 0 0 10px rgb 0 0 0/30%;
+}
+
+.btn:not(:active) .btn__span {
+  -webkit-transition: z-index 0s ease-in-out;
+  -o-transition: z-index 0s ease-in-out;
+  transition: z-index 0s ease-in-out;
+  -webkit-transition-delay: 0.25s;
+  -o-transition-delay: 0.25s;
+  transition-delay: 0.25s;
+}
+
+.btn:active .btn__span {
+  z-index: 1;
 }
 
 .btn__main {
@@ -484,6 +481,11 @@ $lightGrey: #edf0f5; */
   position: relative;
 } */
 
+/*     transition: background 0.3s ease-in-out;
+    &:hover .item-suit {
+      background-color: #0b213f;
+    } */
+
 .contact {
   margin-top: 7.75rem;
   /* 
@@ -500,6 +502,10 @@ $lightGrey: #edf0f5; */
      );
    }
   */
+}
+
+.articles {
+  background: url("../assets/backgrounds/main/programm-background.svg") no-repeat center center/cover;
 }
 
 .footer {
@@ -861,23 +867,6 @@ $lightGrey: #edf0f5; */
 
 /* Landscape phones and smaller */
 
-.service {
-  /* 
-   &__footer {
-     @include grid(
-       0,
-       rem(80px),
-       rem(30px),
-       1,
-       1fr,
-       auto-fill,
-       rem(277px),
-       rem(277px)
-     );
-   }
-  */
-}
-
 .services {
   background: #192942;
 }
@@ -1166,6 +1155,23 @@ $lightGrey: #edf0f5; */
   display: block;
 }
 
+.service {
+  /* 
+   &__footer {
+     @include grid(
+       0,
+       rem(80px),
+       rem(30px),
+       1,
+       1fr,
+       auto-fill,
+       rem(277px),
+       rem(277px)
+     );
+   }
+  */
+}
+
 .sidebar {
   z-index: 2;
 }
@@ -1303,7 +1309,6 @@ $lightGrey: #edf0f5; */
 }
 
 @media (min-width: 768px) {
-
   .services-item__btn {
     position: absolute;
     content: "";
