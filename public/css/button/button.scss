@@ -24,6 +24,11 @@
   &:active &__span {
     z-index: 1;
   }
+
+  &__noBorder {
+    border: none !important;
+  }
+
   &__main {
     background-color: $primaryColor;
     color: $secColor;

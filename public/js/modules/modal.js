@@ -103,10 +103,19 @@ class Modal {
         console.log(popupModalForm)
         popupModalForm.addEventListener('submit', (e) => {
             console.log('ok')
+
+            let tempParams = {
+                name: this.formInputs[0].value,
+                phone: this.formInputs[1].value,
+            }
+            console.log(Xhr.makeRequest(tempParams))
             e.preventDefault()
             !popupModalForm.classList.contains(this.staticForm) && ClassToggle.removeClass(popupModalForm, this.popupModalActive)
             this.popup.classList.contains(this.popupHidden) && ClassToggle.removeClass(this.popup, this.popupHidden)
             this.clearFields(this.formInputs)
+
+
+
             this.popupModal.map((popupModal, i) => {
                 if (popupModal.dataset.modal === 'success') {
                     console.log(this.staticForm)
@@ -118,7 +127,7 @@ class Modal {
     }
 
     clearFields = (fields) => {
-        console.log(fields)
+        // console.log(fields)
         fields.map((field, i) => field.value = '')
     }
 

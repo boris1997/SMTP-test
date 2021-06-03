@@ -17,6 +17,8 @@ let path = {
         // , "!" + source_folder + "/css/**/*fonts.scss"]
         cssFonts: source_folder + "/css/**/*fonts.scss",
         js: source_folder + "/js/**/*.js",
+        jsMain: source_folder + '/js/script.js',
+        jsFiles: [source_folder + '/js/script.js'],
         assets: source_folder + "/assets/**/*.{jpg,png,svg,gif,ico,mp4}",
         fonts: source_folder + "/fonts/**/*.{ttf,woff,woff2,eot,css}"
     },
@@ -28,6 +30,8 @@ let path = {
     },
     clean: "./" + project_folder + "/"
 }
+
+
 
 let { src, dest } = require('gulp'),
     gulp = require('gulp'),
@@ -49,7 +53,15 @@ let { src, dest } = require('gulp'),
     uncss = require('gulp-uncss'),
     purgecss = require('gulp-purgecss'),
     svgSprite = require('gulp-svg-sprite'),
-    fs = require('fs')
+    fs = require('fs'),
+    babel = require('gulp-babel'),
+    webpack = require('webpack-stream'),
+    browserify = require('browserify'),
+    babelify = require('babelify'),
+    buffer = require('vinyl-buffer'),
+    source = require('vinyl-source-stream');
+
+
 
 const cssFileObg = {
     first: {
@@ -128,6 +140,7 @@ function html() {
         .pipe(browsersync.stream())
 }
 
+
 function css(html, style) {
     return src(path.src.css)
         /*     .pipe(scss({
@@ -145,7 +158,7 @@ function css(html, style) {
         .pipe(group_media())
         .pipe(purgecss({
             content: [`public/${html}`],
-            safelist: ['page__sidebar--active', 'body--noscroll', 'sidebar__content--active', 'sidebar__content--visible', 'overlay--show', 'ripple', 'hamburger-menu__content--active', 'cities__accordion-body--hide', 'direction__accordion-body--hide', 'page_screen_full', 'incDec-btn--minus']
+            safelist: ['page__sidebar--active', 'body--noscroll', 'sidebar__content--active', 'btn__noBorder', 'sidebar__content--visible', 'overlay--show', 'ripple', 'wave_active', 'hamburger - menu__content--active', 'cities__accordion - body--hide', 'direction__accordion - body--hide', 'page_screen_full', 'incDec - btn--minus']
         }))
         .pipe(dest(path.build.css))
         .pipe(clean_css())
@@ -163,6 +176,7 @@ function css(html, style) {
 
 const allCss = (params) => {
     Object.entries(cssFileObg).map((item, i) => {
+        console.log([path.src.jsMain])
         css(item[1].htmlName, item[1].cssName)
     })
     params()
@@ -171,17 +185,61 @@ const allCss = (params) => {
 
 
 function js() {
-    return src(path.src.js)
-        .pipe(concat("script.js"))
-        .pipe(dest(path.build.js))
-        .pipe(terser())
-        .pipe(
-            rename({
-                extname: ".min.js"
+    path.src.jsFiles.map(entry => {
+        return browserify({
+            entries: [entry]
+        })
+            .transform(babelify, {
+                presets: ['@babel/preset-env'],
+                plugins: [
+                    "syntax-dynamic-import",
+                    "@babel/transform-runtime",
+                    "transform-async-to-generator"
+                ]
             })
-        )
-        .pipe(dest(path.build.js))
-        .pipe(browsersync.stream())
+            .bundle()
+            .pipe(source(entry))
+            .pipe(
+                rename({
+                    extname: ".min.js"
+                })
+            )
+            .pipe(
+                buffer()
+            )
+            // .pipe(terser())
+            .pipe(dest(path.build.js))
+            .pipe(browsersync.stream())
+        /*    return src(path.src.js)
+           .pipe(
+   
+           ) */
+        /*     .pipe(babel({
+                presets: ['@babel/env'],
+                plugins: [
+                    "syntax-dynamic-import",
+                    "@babel/transform-runtime",
+                    "transform-async-to-generator"
+                ]
+            })) */
+        /* .pipe(webpack({
+            module: {
+                rules: [
+                    { test: /\.js$|jsx/, loader: 'babel-loader' },
+                ],
+            },
+        })) */
+        /*      .pipe(concat("script.js"))
+             .pipe(dest(path.build.js))
+             .pipe(terser()) 
+             .pipe(
+                 rename({
+                     extname: ".min.js"
+                 })
+             ) */
+        /*  .pipe(dest(path.build.js))
+         .pipe(browsersync.stream()) */
+    })
 }
 
 function fontsWoff() {

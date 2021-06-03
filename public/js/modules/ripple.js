@@ -198,7 +198,7 @@
 
 window.addEventListener('load', function () {
   function applyStyle(css) {
-    console.log('ok')
+    // console.log('ok')
     var style = document.createElement('style');
     style.type = 'text/css';
     if (style.styleSheet) {
@@ -215,7 +215,7 @@ window.addEventListener('load', function () {
     var s = window.getComputedStyle(test);
     var result = s.position == 'absolute';
     document.body.removeChild(test);
-    console.log(result)
+    // console.log(result)
     return result;
   }
   if (!hasCSS()) {
@@ -224,9 +224,9 @@ window.addEventListener('load', function () {
   }
 
   function startRipple(type, at) {
-    console.log('ok')
+    // console.log('ok')
     var holder = at.target;
-    console.log(holder)
+    // console.log(holder)
     // holder.style.zIndex = 0;
     var cl = holder.classList;
     if (!cl.contains('rippleJS')) {
