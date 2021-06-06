@@ -1,22 +1,22 @@
 .download {
   &__section {
-    padding-bottom: rem(40px);
+    padding-bottom: 40px;
   }
   background: url("../assets/backgrounds/base/download-background.svg")
     no-repeat center center/cover;
   &__title {
-    max-width: rem(830px);
+    max-width: 830px;
     text-align: center;
     margin: 0 auto;
   }
 
   &__header {
-    margin-bottom: rem(32px);
+    margin-bottom: 32px;
   }
   &__sec-title {
     right: 0;
     left: 0;
-    top: rem(-20px);
+    top: -20px;
     text-align: center;
     bottom: auto;
     justify-content: center;
@@ -31,16 +31,15 @@
 
   &__text {
     margin-top: 0;
-    max-width: rem(605px);
+    max-width: 605px;
     text-align: center;
   }
 
   &__btn {
-    width: rem(277px);
-    height: rem(58px);
-    border-radius: rem(12px);
-    margin-top: rem(32px);
-    font-size: rem(16px);
+    width: 277px;
+    height: 58px;
+    margin-top: 32px;
+    font-size: 16px;
     color: $primaryColor;
     background: linear-gradient(90deg, #16d9e3 0%, #29c2e8 47%, #46aef7 100%);
     position: relative;
@@ -50,38 +49,38 @@
         url("../../assets/svg/bases/download/icon.svg"),
         0,
         0,
-        rem(-192px),
-        0,
+        30px,
+        auto,
         auto
       );
-      height: rem(24px);
+      height: 24px;
     }
   }
   &__footer {
-    margin-top: rem(50px);
+    margin-top: 50px;
   }
   &__info {
-    max-width: rem(500px);
-    margin-left: rem(10px);
+    max-width: 500px;
+    margin-left: 10px;
     margin: auto;
     position: relative;
 
     &:before {
-      @include position(absolute, "", 0, 0, rem(-10px), auto, auto);
-      width: rem(2px);
+      @include position(absolute, "", 0, 0, -10px, auto, auto);
+      width: 2px;
       height: 100%;
       background: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
     }
   }
   &__use {
-    @include position(absolute, "", rem(-85px), auto, 0, auto, auto);
+    @include position(absolute, "", -85px, auto, 0, auto, auto);
     @include flexbox(column, center, center);
-    border-radius: rem(100px);
-    width: rem(152px);
-    height: rem(152px);
+    border-radius: 100px;
+    width: 152px;
+    height: 152px;
     background: url("../assets/svg/ellipse.svg") no-repeat center center/cover;
     // background-clip: padding-box; /* !importanté */
-    // border: solid rem(1px) transparent; /* !importanté */
+    // border: solid 1px transparent; /* !importanté */
     // border-image: linear-gradient(90deg, #83a6ff -0.49%, #4d6de2 99.88%);
     // border-image-slice: 1;
   }

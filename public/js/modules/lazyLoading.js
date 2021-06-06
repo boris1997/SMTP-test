@@ -1,4 +1,6 @@
-class LazyLoading {
+import ClassToggle from './utilities/classToggle'
+
+export class LazyLoading {
 
     constructor(dataLazy, observerRoot, activeClass) {
         this.dataLazy = dataLazy;
@@ -21,18 +23,13 @@ class LazyLoading {
 
     loadBackground = (element, backgroungUrl) => {
         element.style.backgroundImage = `url(${backgroungUrl})`
-        this.addClass(element, this.activeClass)
+        ClassToggle.addClass(element, this.activeClass)
         this.observer.unobserve(element)
     }
     loadImg = (element, src) => {
         element.src = src;
         this.observer.unobserve(element)
     }
-
-    addClass = (element, clas) => element.classList.add(this.activeClass);
-
-
-
 
     scrollObserver = () => {
 
@@ -52,9 +49,7 @@ class LazyLoading {
 
 
 }
-
-
-document.addEventListener('DOMContentLoaded', () => {
+export const initLazyLoading = () => {
 
     // faq
     const dataLazy = [...document.querySelectorAll(".data-lazy")];
@@ -62,6 +57,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const activeClass = 'section--active'
     new LazyLoading(dataLazy, observerRoot, activeClass);
 
-})
 
-
+}

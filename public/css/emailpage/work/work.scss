@@ -6,26 +6,26 @@
   }
 
   &__right {
-    margin-left: rem(26px);
+    margin-left: 26px;
   }
 
   &__sec-title {
-    max-width: rem(451px);
+    max-width: 451px;
   }
 
   &__advantage {
-    margin-left: rem(12px);
-    max-width: rem(554px);
+    margin-left: 12px;
+    max-width: 554px;
   }
   &__item:nth-child(1) {
-    margin-top: rem(38px);
+    margin-top: 38px;
   }
   &__item {
-    margin-top: rem(76px);
+    margin-top: 76px;
   }
   &__item:nth-child(2),
   &__item:nth-child(3) {
-    margin-left: rem(82px);
+    margin-left: 82px;
   }
 }
 
@@ -33,17 +33,17 @@
   @include flexbox(row, baseline, flex-start);
   &__title {
     margin-top: 0;
-    max-width: rem(209px);
+    max-width: 209px;
   }
   &__text {
-    max-width: rem(384px);
+    max-width: 384px;
   }
   &__right {
-    margin-left: rem(16px);
+    margin-left: 16px;
   }
   margin: 0;
   &__order {
-    font-size: rem(62px);
+    font-size: 62px;
     font-weight: 700;
   }
 }

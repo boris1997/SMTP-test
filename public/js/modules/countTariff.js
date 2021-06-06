@@ -1,4 +1,4 @@
-class CountTarif {
+export class CountTarif {
 
     constructor(switchRadio, switchLabel, togglersTariff, totalPriceEl) {
 
@@ -80,10 +80,6 @@ class CountTarif {
     }
 
 
-
-
-
-
     countTotalPrice = () => {
         /*      console.log(this.primaryPrice, this.totalPrice, this.tariffIndicators['countIndex'][i], this.tariffIndicators['discount'], this.priceIndex);
              const discount = this.primaryPrice * this.tariffIndicators['discount'];
@@ -123,13 +119,15 @@ class CountTarif {
 }
 
 
-document.addEventListener('DOMContentLoaded', () => {
+export const initCountTarif = () => {
+
 
     // Coffee Slider
     const switchRadio = [...document.querySelectorAll(".switch-radio__input")];
     const switchLabel = [...document.querySelectorAll(".switch-radio__label")];
     const togglersTariff = [...document.querySelectorAll(".togglers-tariff__btn")];
     const totalPrice = document.querySelector(".total-price__amount");
+    console.log(switchRadio, switchLabel, togglersTariff, totalPrice)
     if (switchRadio.length !== 0 && switchRadio.length !== 0 && togglersTariff.length !== 0 && totalPrice !== null) {
         const countTarif = new CountTarif(switchRadio, switchLabel, togglersTariff, totalPrice);
         countTarif.getindicators();
@@ -137,11 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
         countTarif.initTogglers();
         countTarif.setDiscounts();
     }
-})
 
 
-
-
+}
 
 
 

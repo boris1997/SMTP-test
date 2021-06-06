@@ -15,12 +15,12 @@
 }
 /* @media (max-width: 768px) {
   * {
-    font-size: rem(14px);
+    font-size: 14px;
   }
 } */
 /* @media (max-width: 650px) {
   * {
-    font-size: rem(13px);
+    font-size: 13px;
   }
 } */
 *,
@@ -48,6 +48,7 @@ body {
   width: 100%;
   color: $primaryColor;
   line-height: 1;
+  font-size: 16px;
   font-family: "TTCommons";
 }
 /* .body {
@@ -122,17 +123,17 @@ img {
 
 .container,
 .container-md {
-  max-width: rem(1224px);
+  max-width: 1224px;
   height: 100%;
   margin: auto;
-  padding-left: rem(12px);
-  padding-right: rem(12px);
+  padding-left: 12px;
+  padding-right: 12px;
   overflow: hidden;
 }
 
 .container-md {
   overflow: visible;
-  max-width: rem(1132px);
+  max-width: 1132px;
 }
 
 .body--noscroll {
@@ -149,14 +150,14 @@ img {
   z-index: 0;
   overflow: hidden !important;
   &:after {
-    @include position(absolute, "", rem(-407px), auto, 54%, 0, auto);
+    @include position(absolute, "", -407px, auto, 54%, 0, auto);
     background: url("../assets/svg/main/main/Ellipse-full.svg");
     object-fit: cover;
-    width: rem(1173px);
-    height: rem(1173px);
+    width: 1173px;
+    height: 1173px;
     z-index: -1;
     display: flex;
-    /*   @media (max-width: 1920px) {
+    /*   @media (max-width: 1920px {
       width: 45%;
     } */
   }
@@ -171,8 +172,8 @@ img {
   }
 
   &__navigtion {
-    padding-left: rem(12px);
-    @include position(absolute, "", rem(28px), auto, 0, auto, auto);
+    padding-left: 12px;
+    @include position(absolute, "", 28px, auto, 0, auto, auto);
   }
 
   &__sidebar {
@@ -196,7 +197,7 @@ img {
 }
 
 .page--contact {
-  height: calc(100vh - 200px) !important;
+  height: calc(100vh - 200px !important);
 }
 
 .page--mail {
@@ -215,20 +216,20 @@ img {
 .navigtion-page {
   display: flex;
   &__item + &__item {
-    margin-left: rem(26px);
+    margin-left: 26px;
     position: relative;
     &:before {
       @include position(
         absolute,
         url("../assets/svg/page-pagination-icon.svg"),
-        rem(-5px),
+        -5px,
         0,
-        rem(-15px),
+        -15px,
         auto,
         auto
       );
-      width: rem(10px);
-      height: rem(10px);
+      width: 10px;
+      height: 10px;
     }
   }
 
@@ -239,19 +240,19 @@ img {
 
 .section {
   &__header {
-    margin-top: rem(120px);
-    margin-bottom: rem(70px);
+    margin-top: 120px;
+    margin-bottom: 70px;
   }
 
   &__content {
-    padding-bottom: rem(120px);
+    padding-bottom: 120px;
   }
 
   &__title {
     z-index: 1;
-    line-height: rem(52px);
-    font-size: rem(45px);
-    max-width: rem(725px);
+    line-height: 52px;
+    font-size: 45px;
+    max-width: 725px;
     text-align: center;
     margin: auto;
     letter-spacing: 0.02em;
@@ -260,13 +261,13 @@ img {
   }
   &__sec-title {
     margin: auto;
-    margin-top: rem(30px) !important;
+    margin-top: 30px !important;
     text-align: center;
   }
   &__title-span {
-    line-height: rem(24px);
+    line-height: 24px;
     font-family: "Nunito";
-    font-size: rem(20px);
+    font-size: 20px;
     font-weight: 600;
   }
 }
@@ -280,44 +281,44 @@ img {
 }
 
 .page_screen_full + .section--sec {
-  padding-top: rem(20px);
+  padding-top: 20px;
 }
 
 .item {
   @include flexbox(column, center, center);
   &__title {
-    line-height: rem(30px);
-    font-size: rem(22px);
+    line-height: 30px;
+    font-size: 22px;
     font-weight: 500;
-    margin-top: rem(18px);
+    margin-top: 18px;
   }
 
   &__title-modal {
-    line-height: rem(30px);
-    font-size: rem(28px);
+    line-height: 30px;
+    font-size: 28px;
     font-weight: 500;
   }
 
   &__title-medium {
-    font-size: rem(18px);
-    line-height: rem(26px);
+    font-size: 18px;
+    line-height: 26px;
     font-weight: 600;
   }
   &__text {
-    line-height: rem(24px);
-    font-size: rem(17px);
+    line-height: 24px;
+    font-size: 17px;
     font-weight: 400;
-    margin-top: rem(12px);
+    margin-top: 12px;
   }
   &__text-medium {
-    line-height: rem(23px);
+    line-height: 23px;
     font-weight: 400;
-    margin-top: rem(12px);
-    font-size: rem(15px);
+    margin-top: 12px;
+    font-size: 15px;
   }
   &__price {
-    font-size: rem(20px);
-    line-height: rem(24px);
+    font-size: 20px;
+    line-height: 24px;
     font-weight: 600;
   }
 
@@ -349,16 +350,7 @@ img {
 }
 
 .order {
-  @include grid(
-    0,
-    rem(80px),
-    rem(30px),
-    1,
-    1fr,
-    auto-fill,
-    rem(380px),
-    rem(380px)
-  );
+  @include grid(0, 80px, 30px, 1, 1fr, auto-fill, 380px, 380px);
   justify-content: center;
 
   &__wrapper {
@@ -384,8 +376,8 @@ img {
   } /* border: 1px solid; */
 
   &__item {
-    margin: rem(42px) auto;
-    height: rem(200px);
+    margin: 42px auto;
+    height: 200px;
     @include flexbox(column, center, center);
   }
 
@@ -395,26 +387,26 @@ img {
 
   &__text {
     text-align: center;
-    font-size: rem(15px);
-    line-height: rem(23px);
-    max-width: rem(320px);
-    margin-top: rem(12px);
+    font-size: 15px;
+    line-height: 23px;
+    max-width: 320px;
+    margin-top: 12px;
   }
 
   &__num {
-    @include position(absolute, "", rem(-37.5px), 0, rem(21.5px), auto, auto);
+    @include position(absolute, "", -37.5px, 0, 21.5px, auto, auto);
     background: linear-gradient(101.62deg, #1549d0 -3.13%, #17cdcd 174.19%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: rem(50px);
-    line-height: rem(58px);
+    font-size: 50px;
+    line-height: 58px;
     font-weight: 700;
   }
 }
 
 .switch-radio {
   &__item + &__item {
-    margin-top: rem(10px);
+    margin-top: 10px;
   }
 
   &__item {
@@ -427,13 +419,13 @@ img {
 
   &__input {
     position: relative;
-    width: rem(18px);
+    width: 18px;
     z-index: 1;
-    height: rem(18px);
+    height: 18px;
     opacity: 0;
     &:after {
-      @include position(absolute, "", 0, 0, rem(-50%), 0, auto);
-      border-radius: rem(1000px);
+      @include position(absolute, "", 0, 0, -50%, 0, auto);
+      border-radius: 1000px;
       background-color: $primaryColor;
     }
   }
@@ -445,18 +437,18 @@ img {
 
   &__label {
     margin-top: 0;
-    margin-left: rem(12px);
-    padding-top: rem(3px);
+    margin-left: 12px;
+    padding-top: 3px;
     @include flexbox(row, baseline, center);
   }
 }
 
 .custom-radio {
   @include position(absolute, "", 0, 0, 0, 0, auto);
-  width: rem(18px);
-  height: rem(18px);
+  width: 18px;
+  height: 18px;
   z-index: 0;
-  border-radius: rem(1000px);
+  border-radius: 1000px;
   background-color: $primaryColor;
   &__field {
     position: relative;
@@ -466,7 +458,7 @@ img {
       @include position(absolute, "", 0, 0, 0, 0, auto);
       width: 50%;
       height: 50%;
-      border-radius: rem(1000px);
+      border-radius: 1000px;
       z-index: 2;
       background: transparent;
     }
@@ -476,5 +468,5 @@ img {
 .opportunity__body,
 .suit__body,
 .suitBase__body {
-  margin-top: rem(90px) !important;
+  margin-top: 90px !important;
 }

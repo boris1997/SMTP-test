@@ -1,10 +1,10 @@
 .programm {
   &__title {
-    max-width: rem(784px);
+    max-width: 784px;
   }
 
   &__sec-title {
-    max-width: rem(670px);
+    max-width: 670px;
   }
 
   &__body {
@@ -33,10 +33,10 @@
   &__title {
     text-align: center;
     margin-top: 0;
-    font-size: rem(22px) !important;
+    font-size: 22px !important;
   }
   /*   &__body {
-    margin-top: rem(50px);
+    margin-top: 50px;
   } */
 
   &__body {
@@ -57,36 +57,36 @@
     grid-area: first;
   }
   &__item:nth-child(2) > .item-programm {
-    margin-top: rem(92px);
-    margin-left: rem(97px);
+    margin-top: 92px;
+    margin-left: 97px;
   }
 
   &__item:nth-child(2) .item-programm__title {
-    max-width: rem(509px);
+    max-width: 509px;
   }
   &__item:nth-child(3) {
     grid-area: second;
   }
 
   &__item:nth-child(3) > .item-programm {
-    margin-top: rem(29px);
+    margin-top: 29px;
   }
   &__item:nth-child(3) .item-programm__title {
-    max-width: rem(174px);
+    max-width: 174px;
   }
   &__item:nth-child(4) {
     grid-area: third;
   }
   &__item:nth-child(4) > .item-programm {
-    margin-top: rem(92px);
-    margin-left: rem(20px);
+    margin-top: 92px;
+    margin-left: 20px;
   }
   &__item:nth-child(5) {
     grid-area: fourth;
   }
   &__item:nth-child(5) > .item-programm {
-    margin-top: rem(29px);
-    margin-left: rem(70px);
+    margin-top: 29px;
+    margin-left: 70px;
   }
 
   &__item:nth-child(6) {
@@ -100,23 +100,23 @@
     margin-top: 0;
   }
   &__text {
-    max-width: rem(384px);
+    max-width: 384px;
   }
   &__right {
-    margin-left: rem(16px);
+    margin-left: 16px;
   }
   margin: 0;
   &__order {
-    font-size: rem(62px);
+    font-size: 62px;
     font-weight: 700;
   }
 }
 
 .mailing {
   &__text {
-    max-width: rem(542px);
+    max-width: 542px;
   }
   &__img {
-    margin-top: rem(-30px);
+    margin-top: -30px;
   }
 }

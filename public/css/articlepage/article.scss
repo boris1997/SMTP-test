@@ -1,13 +1,13 @@
 .article {
   &__title {
-    font-size: rem(50px);
+    font-size: 50px;
     font-weight: 700;
   }
   background: url("../assets/backgrounds/main/programm-background.svg")
     no-repeat center center/cover;
 
   &__main {
-    /*    margin-top: rem(50px); */
+    /*    margin-top: 50px; */
 
     @include flexbox(row, space-between, center);
   }
@@ -15,28 +15,28 @@
   &__interest,
   &__articles,
   &__directions {
-    margin-top: rem(120px);
+    margin-top: 120px;
   }
 
   /*   &__right {
-    margin-left: rem(135px);
+    margin-left: 135px;
   } */
 
   &__img {
-    margin-bottom: rem(40px);
+    margin-bottom: 40px;
   }
 }
 
 .article-data {
-  margin-right: rem(49px);
+  margin-right: 49px;
   &__text {
-    margin-top: rem(0);
-    max-width: rem(773px);
+    margin-top: 0;
+    max-width: 773px;
   }
   &__text + &__text {
-    margin-top: rem(23px);
+    margin-top: 23px;
   }
   &__text-overflow {
-    margin-top: rem(20px);
+    margin-top: 20px;
   }
 }

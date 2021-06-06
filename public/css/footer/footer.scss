@@ -5,7 +5,7 @@
     display: block !important;
   }
   &__logo {
-    margin: rem(35px) 0;
+    margin: 35px 0;
   }
   background-color: #131320;
   &__content,
@@ -14,21 +14,21 @@
   }
 
   &__list {
-    width: rem(689px) !important;
+    width: 689px !important;
   }
 }
 
 .company {
   background-color: #0c0c13;
   &__logo {
-    margin: rem(16px) auto;
+    margin: 16px auto;
     float: right;
     @include flexbox(row, space-between, center);
   }
   &__span {
     color: #cfd2d7;
-    font-size: rem(13px);
-    line-height: rem(23px);
-    margin-left: rem(3px);
+    font-size: 13px;
+    line-height: 23px;
+    margin-left: 3px;
   }
 }

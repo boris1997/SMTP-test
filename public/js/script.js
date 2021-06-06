@@ -1,206 +1,170 @@
-
-import ClassToggle from './modules/classToggle'
-import Styles from './modules/styles'
-import Togglers from './modules/#toggler'
-import Accordion from './modules/accordion'
-import Slider from './modules/slider'
+import { Togglers, initTogglers } from './modules/toggler'
+import { Accordion, initAccordion } from './modules/accordion'
+import { Slider, initSlider } from './modules/slider'
+import { CountTarif, initCountTarif } from './modules/countTariff'
+import { Direction, initDirection } from './modules/direction'
+import { LazyLoading, initLazyLoading } from './modules/lazyLoading'
+import { Modal, initModal } from './modules/modal'
+import { Sidebar, initSidebar } from './modules/sidebar'
+import { Scroll, initScroll } from './modules/smoothScrolll'
+// import initRipple from './modules/ripple'
 
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // TOGGLERS INIT
-    const togglersBtn = [...document.querySelectorAll(".togglers__button")];
-    if (togglersBtn.length !== 0) {
 
-        const tariffItem = [...document.querySelectorAll(".tariff__switch")];
-        const togglersActiveClass = 'togglers__button--active';
-        const itemActiveClass = 'tariff__switch--active';
+    // INIT LAZY LOADING 
+    initLazyLoading()
 
-        new Togglers(togglersBtn, tariffItem, togglersActiveClass, itemActiveClass);
-    }
+    // INIT SIDEBAR 
 
-
-
+    initSidebar()
 
     // ACCORDION INIT
 
-    const faqBtn = [...document.querySelectorAll(".item-faq")];
-    if (faqBtn.length !== 0) {
-        const faqBtnText = [...document.querySelectorAll(".item-faq__text")];
-        const faqBtnActive = 'incDec-btn--minus';
-        const activeClasses = ['item-faq__body', 'item-faq__text']
-        const faqTransitionTime = 500;
-        const heightFaqVar = '--max-heightFaq'
-        new Accordion(faqBtn, faqBtnText, faqBtnActive, activeClasses, null, null, null, faqTransitionTime, heightFaqVar);
-    }
-
-
-    // Cities
-    const citiesList = [...document.querySelectorAll(".cities__content-hidden")];
-    console.log(citiesList)
-    if (citiesList.length !== 0) {
-        const citiesBtn = [...document.querySelectorAll(".cities__accordion-body")];
-        const citiesBtnActive = 'cities__accordion-body--hide';
-        const citiesTextToggleBtn = document.querySelector(".cities__link");
-        const citiesTextToggle = ['Все города', 'Свернуть'];
-        const citiesTransitionTime = 500;
-        const heightCitiesVar = '--max-heightCities'
-        new Accordion(citiesBtn, citiesList, citiesBtnActive, null, null, citiesTextToggle, citiesTextToggleBtn, citiesTransitionTime, heightCitiesVar);
-    }
-
-
-
-    // Direction
-    const directionList = [...document.querySelectorAll(".direction__content-overflow")];
-    console.log(directionList)
-    if (directionList.length !== 0) {
-        const directionBody = document.querySelector(".direction__body ");
-        const directionBtn = [...document.querySelectorAll(".direction__accordion-body")];
-        const directionBtnActive = 'direction__accordion-body--hide';
-        const directionListActive = 'direction__content-overflow--visible';
-        const directionBackgroundRect = document.querySelector(".direction__background-img");
-        const directionTextToggleBtn = document.querySelector(".direction__link");
-        const directionTextToggle = ['Все направления', 'Свернуть'];
-        const directionTransitionTime = 300;
-        const heightDirectionVar = '--max-heightDirection';
-
-        new Accordion(directionBtn, directionList, directionBtnActive, null, directionListActive, directionTextToggle, directionTextToggleBtn, directionTransitionTime, heightDirectionVar, directionBackgroundRect, directionBody);
-    }
-
+    initAccordion()
 
 
     // SLIDER INIT
 
-    const contentAdvantages = [...document.querySelectorAll(".advantages__carousel-item")];
-    if (contentAdvantages.length !== 0) {
-
-        const wrapperAdvantages = document.querySelector(".advantages__body");
-        const mainAdvantages = document.querySelector(".advantages__slider");
-        const resizeOberverAdvantages = document.querySelector(".advantages__resizer");
-        const circeTogglersCard = [...document.querySelectorAll(".circe-togglers__advantages")];
-        console.log(circeTogglersCard)
-        const circleActiveClass = 'circe-togglers__item--active'
-        const sliderBreakpointAdvantages = 480;
-        const sliderAdvantages = new Slider(contentAdvantages, mainAdvantages, wrapperAdvantages, sliderBreakpointAdvantages, null, circeTogglersCard, circleActiveClass, resizeOberverAdvantages, null, null, 0, null, null);
-
-        /*  sliderCoffee.getUnactiveElts(); */
-        /* sliderCoffee.initArrowsBtns(); */
+    initSlider()
 
 
-        sliderAdvantages.getMargin()
-        sliderAdvantages.getTranslateStepX();
-        sliderAdvantages.initDrag();
-        sliderAdvantages.initCirceTogglers()
-        sliderAdvantages.slideResizeObserver();
 
+    // COUNT TARIFF INIT
+
+    initTogglers()
+    initCountTarif()
+
+
+    // DIRECTION INIT
+
+    initDirection()
+
+    // MODAL INIT
+
+    initModal()
+
+    /*  //  RIPPLE INIT
+     initRipple() */
+
+    //  SCROLL INIT
+
+    initScroll()
+
+    const applyStyle = (css) => {
+        // console.log('ok')
+        var style = document.createElement('style');
+        style.type = 'text/css';
+        if (style.styleSheet) {
+            style.styleSheet.cssText = css;
+        } else {
+            style.appendChild(document.createTextNode(css));
+        }
+        document.body.appendChild(style);
     }
 
-
-    const contentEffect = [...document.querySelectorAll(".effect__item")];
-    if (contentEffect.length !== 0) {
-
-        const wrapperEffect = document.querySelector(".effect__body");
-        const mainEffect = document.querySelector(".effect__slider");
-        const resizeOberverEffect = document.querySelector(".effect__resizer");
-        const sliderBreakpointEffect = 768;
-        const sliderEffect = new Slider(contentEffect, mainEffect, wrapperEffect, sliderBreakpointEffect, null, null, null, resizeOberverEffect, null, null, 0, null, null);
-
-        /*  sliderCoffee.getUnactiveElts(); */
-        /* sliderCoffee.initArrowsBtns(); */
-        sliderEffect.getMargin();
-        sliderEffect.getTranslateStepX();
-        sliderEffect.initDrag();
-        sliderEffect.slideResizeObserver();
+    const hasCSS = () => {
+        var test = document.createElement('div');
+        test.className = 'rippleJS';
+        document.body.appendChild(test);
+        var s = window.getComputedStyle(test);
+        var result = s.position == 'absolute';
+        document.body.removeChild(test);
+        // console.log(result)
+        return result;
     }
 
-
-    // Advantages Slider
-
-    const contentProgramm = [...document.querySelectorAll(".programm__item ")];
-
-    if (contentProgramm.length !== 0) {
-        const wrapperProgramm = document.querySelector(".programm__body");
-        const mainProgramm = document.querySelector(".programm__slider ");
-        const resizeOberverProgramm = document.querySelector(".programm__resizer");
-        const sliderBreakpointProgramm = 1225;
-        const sliderProgramm = new Slider(contentProgramm, mainProgramm, wrapperProgramm, sliderBreakpointProgramm, null, null, null, resizeOberverProgramm, null, null, 0, null, null);
-
-        /*  sliderCoffee.getUnactiveElts(); */
-        /* sliderCoffee.initArrowsBtns(); */
-        sliderProgramm.getMargin();
-        sliderProgramm.getTranslateStepX();
-        sliderProgramm.initDrag();
-        sliderProgramm.slideResizeObserver();
-
+    if (!hasCSS()) {
+        var css = '/*rippleJS*/.rippleJS{display:block;position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;border-radius:inherit;-webkit-mask-image:-webkit-radial-gradient(circle,#fff,#000)}.rippleJS.fill::after{position:absolute;top:0;left:0;right:0;bottom:0;content:""}.rippleJS.fill.active{border-radius:1000000px}.rippleJS .ripple{position:absolute;border-radius:100%;background:currentColor;opacity:.5;transition:all .4s ease-out;width:0;height:0;pointer-events:none;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.rippleJS .ripple.held{opacity:1}.rippleJS .ripple.done{opacity:0}';
+        applyStyle(css);
     }
 
-    const contentCard = [...document.querySelectorAll(".tariffsec__card")];
+    const startRipple = (type, at) => {
+        // console.log('ok')
+        var holder = at.target;
+        // console.log(holder)
+        // holder.style.zIndex = 0;
+        var cl = holder.classList;
+        if (!cl.contains('rippleJS')) {
+            return false;  // ignore
+        }
 
-    if (contentCard.length !== 0) {
-        const mainCard = document.querySelector(".tariffsec__slider");
-        const wrapperCard = document.querySelector(".tariffsec__body");
-        const resizeOberverCard = document.querySelector(".tariffsec__resizer");
-        const circeTogglersCard = [...document.querySelectorAll(".circe-togglers__item")];
-        const circleActiveClass = 'circe-togglers__item--active'
-        const sliderBreakpointCard = 480;
-        const sliderProgramm = new Slider(contentCard, mainCard, wrapperCard, sliderBreakpointCard, null, circeTogglersCard, circleActiveClass, resizeOberverCard, null, null, 0, null, null);
-        /*  sliderCoffee.getUnactiveElts(); */
-        /* sliderCoffee.initArrowsBtns(); */
-        const waitMargin = new Promise((resolve, reject) => {
-            console.log('ok')
-            setTimeout(() => {
-                sliderProgramm.getMargin()
-                resolve()
-            }, 100)
-        })
-        console.log('ok')
-        waitMargin.then(() => {
-            sliderProgramm.getTranslateStepX();
-            sliderProgramm.initDrag();
-            sliderProgramm.initCirceTogglers()
-            sliderProgramm.slideResizeObserver();
-        })
+        // Store the event use to generate this ripple on the holder: don't allow
+        // further events of different types until we're done. Prevents double-
+        // ripples from mousedown/touchstart.
+        var prev = holder.getAttribute('data-event');
+        if (prev && prev != type) {
+            return false;
+        }
+        holder.setAttribute('data-event', type);
+
+        // Create and position the ripple.
+        var rect = holder.getBoundingClientRect();
+        var x = at.offsetX;
+        var y;
+        if (x !== undefined) {
+            y = at.offsetY;
+        } else {
+            x = at.clientX - rect.left;
+            y = at.clientY - rect.top;
+        }
+        var ripple = document.createElement('div');
+        ripple.className = 'ripple';
+        ripple.style.transform = 'translate(' + x + 'px, ' + y + 'px';
+        ripple.style.webkitTransform = ripple.style.transform;
+        // ripple.style.zIndex = -1;
+
+        // Activate/add the element, forcing an animation (setTimeout).
+        cl.add('active');
+        holder.appendChild(ripple);
+        window.setTimeout(function () {
+            var max;
+            if (rect.width == rect.height) {
+                max = rect.width * 1.412;
+            } else {
+                max = Math.sqrt(rect.width * rect.width + rect.height * rect.height);
+            }
+
+            var dim = max * 2 + 'px';
+            var margin = -max + 'px';
+            ripple.style.width = dim;
+            ripple.style.height = dim;
+            ripple.style.marginLeft = margin;
+            ripple.style.marginTop = margin;
+            ripple.classList.add('held');
+        }, 20);
+
+        var releaseEvent = (type == 'mousedown' ? 'mouseup' : 'touchend');
+        var release = function (ev) {
+            // TODO: We don't check for _our_ touch here. Releasing one finger
+            // releases all ripples.
+            document.removeEventListener(releaseEvent, release);
+            ripple.classList.add('done');
+
+            // larger than animation: duration in css
+            window.setTimeout(function () {
+                holder.removeChild(ripple);
+                if (!holder.children.length) {
+                    cl.remove('active');
+                    holder.removeAttribute('data-event');
+                }
+            }, 650);
+        };
+        document.addEventListener(releaseEvent, release);
     }
 
-
-
-    const contentService = [...document.querySelectorAll(".interest-service__slider-item")];
-    if (contentService.length !== 0) {
-        const mainService = document.querySelector(".interest-service__slider");
-        const wrapperService = document.querySelector(".interest-service__body");
-        const resizeOberverService = document.querySelector(".interest-service__resizer");
-        const sliderBreakpointService = 1225;
-        const sliderProgramm = new Slider(contentService, mainService, wrapperService, sliderBreakpointService, null, null, null, resizeOberverService, null, null, 0, null, null);
-
-        /*  sliderCoffee.getUnactiveElts(); */
-        /* sliderCoffee.initArrowsBtns(); */
-        sliderProgramm.getMargin();
-        sliderProgramm.getTranslateStepX();
-        sliderProgramm.initDrag();
-        sliderProgramm.slideResizeObserver();
-
-    }
-
-
-    const contentArticles = [...document.querySelectorAll(".articles-content__slide")];
-    if (contentService.length !== 0) {
-        const mainArticles = document.querySelector(".usefull-articles__slider");
-        const wrapperArticles = document.querySelector(".usefull-articles__body");
-        const resizeOberverArticles = document.querySelector(".articles-content__resizer");
-        const sliderBreakpointArticles = 1225;
-        const sliderProgramm = new Slider(contentArticles, mainArticles, wrapperArticles, sliderBreakpointArticles, null, null, null, resizeOberverArticles, null, null, 0, null, null);
-
-        /*  sliderCoffee.getUnactiveElts(); */
-        /* sliderCoffee.initArrowsBtns(); */
-        sliderProgramm.getMargin();
-        sliderProgramm.getTranslateStepX();
-        sliderProgramm.initDrag();
-        sliderProgramm.slideResizeObserver();
-
-    }
-
-
-
+    document.addEventListener('mousedown', function (ev) {
+        if (ev.button == 0) {
+            // trigger on left click only
+            startRipple(ev.type, ev);
+        }
+    });
+    document.addEventListener('touchstart', function (ev) {
+        for (var i = 0; i < ev.changedTouches.length; ++i) {
+            startRipple(ev.type, ev.changedTouches[i]);
+        }
+    });
 
 
 })

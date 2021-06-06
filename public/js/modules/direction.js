@@ -1,4 +1,6 @@
-class Direction {
+import ClassToggle from './utilities/classToggle'
+
+export class Direction {
 
     constructor(directionsBody, directions, directionActive) {
         this.directionsBody = directionsBody;
@@ -8,14 +10,8 @@ class Direction {
     }
 
     initEvents = () => {
+        console.log('')
         this.directionResizeObserver()
-    }
-
-    removeClass = (element, clas) => {
-        element.classList.remove(clas)
-    }
-    addClass = (element, clas) => {
-        this.directions.indexOf(element) % 3 !== 0 && element.classList.add(clas)
     }
 
     directionRzeObrCallback = (entries) => {
@@ -47,26 +43,19 @@ class Direction {
             childMarginRight > 0 && (direction.style.marginRight = '0') // console.log 
         }
         if ((childTop - parentTop) > childMarginTop && direction.classList.contains(this.directionActive) && directionUl.indexOf(direction) !== 0) {
-            this.removeClass(direction, this.directionActive)
+            ClassToggle.removeClass(direction, this.directionActive)
+
             direction.previousElementSibling.style.marginRight = '34px'
         }
 
         if (childTop - parentTop === childMarginTop && !direction.classList.contains(this.directionActive) && directionUl.indexOf(direction) !== 0) {
-            // console.log(direction.classList.contains(this.directionActive))
-            /*       console.log(childTop, parentTop)
-            console.log(childMarginTop) */
-            /*    console.log(this.directions)
-               console.log(this.directions.indexOf(direction))
-               console.log(directionUlLength)
-               console.log(direction) */
             direction.previousElementSibling.style.marginRight = '0'
-            this.addClass(direction, this.directionActive)
+            ClassToggle.addClass(direction, this.directionActive)
         }
     }
 }
 
-
-document.addEventListener('DOMContentLoaded', () => {
+export const initDirection = () => {
 
     // Coffee Slider
     const directions = [...document.querySelectorAll(".direction__item")];
@@ -74,9 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const directionActive = 'direction__item--margin';
     directions.length !== 0 && new Direction(directionsBody, directions, directionActive);
 
-
-
-
-})
+}
 
 

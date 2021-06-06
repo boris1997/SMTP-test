@@ -24,13 +24,13 @@
 .section__title,
 .total-price__amount,
 .total-price__amount-rub {
-    font-size: rem(40px);
-    line-height: rem(50px);
+    font-size: 40px;
+    line-height: 50px;
   }
 
   .section__header {
-    margin-top: rem(110px);
-    margin-bottom: rem(55px);
+    margin-top: 110px;
+    margin-bottom: 55px;
   }
 
   .main {
@@ -39,7 +39,7 @@
   }
 
   .section {
-    padding-bottom: rem(110px);
+    padding-bottom: 110px;
   }
 
   .get__left {
@@ -51,25 +51,25 @@
   }
 
   .section__sec-title {
-    font-size: rem(60px);
+    font-size: 60px;
   }
 
   .item__title {
-    line-height: rem(28px);
-    font-size: rem(20px);
+    line-height: 28px;
+    font-size: 20px;
   }
 
   .item__text {
-    font-size: rem(15px);
-    line-height: rem(24px);
+    font-size: 15px;
+    line-height: 24px;
   }
 
   .opportunity__body {
-    grid-column-gap: rem(128px);
+    grid-column-gap: 128px;
   }
 
   .mailing__right {
-    margin-left: rem(10px);
+    margin-left: 10px;
   }
 
   .mailing__img {
@@ -79,11 +79,11 @@
   .order__text,
 .switch-radio__label,
 .item__text-medium {
-    font-size: rem(14px);
+    font-size: 14px;
   }
 
   .item__title-medium {
-    font-size: rem(17px);
+    font-size: 17px;
   }
 
   .card-tariff__header {
@@ -105,7 +105,7 @@
   }
 
   .card-tariff__footer {
-    margin-top: rem(30px);
+    margin-top: 30px;
   }
 
   .afterMailing__body,
@@ -122,45 +122,45 @@
 }
 /* Portrait tablets and small desktops */
 /* Landscape phones and portrait tablets */
-@media (max-width: 767px) {
+@media (max-width: 767px {
   .main__title,
 .section__title {
-    font-size: rem(30px);
-    line-height: rem(40px);
+    font-size: 30px;
+    line-height: 40px;
   }
 
   .section__header {
-    margin-top: rem(80px);
-    margin-bottom: rem(45px);
+    margin-top: 80px;
+    margin-bottom: 45px;
   }
 
   .section {
-    padding-bottom: rem(80px);
+    padding-bottom: 80px;
   }
 
   .section__sec-title {
-    font-size: rem(45px);
+    font-size: 45px;
   }
 
   .item__title {
-    font-size: rem(19px);
+    font-size: 19px;
   }
 
   .item__text {
-    font-size: rem(14px);
-    line-height: rem(22px);
+    font-size: 14px;
+    line-height: 22px;
   }
 
   .total-price__amount,
 .total-price__amount-rub {
-    font-size: rem(36px);
-    line-height: rem(36px);
+    font-size: 36px;
+    line-height: 36px;
   }
 
   .order__text,
 .switch-radio__label,
 .item__text-medium {
-    font-size: rem(13px);
+    font-size: 13px;
   }
 
   .get__img {
@@ -170,42 +170,42 @@
 /* Landscape phones and smaller */
 @media (max-width: 480px) {
   .section__header {
-    margin-top: rem(50px);
-    margin-bottom: rem(40px);
+    margin-top: 50px;
+    margin-bottom: 40px;
   }
 
   .section {
-    padding-bottom: rem(50px);
+    padding-bottom: 50px;
   }
 
   .main__title,
 .section__title {
-    font-size: rem(22px);
-    line-height: rem(32px);
+    font-size: 22px;
+    line-height: 32px;
   }
 
   .item__title {
-    font-size: rem(18px);
+    font-size: 18px;
   }
 
   .item__text {
-    font-size: rem(13px);
+    font-size: 13px;
   }
 
   .total-price__amount,
 .total-price__amount-rub {
-    font-size: rem(34px);
-    line-height: rem(32px);
+    font-size: 34px;
+    line-height: 32px;
   }
 
   .tariff__card {
-    padding: rem(22px);
-    padding-bottom: rem(50px);
+    padding: 22px;
+    padding-bottom: 50px;
   }
 
   .card-tariff__text {
-    font-size: rem(12px);
-    line-height: rem(15px);
+    font-size: 12px;
+    line-height: 15px;
   }
 
   .btn {
@@ -213,12 +213,12 @@
   }
 
   .total-price__amount-rub {
-    margin-left: rem(8px);
+    margin-left: 8px;
   }
 
   .footer-tariff__btn {
-    font-size: rem(14px);
-    height: rem(50px);
+    font-size: 14px;
+    height: 50px;
   }
 }
 @media (max-width: 650px) {
@@ -250,7 +250,7 @@
   }
 
   .total-price__text {
-    margin-left: rem(22px);
+    margin-left: 22px;
     padding: 0 !important;
   }
 
@@ -259,15 +259,15 @@
 .footer-tariff__info,
 .card-tariff__line,
 .togglers-tariff__item + .togglers-tariff__item {
-    margin-top: rem(30px);
+    margin-top: 30px;
   }
 
   .togglers-tariff__btn {
-    margin-top: rem(24px);
+    margin-top: 24px;
   }
 
   .switch-radio__item + .switch-radio__item {
-    margin-top: rem(16px);
+    margin-top: 16px;
   }
 
   .footer-tariff__info {

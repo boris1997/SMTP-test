@@ -1,4 +1,6 @@
-class Modal {
+import ClassToggle from './utilities/classToggle'
+
+export class Modal {
 
     constructor(body, popup, popupModal, popupModalWrapper, wrapperMargin, btnPopup, closeBtn, formInputs, popupModalActive, popupHidden, bodyNoScroll, staticForm) {
         this.body = body;
@@ -33,13 +35,10 @@ class Modal {
                 console.log(e.target.classList, this.popupModal)
 
                 this.popupModal.map((popupModal, i) => {
-                    console.log(popupModal.classList.contains(this.popupModalActive))
                     if (popupModal.classList.contains(this.popupModalActive)) {
-                        console.log(this.body)
                         ClassToggle.removeClass(this.body, this.bodyNoScroll);
                         this.removeNoScrollStyles(this.body);
                         /*  !popupModal.classList.contains(this.staticForm) && this.removeNoScrollStyles(popupModal); */
-                        console.log(popupModal)
                         !popupModal.classList.contains(this.staticForm) && ClassToggle.removeClass(popupModal, this.popupModalActive);
                         ClassToggle.addClass(this.popup, this.popupHidden)
                     }
@@ -133,8 +132,8 @@ class Modal {
 
 }
 
+export const initModal = () => {
 
-document.addEventListener('DOMContentLoaded', () => {
 
     // Coffee Slider
     const popupMain = document.getElementById("popup-main");
@@ -181,4 +180,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // citiesList !== null && new Accordion(citiesBtn, citiesList, citiesBtnActive, textToggleBtn);
 
 
-})
+
+}

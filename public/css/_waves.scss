@@ -1,7 +1,7 @@
 /** NOTE: When this is updated, refresh ripple.js' minified version. */
 
 /**
- * contains a ripple. Will normally grow to fixed size (200px/200px), not
+ * contains a ripple. Will normally grow to fixed size (200px/200px, not
  * related to the holder itself.
  */
 
@@ -98,7 +98,7 @@
 }
 
 .btn__linear .rippleJS .ripple {
-  background: rgb(88, 122, 132);
+  background: rgba(68, 213, 252, 1);
 }
 
 .btn__wave {

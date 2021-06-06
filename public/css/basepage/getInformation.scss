@@ -1,22 +1,22 @@
 .getInformation {
   &__section {
-    padding-bottom: rem(40px);
+    padding-bottom: 40px;
   }
   background: url("../assets/backgrounds/base/getInformation-background.svg")
     no-repeat center center/cover;
   &__title {
-    max-width: rem(811px);
+    max-width: 811px;
     text-align: center;
     margin: 0 auto;
   }
 
   &__header {
-    margin-bottom: rem(32px);
+    margin-bottom: 32px;
   }
   &__sec-title {
     right: 0;
     left: 0;
-    top: rem(-50px);
+    top: -50px;
     text-align: center;
     bottom: auto;
     justify-content: center;
@@ -28,7 +28,7 @@
 
   &__text {
     margin-top: 0;
-    max-width: rem(880px);
+    max-width: 880px;
     text-align: center;
   }
 }

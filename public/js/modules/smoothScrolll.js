@@ -1,7 +1,6 @@
-// import smoothscroll from 'smoothscroll-polyfill';
 
 /* smoothscroll.polyfill(); */
-class Scroll {
+export class Scroll {
 
     constructor(btn, scrollToSection, speed) {
         this.btn = btn;
@@ -52,7 +51,7 @@ class Scroll {
 }
 
 
-document.addEventListener('DOMContentLoaded', () => {
+export const initScroll = () => {
 
     const scrollBtn = [...document.querySelectorAll(".data-scroll__btn")];
     console.log(scrollBtn)
@@ -62,6 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(scrollToSection)
         new Scroll(scrollBtn, scrollToSection, speed);
     }
-})
+}
 
 

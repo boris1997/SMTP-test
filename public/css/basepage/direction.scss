@@ -1,11 +1,11 @@
 .direction {
   &__section {
-    padding-bottom: rem(40px);
+    padding-bottom: 40px;
   }
   background: url("../assets/backgrounds/base/direction-background.svg")
     no-repeat center center/cover;
   &__body {
-    margin-top: rem(32px);
+    margin-top: 32px;
     @include flexbox(column, flex-start, flex-start);
 
     position: relative;
@@ -13,7 +13,7 @@
 
   &__body-wrapper {
     z-index: 1;
-    margin: rem(17px);
+    margin: 17px;
   }
 
   &__background {
@@ -51,7 +51,7 @@
   }
 
   &__content {
-    margin-bottom: rem(16px);
+    margin-bottom: 16px;
   }
   &__content-overflow {
     margin-top: 0;
@@ -66,11 +66,11 @@
   }
 
   &__title {
-    max-width: rem(481px);
+    max-width: 481px;
   }
 
   &__main-title {
-    max-width: rem(463px);
+    max-width: 463px;
   }
 
   &__list {
@@ -83,7 +83,7 @@
     flex-wrap: wrap;
   }
   &__list + &__list {
-    margin-top: rem(16px);
+    margin-top: 16px;
   }
   &__list:hover {
     max-height: 1000px;
@@ -100,19 +100,19 @@
   } */
 
   &__item--margin {
-    margin-left: rem(16px);
-    padding-left: rem(18px);
+    margin-left: 16px;
+    padding-left: 18px;
     position: relative;
     &:before {
-      @include position(absolute, "", 0, 0, rem(-5px), auto, auto);
-      width: rem(8px);
-      height: rem(8px);
-      border-radius: rem(100px);
+      @include position(absolute, "", 0, 0, -5px, auto, auto);
+      width: 8px;
+      height: 8px;
+      border-radius: 100px;
       background: linear-gradient(90deg, #83a6ff -0.49%, #4d6de2 99.88%);
     }
   }
   &__icon {
-    margin-left: rem(12px);
+    margin-left: 12px;
   }
   &__accordion-body--hide &__icon {
     transform: rotate(180deg);

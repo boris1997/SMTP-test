@@ -7,7 +7,7 @@
   display: flex;
 }
 .togglers__button {
-  width: rem(196px);
+  width: 196px;
 }
 .togglers__button:nth-child(1) {
   border-top-right-radius: 0;

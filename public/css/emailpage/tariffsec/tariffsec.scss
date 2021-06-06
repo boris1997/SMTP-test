@@ -6,28 +6,19 @@
     #191830 100.96%
   );
   &__title {
-    max-width: rem(539px);
+    max-width: 539px;
   }
   /*   &__body {
   } */
 
   &__slider {
-    @include grid(
-      0,
-      rem(80px),
-      rem(30px),
-      1,
-      1fr,
-      auto-fill,
-      rem(380px),
-      rem(380px)
-    );
+    @include grid(0, 80px, 30px, 1, 1fr, auto-fill, 380px, 380px);
     justify-content: center;
   }
   &__card {
     background-color: #2c2c45;
-    box-shadow: 0px rem(5px) rem(50px) rem(2px) rgba(0, 0, 0, 0.1);
-    border-radius: rem(12px);
+    box-shadow: 0px 5px 50px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
   }
 
   &__card--base {
@@ -59,53 +50,53 @@
   }
 
   &__header {
-    padding: rem(32px) rem(40px);
-    border-top-left-radius: rem(12px);
-    border-top-right-radius: rem(12px);
+    padding: 32px 40px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
   }
 
   &__header-sm {
-    padding: rem(32px) rem(28px);
+    padding: 32px 28px;
   }
 
   &__body {
-    margin-top: rem(34px);
-    padding: 0 rem(40px);
-    padding-bottom: rem(50px);
+    margin-top: 34px;
+    padding: 0 40px;
+    padding-bottom: 50px;
   }
 
   &__body-sm {
-    padding: 0 rem(28px);
+    padding: 0 28px;
   }
 
   &__btn {
     @include flexbox(row, baseline, center);
-    margin-top: rem(22px);
+    margin-top: 22px;
   }
 
   &__header-center {
     background: linear-gradient(90deg, #83a6ff -0.49%, #4d6de2 99.88%);
-    box-shadow: rem(0px) rem(10px) rem(30px) rgba(21, 27, 60, 0.1);
+    box-shadow: 0px 10px 30px rgba(21, 27, 60, 0.1);
   }
 
   &__title {
     margin-top: 0;
-    font-size: rem(26px);
+    font-size: 26px;
   }
 
   /*   &__sale {
-    max-width: rem(374px);
-    margin-top: rem(18px);
+    max-width: 374px;
+    margin-top: 18px;
 
   } */
 
   &__footer {
-    margin-top: rem(32px);
+    margin-top: 32px;
   }
 
   &__line {
-    margin: 0 rem(15px);
-    height: rem(1px);
+    margin: 0 15px;
+    height: 1px;
     background-color: #474761;
   }
   &__span {
@@ -113,27 +104,27 @@
   }
 
   &__switch {
-    margin-left: rem(217px);
+    margin-left: 217px;
     @include flexbox(column, space-between, space-between);
   }
 }
 
 .item-tariffseccard {
   &__amount {
-    font-size: rem(36px);
-    line-height: rem(58px);
+    font-size: 36px;
+    line-height: 58px;
     font-weight: 700;
   }
   &__date {
-    font-size: rem(28px);
-    line-height: rem(30px);
+    font-size: 28px;
+    line-height: 30px;
     font-weight: 400;
-    margin-top: rem(8px);
+    margin-top: 8px;
   }
   &__text {
-    max-width: rem(269px);
-    line-height: rem(26px);
-    margin-top: rem(32px);
+    max-width: 269px;
+    line-height: 26px;
+    margin-top: 32px;
   }
 
   &__free {
@@ -148,7 +139,7 @@
 .footer-tariffsec {
   &__btn {
     filter: drop-shadow(0px 10px 30px rgba(36, 110, 226, 0.1));
-    width: rem(296px);
+    width: 296px;
     margin-top: 0 !important;
   }
 }

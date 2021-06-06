@@ -1,4 +1,8 @@
-class Slider {
+import MathUtl from './utilities/Math'
+import ClassToggle from './utilities/classToggle'
+
+
+export class Slider {
 
     constructor(content, main, wrapper, sliderBreakpoint, arrow, circeTogglers, circleActiveClass, slideResizeOberverObj, toggleBtn, toggleMoveGif, stopperFactor, slideNumber, toggleResizeOberverObj) {
 
@@ -79,7 +83,7 @@ class Slider {
             console.log(this.sliderBreakpoint, innerWidth)
             if (this.sliderBreakpoint > innerWidth) {
                 console.log('ok')
-                this.main.classList.remove('slider--smooth'); // удаляем плавность при движении, чтобы не было задержек
+                ClassToggle.removeClass(this.main, 'slider--smooth') // удаляем плавность при движении, чтобы не было задержек
                 this.startPos = this.getPositionX(event);                // узнаем стартовую позицию мыши
                 this.isDragging = true;                                  // инициализируем перетаскивание
                 this.animationID = requestAnimationFrame(this.animation) // запускаем анимацию
@@ -101,7 +105,7 @@ class Slider {
             const lastElementRight = window.innerWidth - (this.content[this.content.length - 1].getBoundingClientRect().left + this.content[this.content.length - 1].clientWidth);
 
             if ((lastElementRight <= this.sliderLimit && +Math.abs(this.currentTranslationX).toFixed() <= ((this.translateStepX * (this.content.length - 1)) + this.elemntsMargins).toFixed() && this.currentTranslationX < 2) || (this.currentTranslationX >= this.prevTranslation && this.currentTranslationX < 2)) {
-                this.currentTranslationX = this.absToPercent(((this.prevTranslation * this.main.clientWidth / 100) + currentPosition - this.startPos), this.main.clientWidth);
+                this.currentTranslationX = MathUtl.absToPercent(((this.prevTranslation * this.main.clientWidth / 100) + currentPosition - this.startPos), this.main.clientWidth);
             }
         }
     }
@@ -110,7 +114,8 @@ class Slider {
     touchEnd = (e) => {
         // Остановка тач события
         if (this.sliderBreakpoint > innerWidth) {
-            this.main.classList.add('slider--smooth');           // возвращаем плавность для событий на клик стрелки
+
+            ClassToggle.addClass(this.main, 'slider--smooth')         // возвращаем плавность для событий на клик стрелки
             cancelAnimationFrame(this.animationID)                          // отмена анимацию
             this.isDragging = false;                                        // отсановка перетаскивания
 
@@ -188,7 +193,7 @@ class Slider {
 
     initToggleBtns = () => {
         this.toggleBtn.map((item, i) => item.addEventListener("click", () => {
-            !this.toggleMoveGif.classList.contains('togglers__item-move--smooth') && this.toggleClasses(this.toggleMoveGif, 'togglers__item-move--smooth')
+            !this.toggleMoveGif.classList.contains('togglers__item-move--smooth') && ClassToggle.toggleClass(this.toggleMoveGif, 'togglers__item-move--smooth')
             this.currentIndex = i;
             this.setCurrentXTranslation();                                  // Меняем текущий транслэйт слайдер 
             this.setSliderPositionX(this.main, this.currentTranslationX);  // Устанавливаем транслэйт для слайдера
@@ -210,9 +215,9 @@ class Slider {
     /*                                                СОБЫТИЕ НА КЛИК КРУЖКОВ                                         */
 
 
-    initCirceTogglers = () => {
+    initCirceTogglers = () => { /*  */
         this.circeTogglers.map((item, i) => item.addEventListener("click", () => {
-            /*  !this.toggleMoveGif.classList.contains('togglers__item-move--smooth') && this.toggleClasses(this.toggleMoveGif, 'togglers__item-move--smooth') */
+            /*  !this.toggleMoveGif.classList.contains('togglers__item-move--smooth') && ClassToggle.toggleClass(this.toggleMoveGif, 'togglers__item-move--smooth') */
 
             this.setCircleActivity(item)
 
@@ -228,8 +233,8 @@ class Slider {
     getActiveElement = (activeClass) => document.querySelector(`.${activeClass}`)
 
     setCircleActivity = (item) => {
-        this.toggleClasses(this.getActiveElement(this.circleActiveClass), this.circleActiveClass)
-        this.toggleClasses(item, this.circleActiveClass)
+        ClassToggle.toggleClass(this.getActiveElement(this.circleActiveClass), this.circleActiveClass)
+        ClassToggle.toggleClass(item, this.circleActiveClass)
     }
 
     /*                                                ОБЩИЕ МЕТОДЫ                                         */
@@ -245,17 +250,17 @@ class Slider {
         if (this.arrow) {
             // Левая стрелка
             if (Math.abs(this.currentTranslationX) > 0) {
-                this.arrow[0].classList.contains('carousel__toggle-btn--unactive') && this.arrow[0].classList.remove('carousel__toggle-btn--unactive')
+                this.arrow[0].classList.contains('carousel__toggle-btn--unactive') && ClassToggle.removeClass(this.arrow[0], 'carousel__toggle-btn--unactive')
             } else {
-                !this.arrow[0].classList.contains('carousel__toggle-btn--unactive') && this.arrow[0].classList.add('carousel__toggle-btn--unactive');
+                !this.arrow[0].classList.contains('carousel__toggle-btn--unactive') && ClassToggle.addClass(this.arrow[0], 'carousel__toggle-btn--unactive');
             }
 
 
             // Правая стрелка
             if (this.currentIndex === this.getMainToContentIndex()) {
-                this.arrow[1].classList.add('carousel__toggle-btn--unactive');
+                ClassToggle.addClass(this.arrow[1], 'carousel__toggle-btn--unactive');
             } else {
-                this.arrow[1].classList.remove('carousel__toggle-btn--unactive');
+                ClassToggle.removeClass(this.arrow[1], 'carousel__toggle-btn--unactive');
             }
         }
     }
@@ -267,11 +272,11 @@ class Slider {
 
     getUnactiveElts = () => this.content.map((item, i) => {
         // меняем опасити элементов 
-        const translationtoAbs = this.percentToAbsolute(Math.abs(this.currentTranslationX), this.main.clientWidth).toFixed();
+        const translationtoAbs = MathUtl.percentToAbsolute(Math.abs(this.currentTranslationX), this.main.clientWidth).toFixed();
         if (this.main.clientWidth <= ((item.offsetLeft + this.margin + i) - translationtoAbs) || item.offsetLeft + i - translationtoAbs < 0) {
-            item.classList.add('carousel__item--unActive')
+            ClassToggle.addClass(item, 'carousel__item--unActive')
         } else {
-            (item.classList.contains('carousel__item--unActive') && item.classList.remove('carousel__item--unActive'))
+            (item.classList.contains('carousel__item--unActive') && ClassToggle.removeClass(item, 'carousel__item--unActive'))
         }
 
     })
@@ -334,7 +339,7 @@ class Slider {
     }
 
     toggleContainerRzeObrCallback = () => {
-        this.toggleMoveGif.classList.contains('togglers__item-move--smooth') && this.toggleClasses(this.toggleMoveGif, 'togglers__item-move--smooth')
+        this.toggleMoveGif.classList.contains('togglers__item-move--smooth') && ClassToggle.toggleClass(this.toggleMoveGif, 'togglers__item-move--smooth')
         if (this.direction() === 'column') {
             this.setSliderPositionY(this.toggleMoveGif, this.setCurrentFullBodyTranslation(100))   // Меняем текущий транслэйт движущегося элемента и станавливаем транслэйт для движущегося элемента
         } else {
@@ -356,17 +361,12 @@ class Slider {
 
     /*                                               ТЕХНИЧЕСКИЕ МЕТОДЫ                                  */
 
-    toggleClasses = (element, classList) => element.classList.toggle(classList)
 
 
 
 
-    /*                                               СМЕНА КЛАССОВ                                 */
 
-
-
-
-    getMainToContentIndex = () => this.content.length - ((this.absToPercent(this.main.clientWidth, this.getTotalElementsWidth()).toFixed() / 100) * this.content.length).toFixed()  // индекс отношения контэйнера слайдера к его контентой части
+    getMainToContentIndex = () => this.content.length - ((MathUtl.absToPercent(this.main.clientWidth, this.getTotalElementsWidth()).toFixed() / 100) * this.content.length).toFixed()  // индекс отношения контэйнера слайдера к его контентой части
 
 
     setSliderPositionX = (element, translation) => element.style.transform = `translateX(${translation}%)`  // Устанавливаем транслэйт для элемента по x координате
@@ -379,40 +379,31 @@ class Slider {
 
     // Переводы чисел
 
-    absToPercent = (absolute, container) => absolute / container * 100  // Перевод в проценты
-
-    percentToAbsolute = (percent, container) => percent / 100 * container  // Перевод в абсолюбное значение
 
 
     setSlideNumber = (elem) => elem.textContent = this.currentIndex + 1  // Устанавливаем номер слайда
 
 
-    setPrevTranslation = () => this.prevTranslation = this.currentIndex * - this.absToPercent(this.content[0].clientWidth + this.margin, this.main.clientWidth).toFixed();// Устанавливаем предыдущий трансл
+    setPrevTranslation = () => this.prevTranslation = this.currentIndex * - MathUtl.absToPercent(this.content[0].clientWidth + this.margin, this.main.clientWidth).toFixed();// Устанавливаем предыдущий трансл
 
     setCurrentXTranslation = () => this.currentTranslationX = (this.currentIndex) * -this.translateStepX; //Меняем текущий X транслэйт
 
     setCurrentFullBodyTranslation = (translate) => (this.currentIndex) * translate; //Меняем текущий Y транслэйт
 
 
-    getMargin(a) {
+    getMargin() {
         // Узнаем отутупы для правельного транслэйта
         /*  const result = */
-        a++
+
         this.margin = +getComputedStyle(this.content[1]).marginLeft.split('px').join('');
-        this.elemntsMargins = this.absToPercent((this.margin * this.content.length - 1), this.getTotalElementsWidth()) - this.stopperFactor;
+        this.elemntsMargins = MathUtl.absToPercent((this.margin * this.content.length - 1), this.getTotalElementsWidth()) - this.stopperFactor;
         console.log(window.getComputedStyle(this.content[1]).marginLeft)
         console.log(this.content[1], getComputedStyle(this.content[1]).marginLeft, this.margin)
-        return a
-
     }
 
     getTranslateStepX = () => {
 
-        /*  setTimeout(() => { */
-        this.translateStepX = ((this.content[1].clientWidth + this.margin) / this.main.clientWidth * 100).toFixed() // Узнаем шаг для X транслэйта
-        /*         }, 500) */
-        console.log(this.margin)
-        /*  console.log(this.translateStepX) */
+        this.translateStepX = MathUtl.absToPercent((this.content[1].clientWidth + this.margin), this.main.clientWidth).toFixed() // Узнаем шаг для X транслэйта
 
     }
 
@@ -420,8 +411,138 @@ class Slider {
 
 }
 
+export const initSlider = () => {
 
-export default Slider
+    const contentAdvantages = [...document.querySelectorAll(".advantages__carousel-item")];
+    if (contentAdvantages.length !== 0) {
+
+        const wrapperAdvantages = document.querySelector(".advantages__body");
+        const mainAdvantages = document.querySelector(".advantages__slider");
+        const resizeOberverAdvantages = document.querySelector(".advantages__resizer");
+        const circeTogglersCard = [...document.querySelectorAll(".circe-togglers__advantages")];
+        console.log(circeTogglersCard)
+        const circleActiveClass = 'circe-togglers__item--active'
+        const sliderBreakpointAdvantages = 480;
+        const sliderAdvantages = new Slider(contentAdvantages, mainAdvantages, wrapperAdvantages, sliderBreakpointAdvantages, null, circeTogglersCard, circleActiveClass, resizeOberverAdvantages, null, null, 0, null, null);
+
+        /*  sliderCoffee.getUnactiveElts(); */
+        /* sliderCoffee.initArrowsBtns(); */
+
+
+        sliderAdvantages.getMargin()
+        sliderAdvantages.getTranslateStepX();
+        sliderAdvantages.initDrag();
+        sliderAdvantages.initCirceTogglers()
+        sliderAdvantages.slideResizeObserver();
+
+    }
+
+
+    const contentEffect = [...document.querySelectorAll(".effect__item")];
+    if (contentEffect.length !== 0) {
+
+        const wrapperEffect = document.querySelector(".effect__body");
+        const mainEffect = document.querySelector(".effect__slider");
+        const resizeOberverEffect = document.querySelector(".effect__resizer");
+        const sliderBreakpointEffect = 768;
+        const sliderEffect = new Slider(contentEffect, mainEffect, wrapperEffect, sliderBreakpointEffect, null, null, null, resizeOberverEffect, null, null, 0, null, null);
+
+        /*  sliderCoffee.getUnactiveElts(); */
+        /* sliderCoffee.initArrowsBtns(); */
+        sliderEffect.getMargin();
+        sliderEffect.getTranslateStepX();
+        sliderEffect.initDrag();
+        sliderEffect.slideResizeObserver();
+    }
+
+
+    // Advantages Slider
+
+    const contentProgramm = [...document.querySelectorAll(".programm__item ")];
+
+    if (contentProgramm.length !== 0) {
+        const wrapperProgramm = document.querySelector(".programm__body");
+        const mainProgramm = document.querySelector(".programm__slider ");
+        const resizeOberverProgramm = document.querySelector(".programm__resizer");
+        const sliderBreakpointProgramm = 1225;
+        const sliderProgramm = new Slider(contentProgramm, mainProgramm, wrapperProgramm, sliderBreakpointProgramm, null, null, null, resizeOberverProgramm, null, null, 0, null, null);
+
+        /*  sliderCoffee.getUnactiveElts(); */
+        /* sliderCoffee.initArrowsBtns(); */
+        sliderProgramm.getMargin();
+        sliderProgramm.getTranslateStepX();
+        sliderProgramm.initDrag();
+        sliderProgramm.slideResizeObserver();
+
+    }
+
+    const contentCard = [...document.querySelectorAll(".tariffsec__card")];
+
+    if (contentCard.length !== 0) {
+        const mainCard = document.querySelector(".tariffsec__slider");
+        const wrapperCard = document.querySelector(".tariffsec__body");
+        const resizeOberverCard = document.querySelector(".tariffsec__resizer");
+        const circeTogglersCard = [...document.querySelectorAll(".circe-togglers__item")];
+        const circleActiveClass = 'circe-togglers__item--active'
+        const sliderBreakpointCard = 480;
+        const sliderProgramm = new Slider(contentCard, mainCard, wrapperCard, sliderBreakpointCard, null, circeTogglersCard, circleActiveClass, resizeOberverCard, null, null, 0, null, null);
+        /*  sliderCoffee.getUnactiveElts(); */
+        /* sliderCoffee.initArrowsBtns(); */
+        const waitMargin = new Promise((resolve, reject) => {
+            console.log('ok')
+            setTimeout(() => {
+                sliderProgramm.getMargin()
+                resolve()
+            }, 100)
+        })
+        console.log('ok')
+        waitMargin.then(() => {
+            sliderProgramm.getTranslateStepX();
+            sliderProgramm.initDrag();
+            sliderProgramm.initCirceTogglers()
+            sliderProgramm.slideResizeObserver();
+        })
+    }
+
+
+
+    const contentService = [...document.querySelectorAll(".interest-service__slider-item")];
+    if (contentService.length !== 0) {
+        const mainService = document.querySelector(".interest-service__slider");
+        const wrapperService = document.querySelector(".interest-service__body");
+        const resizeOberverService = document.querySelector(".interest-service__resizer");
+        const sliderBreakpointService = 1225;
+        const sliderProgramm = new Slider(contentService, mainService, wrapperService, sliderBreakpointService, null, null, null, resizeOberverService, null, null, 0, null, null);
+
+        /*  sliderCoffee.getUnactiveElts(); */
+        /* sliderCoffee.initArrowsBtns(); */
+        sliderProgramm.getMargin();
+        sliderProgramm.getTranslateStepX();
+        sliderProgramm.initDrag();
+        sliderProgramm.slideResizeObserver();
+
+    }
+
+
+    const contentArticles = [...document.querySelectorAll(".articles-content__slide")];
+    if (contentService.length !== 0) {
+        const mainArticles = document.querySelector(".usefull-articles__slider");
+        const wrapperArticles = document.querySelector(".usefull-articles__body");
+        const resizeOberverArticles = document.querySelector(".articles-content__resizer");
+        const sliderBreakpointArticles = 1225;
+        const sliderProgramm = new Slider(contentArticles, mainArticles, wrapperArticles, sliderBreakpointArticles, null, null, null, resizeOberverArticles, null, null, 0, null, null);
+
+        /*  sliderCoffee.getUnactiveElts(); */
+        /* sliderCoffee.initArrowsBtns(); */
+        sliderProgramm.getMargin();
+        sliderProgramm.getTranslateStepX();
+        sliderProgramm.initDrag();
+        sliderProgramm.slideResizeObserver();
+
+    }
+}
+
+
 
 
 /* const carousel = {

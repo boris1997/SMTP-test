@@ -1,5 +1,5 @@
 .header {
-  padding: rem(17px) 0;
+  padding: 17px 0;
   width: 100%;
   background-color: rgba(23, 22, 41, 0.2);
   &__logo,
@@ -12,14 +12,14 @@
   }
 
   &__title {
-    margin-top: rem(12px);
+    margin-top: 12px;
   }
 
   &__btn {
-    width: rem(158px);
+    width: 158px;
     &:after {
       content: url("../assets/svg/header/contact.svg");
-      top: rem(6px);
+      top: 6px;
     }
   }
 
@@ -30,7 +30,7 @@
 
 .nav {
   &__list {
-    width: rem(791px);
+    width: 791px;
     @include flexbox(row, space-between, center);
   }
 
@@ -47,9 +47,9 @@
       position: absolute;
       width: 0;
       left: -4%;
-      bottom: rem(-9px);
-      height: rem(4px);
-      border-radius: rem(1000px);
+      bottom: -9px;
+      height: 4px;
+      border-radius: 1000px;
       background: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
       transition: width 0.4s ease-in-out;
     }
@@ -79,6 +79,6 @@
     }
   }
   &__icon {
-    margin-right: rem(10px);
+    margin-right: 10px;
   }
 }

@@ -17,8 +17,11 @@ let path = {
         // , "!" + source_folder + "/css/**/*fonts.scss"]
         cssFonts: source_folder + "/css/**/*fonts.scss",
         js: source_folder + "/js/**/*.js",
-        jsMain: source_folder + '/js/script.js',
-        jsFiles: [source_folder + '/js/script.js'],
+
+        jsSrc: 'script.js',
+        jsFolder: source_folder + '/js/',
+        jsFiles: ['script.js'],
+
         assets: source_folder + "/assets/**/*.{jpg,png,svg,gif,ico,mp4}",
         fonts: source_folder + "/fonts/**/*.{ttf,woff,woff2,eot,css}"
     },
@@ -39,6 +42,7 @@ let { src, dest } = require('gulp'),
     fileinclude = require("gulp-file-include"),
     del = require('del'),
     autoprefixer = require('gulp-autoprefixer'),
+    pxtorem = require('gulp-pxtorem'),
     group_media = require('gulp-group-css-media-queries'),
     clean_css = require('gulp-clean-css'),
     rename = require('gulp-rename'),
@@ -63,44 +67,6 @@ let { src, dest } = require('gulp'),
 
 
 
-const cssFileObg = {
-    first: {
-        htmlName: 'index.html',
-        cssName: 'main',
-    },
-    second: {
-        htmlName: 'base.html',
-        cssName: 'base',
-    },
-    third: {
-        htmlName: 'mail.html',
-        cssName: 'mail',
-    },
-    fourth: {
-        htmlName: 'article.html',
-        cssName: 'article',
-    },
-    fifth: {
-        htmlName: 'articles.html',
-        cssName: 'articles',
-    },
-    sixth: {
-        htmlName: 'service.html',
-        cssName: 'service',
-    },
-    seventh: {
-        htmlName: 'services.html',
-        cssName: 'services',
-    },
-    eight: {
-        htmlName: 'contact.html',
-        cssName: 'contact',
-    },
-    ninth: {
-        htmlName: '404.html',
-        cssName: '404',
-    }
-}
 
 function browserSync(params) {
     browsersync.init({
@@ -141,25 +107,29 @@ function html() {
 }
 
 
-function css(html, style) {
+
+function css() {
+
     return src(path.src.css)
         /*     .pipe(scss({
                 outputStyle: "expanded"
             }))
             .pipe(dest(path.src.outPutCss)) */
-        .pipe(concat(`${style}.scss`))
+        .pipe(concat(`style.scss`))
         .pipe(scss({
             outputStyle: "expanded"
         }).on('error', scss.logError))
+        .pipe(pxtorem({
+            propWhiteList: [
+                '*'
+            ]
+        }))
         .pipe(autoprefixer({
             overrideBrowserlist: ["last 5 versions"],
             cascade: true,
         }))
         .pipe(group_media())
-        .pipe(purgecss({
-            content: [`public/${html}`],
-            safelist: ['page__sidebar--active', 'body--noscroll', 'sidebar__content--active', 'btn__noBorder', 'sidebar__content--visible', 'overlay--show', 'ripple', 'wave_active', 'hamburger - menu__content--active', 'cities__accordion - body--hide', 'direction__accordion - body--hide', 'page_screen_full', 'incDec - btn--minus']
-        }))
+
         .pipe(dest(path.build.css))
         .pipe(clean_css())
         /*  .pipe(scss({
@@ -174,20 +144,20 @@ function css(html, style) {
         .pipe(browsersync.stream())
 }
 
-const allCss = (params) => {
+/* const allCss = (params) => {
     Object.entries(cssFileObg).map((item, i) => {
-        console.log([path.src.jsMain])
+        // console.log([path.src.jsMain])
         css(item[1].htmlName, item[1].cssName)
     })
     params()
-}
+} */
 
 
 
-function js() {
+function js(params) {
     path.src.jsFiles.map(entry => {
         return browserify({
-            entries: [entry]
+            entries: [path.src.jsFolder + entry]
         })
             .transform(babelify, {
                 presets: ['@babel/preset-env'],
@@ -199,6 +169,7 @@ function js() {
             })
             .bundle()
             .pipe(source(entry))
+            .pipe(dest(path.build.js))
             .pipe(
                 rename({
                     extname: ".min.js"
@@ -207,7 +178,7 @@ function js() {
             .pipe(
                 buffer()
             )
-            // .pipe(terser())
+            .pipe(terser())
             .pipe(dest(path.build.js))
             .pipe(browsersync.stream())
         /*    return src(path.src.js)
@@ -240,6 +211,7 @@ function js() {
         /*  .pipe(dest(path.build.js))
          .pipe(browsersync.stream()) */
     })
+    params()
 }
 
 function fontsWoff() {
@@ -279,7 +251,7 @@ gulp.task('svgSprite', () => {
 
 function watchFiles(params) {
     gulp.watch([path.watch.html], html);
-    gulp.watch([path.watch.css], allCss);
+    gulp.watch([path.watch.css], css);
     gulp.watch([path.watch.js], js);
     gulp.watch([path.watch.assets], images);
 }
@@ -314,7 +286,7 @@ function fontsStyle(params) {
 
 function cb() { }
 
-let build = gulp.series(clean, gulp.parallel(html, allCss, /* fonts, */ js, images, fontsWoff, fontsStyle));
+let build = gulp.series(clean, gulp.parallel(html, css, /* fonts, */ js, images, fontsWoff, fontsStyle));
 let watch = gulp.parallel(build, browserSync, watchFiles);
 
 exports.fontsStyle = fontsStyle;
@@ -322,7 +294,7 @@ exports.fontsWoff = fontsWoff;
 
 exports.images = images;
 exports.html = html;
-exports.allCss = allCss;
+exports.css = css;
 // exports.fonts = fonts;
 exports.js = js;
 exports.build = build;

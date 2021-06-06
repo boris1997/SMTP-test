@@ -1,7 +1,7 @@
 .contact {
-  margin-top: rem(124px);
+  margin-top: 124px;
   &__title {
-    font-size: rem(50px);
+    font-size: 50px;
     font-weight: 700;
   }
   &__body {
@@ -9,10 +9,10 @@
   }
 
   &__left {
-    margin-top: rem(70px);
+    margin-top: 70px;
   }
   &__right {
-    margin-top: rem(-42px);
+    margin-top: -42px;
     padding: 0 !important;
   }
 
@@ -23,11 +23,11 @@
   }
 
   &__item + &__item {
-    margin-top: rem(38px);
+    margin-top: 38px;
   }
 
   &__form {
-    width: rem(482px);
+    width: 482px;
     /*  width: calc(482 / 1200 * 100%); */
   }
 
@@ -40,13 +40,13 @@
   &__footer {
     @include grid(
       0,
-      rem(80px),
-      rem(30px),
+      80px,
+      30px,
       1,
       1fr,
       auto-fill,
-      rem(277px),
-      rem(277px)
+      277px,
+      277px
     );
   }
  */
@@ -54,37 +54,37 @@
 
 .item-contact {
   &__title {
-    font-size: rem(18px);
-    line-height: rem(26px);
+    font-size: 18px;
+    line-height: 26px;
     font-weight: 600;
   }
 
   &__right {
-    margin-left: rem(18px);
+    margin-left: 18px;
   }
   &__img {
-    margin-top: rem(18px);
+    margin-top: 18px;
   }
 }
 
 .contact-form {
   @include flexbox(column, space-between, flex-start);
   background-color: $primaryColor;
-  border-radius: rem(12px);
-  padding: rem(42px) rem(52px);
+  border-radius: 12px;
+  padding: 42px 52px;
   &__title {
     color: initial;
     margin-top: 0;
     margin-right: auto;
   }
   /*   &__content {
-    margin-top: rem(100px);
+    margin-top: 100px;
   } */
 
   &__item,
   &__btn {
     width: 100%;
-    margin-top: rem(18px);
+    margin-top: 18px;
   }
 
   &__btn {
@@ -92,9 +92,9 @@
   }
 
   &__text {
-    font-size: rem(14px);
+    font-size: 14px;
     color: #9497b1;
-    line-height: rem(20px);
+    line-height: 20px;
   }
 
   &__link {
@@ -105,17 +105,17 @@
   &__input,
   &__textarea {
     width: 100%;
-    height: rem(50px);
+    height: 50px;
     background-color: #f3f6fb;
     color: #9497b1;
-    padding-left: rem(22px);
-    line-height: rem(22px);
-    border-radius: rem(8px);
+    padding-left: 22px;
+    line-height: 22px;
+    border-radius: 8px;
   }
 
   &__textarea {
-    padding-top: rem(14px);
-    height: rem(62px);
+    padding-top: 14px;
+    height: 62px;
     resize: none;
   }
 

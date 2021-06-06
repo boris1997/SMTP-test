@@ -3,13 +3,13 @@
   overflow: hidden;
 
   &__map {
-    @include position(absolute, "", rem(-25px), 0, rem(-304px), auto, none);
+    @include position(absolute, "", -25px, 0, -304px, auto, none);
 
     z-index: -1;
   }
 
   &__section {
-    padding-bottom: rem(40px);
+    padding-bottom: 40px;
   }
 
   &__body,
@@ -20,7 +20,7 @@
   background: #2e2d44;
 
   &__header {
-    margin-bottom: rem(30px);
+    margin-bottom: 30px;
   }
   &__body {
     @include flexbox(row, space-between, flex-start);
@@ -39,10 +39,10 @@
 
   &__list,
   &__list-hidden {
-    @include grid(0, rem(18px), rem(0px), 1, 1fr, auto-fill, rem(200px), 0.3fr);
+    @include grid(0, 18px, 0px, 1, 1fr, auto-fill, 200px, 0.3fr);
   }
   &__content {
-    margin-bottom: rem(18px);
+    margin-bottom: 18px;
   }
 
   &__content-hidden {
@@ -53,17 +53,17 @@
   }
 
   &__item {
-    margin-left: rem(16px);
-    padding-left: rem(18px);
-    max-width: rem(200px);
+    margin-left: 16px;
+    padding-left: 18px;
+    max-width: 200px;
     margin-top: 0;
     position: relative;
     display: list-item;
     &:before {
-      @include position(absolute, "", 0, 0, rem(-5px), auto, auto);
-      width: rem(8px);
-      height: rem(8px);
-      border-radius: rem(100px);
+      @include position(absolute, "", 0, 0, -5px, auto, auto);
+      width: 8px;
+      height: 8px;
+      border-radius: 100px;
       background: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
     }
 
@@ -71,14 +71,14 @@
   }
 
   &__accordion {
-    margin-top: rem(14px);
+    margin-top: 14px;
   }
 
   &__link {
-    margin-left: rem(16px);
+    margin-left: 16px;
   }
   &__icon {
-    margin-left: rem(12px);
+    margin-left: 12px;
   }
   &__accordion-body--hide &__icon {
     transform: rotate(180deg);

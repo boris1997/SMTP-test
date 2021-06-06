@@ -1,39 +1,39 @@
 .services {
   &__title {
-    font-size: rem(50px);
+    font-size: 50px;
     font-weight: 700;
   }
   background: #192942;
   &__header {
-    /*     margin-top: rem(50px); */
+    /*     margin-top: 50px; */
   }
   &__pages {
-    margin-top: rem(70px);
+    margin-top: 70px;
   }
 
   &__footer {
-    margin-top: rem(100px);
+    margin-top: 100px;
     @include flexbox(row, center, center);
   }
 
   &__line {
-    margin-top: rem(32px);
-    height: rem(1px);
+    margin-top: 32px;
+    height: 1px;
     background-color: #302f4b;
   }
 }
 
 .content-services {
-  @include grid(0, rem(32px), rem(32px), 1, 1fr, auto-fit, rem(255px), 1fr);
+  @include grid(0, 32px, 32px, 1, 1fr, auto-fit, 255px, 1fr);
   justify-items: center;
   &__item {
-    /*    height: rem(316px); */
+    /*    height: 316px; */
     position: relative;
     z-index: 0;
     width: 100%;
     flex: 1;
     background-color: #3f3d5f;
-    border-radius: rem(12px);
+    border-radius: 12px;
     transition: all 0.2s ease-in-out;
   }
   &__item:hover .services-item__title {
@@ -43,7 +43,7 @@
     display: flex;
     visibility: visible;
     opacity: 1;
-    margin-top: rem(32px);
+    margin-top: 32px;
     &:after {
       content: none;
     }
@@ -57,14 +57,14 @@
 }
 
 .pagination {
-  margin-top: rem(80px);
+  margin-top: 80px;
   @include flexbox(row, center, center);
   &__content {
     @include flexbox(row, space-between, center);
   }
 
   &__item + &__item {
-    margin-left: rem(19px);
+    margin-left: 19px;
   }
 
   &__btn {
@@ -78,11 +78,11 @@
     }
 
     &::after {
-      @include position(absolute, "", 0, rem(4px), rem(-8.5px), 0, auto);
-      border-radius: rem(100px);
+      @include position(absolute, "", 0, 4px, -8.5px, 0, auto);
+      border-radius: 100px;
       background: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
-      height: rem(22px);
-      width: rem(22px);
+      height: 22px;
+      width: 22px;
       z-index: -1;
       opacity: 0;
       transition: opacity 0.4s ease-in-out;
@@ -121,7 +121,7 @@
   &__list {
     @include flexbox(row, space-between, space-between);
     flex-wrap: wrap;
-    column-gap: rem(40px);
+    column-gap: 40px;
   }
 
   // &__link--active {
@@ -139,8 +139,8 @@
 
 .services-item {
   &__header {
-    border-top-left-radius: rem(12px);
-    border-top-right-radius: rem(12px);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
     @include flexbox(row, center, center);
     position: relative;
     overflow: hidden;
@@ -161,7 +161,7 @@
     }
   }
   &__btn {
-    margin-bottom: rem(39px);
+    margin-bottom: 39px;
     transition: opacity 0.3s ease-in-out;
     /*  display: none; */
 
@@ -171,7 +171,7 @@
     @media (min-width: 768px) {
       @include position(absolute, "", 0, auto, 0, 0, auto);
       opacity: 0;
-      margin: 0 rem(12px);
+      margin: 0 12px;
       visibility: hidden;
     }
   }
@@ -195,7 +195,7 @@
   &__body {
     // overflow: hidden;
     position: relative;
-    padding: 0 rem(12px);
+    padding: 0 12px;
   }
 
   &__text,
@@ -206,16 +206,16 @@
   &__title {
     max-width: 155px;
     margin: auto;
-    margin-top: rem(28px);
-    margin-bottom: rem(33px);
+    margin-top: 28px;
+    margin-bottom: 33px;
   }
   &__text {
     margin: auto;
-    max-width: rem(322px);
+    max-width: 322px;
   }
 
   &__text-short {
-    max-width: rem(312px);
+    max-width: 312px;
   }
   &__img {
     margin: auto;

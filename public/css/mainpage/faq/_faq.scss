@@ -9,14 +9,14 @@
 .item-faq {
   overflow: hidden;
   cursor: pointer;
-  border-bottom: rem(1px) solid #3f3d5f;
+  border-bottom: 1px solid #3f3d5f;
   &__wrapper {
-    margin: rem(32px) 0;
+    margin: 32px 0;
   }
 
   &__header {
     @include flexbox(row, space-between, center);
-    margin-bottom: rem(-12px);
+    margin-bottom: -12px;
   }
 
   &__body {
@@ -25,12 +25,12 @@
 
   &__title {
     margin-top: 0;
-    font-size: rem(28px);
-    margin-right: rem(10px);
+    font-size: 28px;
+    margin-right: 10px;
   }
 
   &__text {
-    max-width: rem(955px);
+    max-width: 955px;
     overflow: hidden;
     --max-heightFaq: 0;
     max-height: var(--max-heightFaq);
@@ -43,24 +43,24 @@
 
   &__right {
     align-self: flex-start;
-    height: rem(36px);
-    width: rem(36px);
+    height: 36px;
+    width: 36px;
   }
   &__togglers {
-    height: rem(36px);
-    width: rem(36px);
+    height: 36px;
+    width: 36px;
     position: relative;
   }
 
   &__underline {
     background-color: #2b4263;
     width: 100%;
-    height: rem(1px);
-    margin-top: rem(32px);
+    height: 1px;
+    margin-top: 32px;
   }
 
   &__toggler {
-    height: rem(36px);
+    height: 36px;
     @include position(absolute, "", 0, 0, 0, 0, auto);
   }
 }

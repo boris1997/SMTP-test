@@ -1,6 +1,6 @@
 .parametres {
   &__section {
-    padding-bottom: rem(60px);
+    padding-bottom: 60px;
   }
   background: url("../assets/backgrounds/base/parametres-background.svg")
     no-repeat center center/cover;
@@ -9,35 +9,35 @@
   }
 
   &__main-title {
-    max-width: rem(888px);
+    max-width: 888px;
   }
 
   &__sec-title {
-    max-width: rem(563px);
+    max-width: 563px;
   }
 
   &__left {
     height: 100%;
-    /*     margin-bottom: rem(80px); */
+    /*     margin-bottom: 80px; */
   }
   &__list {
     display: grid;
-    grid-template-columns: rem(230px) rem(120px);
+    grid-template-columns: 230px 120px;
     grid-column-gap: 0;
   }
 
   &__img {
-    margin-top: rem(-40px);
+    margin-top: -40px;
   }
 
   &__text {
-    margin-top: rem(70px);
-    max-width: rem(458px);
+    margin-top: 70px;
+    max-width: 458px;
   }
   &__item {
-    margin-left: rem(16px);
-    margin-top: rem(18px);
-    padding-left: rem(18px);
+    margin-left: 16px;
+    margin-top: 18px;
+    padding-left: 18px;
   }
 
   &__item::marker {

@@ -1,4 +1,6 @@
-class Sidebar {
+import Styles from './utilities/Styles'
+
+export class Sidebar {
     constructor(page, sections, menuItems, mobileMenuItems, hamburgerMenu, sidebar, sidebarBody, sidebarOverlay, transitionTime) {
         this.page = page,
             this.sections = sections,
@@ -76,8 +78,8 @@ class Sidebar {
 
 }
 
+export const initSidebar = () => {
 
-document.addEventListener('DOMContentLoaded', () => {
     const page = document.querySelector('.page');
     const sections = [...document.querySelectorAll('.section')];
     const menuItems = [...document.querySelectorAll('.menu__items')];
@@ -92,4 +94,5 @@ document.addEventListener('DOMContentLoaded', () => {
     scroll.menuItemsInit();
     scroll.sidebarManipulation()
 
-})
+
+}

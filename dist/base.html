@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/base.min.css">
+    <link rel="preload stylesheet" type="text/css" as="style" href="/css/style.min.css">
     <title>SMTP</title>
 </head>
 
@@ -473,13 +473,14 @@
                                     <span class="item-tariffseccard__amount">3 000 ₽</span>
                                 </div>
                                 <div class="card-tariffsec__footer footer-tariffsec">
-                                    <button class="footer-tariffsec__btn btn btn__wave  btn__transparent item__text">
-                                        Выбрать
-                                        тариф
-                                        <!--       <span class="btn__span">
-                                        </span> -->
+                                    <button class="footer-tariffsec__btn btn  btn__transparent item__text">
+                                        <span class="btn__span">
+                                            Выбрать
+                                            тариф
+                                        </span>
                                         <!--  <div class="wave"> -->
-                                        <!--    <div class="ripple"></div> -->
+                                        <div class="rippleJS">
+                                        </div>
                                         <!--     <div class="block"></div>
                                         </div> -->
                                     </button>
@@ -591,10 +592,10 @@
             <div class="download__body">
                 <div class="download__content">
                     <button class="download__btn btn item__text btn__linear">
+                        <div class="btn__span">Cкачать бесплатно</div>
                         <div class="rippleJS">
                             <div class="ripple"></div>
                         </div>
-                        <div class="btn__span">Cкачать бесплатно</div>
                     </button>
                 </div>
                 <div class="download__use use-download">

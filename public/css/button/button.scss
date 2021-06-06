@@ -1,15 +1,12 @@
-@media (max-width: 1200px) {
-  $accentColor: #132451;
-}
 .btn {
   outline: none;
   background-color: transparent;
   margin-top: 0;
   position: relative;
-  height: rem(50px);
-  border-radius: rem(4px);
+  height: 50px;
+  border-radius: 4px;
   font-weight: 500;
-  // font-size: rem(16px);
+  // font-size: 16px;
   transition: transform 0.3s, box-shadow 0.3s;
   &:hover {
     // transform: scale(1.02);
@@ -40,12 +37,12 @@
         0,
         0,
         auto,
-        rem(18px),
+        18px,
         auto
       );
       @include flexbox(row, center, center);
 
-      height: rem(12px);
+      height: 12px;
     }
     &:hover {
       border: none;
@@ -54,7 +51,7 @@
 
   &__span {
     align-self: baseline;
-    margin-left: rem(28px);
+    margin-left: 28px;
     z-index: 0;
   }
 
@@ -65,7 +62,7 @@
   }
   &__transparent {
     background-color: transparent;
-    border: rem(1px) solid $primaryColor;
+    border: 1px solid $primaryColor;
     &:active {
       border: none;
     }
@@ -85,7 +82,7 @@
 
   &__shadow {
     color: $primaryColor;
-    box-shadow: rem(0px) rem(10px) rem(30px) rem(0px) rgba(36, 192, 226, 0.1);
+    box-shadow: 0px 10px 30px 0px rgba(36, 192, 226, 0.1);
   }
 
   &__linear {
