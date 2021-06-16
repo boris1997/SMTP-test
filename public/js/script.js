@@ -3,7 +3,6 @@ import { Accordion, initAccordion } from './modules/accordion'
 import { Slider, initSlider } from './modules/slider'
 import { CountTarif, initCountTarif } from './modules/countTariff'
 import { Direction, initDirection } from './modules/direction'
-import { LazyLoading, initLazyLoading } from './modules/lazyLoading'
 import { Modal, initModal } from './modules/modal'
 import { Sidebar, initSidebar } from './modules/sidebar'
 import { Scroll, initScroll } from './modules/smoothScrolll'
@@ -13,8 +12,6 @@ import { Scroll, initScroll } from './modules/smoothScrolll'
 document.addEventListener('DOMContentLoaded', () => {
 
 
-    // INIT LAZY LOADING 
-    initLazyLoading()
 
     // INIT SIDEBAR 
 

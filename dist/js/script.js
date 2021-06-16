@@ -1485,85 +1485,7 @@ var initDirection = function initDirection() {
 
 exports.initDirection = initDirection;
 
-},{"./utilities/classToggle":25,"@babel/runtime/helpers/classCallCheck":4,"@babel/runtime/helpers/defineProperty":6,"@babel/runtime/helpers/interopRequireDefault":7,"@babel/runtime/helpers/toConsumableArray":10}],17:[function(require,module,exports){
-"use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.initLazyLoading = exports.LazyLoading = void 0;
-
-var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers/toConsumableArray"));
-
-var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
-
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-
-var _classToggle = _interopRequireDefault(require("./utilities/classToggle"));
-
-var LazyLoading = function LazyLoading(dataLazy, observerRoot, activeClass) {
-  var _this = this;
-
-  (0, _classCallCheck2["default"])(this, LazyLoading);
-  (0, _defineProperty2["default"])(this, "initEvents", function () {
-    _this.scrollObserver();
-  });
-  (0, _defineProperty2["default"])(this, "scrollObserverCallback", function (entries, observer) {
-    return entries.map(function (entry) {
-      return entry.isIntersecting && _this.loadContent(entry.target);
-    });
-  });
-  (0, _defineProperty2["default"])(this, "loadContent", function (entry) {
-    console.log(entry.dataset);
-    entry.dataset.src && _this.loadImg(entry, entry.dataset.src);
-    entry.dataset.backgroungImg && _this.loadBackground(entry, entry.dataset.backgroungImg);
-    /*     if (entry) */
-  });
-  (0, _defineProperty2["default"])(this, "loadBackground", function (element, backgroungUrl) {
-    element.style.backgroundImage = "url(".concat(backgroungUrl, ")");
-
-    _classToggle["default"].addClass(element, _this.activeClass);
-
-    _this.observer.unobserve(element);
-  });
-  (0, _defineProperty2["default"])(this, "loadImg", function (element, src) {
-    element.src = src;
-
-    _this.observer.unobserve(element);
-  });
-  (0, _defineProperty2["default"])(this, "scrollObserver", function () {
-    var options = {
-      root: _this.observerRoot,
-      threshold: 0,
-      rootMargin: '0px 0px 500px 0px'
-    };
-    _this.observer = new IntersectionObserver(_this.scrollObserverCallback, options);
-
-    _this.dataLazy.map(function (data) {
-      _this.observer.observe(data);
-    });
-  });
-  this.dataLazy = dataLazy;
-  this.observerRoot = observerRoot;
-  this.activeClass = activeClass;
-  this.initEvents();
-};
-
-exports.LazyLoading = LazyLoading;
-
-var initLazyLoading = function initLazyLoading() {
-  // faq
-  var dataLazy = (0, _toConsumableArray2["default"])(document.querySelectorAll(".data-lazy"));
-  var observerRoot = document.querySelector("intersaction-observer");
-  var activeClass = 'section--active';
-  new LazyLoading(dataLazy, observerRoot, activeClass);
-};
-
-exports.initLazyLoading = initLazyLoading;
-
-},{"./utilities/classToggle":25,"@babel/runtime/helpers/classCallCheck":4,"@babel/runtime/helpers/defineProperty":6,"@babel/runtime/helpers/interopRequireDefault":7,"@babel/runtime/helpers/toConsumableArray":10}],18:[function(require,module,exports){
+},{"./utilities/classToggle":24,"@babel/runtime/helpers/classCallCheck":4,"@babel/runtime/helpers/defineProperty":6,"@babel/runtime/helpers/interopRequireDefault":7,"@babel/runtime/helpers/toConsumableArray":10}],17:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -1777,7 +1699,7 @@ var initModal = function initModal() {
 
 exports.initModal = initModal;
 
-},{"./utilities/classToggle":25,"@babel/runtime/helpers/classCallCheck":4,"@babel/runtime/helpers/defineProperty":6,"@babel/runtime/helpers/interopRequireDefault":7,"@babel/runtime/helpers/toConsumableArray":10}],19:[function(require,module,exports){
+},{"./utilities/classToggle":24,"@babel/runtime/helpers/classCallCheck":4,"@babel/runtime/helpers/defineProperty":6,"@babel/runtime/helpers/interopRequireDefault":7,"@babel/runtime/helpers/toConsumableArray":10}],18:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -1907,7 +1829,7 @@ var initSidebar = function initSidebar() {
 
 exports.initSidebar = initSidebar;
 
-},{"./utilities/Styles":24,"@babel/runtime/helpers/classCallCheck":4,"@babel/runtime/helpers/defineProperty":6,"@babel/runtime/helpers/interopRequireDefault":7,"@babel/runtime/helpers/toConsumableArray":10}],20:[function(require,module,exports){
+},{"./utilities/Styles":23,"@babel/runtime/helpers/classCallCheck":4,"@babel/runtime/helpers/defineProperty":6,"@babel/runtime/helpers/interopRequireDefault":7,"@babel/runtime/helpers/toConsumableArray":10}],19:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -2509,7 +2431,7 @@ const sliderGif = new Slider (
 
 exports.initSlider = initSlider;
 
-},{"./utilities/Math":23,"./utilities/classToggle":25,"@babel/runtime/helpers/classCallCheck":4,"@babel/runtime/helpers/createClass":5,"@babel/runtime/helpers/defineProperty":6,"@babel/runtime/helpers/interopRequireDefault":7,"@babel/runtime/helpers/toConsumableArray":10}],21:[function(require,module,exports){
+},{"./utilities/Math":22,"./utilities/classToggle":24,"@babel/runtime/helpers/classCallCheck":4,"@babel/runtime/helpers/createClass":5,"@babel/runtime/helpers/defineProperty":6,"@babel/runtime/helpers/interopRequireDefault":7,"@babel/runtime/helpers/toConsumableArray":10}],20:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -2583,7 +2505,7 @@ var initScroll = function initScroll() {
 
 exports.initScroll = initScroll;
 
-},{"@babel/runtime/helpers/classCallCheck":4,"@babel/runtime/helpers/defineProperty":6,"@babel/runtime/helpers/interopRequireDefault":7,"@babel/runtime/helpers/toConsumableArray":10}],22:[function(require,module,exports){
+},{"@babel/runtime/helpers/classCallCheck":4,"@babel/runtime/helpers/defineProperty":6,"@babel/runtime/helpers/interopRequireDefault":7,"@babel/runtime/helpers/toConsumableArray":10}],21:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -2651,7 +2573,7 @@ var initTogglers = function initTogglers() {
 
 exports.initTogglers = initTogglers;
 
-},{"./utilities/classToggle":25,"@babel/runtime/helpers/classCallCheck":4,"@babel/runtime/helpers/defineProperty":6,"@babel/runtime/helpers/interopRequireDefault":7,"@babel/runtime/helpers/toConsumableArray":10}],23:[function(require,module,exports){
+},{"./utilities/classToggle":24,"@babel/runtime/helpers/classCallCheck":4,"@babel/runtime/helpers/defineProperty":6,"@babel/runtime/helpers/interopRequireDefault":7,"@babel/runtime/helpers/toConsumableArray":10}],22:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -2680,7 +2602,7 @@ exports["default"] = MathUtl;
   element.classList.toggle(clas);
 });
 
-},{"@babel/runtime/helpers/classCallCheck":4,"@babel/runtime/helpers/defineProperty":6,"@babel/runtime/helpers/interopRequireDefault":7}],24:[function(require,module,exports){
+},{"@babel/runtime/helpers/classCallCheck":4,"@babel/runtime/helpers/defineProperty":6,"@babel/runtime/helpers/interopRequireDefault":7}],23:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -2716,7 +2638,7 @@ var Styles = /*#__PURE__*/function () {
 var _default = Styles;
 exports["default"] = _default;
 
-},{"@babel/runtime/helpers/classCallCheck":4,"@babel/runtime/helpers/createClass":5,"@babel/runtime/helpers/interopRequireDefault":7}],25:[function(require,module,exports){
+},{"@babel/runtime/helpers/classCallCheck":4,"@babel/runtime/helpers/createClass":5,"@babel/runtime/helpers/interopRequireDefault":7}],24:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -2745,7 +2667,7 @@ exports["default"] = ClassToggle;
   element.classList.toggle(clas);
 });
 
-},{"@babel/runtime/helpers/classCallCheck":4,"@babel/runtime/helpers/defineProperty":6,"@babel/runtime/helpers/interopRequireDefault":7}],26:[function(require,module,exports){
+},{"@babel/runtime/helpers/classCallCheck":4,"@babel/runtime/helpers/defineProperty":6,"@babel/runtime/helpers/interopRequireDefault":7}],25:[function(require,module,exports){
 "use strict";
 
 var _toggler = require("./modules/toggler");
@@ -2758,8 +2680,6 @@ var _countTariff = require("./modules/countTariff");
 
 var _direction = require("./modules/direction");
 
-var _lazyLoading = require("./modules/lazyLoading");
-
 var _modal = require("./modules/modal");
 
 var _sidebar = require("./modules/sidebar");
@@ -2768,9 +2688,7 @@ var _smoothScrolll = require("./modules/smoothScrolll");
 
 // import initRipple from './modules/ripple'
 document.addEventListener('DOMContentLoaded', function () {
-  // INIT LAZY LOADING 
-  (0, _lazyLoading.initLazyLoading)(); // INIT SIDEBAR 
-
+  // INIT SIDEBAR 
   (0, _sidebar.initSidebar)(); // ACCORDION INIT
 
   (0, _accordion.initAccordion)(); // SLIDER INIT
@@ -2911,4 +2829,4 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-},{"./modules/accordion":14,"./modules/countTariff":15,"./modules/direction":16,"./modules/lazyLoading":17,"./modules/modal":18,"./modules/sidebar":19,"./modules/slider":20,"./modules/smoothScrolll":21,"./modules/toggler":22}]},{},[26]);
+},{"./modules/accordion":14,"./modules/countTariff":15,"./modules/direction":16,"./modules/modal":17,"./modules/sidebar":18,"./modules/slider":19,"./modules/smoothScrolll":20,"./modules/toggler":21}]},{},[25]);
