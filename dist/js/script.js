@@ -1503,6 +1503,8 @@ var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/de
 
 var _classToggle = _interopRequireDefault(require("./utilities/classToggle"));
 
+var _Styles = _interopRequireDefault(require("./utilities/Styles"));
+
 var Modal = function Modal(body, popup, _popupModal, popupModalWrapper, wrapperMargin, _btnPopup, closeBtn, formInputs, popupModalActive, popupHidden, bodyNoScroll, staticForm) {
   var _this = this;
 
@@ -1553,7 +1555,7 @@ var Modal = function Modal(body, popup, _popupModal, popupModalWrapper, wrapperM
         btnPopup.addEventListener('click', function () {
           _this.popupModal.map(function (popupModal, i) {
             // console.log(popupModal.children[0])
-            Styles.addTransition(popupModal.children[0], 'all', '0.5s', 'ease-in-out');
+            _Styles["default"].addTransition(popupModal.children[0], 'all', '0.5s', 'ease-in-out');
 
             if (btnPopup.dataset.modal === popupModal.dataset.modal) {
               popupModal.dataset.modal === 'form' && _this.submitForm(popupModal);
@@ -1699,7 +1701,7 @@ var initModal = function initModal() {
 
 exports.initModal = initModal;
 
-},{"./utilities/classToggle":24,"@babel/runtime/helpers/classCallCheck":4,"@babel/runtime/helpers/defineProperty":6,"@babel/runtime/helpers/interopRequireDefault":7,"@babel/runtime/helpers/toConsumableArray":10}],18:[function(require,module,exports){
+},{"./utilities/Styles":23,"./utilities/classToggle":24,"@babel/runtime/helpers/classCallCheck":4,"@babel/runtime/helpers/defineProperty":6,"@babel/runtime/helpers/interopRequireDefault":7,"@babel/runtime/helpers/toConsumableArray":10}],18:[function(require,module,exports){
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");

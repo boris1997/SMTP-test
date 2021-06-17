@@ -1,4 +1,6 @@
 import ClassToggle from './utilities/classToggle'
+import Styles from './utilities/Styles'
+
 
 export class Modal {
 
